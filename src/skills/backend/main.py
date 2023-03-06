@@ -16,17 +16,20 @@ def main():
                 'end_session': False
             }
         }
-    handle_dialog(request.json, response)
-    return json.dumps(response)
+    general_menu(request.json, response)
+    return json.dumps(response, ensure_ascii=False)
 
 
-def handle_dialog(req, res):
+def general_menu(req, res):
     user_id = req['session']['user_id']
     if req['session']['new']:
         sessionStorage[user_id] = \
             {
                 'suggests': [
-                    None
+                    'Русский Язык',
+                    'Английский язык',
+                    'Выйти',
+                    'Помощь'
                 ]
             }
         res['response']['text'] = \
@@ -35,12 +38,11 @@ def handle_dialog(req, res):
 
 Hello Student! To use the skill, choose a language.
 
-
         1. Русский Язык (Russian Language)
         2. Английский Язык (English Language)
             """
-
-        return sessionStorage
+        res['response']['buttons'] = sessionStorage[user_id]
+        return
 
 
 if __name__ == '__main__':
