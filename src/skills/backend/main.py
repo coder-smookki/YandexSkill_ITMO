@@ -156,6 +156,12 @@ def russian_menu(event, context):
 
 
 def student_office_menu(event, context):
+    """
+
+    :param event: содержимое request.json().
+    :param context: информация о текущем контексте выполнения.
+    :return: Ответ будет представлен в виде json автоматически.
+    """
     buttons = {
         'suggests': [
             '<buttons>'
@@ -216,6 +222,12 @@ def student_office_menu(event, context):
 
 
 def for_freshmen(event, context):
+    """
+
+    :param event: содержимое request.json().
+    :param context: информация о текущем контексте выполнения.
+    :return: Ответ будет представлен в виде json автоматически.
+    """
     buttons = {
         "suggests": [
 
@@ -248,7 +260,7 @@ def for_freshmen(event, context):
         },
         'session': event['session'],
         'session_state': {
-            'branch': 'for_fresmen'  # !
+            'branch': 'for_freshmen'  # !
         },
         'version': event['version']
     }
@@ -257,6 +269,10 @@ def for_freshmen(event, context):
 def class_schedule_start(event, context):
     """
     Окно с текстом "Вы выбрали категорию расписание уроков", поэтому _start
+
+    :param event: содержимое request.json().
+    :param context: информация о текущем контексте выполнения.
+    :return: Ответ будет представлен в виде json автоматически.
     """
     buttons = {
         "suggests": [
@@ -299,6 +315,10 @@ def class_schedule_start(event, context):
 def session_schedule(event, context):
     """
     Окно с текстом "Вы выбрали категорию расписание сессии", поэтому _start
+
+    :param event: содержимое request.json().
+    :param context: информация о текущем контексте выполнения.
+    :return: Ответ будет представлен в виде json автоматически.
     """
     buttons = {
         "suggests": [
@@ -342,6 +362,10 @@ def for_international_students_start(event, context):
     """
     Окно с текстом "Вы выбрали категорию для иностранных студентов", поэтому _start, т.к. дальше выбор вопросов
     Можно поменять _start на _category
+
+    :param event: содержимое request.json().
+    :param context: информация о текущем контексте выполнения.
+    :return: Ответ будет представлен в виде json автоматически.
     """
     buttons = {
         "suggests": [
@@ -382,6 +406,12 @@ def for_international_students_start(event, context):
 
 
 def university_wide_modules_in_the_bachelors_degree(event, context):
+    """
+
+    :param event: содержимое request.json().
+    :param context: информация о текущем контексте выполнения.
+    :return: Ответ будет представлен в виде json автоматически.
+    """
     buttons = {
         "suggests": [
 
@@ -421,6 +451,12 @@ def university_wide_modules_in_the_bachelors_degree(event, context):
 
 
 def university_wide_modules_in_the_masters_degree(event, context):
+    """
+
+    :param event: содержимое request.json().
+    :param context: информация о текущем контексте выполнения.
+    :return: Ответ будет представлен в виде json автоматически.
+    """
     buttons = {
         "suggests": [
 
@@ -462,6 +498,10 @@ def university_wide_modules_in_the_masters_degree(event, context):
 def library_category(event, context):
     """
     _category для прикола добавил, в состоянии сессии нету)
+
+    :param event: содержимое request.json().
+    :param context: информация о текущем контексте выполнения.
+    :return: Ответ будет представлен в виде json автоматически.
     """
     buttons = {
         "suggests": [
@@ -502,6 +542,12 @@ def library_category(event, context):
 
 
 def educational_and_methodological_publications(event, context):
+    """
+
+    :param event: содержимое request.json().
+    :param context: информация о текущем контексте выполнения.
+    :return: Ответ будет представлен в виде json автоматически.
+    """
     buttons = {
         "suggests": [
 
@@ -541,6 +587,12 @@ def educational_and_methodological_publications(event, context):
 
 
 def scholarships(event, context):
+    """
+
+    :param event: содержимое request.json().
+    :param context: информация о текущем контексте выполнения.
+    :return: Ответ будет представлен в виде json автоматически.
+    """
     buttons = {
         "suggests": [
 
@@ -582,7 +634,11 @@ def scholarships(event, context):
 def ask_a_question_start(event, context):
     """
     Окно с текстом "Вы направились в категорию "Задать вопрос", поэтому _start
-    Можно сменить на что-то, запрашивающее ФИО.
+    Можно сменить на что-то, как запрос ФИО.
+
+    :param event: содержимое request.json().
+    :param context: информация о текущем контексте выполнения.
+    :return: Ответ будет представлен в виде json автоматически.
     """
     buttons = {
         "suggests": [
@@ -625,6 +681,10 @@ def ask_a_question_start(event, context):
 def news_category(event, context):
     """
     _category для прикола добавил, в состоянии сессии нету)
+
+    :param event: содержимое request.json().
+    :param context: информация о текущем контексте выполнения.
+    :return: Ответ будет представлен в виде json автоматически.
     """
     buttons = {
         "suggests": [
