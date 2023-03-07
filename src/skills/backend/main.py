@@ -718,7 +718,7 @@ def news_category(event, context):
         },
         'session': event['session'],
         'session_state': {
-            'branch': 'news'  # !
+            'branch': 'news'
         },
         'version': event['version']
     }
