@@ -28,8 +28,11 @@ Hello Student! To use the skill, choose a language.
                 """
 Привет Студент! Чтобы пользоваться навыком, выбери язык.
 Hello Student! To use the skill, choose a language.
-       Первое - это Русский Язык (Russian Language)
-       Второе - это Английский Язык (English Language)
+       Первое - это Русский Язык
+       The first is the Russian Language
+       Второе - это Английский Язык
+       The second is English
+
                 """,
             'card': {
                 'type': 'BigImage',
@@ -37,7 +40,7 @@ Hello Student! To use the skill, choose a language.
                 'title': 'ГЛАВНОЕ МЕНЮ (GENERAL MENU)',
                 'description':
                     """
-Привет Студент! Чтобы пользоваться навыком, выбери язык.          Hello Student! To use the skill, choose a language.        1 - Русский Язык (Russian Language).       2 - Английский Язык (English Language).
+Первое (first) - Рус. Язык (Russian Language)... Второе (second) - Англ. Язык (English Language)...
                 """,
             },
             'buttons': [
@@ -266,7 +269,7 @@ def for_freshmen(event, context):
     }
 
 
-def class_schedule_start(event, context):
+def class_timetable_start(event, context):
     """
     Окно с текстом "Вы выбрали категорию расписание уроков", поэтому _start
 
