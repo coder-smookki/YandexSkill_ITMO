@@ -28,8 +28,11 @@ Hello Student! To use the skill, choose a language.
                 """
 Привет Студент! Чтобы пользоваться навыком, выбери язык.
 Hello Student! To use the skill, choose a language.
-       Первое - это Русский Язык (Russian Language)
-       Второе - это Английский Язык (English Language)
+       Первое - это Русский Язык
+       The first is the Russian Language
+       Второе - это Английский Язык
+       The second is English
+
                 """,
             'card': {
                 'type': 'BigImage',
@@ -37,7 +40,7 @@ Hello Student! To use the skill, choose a language.
                 'title': 'ГЛАВНОЕ МЕНЮ (GENERAL MENU)',
                 'description':
                     """
-Привет Студент! Чтобы пользоваться навыком, выбери язык.          Hello Student! To use the skill, choose a language.        1 - Русский Язык (Russian Language).       2 - Английский Язык (English Language).
+Первое (first) - Рус. Язык (Russian Language)... Второе (second) - Англ. Язык (English Language)...
                 """,
             },
             'buttons': [
@@ -156,6 +159,12 @@ def russian_menu(event, context):
 
 
 def student_office_menu(event, context):
+    """
+
+    :param event: содержимое request.json().
+    :param context: информация о текущем контексте выполнения.
+    :return: Ответ будет представлен в виде json автоматически.
+    """
     buttons = {
         'suggests': [
             '<buttons>'
@@ -210,6 +219,509 @@ def student_office_menu(event, context):
         'session': event['session'],
         'session_state': {
             'branch': 'student_office'
+        },
+        'version': event['version']
+    }
+
+
+def for_freshmen(event, context):
+    """
+
+    :param event: содержимое request.json().
+    :param context: информация о текущем контексте выполнения.
+    :return: Ответ будет представлен в виде json автоматически.
+    """
+    buttons = {
+        "suggests": [
+
+        ]
+    }
+    return {
+        'response': {
+            'text':
+                """
+                """,
+            'tts':
+                """
+                """,
+            'card': {
+                'type': 'BigImage',
+                'image_id': '937455/40f0536e426907808499',
+                'title': '',
+                'description':
+                    """
+                    """,
+            },
+            'buttons': [
+                {
+                    'title': title,
+                    'payload': {},
+                    'hide': 'true'
+                } for title in buttons['suggests']
+            ],
+            'end': 'false'
+        },
+        'session': event['session'],
+        'session_state': {
+            'branch': 'for_freshmen'  # !
+        },
+        'version': event['version']
+    }
+
+
+def class_timetable_start(event, context):
+    """
+    Окно с текстом "Вы выбрали категорию расписание уроков", поэтому _start
+
+    :param event: содержимое request.json().
+    :param context: информация о текущем контексте выполнения.
+    :return: Ответ будет представлен в виде json автоматически.
+    """
+    buttons = {
+        "suggests": [
+
+        ]
+    }
+    return {
+        'response': {
+            'text':
+                """
+                """,
+            'tts':
+                """
+                """,
+            'card': {
+                'type': 'BigImage',
+                'image_id': '937455/40f0536e426907808499',
+                'title': '',
+                'description':
+                    """
+                    """,
+            },
+            'buttons': [
+                {
+                    'title': title,
+                    'payload': {},
+                    'hide': 'true'
+                } for title in buttons['suggests']
+            ],
+            'end': 'false'
+        },
+        'session': event['session'],
+        'session_state': {
+            'branch': 'class_schedule_start'  # !
+        },
+        'version': event['version']
+    }
+
+
+def session_schedule(event, context):
+    """
+    Окно с текстом "Вы выбрали категорию расписание сессии", поэтому _start
+
+    :param event: содержимое request.json().
+    :param context: информация о текущем контексте выполнения.
+    :return: Ответ будет представлен в виде json автоматически.
+    """
+    buttons = {
+        "suggests": [
+
+        ]
+    }
+    return {
+        'response': {
+            'text':
+                """
+                """,
+            'tts':
+                """
+                """,
+            'card': {
+                'type': 'BigImage',
+                'image_id': '937455/40f0536e426907808499',
+                'title': '',
+                'description':
+                    """
+                    """,
+            },
+            'buttons': [
+                {
+                    'title': title,
+                    'payload': {},
+                    'hide': 'true'
+                } for title in buttons['suggests']
+            ],
+            'end': 'false'
+        },
+        'session': event['session'],
+        'session_state': {
+            'branch': 'session_schedule_start'  # !
+        },
+        'version': event['version']
+    }
+
+
+def for_international_students_start(event, context):
+    """
+    Окно с текстом "Вы выбрали категорию для иностранных студентов", поэтому _start, т.к. дальше выбор вопросов
+    Можно поменять _start на _category
+
+    :param event: содержимое request.json().
+    :param context: информация о текущем контексте выполнения.
+    :return: Ответ будет представлен в виде json автоматически.
+    """
+    buttons = {
+        "suggests": [
+
+        ]
+    }
+    return {
+        'response': {
+            'text':
+                """
+                """,
+            'tts':
+                """
+                """,
+            'card': {
+                'type': 'BigImage',
+                'image_id': '937455/40f0536e426907808499',
+                'title': '',
+                'description':
+                    """
+                    """,
+            },
+            'buttons': [
+                {
+                    'title': title,
+                    'payload': {},
+                    'hide': 'true'
+                } for title in buttons['suggests']
+            ],
+            'end': 'false'
+        },
+        'session': event['session'],
+        'session_state': {
+            'branch': 'for_international_students_start'  # !
+        },
+        'version': event['version']
+    }
+
+
+def university_wide_modules_in_the_bachelors_degree(event, context):
+    """
+
+    :param event: содержимое request.json().
+    :param context: информация о текущем контексте выполнения.
+    :return: Ответ будет представлен в виде json автоматически.
+    """
+    buttons = {
+        "suggests": [
+
+        ]
+    }
+    return {
+        'response': {
+            'text':
+                """
+                """,
+            'tts':
+                """
+                """,
+            'card': {
+                'type': 'BigImage',
+                'image_id': '937455/40f0536e426907808499',
+                'title': '',
+                'description':
+                    """
+                    """,
+            },
+            'buttons': [
+                {
+                    'title': title,
+                    'payload': {},
+                    'hide': 'true'
+                } for title in buttons['suggests']
+            ],
+            'end': 'false'
+        },
+        'session': event['session'],
+        'session_state': {
+            'branch': 'university_wide_modules_in_the_bachelors_degree'  # !
+        },
+        'version': event['version']
+    }
+
+
+def university_wide_modules_in_the_masters_degree(event, context):
+    """
+
+    :param event: содержимое request.json().
+    :param context: информация о текущем контексте выполнения.
+    :return: Ответ будет представлен в виде json автоматически.
+    """
+    buttons = {
+        "suggests": [
+
+        ]
+    }
+    return {
+        'response': {
+            'text':
+                """
+                """,
+            'tts':
+                """
+                """,
+            'card': {
+                'type': 'BigImage',
+                'image_id': '937455/40f0536e426907808499',
+                'title': '',
+                'description':
+                    """
+                    """,
+            },
+            'buttons': [
+                {
+                    'title': title,
+                    'payload': {},
+                    'hide': 'true'
+                } for title in buttons['suggests']
+            ],
+            'end': 'false'
+        },
+        'session': event['session'],
+        'session_state': {
+            'branch': 'university_wide_modules_in_the_masters_degree'  # !
+        },
+        'version': event['version']
+    }
+
+
+def library_category(event, context):
+    """
+    _category для прикола добавил, в состоянии сессии нету)
+
+    :param event: содержимое request.json().
+    :param context: информация о текущем контексте выполнения.
+    :return: Ответ будет представлен в виде json автоматически.
+    """
+    buttons = {
+        "suggests": [
+
+        ]
+    }
+    return {
+        'response': {
+            'text':
+                """
+                """,
+            'tts':
+                """
+                """,
+            'card': {
+                'type': 'BigImage',
+                'image_id': '937455/40f0536e426907808499',
+                'title': '',
+                'description':
+                    """
+                    """,
+            },
+            'buttons': [
+                {
+                    'title': title,
+                    'payload': {},
+                    'hide': 'true'
+                } for title in buttons['suggests']
+            ],
+            'end': 'false'
+        },
+        'session': event['session'],
+        'session_state': {
+            'branch': 'library'  # !
+        },
+        'version': event['version']
+    }
+
+
+def educational_and_methodological_publications(event, context):
+    """
+
+    :param event: содержимое request.json().
+    :param context: информация о текущем контексте выполнения.
+    :return: Ответ будет представлен в виде json автоматически.
+    """
+    buttons = {
+        "suggests": [
+
+        ]
+    }
+    return {
+        'response': {
+            'text':
+                """
+                """,
+            'tts':
+                """
+                """,
+            'card': {
+                'type': 'BigImage',
+                'image_id': '937455/40f0536e426907808499',
+                'title': '',
+                'description':
+                    """
+                    """,
+            },
+            'buttons': [
+                {
+                    'title': title,
+                    'payload': {},
+                    'hide': 'true'
+                } for title in buttons['suggests']
+            ],
+            'end': 'false'
+        },
+        'session': event['session'],
+        'session_state': {
+            'branch': 'educational_and_methodological_publications'  # !
+        },
+        'version': event['version']
+    }
+
+
+def scholarships(event, context):
+    """
+
+    :param event: содержимое request.json().
+    :param context: информация о текущем контексте выполнения.
+    :return: Ответ будет представлен в виде json автоматически.
+    """
+    buttons = {
+        "suggests": [
+
+        ]
+    }
+    return {
+        'response': {
+            'text':
+                """
+                """,
+            'tts':
+                """
+                """,
+            'card': {
+                'type': 'BigImage',
+                'image_id': '937455/40f0536e426907808499',
+                'title': '',
+                'description':
+                    """
+                    """,
+            },
+            'buttons': [
+                {
+                    'title': title,
+                    'payload': {},
+                    'hide': 'true'
+                } for title in buttons['suggests']
+            ],
+            'end': 'false'
+        },
+        'session': event['session'],
+        'session_state': {
+            'branch': 'scholarships'  # !
+        },
+        'version': event['version']
+    }
+
+
+def ask_a_question_start(event, context):
+    """
+    Окно с текстом "Вы направились в категорию "Задать вопрос", поэтому _start
+    Можно сменить на что-то, как запрос ФИО.
+
+    :param event: содержимое request.json().
+    :param context: информация о текущем контексте выполнения.
+    :return: Ответ будет представлен в виде json автоматически.
+    """
+    buttons = {
+        "suggests": [
+
+        ]
+    }
+    return {
+        'response': {
+            'text':
+                """
+                """,
+            'tts':
+                """
+                """,
+            'card': {
+                'type': 'BigImage',
+                'image_id': '937455/40f0536e426907808499',
+                'title': '',
+                'description':
+                    """
+                    """,
+            },
+            'buttons': [
+                {
+                    'title': title,
+                    'payload': {},
+                    'hide': 'true'
+                } for title in buttons['suggests']
+            ],
+            'end': 'false'
+        },
+        'session': event['session'],
+        'session_state': {
+            'branch': 'ask_a_question_start'  # !
+        },
+        'version': event['version']
+    }
+
+
+def news_category(event, context):
+    """
+    _category для прикола добавил, в состоянии сессии нету)
+
+    :param event: содержимое request.json().
+    :param context: информация о текущем контексте выполнения.
+    :return: Ответ будет представлен в виде json автоматически.
+    """
+    buttons = {
+        "suggests": [
+
+        ]
+    }
+    return {
+        'response': {
+            'text':
+                """
+                """,
+            'tts':
+                """
+                """,
+            'card': {
+                'type': 'BigImage',
+                'image_id': '937455/40f0536e426907808499',
+                'title': '',
+                'description':
+                    """
+                    """,
+            },
+            'buttons': [
+                {
+                    'title': title,
+                    'payload': {},
+                    'hide': 'true'
+                } for title in buttons['suggests']
+            ],
+            'end': 'false'
+        },
+        'session': event['session'],
+        'session_state': {
+            'branch': 'news'
         },
         'version': event['version']
     }
