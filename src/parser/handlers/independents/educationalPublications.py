@@ -1,10 +1,11 @@
 import requests
-import re
 from bs4 import BeautifulSoup as bs
-from .utils.textNormalizer.index import textNormalizer
+from ..utils.textNormalizer.index import textNormalizer
 
 
 def educationalPublications(query):
+    if not query:
+        raise TypeError('Empty query is not allowed')
     result = []
     body = {"searchTextBox": query}
     try:
