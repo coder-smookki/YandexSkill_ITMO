@@ -1,16 +1,11 @@
 from main import *
 from student_office import *
-import requests
-import json
 
 russian_language_intent = {'русский', 'русски', 'русск', 'русс', 'рус', 'russian', 'russia', 'russi', 'russ', 'rus',
                            'ru'}
 
 
 def main(event, context):
-    jsonchik = json.dumps(event)
-    body = {"result_main": jsonchik}
-    r = requests.post('https://eotlrqslpj90nwy.m.pipedream.net/', data=body)
     if event['session']['new'] == True:
         return general_menu(event, context)
     elif list(set(event['request']['nlu']['tokens']) & {'главное', 'меню'}):
