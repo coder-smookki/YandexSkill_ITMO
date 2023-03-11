@@ -1,3 +1,4 @@
+
 def isNewSession(event):
     return event['session']['new'] is True
 
@@ -5,14 +6,15 @@ def isNewSession(event):
 def isSimilarTokens(event, tokens):
     return list(set(event['request']['nlu']['tokens']) & tokens)
 
-
 def isInContext(event, context):
-    if not 'branch' in event['state']['session']:
+
+    if not 'dialogContext' in event:
         return False
 
     if isinstance(context, list):
         for elem in context:
-            if event['state']['session']["branch"] == elem:
+            if event['dialogContext'] == elem:
                 return True
         return False
-    return event['state']['session']["branch"] == context
+    return event['dialogContext'] == context
+
