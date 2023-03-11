@@ -1,4 +1,4 @@
-def createResponse(event,config):
+def createResponse(event, config):
     return {
         'response': {
             'text': config['message'],
@@ -11,6 +11,7 @@ def createResponse(event,config):
         'session_state': config['session_state'],
         'version': event['version']
     }
+
 
 def createButtons(buttons):
     result = []

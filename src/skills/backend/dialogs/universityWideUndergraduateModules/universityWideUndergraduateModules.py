@@ -9,8 +9,8 @@ def getResponse(event, context):
 
 
 def isTriggered(event, context):
-    token = {"студенческий", "студенчески", "студенческ", "офис", "офисс", "офи"}
+    token = {"общеуниверситетские", "модули", "в", "бакалавриате"}
     return isSimilarTokens(event, token) and isInContext(event, 'generalMenu')
 
 
-studentOffice = {'getResponse': getResponse, 'isTriggered': isTriggered}
+universityWideUndergraduateModules = {'getResponse': getResponse, 'isTriggered': isTriggered}
