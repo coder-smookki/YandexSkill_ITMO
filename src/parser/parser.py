@@ -1,10 +1,10 @@
 import requests
 from bs4 import BeautifulSoup as bs
-from handlers.announces import announces
-from handlers.contests import contests
-from handlers.independents.educationalPublications import educationalPublications
-from handlers.independents.timetable.getAllGroups import getAllGroups
-from handlers.independents.timetable.getGroupTimetable import getGroupTimetable
+from src.parser.handlers.announces import announces
+from src.parser.handlers.contests import contests
+from src.parser.handlers.independents.educationalPublications import educationalPublications
+from src.parser.handlers.independents.timetable.getAllGroups import getAllGroups
+from src.parser.handlers.independents.timetable.getGroupTimetable import getGroupTimetable
 
 # infoType - тип информации, которую нужно спарсить
 # query - строка запроса, если используется (необязательная)

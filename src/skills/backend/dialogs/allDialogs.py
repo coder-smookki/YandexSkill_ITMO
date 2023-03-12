@@ -7,6 +7,10 @@ from .studentOfficeWhy.studentOfficeWhy import studentOfficeWhy
 from .universityWideUndergraduateModules.universityWideUndergraduateModules import universityWideUndergraduateModules
 from .documentOnPreviousEducation.documentOnPreviousEducation import documentOnPreviousEducation
 from .library.library import library
+from .news.news import news
+from .announces.announces import announces
+from .contests.contests import contests
+
 
 allDialogs = [
     generalMenu,
@@ -17,5 +21,8 @@ allDialogs = [
     documentOnPreviousEducation,
     universityWideUndergraduateModules,
     library,
+    news,
+    announces,
+    contests,
     russianMenu
 ]
