@@ -1,4 +1,4 @@
-from .config import getConfig
+from config import getConfig
 from ..utils.dialogCreator import *
 from ..utils.triggerHelper import *
 
