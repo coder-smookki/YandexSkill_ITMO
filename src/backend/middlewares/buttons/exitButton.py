@@ -5,6 +5,6 @@ def getResponse(event, allDialogs):
     return allDialogs['russianMenu']['getResponse'](event, None)
 
 def isTriggered(event, context):
-    return isSimilarCommand(event, "Выйти")
+    return isSimilarCommand(event, "выйти")
 
 exitButton = {'getResponse': getResponse, 'isTriggered': isTriggered}
