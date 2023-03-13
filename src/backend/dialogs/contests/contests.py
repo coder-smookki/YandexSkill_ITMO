@@ -1,4 +1,4 @@
-from config import getConfig
+from .config import getConfig
 from utils.responseHelper import *
 from utils.triggerHelper import *
 
