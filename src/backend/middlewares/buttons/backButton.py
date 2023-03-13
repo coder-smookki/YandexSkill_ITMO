@@ -5,7 +5,9 @@ def getResponse(event, allDialogs):
     if not 'branch' in event['state']['session']:
         return allDialogs['russianMenu']['getResponse'](event, None)
 
-    branch = event['state']['session']["branch"] 
+    branch = event['state']['session']["branch"]
+    if not allDialogs[branch]:
+        return allDialogs['russianMenu']['getResponse'](event, None)
     return allDialogs[branch]['getResponse'](event, None)
 
 def isTriggered(event, context):
