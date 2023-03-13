@@ -9,6 +9,7 @@ def getResponse(event, allDialogs):
     return allDialogs[branch]['getResponse'](event, None)
 
 def isTriggered(event, context):
+    print(isSimilarCommand(event, "Назад"))
     return isSimilarCommand(event, "Назад")
 
 backButton = {'getResponse': getResponse, 'isTriggered': isTriggered}
