@@ -1,6 +1,6 @@
 from utils.responseHelper import *
 from utils.triggerHelper import *
-from dialogs.russianMenu.russianMenu import russianMenu
+
 def getResponse(event, allDialogs):
     return allDialogs['russianMenu']['getResponse'](event, None)
 
