@@ -1,6 +1,6 @@
 from .generalMenu.generalMenu import generalMenu
 from .russianMenu.russianMenu import russianMenu
-from .for_freshman.for_freshman import for_freshman
+from .forFreshman.forFreshman import forFreshman
 from .studentOffice.studentOffice import studentOffice
 from .studentOfficeAbout.studentOfficeAbout import studentOfficeAbout
 from .studentOfficeWhy.studentOfficeWhy import studentOfficeWhy
