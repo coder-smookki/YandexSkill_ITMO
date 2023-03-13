@@ -1,6 +1,7 @@
 from dialogs.allDialogs import allDialogs
 from flask import Flask, request
 from middlewares.allMiddlewares import allMiddlewares
+from utils.triggerHelper import *
 
 def main(event, context):
     if not isNewSession(event):
