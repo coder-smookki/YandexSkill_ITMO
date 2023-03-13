@@ -7,7 +7,7 @@ message = \
     """
 
 tts = \
-    """
+    """ 
     Привет Студент! Чтобы пользоваться навыком, выбери язык.
     Hello Student! To use the skill, choose a language.
         Первое - это Русский Язык
