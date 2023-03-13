@@ -24,5 +24,7 @@ def content():
     return reqzap
 
 
-if __name__ == 'main':
+if __name__ == '__main__':
+    print('Server starting...')
     app.run(port=2083, host='0.0.0.0', debug=True)
+    print('Server started successfully!')
