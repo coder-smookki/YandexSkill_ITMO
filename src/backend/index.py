@@ -4,12 +4,12 @@ from middlewares.allMiddlewares import allMiddlewares
 
 def main(event, context):
     for key in allMiddlewares:
-        if not allMiddlewares[key]['isTriggered'](event, allDialogs):
+        if not allMiddlewares[key]['isTriggered']:
             continue
         return allMiddlewares[key]['getResponse'](event, allDialogs)
 
     for key in allDialogs:
-        if not allDialogs[key]['isTriggered'](event, context):
+        if not allDialogs[key]['isTriggered']:
             continue
         return allDialogs[key]['getResponse'](event, context)
 
