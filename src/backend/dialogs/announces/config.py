@@ -33,5 +33,3 @@ def getConfig():
         'buttons': buttons,
         'session_state': session_state
     }
-
-print(message)

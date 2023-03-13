@@ -2,16 +2,21 @@ from dialogs.allDialogs import allDialogs
 #from connect import connect
 from flask import Flask, request
 import ssl
-
+from middlewares.allMiddlewares import allMiddlewares
 
 def main(event, context):
-    for dialog in allDialogs:
-        if not dialog['isTriggered'](event, context):
+    for key in allMiddlewares:
+        if not allMiddlewares[key]['isTriggered'](event, allDialogs):
             continue
-        return dialog['getResponse'](event, context)
+        return allMiddlewares[key]['getResponse'](event, allDialogs)
+
+    for key in allDialogs:
+        if not allDialogs[key]['isTriggered'](event, context):
+            continue
+        return allDialogs[key]['getResponse'](event, context)
 
 
-app = Flask(name)
+app = Flask(__name__)
 #context = ssl.create_default_context(purpose=ssl.Purpose.CLIENT_AUTH)
 #context.load_cert_chain('cert.crt')
 @app.route('/', methods=['POST'])
@@ -22,6 +27,6 @@ def content():
     return reqzap
 
 
-if name == 'main':
+if __name__ == 'main':
 #   app.run(port=80, host='0.0.0.0', debug=True, ssl_context=context)
     app.run(port=80, host='0.0.0.0', debug=True)

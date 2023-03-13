@@ -1,10 +1,9 @@
 from .config import getConfig
-from ..utils.dialogCreator import *
-from ..utils.triggerHelper import *
+from utils.dialogCreator import *
+from utils.triggerHelper import *
 
-
+config = getConfig()
 def getResponse(event, context):
-    config = getConfig()
     return createResponse(event, config)
 
 

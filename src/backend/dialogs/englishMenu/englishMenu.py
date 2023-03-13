@@ -1,6 +1,6 @@
 from .config import getConfig
-from ..utils.dialogCreator import *
-from ..utils.triggerHelper import *
+from utils.dialogCreator import *
+from utils.triggerHelper import *
 
 
 def getResponse(event, context):

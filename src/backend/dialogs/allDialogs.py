@@ -11,18 +11,17 @@ from .news.news import news
 from .announces.announces import announces
 from .contests.contests import contests
 
-
-allDialogs = [
-    generalMenu,
-    for_freshman,
-    studentOffice,
-    studentOfficeAbout,
-    studentOfficeWhy,
-    documentOnPreviousEducation,
-    universityWideUndergraduateModules,
-    library,
-    news,
-    announces,
-    contests,
-    russianMenu
-]
+allDialogs = {
+    'generalMenu': generalMenu,
+    'for_freshman': for_freshman,
+    'studentOffice': studentOffice,
+    'studentOfficeAbout': studentOfficeAbout,
+    'studentOfficeWhy': studentOfficeWhy,
+    'documentOnPreviousEducation': documentOnPreviousEducation,
+    'universityWideUndergraduateModules': universityWideUndergraduateModules,
+    'library': library,
+    'news': news,
+    'announces': announces,
+    'contests': contests,
+    'russianMenu': russianMenu
+}
