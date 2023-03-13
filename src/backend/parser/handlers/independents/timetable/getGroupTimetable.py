@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup as bs
 from ...utils.textNormalizer.index import textNormalizer
-
+ 
 def getGroupTimetable(args):
     result = []
 

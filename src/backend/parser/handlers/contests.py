@@ -1,5 +1,5 @@
 from .utils.textNormalizer.index import textNormalizer
-
+  
 def contests(soup):
     result = []
 

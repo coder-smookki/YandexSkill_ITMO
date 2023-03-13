@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup as bs
 import re
 from ...utils.textNormalizer.index import textNormalizer
-
+ 
 def getAllGroups(args):
     if not isinstance(args, list):
         raise TypeError(

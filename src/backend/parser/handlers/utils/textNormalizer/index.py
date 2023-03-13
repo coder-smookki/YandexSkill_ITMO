@@ -1,7 +1,7 @@
 from .removeMultipleSpaces import removeMultipleSpaces
 from .removeCharacters import removeCharacters
 from .checkNullString import checkNullString
-
+ 
 def textNormalizer(string):
     if checkNullString(string) == False:
         return False
