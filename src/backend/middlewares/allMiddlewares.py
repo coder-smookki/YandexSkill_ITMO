@@ -1,4 +1,4 @@
-from .exitButton import exitButton
+from .exitButton.exitButton import exitButton
 
 allMiddlewares = {
     'exitButton': exitButton
