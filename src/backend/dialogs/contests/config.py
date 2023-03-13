@@ -5,7 +5,7 @@ message = ''
 tts = ''
 
 announces = parser('contests')
-
+ 
 for i in announces:
     message += f"""
     {i['text']}\n

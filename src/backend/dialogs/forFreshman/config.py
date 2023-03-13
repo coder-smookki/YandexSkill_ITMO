@@ -12,7 +12,7 @@ message = \
     Приложение на IOS  называется - my.itmo
     Приложение на Android называется - my.itmo
     """
-
+ 
 tts = \
     """
     Вы направились в категорию "Первокурсникам"
@@ -51,7 +51,7 @@ card = {
 }
 
 session_state = {
-    "branch": "for_freshman"
+    "branch": "forFreshman"
 }
 
 

@@ -13,4 +13,4 @@ def isTriggered(event, context):
     return isSimilarTokens(event, token) and isInContext(event, 'generalMenu')
 
 
-for_freshman = {'getResponse': getResponse, 'isTriggered': isTriggered}
+forFreshman = {'getResponse': getResponse, 'isTriggered': isTriggered}

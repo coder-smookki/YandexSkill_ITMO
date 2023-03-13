@@ -13,7 +13,7 @@ from .contests.contests import contests
 
 allDialogs = {
     'generalMenu': generalMenu,
-    'for_freshman': for_freshman,
+    'forFreshman': for_freshman,
     'studentOffice': studentOffice,
     'studentOfficeAbout': studentOfficeAbout,
     'studentOfficeWhy': studentOfficeWhy,
