@@ -1,5 +1,5 @@
 from .config import getConfig
-from utils.dialogCreator import *
+from utils.responseHelper import *
 from utils.triggerHelper import *
 
 
