@@ -16,6 +16,4 @@ def isInContext(event, context):
     return event['state']['session']["branch"] == context
 
 def isSimilarCommand(event, command):
-    print(event['request']['command'])
-    print(command)
     return event['request']['command'] == command

@@ -3,10 +3,11 @@ from flask import Flask, request
 from middlewares.allMiddlewares import allMiddlewares
 
 def main(event, context):
-    for key in allMiddlewares:
-        if not allMiddlewares[key]['isTriggered'](event, context):
-            continue
-        return allMiddlewares[key]['getResponse'](event, allDialogs)
+    if not isNewSession(event):
+        for key in allMiddlewares:
+            if not allMiddlewares[key]['isTriggered'](event, context):
+                continue
+            return allMiddlewares[key]['getResponse'](event, allDialogs)
 
     for key in allDialogs:
         if not allDialogs[key]['isTriggered'](event, context):
