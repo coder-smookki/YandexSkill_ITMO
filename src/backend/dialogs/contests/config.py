@@ -1,4 +1,4 @@
-from ...parser.parser import *
+from parser.parser import *
 
 message = ''
 
