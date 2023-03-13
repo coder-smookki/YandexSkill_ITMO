@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup as bs
 from ..utils.textNormalizer.index import textNormalizer
 
-
+ 
 def educationalPublications(query):
     if not query:
         raise TypeError('Empty query is not allowed')
