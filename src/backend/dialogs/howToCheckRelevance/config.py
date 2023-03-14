@@ -39,7 +39,7 @@ card = {
 }
 
 session_state = {
-    "branch": "whoIsCreator"
+    "branch": "howToCheckRelevance"
 }
 
 def getConfig():
