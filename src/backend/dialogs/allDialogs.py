@@ -18,6 +18,7 @@ from .howToCheckRelevance.howToCheckRelevance import howToCheckRelevance
 from .howToConnectWithDevelopers.howToConnectWithDevelopers import howToConnectWithDevelopers
 from .whoIsCreator.whoIsCreator import whoIsCreator
 from .help.help import help
+from .randomFact.randomFact import randomFact
 
 allDialogs = {
     'generalMenu': generalMenu,
@@ -40,5 +41,6 @@ allDialogs = {
     'news': news,
     'announces': announces,
     'contests': contests,
+    'randomFact': randomFact,
     'russianMenu': russianMenu
 }
