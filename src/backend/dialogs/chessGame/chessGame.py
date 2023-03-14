@@ -1,6 +1,6 @@
 from .event_handler import event_handler
-from ..utils.dialogCreator import *
-from ..utils.triggerHelper import *
+from utils.dialogCreator import *
+from utils.triggerHelper import *
 
 
 def getResponse(event, context):
