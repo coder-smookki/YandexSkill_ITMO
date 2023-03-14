@@ -4,7 +4,15 @@ from middlewares.allMiddlewares import allMiddlewares
 from utils.triggerHelper import *
 from utils.branchHandler import updateBranchToResponse
 
+DEBUG = True
+
 def main(event, context):
+    if DEBUG:
+        if 'branch' in event['state']['session']:
+            print('Branch: ' + event['state']['session']['branch'])
+        else:
+            print("Branch don't initilized")
+        print('---------------------------')
     if not isNewSession(event):
         for key in allMiddlewares:
             if not allMiddlewares[key]['isTriggered'](event, context):
@@ -12,7 +20,9 @@ def main(event, context):
             return allMiddlewares[key]['getResponse'](event, allDialogs)
 
     for key in allDialogs:
-        print(str(key) + ' ' + str(allDialogs[key]['isTriggered'](event, context)))
+        if DEBUG:
+            print(str(key) + ' ' + str(allDialogs[key]['isTriggered'](event, context)))
+            print('===========================')
         if not allDialogs[key]['isTriggered'](event, context):
             continue
         response = allDialogs[key]['getResponse'](event, context)
