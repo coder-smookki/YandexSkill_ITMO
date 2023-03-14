@@ -47,5 +47,6 @@ def getConfig():
         'message': message,
         'tts': tts,
         'buttons': buttons,
-        'card': card
+        'card': card,
+        'session_state': session_state
     }
