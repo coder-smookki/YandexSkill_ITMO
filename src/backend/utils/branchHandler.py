@@ -1,6 +1,5 @@
 import copy
 from .responseHelper import createResponse
-from dialogs.allDialogs import allDialogs
 
 def updateBranchToResponse(event, response):
     newEvent = copy.deepcopy(event)
@@ -24,11 +23,11 @@ def updateBranchToResponse(event, response):
             response['session_state']['branch'] = eventBranch
             return response
 
-def getDialogResponseFromEnd(event, dialogNumber):
+def getDialogResponseFromEnd(event, dialogNumber, dialogs):
     branchList = event["state"]["session"]["branch"]
     if dialogNumber > len(branchList):
-        return allDialogs[branchList[0]]['getResponse'](event, None)
-    return allDialogs[branchList[-dialogNumber]]['getResponse'](event, None)
+        return dialogs[branchList[0]]['getResponse'](event, None)
+    return dialogs[branchList[-dialogNumber]]['getResponse'](event, None)
 
 
 

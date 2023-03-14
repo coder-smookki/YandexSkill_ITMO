@@ -6,7 +6,7 @@ from utils.branchHandler import updateBranchToResponse
 
 DEBUG = True
 
-def main(event, context):
+def main(event):
     if DEBUG:
         print('===========================')
         if 'branch' in event['state']['session']:
@@ -16,16 +16,16 @@ def main(event, context):
         print('---------------------------')
     if not isNewSession(event):
         for key in allMiddlewares:
-            if not allMiddlewares[key]['isTriggered'](event, context):
+            if not allMiddlewares[key]['isTriggered'](event):
                 continue
             return allMiddlewares[key]['getResponse'](event, allDialogs)
 
     for key in allDialogs:
         if DEBUG:
-            print(str(key) + ' ' + str(allDialogs[key]['isTriggered'](event, context)))
-        if not allDialogs[key]['isTriggered'](event, context):
+            print(str(key) + ' ' + str(allDialogs[key]['isTriggered'](event)))
+        if not allDialogs[key]['isTriggered'](event):
             continue
-        response = allDialogs[key]['getResponse'](event, context)
+        response = allDialogs[key]['getResponse'](event, allDialogs)
         branchedResponse = updateBranchToResponse(event, response)
         return branchedResponse
     if DEBUG:
@@ -40,7 +40,7 @@ def content():
     # ЗАПРОС КОТОРЫЙ ПОСТУПИЛ НАМ!                                                                                                                                       |
     # {data}                                                                                                                                                             |
     # """) 
-    reqzap = main(data, None)
+    reqzap = main(data)
     # print(f"""                                                                                                                                                     |
     # ЗАПРОС КОТОРЫЙ ОТПРАВИЛИ МЫ!                                                                                                                                            |
     # {reqzap}                                                                                                                                                           |
