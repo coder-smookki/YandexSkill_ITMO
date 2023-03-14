@@ -8,8 +8,9 @@ DEBUG = True
 
 def main(event, context):
     if DEBUG:
+        print('===========================')
         if 'branch' in event['state']['session']:
-            print('Branch: ' + event['state']['session']['branch'])
+            print('Branch: ' + str(event['state']['session']['branch']))
         else:
             print("Branch don't initilized")
         print('---------------------------')
