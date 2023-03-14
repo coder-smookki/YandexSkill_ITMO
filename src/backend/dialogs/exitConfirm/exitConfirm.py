@@ -7,7 +7,6 @@ import copy
 config = getConfig()
 def getResponse(event, allDialogs=None):
     if isInContext(event, 'exitConfirm') and isSimilarCommand(event, 'да'):
-        print('EXIIIIIIIIIIT')
         newConfig = copy.deepcopy(config)
         newConfig['response']['end_session'] = True
         return createResponse(event, newConfig)
