@@ -4,10 +4,11 @@ from middlewares.allMiddlewares import allMiddlewares
 from utils.triggerHelper import *
 from utils.branchHandler import updateBranchToResponse
 
-DEBUG = True
+DIALOG_DEBUG = True
+REQUESTS_DEBUG = False
 
 def main(event):
-    if DEBUG:
+    if DIALOG_DEBUG:
         print('===========================')
         if 'branch' in event['state']['session']:
             print('Branch: ' + str(event['state']['session']['branch']))
@@ -21,14 +22,14 @@ def main(event):
             return allMiddlewares[key]['getResponse'](event, allDialogs)
 
     for key in allDialogs:
-        if DEBUG:
+        if DIALOG_DEBUG:
             print(str(key) + ' ' + str(allDialogs[key]['isTriggered'](event)))
         if not allDialogs[key]['isTriggered'](event):
             continue
         response = allDialogs[key]['getResponse'](event, allDialogs)
         branchedResponse = updateBranchToResponse(event, response, 'russianMenu')
         return branchedResponse
-    if DEBUG:
+    if DIALOG_DEBUG:
         print('===========================')
 
 app = Flask(__name__)
@@ -36,15 +37,17 @@ app = Flask(__name__)
 @app.route('/', methods=['POST'])
 def content():
     data = request.get_json()
-    # print(f"""                                                                                                                                                     |
-    # ЗАПРОС КОТОРЫЙ ПОСТУПИЛ НАМ!                                                                                                                                       |
-    # {data}                                                                                                                                                             |
-    # """) 
+    if REQUESTS_DEBUG:
+        print(f"""                                                                                                                                                     |
+        ЗАПРОС КОТОРЫЙ ПОСТУПИЛ НАМ!                                                                                                                                       |
+        {data}                                                                                                                                                             |
+        """) 
     reqzap = main(data)
-    # print(f"""                                                                                                                                                     |
-    # ЗАПРОС КОТОРЫЙ ОТПРАВИЛИ МЫ!                                                                                                                                            |
-    # {reqzap}                                                                                                                                                           |
-    # """)
+    if REQUESTS_DEBUG:
+        print(f"""                                                                                                                                                     |
+        ЗАПРОС КОТОРЫЙ ОТПРАВИЛИ МЫ!                                                                                                                                            |
+        {reqzap}                                                                                                                                                           |
+        """)
     return reqzap
 
 
