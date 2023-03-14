@@ -22,9 +22,9 @@ facts = [
 "Чтение и написание своих собственных заметок может помочь вам улучшить понимание материала и организовать свои мысли.",
 "Сон играет важную роль в процессе запоминания и консолидации информации. Старайтесь спать достаточное количество часов, чтобы ваш мозг мог обработать и закрепить информацию, полученную в течение дня."]
 
-message = 'Случайный факт: \n' + facts[random.randint(0, len(facts))]
+message = 'Случайный факт: \n'
 
-tts = 'Случайный факт: \n' + facts[random.randint(0, len(facts))]
+tts = ''
 
 buttons = [
     "Назад",
@@ -39,8 +39,8 @@ session_state = {
 
 def getConfig():
     return {
-        'message': message,
-        'tts': tts,
+        'message': message + facts[random.randint(0, len(facts))],
+        'tts': message,
         'buttons': buttons,
         'session_state': session_state
     }

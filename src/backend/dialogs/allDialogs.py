@@ -24,7 +24,6 @@ allDialogs = {
     'generalMenu': generalMenu,
     'exitConfirm': exitConfirm,
     'backDialog': backDialog,
-
     'help': help,
     'whoIsCreator': whoIsCreator,
     'howToConnectWithDevelopers': howToConnectWithDevelopers,
