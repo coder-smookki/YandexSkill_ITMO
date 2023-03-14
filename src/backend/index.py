@@ -23,12 +23,13 @@ def main(event, context):
     for key in allDialogs:
         if DEBUG:
             print(str(key) + ' ' + str(allDialogs[key]['isTriggered'](event, context)))
-            print('===========================')
         if not allDialogs[key]['isTriggered'](event, context):
             continue
         response = allDialogs[key]['getResponse'](event, context)
         branchedResponse = updateBranchToResponse(event, response)
         return branchedResponse
+    if DEBUG:
+        print('===========================')
 
 app = Flask(__name__)
 
