@@ -17,3 +17,6 @@ def isInContext(event, context):
 
 def isSimilarCommand(event, command):
     return event['request']['command'] == command
+
+def haveState(event, state):
+    return state in event['state']['session']

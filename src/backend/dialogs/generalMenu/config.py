@@ -32,8 +32,7 @@ card = {
 }
 
 session_state = {
-    "branch": "generalMenu",
-    "branch_2": "generalMenu"
+    "branch": "generalMenu"
 }
 
 
