@@ -19,6 +19,8 @@ from .howToConnectWithDevelopers.howToConnectWithDevelopers import howToConnectW
 from .whoIsCreator.whoIsCreator import whoIsCreator
 from .help.help import help
 from .randomFact.randomFact import randomFact
+from .timeTable.timeTable import timeTable
+from .timeTableFind.timeTableFind import timeTableFind
 
 allDialogs = {
     'generalMenu': generalMenu,
@@ -41,5 +43,7 @@ allDialogs = {
     'announces': announces,
     'contests': contests,
     'randomFact': randomFact,
+    'timeTable': timeTable,
+    'timeTableFind': timeTableFind,
     'russianMenu': russianMenu
 }
