@@ -13,6 +13,6 @@ def getResponse(event, allDialogs=None):
     return createResponse(event, config)
 
 def isTriggered(event):
-    return isSimilarCommand(event, 'выйти') or isInContext(event, 'exitConfirm') and haveState(event, 'wanttoexit')
+    return isSimilarCommand(event, 'выйти') or isInContext(event, 'exitConfirm') and haveState(event, 'wanttoexit') and isSimilarCommand(event, 'да')
 
 exitConfirm = {'getResponse': getResponse, 'isTriggered': isTriggered}
