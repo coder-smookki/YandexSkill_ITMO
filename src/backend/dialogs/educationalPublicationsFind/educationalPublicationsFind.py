@@ -2,12 +2,12 @@ from .config import getConfig
 from utils.responseHelper import *
 from utils.triggerHelper import *
 
-def getResponse(event, context):
+def getResponse(event, allDialogs=None):
     config = getConfig(event)
     return createResponse(event, config)
 
 
-def isTriggered(event, context):
+def isTriggered(event):
     return isInContext(event, 'educationalPublications')
 
 

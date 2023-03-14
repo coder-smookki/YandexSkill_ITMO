@@ -9,7 +9,7 @@ def getResponse(event, context):
 
 def isTriggered(event, context):
     token = {"учебные", "издания", "учебны"}
-    return isSimilarTokens(event, token) and isInContext(event, 'generalMenu')
+    return isSimilarTokens(event, token) and isInContext(event, 'russianMenu')
 
 
 educationalPublications = {'getResponse': getResponse, 'isTriggered': isTriggered}
