@@ -7,8 +7,7 @@ def updateBranchToResponse(event, response):
     newResponse = copy.deepcopy(response)
 
     if not 'branch' in newEvent['state']['session']:
-        eventBranch = newEvent['state']['session']['branch']
-        newResponse['session_state']['branch'] = eventBranch
+        newResponse['session_state']['branch'] = [newResponse['session_state']['branch']]
         return newResponse
     else:
         eventBranch = newEvent['state']['session']['branch']
