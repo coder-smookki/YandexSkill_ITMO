@@ -17,7 +17,7 @@ def asd():
     print('Time: ' + str(endTime - startTime))
     print(res)
 
-set_interval(asd, 0.5)
+set_interval(asd, 0.2)
 
 
 

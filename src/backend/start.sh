@@ -1,0 +1,1 @@
+gunicorn --bind 0.0.0.0:2083 index:app
