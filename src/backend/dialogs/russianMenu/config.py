@@ -84,7 +84,7 @@ card = {
 }
 
 session_state = {
-    "branch": "generalMenu"
+    "branch": "russianMenu"
 }
 
 
