@@ -20,8 +20,8 @@ def updateBranchToResponse(event, response):
         # в случае, если в брэнчах нету нового бренча
         except:
             eventBranch.append(responseState)
-            response['session_state']['branch'] = eventBranch
-            return response
+            newResponse['session_state']['branch'] = eventBranch
+            return newResponse
 
 def getDialogResponseFromEnd(event, dialogNumber, dialogs):
     branchList = event["state"]["session"]["branch"]
