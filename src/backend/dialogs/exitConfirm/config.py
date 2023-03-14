@@ -24,10 +24,9 @@ card = {
 }
 
 session_state = {
-    "branch": "exitConfirm"
+    "branch": "exitConfirm",
+    'wanttoexit': True
 }
-
-end_session = True
 
 def getConfig():
     return {
