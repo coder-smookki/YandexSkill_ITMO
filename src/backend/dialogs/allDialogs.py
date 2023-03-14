@@ -14,11 +14,20 @@ from .exitConfirm.exitConfirm import exitConfirm
 from .backDialog.backDialog import backDialog
 from .educationalPublications.educationalPublications import educationalPublications
 from .educationalPublicationsFind.educationalPublicationsFind import educationalPublicationsFind
+from .howToCheckRelevance.howToCheckRelevance import howToCheckRelevance
+from .howToConnectWithDevelopers.howToConnectWithDevelopers import howToConnectWithDevelopers
+from .whoIsCreator.whoIsCreator import whoIsCreator
+from .help.help import help
 
 allDialogs = {
     'generalMenu': generalMenu,
     'exitConfirm': exitConfirm,
     'backDialog': backDialog,
+
+    'help': help,
+    'whoIsCreator': whoIsCreator,
+    'howToConnectWithDevelopers': howToConnectWithDevelopers,
+    'howToCheckRelevance': howToCheckRelevance,
     'forFreshman': forFreshman,
     'studentOffice': studentOffice,
     'studentOfficeAbout': studentOfficeAbout,
