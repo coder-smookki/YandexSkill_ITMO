@@ -12,6 +12,8 @@ from .announces.announces import announces
 from .contests.contests import contests
 from .exitConfirm.exitConfirm import exitConfirm
 from .backDialog.backDialog import backDialog
+from .educationalPublications.educationalPublications import educationalPublications
+from .educationalPublicationsFind.educationalPublicationsFind import educationalPublicationsFind
 
 allDialogs = {
     'generalMenu': generalMenu,
@@ -23,6 +25,8 @@ allDialogs = {
     'studentOfficeWhy': studentOfficeWhy,
     'documentOnPreviousEducation': documentOnPreviousEducation,
     'universityWideUndergraduateModules': universityWideUndergraduateModules,
+    'educationalPublications': educationalPublications,
+    'educationalPublicationsFind': educationalPublicationsFind,
     'library': library,
     'news': news,
     'announces': announces,
