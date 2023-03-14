@@ -1,4 +1,4 @@
-from parser.parser import *
+from utils.parser.parser import *
 
 buttons = [
     "Назад",
@@ -9,7 +9,6 @@ buttons = [
 session_state = {
     "branch": "educationalPublications"
 }
-
 
 def getConfig(event):
     message = ''
