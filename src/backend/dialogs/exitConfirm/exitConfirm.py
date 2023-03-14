@@ -7,9 +7,17 @@ import copy
 config = getConfig()
 def getResponse(event, allDialogs=None):
     if isInContext(event, 'exitConfirm') and isSimilarCommand(event, 'да'):
-        newConfig = copy.deepcopy(config)
-        newConfig['end_session'] = True
-        return createResponse(event, newConfig)
+        response = {
+            "response": {
+                "text": "",
+                "tts": "",
+                "buttons": [],
+                "end_session": True
+            },
+            "version": event['version'],
+            'dontUpdateBranches': True
+        }
+        return response
     elif isInContext(event, 'exitConfirm'):
         return getDialogResponseFromEnd(event, 2, allDialogs)
     return createResponse(event, config)
