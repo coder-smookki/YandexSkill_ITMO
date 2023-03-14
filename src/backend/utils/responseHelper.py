@@ -8,7 +8,7 @@ def createResponse(event, config):
             'end_session': config['end_session'] if 'end_session' in config else False
         },
         'session': event['session'],
-        'session_state': config['session_state'],
+        'session_state': config['session_state'] if 'session_state' in config else False,
         'version': event['version']
     }
 

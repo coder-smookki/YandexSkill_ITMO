@@ -22,7 +22,7 @@ buttons = [
 ]
 
 session_state = {
-    "branch": "news"
+    "branch": "contests"
 }
 
 

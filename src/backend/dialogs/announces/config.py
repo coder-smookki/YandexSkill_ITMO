@@ -22,9 +22,8 @@ buttons = [
 ]
 
 session_state = {
-    "branch": "news"
+    "branch": "announces"
 }
-
 
 def getConfig():
     return {

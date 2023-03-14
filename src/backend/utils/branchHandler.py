@@ -11,6 +11,12 @@ def updateBranchToResponse(event, response):
     else:
         eventBranch = newEvent['state']['session']['branch']
         responseState = newResponse['session_state']['branch']
+
+        # если диалог не имел брэнча
+        if not responseState:
+            newResponse['session_state']['branch'] = eventBranch
+            return newResponse
+
         # сработает, если eventbranch.index(...) найдет новый брэнч в брэнчах
         try:
             index = eventBranch.index(responseState)
