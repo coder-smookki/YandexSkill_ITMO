@@ -1,0 +1,78 @@
+{
+    "1": {
+        "meta": {
+            "locale": "ru-RU",
+            "timezone": "Europe/Moscow",
+            "client_id": "ru.yandex.searchplugin/5.80 (Samsung Galaxy; Android 4.4)",
+            "interfaces": {
+                "screen": {}
+            }
+        },
+        "request": {
+            "command": "сделай ход с e2 на e4",
+            "original_utterance": "сделай ход с e2 на e4",
+            "type": "SimpleUtterance",
+            "markup": {
+                "dangerous_context": true
+            },
+            "payload": {},
+            "nlu": {
+                "tokens": ["сделай", "ход", "с", "е2", "на", "e4"]
+            }
+        },
+        "session": {
+            "new": true,
+            "message_id": 4,
+            "session_id": "2eac4854-fce721f3-b845abba-20d60",
+            "skill_id": "3ad36498-f5rd-4079-a14b-788652932056",
+            "user_id": "AC9WC3DF6FCE052E45A4566A48E6B7193774B84814CE49A922E163B8B29881DC"
+        },
+        "version": "1.0"
+    },
+
+    "2": {
+        "request": {
+            "command": "д-4 G-3 д-4 е-7 Е-5-е-7 Е-7",
+            "original_utterance": "д-4 G-3 д-4 е-7 Е-5-е-7 Е-7",
+            "type": "SimpleUtterance",
+            "markup": {
+                "dangerous_context": true
+            },
+            "payload": {},
+            "nlu": {
+                "tokens": ["д-4", "G-3", "е-7", "Е-5-е-7", "Е-8"]
+            }
+        },
+        "session": {
+            "new": true,
+            "message_id": 4,
+            "session_id": "2eac4854-fce721f3-b845abba-20d60",
+            "skill_id": "3ad36498-f5rd-4079-a14b-788652932056",
+            "user_id": "AC9WC3DF6FCE052E45A4566A48E6B7193774B84814CE49A922E163B8B29881DC"
+        },
+        "version": "1.0"
+    },
+
+    "3": {
+        "request": {
+            "command": "д-4 G-3 д-4 е-7 Е-5-е-7 Е-7",
+            "original_utterance": "д-4 G-3 д-4 е-7 Е-5-е-7 Е-7",
+            "type": "SimpleUtterance",
+            "markup": {
+                "dangerous_context": true
+            },
+            "payload": {},
+            "nlu": {
+                "tokens": ["д-4", "G-3", "е-7", "Е-5-е-7", "Е-8"]
+            }
+        },
+        "session": {
+            "new": true,
+            "message_id": 4,
+            "session_id": "2eac4854-fce721f3-b845abba-20d60",
+            "skill_id": "3ad36498-f5rd-4079-a14b-788652932056",
+            "user_id": "AC9WC3DF6FCE052E45A4566A48E6B7193774B84814CE49A922E163B8B29881DC"
+        },
+        "version": "1.0"
+    }
+}
