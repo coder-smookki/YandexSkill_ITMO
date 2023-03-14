@@ -10,10 +10,10 @@ def isInContext(event, context):
 
     if isinstance(context, list):
         for elem in context:
-            if event['state']['session']["branch"] == elem:
+            if elem in event['state']['session']["branch"]:
                 return True
         return False
-    return event['state']['session']["branch"] == context
+    return context in event['state']['session']["branch"]
 
 def isSimilarCommand(event, command):
     return event['request']['command'] == command
