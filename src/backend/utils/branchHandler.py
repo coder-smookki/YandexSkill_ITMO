@@ -1,13 +1,14 @@
 import copy
 from .responseHelper import createResponse
 
-def updateBranchToResponse(event, response):
+def updateBranchToResponse(event, response, firstBranchName):
     newEvent = copy.deepcopy(event)
     newResponse = copy.deepcopy(response)
 
     if not 'branch' in newEvent['state']['session']:
-        newResponse['session_state']['branch'] = [newResponse['session_state']['branch']]
+        newResponse['session_state']['branch'] = [firstBranchName]
         return newResponse
+
     else:
         eventBranch = newEvent['state']['session']['branch']
         responseState = newResponse['session_state']['branch']
@@ -23,6 +24,7 @@ def updateBranchToResponse(event, response):
             eventBranch = eventBranch[0:index + 1]
             newResponse['session_state']['branch'] = eventBranch
             return newResponse
+
         # в случае, если в брэнчах нету нового бренча
         except:
             eventBranch.append(responseState)
