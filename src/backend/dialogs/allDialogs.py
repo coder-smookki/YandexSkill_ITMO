@@ -14,9 +14,9 @@ from .exitConfirm.exitConfirm import exitConfirm
 from .backDialog.backDialog import backDialog
 
 allDialogs = {
+    'generalMenu': generalMenu,
     'exitConfirm': exitConfirm,
     'backDialog': backDialog,
-    'generalMenu': generalMenu,
     'forFreshman': forFreshman,
     'studentOffice': studentOffice,
     'studentOfficeAbout': studentOfficeAbout,

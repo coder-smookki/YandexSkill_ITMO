@@ -31,16 +31,10 @@ card = {
         """
 }
 
-session_state = {
-    "branch": "generalMenu"
-}
-
-
 def getConfig():
     return {
         'message': message,
         'tts': tts,
         'buttons': buttons,
-        'card': card,
-        'session_state': session_state
+        'card': card
     }
