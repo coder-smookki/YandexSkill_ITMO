@@ -6,3 +6,5 @@ def getResponse(event, context):
 
 def isTriggered(event, context):
     return isSimilarCommand('назад')
+
+backDialog = {'getResponse': getResponse, 'isTriggered': isTriggered}

@@ -10,8 +10,12 @@ from .library.library import library
 from .news.news import news
 from .announces.announces import announces
 from .contests.contests import contests
+from .exitConfirm.exitConfirm import exitConfirm
+from .backDialog.backDialog import backDialog
 
 allDialogs = {
+    'exitConfirm': exitConfirm,
+    'backDialog': backDialog,
     'generalMenu': generalMenu,
     'forFreshman': forFreshman,
     'studentOffice': studentOffice,

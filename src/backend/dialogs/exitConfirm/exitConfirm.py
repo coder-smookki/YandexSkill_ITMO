@@ -8,3 +8,5 @@ def getResponse(event, context):
 
 def isTriggered(event, context):
     return isSimilarCommand('выйти')
+
+exitConfirm = {'getResponse': getResponse, 'isTriggered': isTriggered}
