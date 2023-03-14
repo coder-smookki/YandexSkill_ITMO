@@ -27,7 +27,7 @@ session_state = {
     "branch": "exitConfirm"
 }
 
-"end_session": True
+end_session = True
 
 def getConfig():
     return {
