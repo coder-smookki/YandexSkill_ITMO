@@ -8,9 +8,9 @@ announces = parser('announces')
  
 for i in announces:
     message += f"""
-    {i['text']}\n
-    {i['link']}\n
-    {i['date']}\n
+    {i['text']}.\n
+    {i['link']}.\n
+    {i['date']}.\n
     ------------\n
     """
     tts += f'{i["text"]} будет {i["date"]} '
