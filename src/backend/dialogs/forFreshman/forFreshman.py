@@ -9,6 +9,7 @@ def getResponse(event, context):
 
 def isTriggered(event, context):
     token = {"первокурсникам", "первокурс", "первокурсник", "первокурснкм", "первокрснкам"}
+    print('isContext ' + str(isSimilarTokens(event, token)))
     return isSimilarTokens(event, token) and isInContext(event, 'generalMenu')
 
 

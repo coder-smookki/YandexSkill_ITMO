@@ -12,9 +12,9 @@ def main(event, context):
             return allMiddlewares[key]['getResponse'](event, allDialogs)
 
     for key in allDialogs:
+        print(str(key) + ' ' + str(allDialogs[key]['isTriggered'](event, context)))
         if not allDialogs[key]['isTriggered'](event, context):
             continue
-
         response = allDialogs[key]['getResponse'](event, context)
         branchedResponse = updateBranchToResponse(event, response)
         return branchedResponse
