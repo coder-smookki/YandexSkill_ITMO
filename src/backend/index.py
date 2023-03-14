@@ -5,7 +5,7 @@ from utils.triggerHelper import *
 from utils.branchHandler import updateBranchToResponse
 
 DIALOG_DEBUG = True
-REQUESTS_DEBUG = False
+REQUESTS_DEBUG = True
 
 def main(event):
     if DIALOG_DEBUG:
