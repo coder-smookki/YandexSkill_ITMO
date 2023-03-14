@@ -9,7 +9,7 @@ def getResponse(event, allDialogs=None):
 
 def isTriggered(event):
     token = {"библиотека", "книжная", "библиоте"}
-    return isSimilarTokens(event, token) and isInContext(event, 'generalMenu')
+    return isSimilarTokens(event, token) and isInContext(event, 'russianMenu')
 
 
 library = {'getResponse': getResponse, 'isTriggered': isTriggered}

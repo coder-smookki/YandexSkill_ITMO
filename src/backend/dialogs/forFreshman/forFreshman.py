@@ -10,7 +10,7 @@ def getResponse(event, allDialogs=None):
 def isTriggered(event):
     token = {"первокурсникам", "первокурс", "первокурсник", "первокурснкм", "первокрснкам"}
     print('isContext ' + str(isSimilarTokens(event, token)))
-    return isSimilarTokens(event, token) and isInContext(event, 'generalMenu')
+    return isSimilarTokens(event, token) and isInContext(event, 'russianMenu')
 
 
 forFreshman = {'getResponse': getResponse, 'isTriggered': isTriggered}
