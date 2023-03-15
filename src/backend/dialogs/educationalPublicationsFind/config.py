@@ -19,7 +19,7 @@ def getConfig(event):
     for i in range(len(announces)):
         message += f"""{announces[i]['title']}\n------------\n"""
         tts += f'{announces[i]["title"]}'
-        buttons.append({"title": f'[${i}$]', "url": f"{announces[i]['link']}", "hide": False})
+        buttons.append({"title": f'🎓{i+1}🎓', "url": f"{announces[i]['link']}", "hide": False})
 
     return {
         'message': message,
