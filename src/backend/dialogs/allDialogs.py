@@ -13,7 +13,6 @@ from .contests.contests import contests
 from .exitConfirm.exitConfirm import exitConfirm
 from .backDialog.backDialog import backDialog
 from .educationalPublications.educationalPublications import educationalPublications
-from .educationalPublicationsFind.educationalPublicationsFind import educationalPublicationsFind
 from .howToCheckRelevance.howToCheckRelevance import howToCheckRelevance
 from .howToConnectWithDevelopers.howToConnectWithDevelopers import howToConnectWithDevelopers
 from .whoIsCreator.whoIsCreator import whoIsCreator
@@ -37,7 +36,6 @@ allDialogs = {
     'documentOnPreviousEducation': documentOnPreviousEducation,
     'universityWideUndergraduateModules': universityWideUndergraduateModules,
     'educationalPublications': educationalPublications,
-    'educationalPublicationsFind': educationalPublicationsFind,
     'library': library,
     'news': news,
     'announces': announces,

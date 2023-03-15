@@ -3,10 +3,21 @@ from flask import Flask, request
 from middlewares.allMiddlewares import allMiddlewares
 from utils.triggerHelper import *
 from utils.branchHandler import updateBranchToResponse
-import random
+import time
+from threading import Thread
+from utils.globalStorage import *
+from utils.parser.parser import parser
+from utils.asyncHelper import doFuncAsAsync
 
 DIALOG_DEBUG = True
-REQUESTS_DEBUG = True
+REQUESTS_DEBUG = False
+
+def refreshNews():
+    while True:
+        setInGlobalStorage('news_announces', parser('announces'))
+        setInGlobalStorage('news_contests', parser('contests'))
+        print('News refreshed')
+        time.sleep(3600)
 
 def main(event):
     if DIALOG_DEBUG:
@@ -34,6 +45,8 @@ def main(event):
         print('===========================')
 
 app = Flask(__name__)
+setInGlobalStorage('app', app, saveLinks=True)
+doFuncAsAsync(refreshNews)
 
 @app.route('/', methods=['POST'])
 def content():
@@ -55,5 +68,5 @@ def content():
 if __name__ == '__main__':
     print('Server starting...')
 
-    app.run(port=2083, host='0.0.0.0', debug=True)
+    app.run(port=2083, host='0.0.0.0', debug=False)
     print('Shutdown!')

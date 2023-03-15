@@ -1,12 +1,11 @@
-from utils.parser.parser import *
-
+from utils.globalStorage import globalStorage
 message = ''
 
 tts = ''
 
-announces = parser('contests')
- 
-for i in announces:
+contests = globalStorage['news_contests']
+
+for i in contests:
     message += f"""
     {i['text']}\n
     {i['link']}\n
