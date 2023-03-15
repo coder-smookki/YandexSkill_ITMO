@@ -21,7 +21,7 @@ from .randomFact.randomFact import randomFact
 from .timeTable.timeTable import timeTable
 from .timeTableFind.timeTableFind import timeTableFind
 from .toAForeignStudent.toAForeignStudent import toAForeignStudent
-from .educationalPublicationsFind.educationalPublications import educationalPublicationsFind
+from .educationalPublicationsFind.educationalPublicationsFind import educationalPublicationsFind
 from .toAForeignStudentBechelorCourse.toAForeignStudentBachelorCource import toAForeignStudentBechelorCourse
 
 allDialogs = {
