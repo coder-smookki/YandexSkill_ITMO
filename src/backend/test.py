@@ -1,3 +1,3 @@
 from utils.parser.parser import parser
 
-print(parser('educationalPublications', 'про'))
+print(parser('educationalPublications', 'лазер'))

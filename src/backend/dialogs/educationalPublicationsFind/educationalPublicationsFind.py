@@ -5,9 +5,8 @@ from utils.triggerHelper import *
 def getResponse(event, allDialogs=None):
     print('1')
     config = getConfig(event)
-    print(event)
+    print(config)
     return createResponse(event, config)
-
 
 def isTriggered(event):
     return isInContext(event, 'educationalPublications')

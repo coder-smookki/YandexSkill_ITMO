@@ -17,12 +17,9 @@ def getConfig(event):
     announces = parser('educationalPublications', event['request']['original_utterance'])
 
     for i in range(len(announces)):
-        message += f"""
-        {announces[i]['title']}\n
-        ------------\n
-        """
+        message += f"""{announces[i]['title']}\n------------\n"""
         tts += f'{announces[i]["title"]}'
-        buttons.append({"title": 'Типа название кнопки', "url": f"{announces[i]['link']}", "hide": False})
+        buttons.append({"title": f'[${i}$]', "url": f"{announces[i]['link']}", "hide": False})
 
     return {
         'message': message,
