@@ -4,11 +4,6 @@ buttons = [
     "Назад",
     "Выйти",
     "Помощь",
-    {
-        "title": 'Кнопка для теста',
-        "url": 'https://www.youtube.com/watch?v=Zb0WTZ--nbc',
-        "hide": False
-    }
 ]
 
 session_state = {
