@@ -16,9 +16,10 @@ for i in announces:
     tts += f'{i["text"]} будет {i["date"]} '
 
 buttons = [
+    "Повторить ещё раз",
+    "Помощь",
     "Назад",
-    "Выйти",
-    "Помощь"
+    "Выйти"
 ]
 
 session_state = {
