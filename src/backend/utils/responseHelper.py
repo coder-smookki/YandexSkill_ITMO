@@ -1,6 +1,5 @@
 import copy
 
-
 def createResponse(event, originalConfig):
     config = copy.deepcopy(originalConfig)
     return {
@@ -16,7 +15,6 @@ def createResponse(event, originalConfig):
         'version': event['version']
     }
 
-
 def createButtons(buttons):
     result = []
     for button in buttons:
@@ -29,3 +27,22 @@ def createButtons(buttons):
         result.append(button)
 
     return result
+
+def createLoadingResponse(event, text):
+    return {
+        'response': {
+            'text': text,
+            'tts': '<speaker audio="alice-music-horn-1.opus">',
+            'buttons': createButtons(['Назад', 'Выйти']),
+            'end_session': False
+        },
+        'session': event['session'],
+        'session_state': {'branch': ''},
+        'version': event['version']
+    }
+
+def getSessionId(event):
+    return event['session']['session_id']
+
+def getUserId(event):
+    return event['session']['user']['user_id']
