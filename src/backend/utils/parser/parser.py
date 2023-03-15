@@ -8,7 +8,7 @@ from .handlers.independents.timetable.getGroupTimetable import getGroupTimetable
 
 # infoType - тип информации, которую нужно спарсить
 # query - строка запроса, если используется (необязательная)
- 
+
 # Типы:
 #  - announces - анонсы
 #  - contests - конкурсы
