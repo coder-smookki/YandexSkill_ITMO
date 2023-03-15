@@ -8,13 +8,13 @@ def getResponse(event, allDialogs=None):
     announces = globalStorage['news_announces']
 
     for i in announces:
-        message += f"""
+        config['message'] += f"""
         {i['text']}.\n
         {i['link']}.\n
         {i['date']}.\n
         ------------\n
         """
-        tts += f'Вы направились в категорию "Анонсы". {i["text"]} будет {i["date"]} '
+        config['tts'] += f'Вы направились в категорию "Анонсы". {i["text"]} будет {i["date"]} '
     return createResponse(event, config)
 
 

@@ -14,7 +14,7 @@ def getResponse(event, allDialogs=None):
         {i['date']}\n
         ------------\n
         """
-        tts += f'Вы направились в категорию "Контесты". {i["text"]} будет {i["date"]} '
+        config['tts'] += f'Вы направились в категорию "Контесты". {i["text"]} будет {i["date"]} '
     return createResponse(event, config)
 
 
