@@ -25,7 +25,7 @@ buttons = [
 
 card = {
     'type': 'BigImage',
-    'image_id': '1540737/7b7039c77bac17a15428',
+    'image_id': '1540737/07a6bc185a8dcec1b266',
     'title': 'ГЛАВНОЕ МЕНЮ (GENERAL MENU)',
     'description': \
         """
