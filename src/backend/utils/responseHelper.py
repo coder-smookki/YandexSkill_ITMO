@@ -1,4 +1,7 @@
-def createResponse(event, config):
+import copy
+
+def createResponse(event, originalConfig):
+    config = copy.deepcopy(originalConfig)
     return {
         'response': {
             'text': config['message'],
