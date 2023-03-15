@@ -8,6 +8,8 @@ message = \
 
 tts = \
     """ 
+    Вы перешли в категорию "Главное меню".
+    You have moved to the "Main Menu" category.
     Привет Студент! Чтобы пользоваться навыком, выбери язык.
     Hello Student! To use the skill, choose a language.
         Первое - это Русский Язык
