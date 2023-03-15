@@ -14,7 +14,7 @@ def getConfig(event):
     message = ''
     tts = ''
 
-    announces = parser('timetable.getGroupTimetable', [event["request"]['command'].split()[0], int(event["request"]['command'].split()[1])])
+    announces = parser('timetable.getGroupTimetable', [event["request"]['original_utterance'].split()[0], int(event["request"]['original_utterance'].split()[1])])
 
     for i in announces:
         message += f"""
