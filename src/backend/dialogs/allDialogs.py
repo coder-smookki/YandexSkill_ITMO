@@ -23,6 +23,7 @@ from .timeTableFind.timeTableFind import timeTableFind
 from .toAForeignStudent.toAForeignStudent import toAForeignStudent
 from .educationalPublicationsFind.educationalPublicationsFind import educationalPublicationsFind
 from .toAForeignStudentBechelorCourse.toAForeignStudentBachelorCource import toAForeignStudentBechelorCourse
+from .scholarships.scholarships import scholarships
 
 allDialogs = {
     'generalMenu': generalMenu,
@@ -49,5 +50,6 @@ allDialogs = {
     'toAForeignStudent': toAForeignStudent,
     'toAForeignStudentBechelorCource': toAForeignStudentBechelorCourse,
     'educationalPublicationsFind': educationalPublicationsFind,
+    'scholarships': scholarships,
     'russianMenu': russianMenu
 }
