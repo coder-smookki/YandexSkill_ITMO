@@ -19,17 +19,8 @@ tts = \
     """
 
 buttons = [
-    {
-        'title': "Русский Язык (Russian Language)",
-        'url': "Русский Язык (Russian Language)",
-        'hide': False
-    },
-    {
-        'title': "Английский язык (English Language)",
-        'url': "Английский язык (English Language)",
-        'hide': False
-    }
-
+    "Русский Язык (Russian Language)",
+    "Английский Язык (English Language)"
 ]
 
 card = {
