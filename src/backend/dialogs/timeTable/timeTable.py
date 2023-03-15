@@ -8,7 +8,7 @@ def getResponse(event, allDialogs=None):
 
 
 def isTriggered(event):
-    token = {"занятий", "расписание", "рассписание"}
+    token = {"занятий", "расписание", "расписание"}
     return isSimilarTokens(event, token) and isInContext(event, 'russianMenu')
 
 

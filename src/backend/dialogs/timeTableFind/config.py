@@ -1,9 +1,9 @@
 from utils.parser.parser import *
 
 buttons = [
+    "Помощь",
     "Назад",
-    "Выйти",
-    "Помощь"
+    "Выйти"
 ]
 
 session_state = {

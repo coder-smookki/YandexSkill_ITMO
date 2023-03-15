@@ -9,18 +9,27 @@ message = \
 tts = \
     """ 
     Вы перешли в категорию "Главное меню".
-    You have moved to the "Main Menu" category.
+    +You +have +moved +to +the +"Main +Menu" +category.
     Привет Студент! Чтобы пользоваться навыком, выбери язык.
-    Hello Student! To use the skill, choose a language.
+    +Hello +Student! +To +use +the +skill, +choose a +language.
         Первое - это Русский Язык
-        The first is the Russian Language
+        +The +first +is +the +Russian +Language
         Второе - это Английский Язык
-        The second is English
+        +The +second +is +English
     """
 
 buttons = [
-    "Русский Язык (Russian Language)",
-    "Английский язык (English Language)"
+    {
+        'title': "Русский Язык (Russian Language)",
+        'url': "Русский Язык (Russian Language)",
+        'hide': False
+    },
+    {
+        'title': "Английский язык (English Language)",
+        'url': "Английский язык (English Language)",
+        'hide': False
+    }
+
 ]
 
 card = {
@@ -29,10 +38,11 @@ card = {
     'title': 'ГЛАВНОЕ МЕНЮ (GENERAL MENU)',
     'description': \
         """
-        Выберите язык - Русский или Английский.
-        Select language - Russian or English.
+        Выберите язык - Русский или Английский...
+        Select language - Russian or English...
         """
 }
+
 
 def getConfig():
     return {
