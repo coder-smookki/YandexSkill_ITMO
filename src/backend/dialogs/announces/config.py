@@ -1,18 +1,6 @@
-from utils.globalStorage import globalStorage
 message = ''
 
 tts = ''
-
-announces = globalStorage['news_announces']
-
-for i in announces:
-    message += f"""
-    {i['text']}.\n
-    {i['link']}.\n
-    {i['date']}.\n
-    ------------\n
-    """
-    tts += f'Вы направились в категорию "Анонсы". {i["text"]} будет {i["date"]} '
 
 buttons = [
     "Повторить ещё раз",
