@@ -27,7 +27,8 @@ card = {
     'title': 'ГЛАВНОЕ МЕНЮ (GENERAL MENU)',
     'description': \
         """
-        Первое (first) - Рус. Язык (Russian Language)... Второе (second) - Англ. Язык (English Language)...
+        Выберите язык - Русский или Английский.
+        Select language - Russian or English.
         """
 }
 
