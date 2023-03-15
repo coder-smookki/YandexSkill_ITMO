@@ -3,7 +3,12 @@ from utils.parser.parser import *
 buttons = [
     "Назад",
     "Выйти",
-    "Помощь"
+    "Помощь",
+    {
+        "title": 'Кнопка для теста',
+        "url": 'https://www.youtube.com/watch?v=Zb0WTZ--nbc',
+        "hide": False
+    }
 ]
 
 session_state = {
