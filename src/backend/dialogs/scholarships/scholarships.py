@@ -10,7 +10,8 @@ def getResponse(event, allDialogs=None):
 
 
 def isTriggered(event):
-    return isNewSession(event)
+    token = {"стипендии", "степуха"}
+    return isSimilarTokens(event, token) and isInContext(event, 'russianMenu')
 
 
-generalMenu = {'getResponse': getResponse, 'isTriggered': isTriggered}
+scholarships = {'getResponse': getResponse, 'isTriggered': isTriggered}

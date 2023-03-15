@@ -2,7 +2,9 @@ import os
 from typing import Any
 from itertools import product
 
-from dotenv import load_dotenv; load_dotenv()  # noqa
+from dotenv import load_dotenv;
+
+load_dotenv()  # noqa
 import requests
 
 from src.backend.dialogs.chessMain import config

@@ -1,5 +1,6 @@
 import copy
 
+
 def createResponse(event, originalConfig):
     config = copy.deepcopy(originalConfig)
     return {
@@ -14,6 +15,7 @@ def createResponse(event, originalConfig):
         'session_state': config['session_state'] if 'session_state' in config else {'branch': ''},
         'version': event['version']
     }
+
 
 def createButtons(buttons):
     result = []

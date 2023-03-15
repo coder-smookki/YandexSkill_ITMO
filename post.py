@@ -41,7 +41,7 @@ body = {
         "nlu": {
         "tokens": [],
         "entities": [],
-        "intents": {}
+            "intents": {}
         },
         "markup": {
         "dangerous_context": False
