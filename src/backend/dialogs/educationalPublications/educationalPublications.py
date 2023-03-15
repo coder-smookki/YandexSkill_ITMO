@@ -4,21 +4,8 @@ from utils.triggerHelper import *
 from utils.globalStorage import *
 import copy
 
-origConfig = getConfig()
+config = getConfig()
 def getResponse(event, allDialogs=None):
-    info = globalStorage['sessionId']
-    config = copy.deepcopy(origConfig)
-    for elem in info:
-        config['buttons'].insert(0, {
-            'title': str(info.index(elem)),
-            'url': elem['link']
-        })
-
-        config['message'] += f"""
-                {str(info.index(elem)) + '. ' + elem['title']}.\n
-                {elem['text']}.\n
-                ------------\n
-            """
     return createResponse(event, config)
 
 
