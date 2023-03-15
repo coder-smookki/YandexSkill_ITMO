@@ -34,7 +34,7 @@ buttons = [
 
 card = {
     'type': 'BigImage',
-    'image_id': '1030494/e955cc538c12dfb9bd3a',
+    'image_id': '213044/48229e513b58c183c88c',
     'title': 'ИНОСТРАННОМУ СТУДЕНТУ',
     'description': \
         """
