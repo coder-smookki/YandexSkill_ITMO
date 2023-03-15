@@ -22,7 +22,7 @@ def getConfig(event):
         ------------\n
         """
         tts += f'{announces[i]["title"]}'
-        buttons.append({"title": i, "url": f"{announces[i]['link']}", "hide": False})
+        buttons.append({"title": str(i), "url": f"{announces[i]['link']}", "hide": False})
 
     return {
         'message': message,
