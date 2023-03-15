@@ -1,18 +1,6 @@
-from utils.globalStorage import globalStorage
 message = ''
 
 tts = ''
-
-contests = globalStorage['news_contests']
-
-for i in contests:
-    message += f"""
-    {i['text']}\n
-    {i['link']}\n
-    {i['date']}\n
-    ------------\n
-    """
-    tts += f'Вы направились в категорию "Контесты". {i["text"]} будет {i["date"]} '
 
 buttons = [
     "Повторить ещё раз",

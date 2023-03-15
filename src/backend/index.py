@@ -1,21 +1,21 @@
+from utils.globalStorage import *
 from dialogs.allDialogs import allDialogs
 from flask import Flask, request
 from middlewares.allMiddlewares import allMiddlewares
 from utils.triggerHelper import *
 from utils.branchHandler import updateBranchToResponse
 import time
-from threading import Thread
-from utils.globalStorage import *
 from utils.parser.parser import parser
 from utils.asyncHelper import doFuncAsAsync
 
 DIALOG_DEBUG = True
 REQUESTS_DEBUG = False
 
-def refreshNews():
+def cycleRefreshNews():
     while True:
-        setInGlobalStorage('news_announces', parser('announces'))
-        setInGlobalStorage('news_contests', parser('contests'))
+        print('Start refreshing news')
+        setInGlobalStorage('news_announces', parser('announces'), overwrite=True)
+        setInGlobalStorage('news_contests', parser('contests'), overwrite=True)
         print('News refreshed')
         time.sleep(3600)
 
@@ -46,8 +46,7 @@ def main(event):
 
 app = Flask(__name__)
 setInGlobalStorage('app', app, saveLinks=True)
-refreshNews()
-doFuncAsAsync(refreshNews)
+doFuncAsAsync(cycleRefreshNews)
 
 @app.route('/', methods=['POST'])
 def content():
