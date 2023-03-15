@@ -46,6 +46,7 @@ def main(event):
 
 app = Flask(__name__)
 setInGlobalStorage('app', app, saveLinks=True)
+refreshNews()
 doFuncAsAsync(refreshNews)
 
 @app.route('/', methods=['POST'])
