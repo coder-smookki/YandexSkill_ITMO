@@ -8,9 +8,8 @@ def getResponse(event, allDialogs=None):
 
 
 def isTriggered(event):
-    token = {"факт", "факты", "фактики", "fact"}
-    print('isContext ' + str(isSimilarTokens(event, token)))
+    token = {"занятий", "расписание", "рассписание"}
     return isSimilarTokens(event, token) and isInContext(event, 'russianMenu')
 
 
-forFreshman = {'getResponse': getResponse, 'isTriggered': isTriggered}
+timeTable = {'getResponse': getResponse, 'isTriggered': isTriggered}

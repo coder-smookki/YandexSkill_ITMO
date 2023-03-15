@@ -3,6 +3,7 @@ from flask import Flask, request
 from middlewares.allMiddlewares import allMiddlewares
 from utils.triggerHelper import *
 from utils.branchHandler import updateBranchToResponse
+import random
 
 DIALOG_DEBUG = True
 REQUESTS_DEBUG = True

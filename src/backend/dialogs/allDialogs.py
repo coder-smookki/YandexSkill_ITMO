@@ -18,12 +18,14 @@ from .howToCheckRelevance.howToCheckRelevance import howToCheckRelevance
 from .howToConnectWithDevelopers.howToConnectWithDevelopers import howToConnectWithDevelopers
 from .whoIsCreator.whoIsCreator import whoIsCreator
 from .help.help import help
+from .randomFact.randomFact import randomFact
+from .timeTable.timeTable import timeTable
+from .timeTableFind.timeTableFind import timeTableFind
 
 allDialogs = {
     'generalMenu': generalMenu,
     'exitConfirm': exitConfirm,
     'backDialog': backDialog,
-
     'help': help,
     'whoIsCreator': whoIsCreator,
     'howToConnectWithDevelopers': howToConnectWithDevelopers,
@@ -40,5 +42,8 @@ allDialogs = {
     'news': news,
     'announces': announces,
     'contests': contests,
+    'randomFact': randomFact,
+    'timeTable': timeTable,
+    'timeTableFind': timeTableFind,
     'russianMenu': russianMenu
 }
