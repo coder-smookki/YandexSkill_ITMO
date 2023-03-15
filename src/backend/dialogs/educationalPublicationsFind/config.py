@@ -3,7 +3,7 @@ from utils.parser.parser import *
 buttons = [
     "Назад",
     "Выйти",
-    "Помощь",
+    "Помощь"
 ]
 
 session_state = {
