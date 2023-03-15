@@ -14,7 +14,7 @@ def getConfig(event):
     message = ''
     tts = ''
 
-    announces = parser('educationalPublications', 'лазер')
+    announces = parser('educationalPublications', event['request']['original_utterance'])
 
     for i in range(len(announces)):
         message += f"""
