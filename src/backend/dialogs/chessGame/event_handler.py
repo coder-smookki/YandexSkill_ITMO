@@ -171,6 +171,7 @@ def get_bigimage_board(
     return card
 
 
+# Удалить, если не используем
 def get_position_score(prev_moves: str, session_states: dict) -> dict | None:
     params = {
         "prev_moves": prev_moves
@@ -218,17 +219,19 @@ def event_handler(event):
     if isinstance(card, dict) and 'tts' in card:
         return card  # Если словарь с tts - это результат get_config
 
-    score = get_position_score(data["prev_moves"], session_states)
-    if 'tts' in data:  # Если словарь с tts - это результат get_config
-        return data
-
-    if score['is_end']:
+    if data['end_type'] is not None:
         session_states.clear()
         session_states["branch"] = "chessMain"
+
+        if data["check"] is not None:
+            who_win = 'w' if data["orientation"] == 'b' else 'b'
+        else:
+            who_win = None
+
         message = 'Игра закончилась '
-        if score["who_win"] == "w":
+        if who_win == "w":
             message += 'победой белых!'
-        elif score["who_win"] == "b":
+        elif who_win == "b":
             message += 'победой чёрных!'
         else:
             message += 'в ничью...'
