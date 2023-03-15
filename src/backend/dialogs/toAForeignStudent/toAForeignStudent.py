@@ -12,4 +12,4 @@ def isTriggered(event):
     return isSimilarTokens(event, token) and isInContext(event, 'russianMenu')
 
 
-studentOffice = {'getResponse': getResponse, 'isTriggered': isTriggered}
+toAForeignStudent = {'getResponse': getResponse, 'isTriggered': isTriggered}

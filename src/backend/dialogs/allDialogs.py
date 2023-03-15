@@ -20,6 +20,8 @@ from .help.help import help
 from .randomFact.randomFact import randomFact
 from .timeTable.timeTable import timeTable
 from .timeTableFind.timeTableFind import timeTableFind
+from .toAForeignStudent.toAForeignStudent import toAForeignStudent
+from .toAForeignStudentBechelorCourse.toAForeignStudentBachelorCource import toAForeignStudentBechelorCourse
 
 allDialogs = {
     'generalMenu': generalMenu,
@@ -43,5 +45,7 @@ allDialogs = {
     'randomFact': randomFact,
     'timeTable': timeTable,
     'timeTableFind': timeTableFind,
+    'toAForeignStudent': toAForeignStudent,
+    'toAForeignStudentBechelorCource': toAForeignStudentBechelorCourse,
     'russianMenu': russianMenu
 }
