@@ -9,11 +9,8 @@ from utils.parser.parser import parser
 from utils.asyncHelper import doFuncAsAsync
 from utils.responseHelper import *
 
-
 DIALOG_DEBUG = True
 REQUESTS_DEBUG = False
-
-load_env()
 
 def cycleRefreshNews():
     while True:
