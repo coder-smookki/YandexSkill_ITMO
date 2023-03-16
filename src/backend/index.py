@@ -39,7 +39,7 @@ def main(event):
         if DIALOG_DEBUG:
             print('===========================')
         if branchedResponse:
-            print('Branch: ' + str(branchedResponse))
+            print('Branch: ' + str(branchedResponse['session_state']['branch']))
         else:
             print("Branch don't initilized")
         print('---------------------------')
