@@ -1,26 +1,18 @@
 from utils.parser.parser import *
 from utils.responseHelper import getState
-buttons = [
-    "Помощь",
-    "Назад",
-    "Выйти"
-]
 
-session_state = {
-    "branch": "timeTable"
-}
+buttons = ["Помощь", "Назад", "Выйти"]
+
+session_state = {"branch": "timeTable"}
 
 
 def getConfig(event):
-    group = getState(event, 'timeTable_group')
-    course = int(getState(event, 'timeTable_course'))
-    message = ''
-    tts = ''
+    group = getState(event, "timeTable_group")
+    course = int(getState(event, "timeTable_course"))
+    message = ""
+    tts = ""
 
-    announces = parser(
-        'timetable.getGroupTimetable',
-        [group,course]
-    )
+    announces = parser("timetable.getGroupTimetable", [group, course])
 
     for i in announces:
         message += f"""
@@ -38,8 +30,8 @@ def getConfig(event):
         """
 
     return {
-        'message': message,
-        'tts': tts,
-        'buttons': buttons,
-        'session_state': session_state
+        "message": message,
+        "tts": tts,
+        "buttons": buttons,
+        "session_state": session_state,
     }
