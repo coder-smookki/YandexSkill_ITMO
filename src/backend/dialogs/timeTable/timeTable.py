@@ -5,29 +5,25 @@ from utils.triggerHelper import *
 
 def getResponse(event, allDialogs=None):
     if not haveState(event, "timeTable_step"):
-        print("1")
         config = copy.deepcopy(getConfig("group"))
         config["session_state"]["timeTable_step"] = 1
         return createResponse(event, config)
 
     elif getState(event, "timeTable_step") == 1:
-        print("2")
         config = copy.deepcopy(getConfig("course"))
         config["session_state"]["timeTable_step"] = 2
         config["session_state"]["timeTable_group"] = getOriginalUtterance(event)
         return createResponse(event, config)
 
     elif getState(event, "timeTable_step") == 2:
-        print("2")
         config = copy.deepcopy(getConfig("degree"))
         config["session_state"]["timeTable_step"] = 3
         config["session_state"]["timeTable_group"] = getState(event, "timeTable_group")
         config["session_state"]["timeTable_course"] = getOriginalUtterance(event)
         return createResponse(event, config)
     elif getState(event, "timeTable_step") == 3:
-        print("2")
         config = copy.deepcopy(getConfig("degree"))
-        config["session_state"]["timeTable_step"] = 3
+        config["session_state"]["timeTable_step"] = 4
         config["session_state"]["timeTable_group"] = getState(event, "timeTable_group")
         config["session_state"]["timeTable_course"] = getState(event, "timeTable_course")
         config["session_state"]["timeTable_degree"] = getOriginalUtterance(event)
