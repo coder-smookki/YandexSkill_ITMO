@@ -10,7 +10,7 @@ askGroupTts = \
 
 askCourseMessage = \
     """
-    Напишите намер вашего Курса
+    Напишите номер вашего Курса
     """
 
 askCourseTts = \

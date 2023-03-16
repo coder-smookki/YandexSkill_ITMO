@@ -1,13 +1,13 @@
-from .config import getAskConfig, getConfig
+from .config import getConfig
 from utils.responseHelper import *
 from utils.triggerHelper import *
 
 def getResponse(event, allDialogs=None):
     if not haveState(event, 'group'):
-        config = getAskConfig('group')
+        config = getConfig('group')
         return createResponse(event, config)
     elif not haveState(event, 'course'):
-        config = getAskConfig('course')
+        config = getConfig('course')
         return createResponse(event, config)
     return allDialogs['timeTableFind']['getResponse'](event, allDialogs)
 
