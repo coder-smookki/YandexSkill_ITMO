@@ -6,12 +6,14 @@ from utils.triggerHelper import *
 
 def getResponse(event, allDialogs):
     try:
-        if getState(event, 'orientation'):  # т.е. играет и есть цвет
+        if o := getState(event, 'orientation'):  # т.е. играет и есть цвет
             config = event_move(event)
         else:
             config = event_color(event)
+        print(f'--- {o}')
     except KeyError:
         config = event_color(event)
+        print('--- KE')
 
     return createResponse(event, config)
 
