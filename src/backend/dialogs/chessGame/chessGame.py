@@ -1,10 +1,15 @@
-from .event_handler import event_handler
+from .event_move import event_move
+from .event_color import event_color
 from utils.dialogCreator import *
 from utils.triggerHelper import *
 
 
 def getResponse(event, context):
-    config = event_handler(event)
+    if event["state"]["session"].get("orientation"):
+        config = event_move(event)
+    else:
+        config = event_color(event)
+
     return createResponse(event, config)
 
 
