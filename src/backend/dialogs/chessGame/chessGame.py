@@ -14,7 +14,7 @@ def getResponse(event, allDialogs):
 
 
 def isTriggered(event):
-    return isInContext(event, 'chessMain')
+    return isInContext(event, 'chessGame')
 
 
 chessGame = {'getResponse': getResponse, 'isTriggered': isTriggered}

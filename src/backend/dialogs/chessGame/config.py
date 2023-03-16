@@ -1,6 +1,3 @@
-
-
-
 choose_color_message = \
     """
     За какой цвет будете играть? Белый или чёрный?
@@ -17,7 +14,6 @@ user_move_first_card = {
     'image_id': {},  # Айди картинки начальной позиции, сделать
     'title': 'Начальная позиция за белых',
 }
-
 
 buttons = [
     "Назад",
@@ -42,7 +38,6 @@ def get_config_choose_color():
         'tts': choose_color_tts,
         'buttons': choose_color_buttons,
         'card': {},
-        'session_state': {}
     }
 
 
@@ -52,5 +47,4 @@ def get_config_user_move_first():
         'tts': user_move_first_tts,
         'buttons': buttons,
         'card': user_move_first_card,
-        'session_state': {}
     }
