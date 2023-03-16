@@ -5,6 +5,7 @@ from utils.triggerHelper import *
 
 
 def getResponse(event, allDialogs):
+    o = 0
     try:
         if o := getState(event, 'orientation'):  # т.е. играет и есть цвет
             config = event_move(event)
@@ -13,7 +14,7 @@ def getResponse(event, allDialogs):
         print(f'--- {o}')
     except KeyError:
         config = event_color(event)
-        print('--- KE')
+        print(f'--- KE {o}')
 
     return createResponse(event, config)
 

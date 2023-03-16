@@ -178,10 +178,15 @@ def event_move(event):
     tokens = replace_scores_to_spaces([ru_to_eng(s.lower()) for s in event["request"]["nlu"]["tokens"]])
     moves = [token for token in tokens if token in all_squares]
 
+    try:
+        prev_moves = getState(event, 'prev_moves')
+    except KeyError:
+        prev_moves = ''
+
     session_states = {
         "branch": "chessGame",
         "orientation": getState(event, 'orientation'),
-        "prev_moves": getState(event, 'prev_moves'),
+        "prev_moves": prev_moves,
     }
 
     if len(moves) != 2 and session_states["prev_moves"]:
