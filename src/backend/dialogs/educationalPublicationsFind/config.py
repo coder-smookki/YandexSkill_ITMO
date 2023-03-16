@@ -13,8 +13,10 @@ session_state = {
 def getConfig(event):
     message = ''
     tts = ''
+    print(event)
+    # announces = parser('educationalPublications', event['request']['original_utterance'])
 
-    announces = parser('educationalPublications', event['request']['original_utterance'])
+    announces = parser('educationalPublications', event['request']['command'])
 
     for i in range(len(announces)):
         message += f"""{announces[i]['title']}\n------------\n"""

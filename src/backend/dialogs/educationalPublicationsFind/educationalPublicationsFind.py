@@ -3,9 +3,8 @@ from utils.responseHelper import *
 from utils.triggerHelper import *
 
 def getResponse(event, allDialogs=None):
-    print('1')
+    print(event)
     config = getConfig(event)
-    print(config)
     return createResponse(event, config)
 
 def isTriggered(event):
