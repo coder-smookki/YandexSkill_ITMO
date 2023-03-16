@@ -1,14 +1,16 @@
-import os
-from typing import Any
-from itertools import product
+import os                                                                          
+from typing import Any                                                             
+from itertools import product                                                      
+import requests                                                                    
+from dialogs.chessMain import config                                               
+from utils.responseHelper import getState                                          
+from dotenv import dotenv_values                  
 
-import requests
-
-from dialogs.chessMain import config
-from utils.responseHelper import getState
-
-oauth_key = os.environ["OAUTH_IMAGE_KEY"]
-skill_id = os.environ["SKILL_ID"]
+env_vars = dotenv_values(".env")                                                   
+oauth_key = env_vars.get("OAUTH_IMAGE_KEY")                                        
+skill_id = env_vars.get("SKILL_ID")                                                
+#oauth_key = os.getenv("OAUTH_IMAGE_KEY")                                          
+#skill_id = os.getenv("SKILL_ID")
 
 # Изменить на 127.0.0.1, если будем запускать в ВМ Швепса
 api_base = 'http://127.0.0.1:5000/api/chess/'
