@@ -22,7 +22,7 @@ rules = rules_tts = \
 card = None
 
 session_state = {
-    "branch": "chessMain",
+    "branch": "chessGame",
 }
 
 
