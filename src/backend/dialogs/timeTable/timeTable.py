@@ -5,13 +5,13 @@ from utils.triggerHelper import *
 def getResponse(event, allDialogs=None):
     if not haveState(event, 'timeTable_group'):
         print('1')
-        config = getConfig('group')
+        config = copy.deepcopy(getConfig('group'))
         config['session_state']['timeTable_group'] = 'notEntered'
         return createResponse(event, config)
     
     elif not haveState(event, 'timeTable_course'):
         print('2')
-        config = getConfig('course')
+        config = copy.deepcopy(getConfig('course'))
         config['session_state']['timeTable_course'] = 'notEntered'
         config['session_state']['timeTable_group'] = getOriginalUtterance(event)
         return createResponse(event, config)
