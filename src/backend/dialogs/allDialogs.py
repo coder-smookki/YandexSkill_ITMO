@@ -24,6 +24,8 @@ from .toAForeignStudent.toAForeignStudent import toAForeignStudent
 from .educationalPublicationsFind.educationalPublicationsFind import educationalPublicationsFind
 from .toAForeignStudentBechelorCourse.toAForeignStudentBachelorCource import toAForeignStudentBechelorCourse
 from .scholarships.scholarships import scholarships
+from .chessGame.chessGame import chessGame
+from .chessMain.chessMain import chessMain
 
 allDialogs = {
     'generalMenu': generalMenu,
@@ -41,6 +43,8 @@ allDialogs = {
     'universityWideUndergraduateModules': universityWideUndergraduateModules,
     'educationalPublications': educationalPublications,
     'library': library,
+    'chessMain': chessMain,
+    'chessGame': chessGame,
     'news': news,
     'announces': announces,
     'contests': contests,

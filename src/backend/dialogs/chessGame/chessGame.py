@@ -1,5 +1,5 @@
 from .event_handler import event_handler
-from utils.dialogCreator import *
+from utils.responseHelper import *
 from utils.triggerHelper import *
 
 
