@@ -15,7 +15,7 @@ def getResponse(event, allDialogs=None):
 def isTriggered(event):
     token = {"занятий", "расписание", "расписание"}
 
-    return isSimilarTokens(event, token) and isInContext(event, 'russianMenu') or isInContext('timeTable')
+    return isSimilarTokens(event, token) and isInContext(event, 'russianMenu') or isInContext(event, 'timeTable')
 
 
 timeTable = {'getResponse': getResponse, 'isTriggered': isTriggered}
