@@ -13,8 +13,7 @@ def educationalPublications(query):
     except:
         return False
     soup = bs(r.text, "html.parser")
-    posts = soup.select('.contentIndents table:nth-child(n+3) td')
-    i = 0
+    posts = soup.select('.contentIndents table:nth-child(n+3) td', limit=3)
     for post in posts:
         title = post.select('h4')[0].getText()
         textArr = post.findAll(text=True, recursive=False)

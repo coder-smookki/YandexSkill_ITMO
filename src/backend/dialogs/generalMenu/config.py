@@ -20,19 +20,20 @@ tts = \
 
 buttons = [
     "Русский Язык (Russian Language)",
-    "Английский язык (English Language)"
+    "Английский Язык (English Language)"
 ]
 
 card = {
     'type': 'BigImage',
-    'image_id': '1540737/7b7039c77bac17a15428',
+    'image_id': '1540737/07a6bc185a8dcec1b266',
     'title': 'ГЛАВНОЕ МЕНЮ (GENERAL MENU)',
     'description': \
         """
-        Выберите язык - Русский или Английский.
-        Select language - Russian or English.
+        Выберите язык - Русский или Английский...
+        Select language - Russian or English...
         """
 }
+
 
 def getConfig():
     return {

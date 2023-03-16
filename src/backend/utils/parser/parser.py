@@ -6,9 +6,10 @@ from .handlers.independents.educationalPublications import educationalPublicatio
 from .handlers.independents.timetable.getAllGroups import getAllGroups
 from .handlers.independents.timetable.getGroupTimetable import getGroupTimetable
 
+
 # infoType - тип информации, которую нужно спарсить
 # query - строка запроса, если используется (необязательная)
- 
+
 # Типы:
 #  - announces - анонсы
 #  - contests - конкурсы
@@ -22,7 +23,7 @@ def parser(infoType, query=''):
         'contests': {'url': 'https://news.itmo.ru/ru/events/', 'handler': contests},
         'educationalPublications': {'handler': educationalPublications},
         'timetable.getAllGroups': {'handler': getAllGroups},
-        'timetable.getGroupTimetable': {'handler': getGroupTimetable} 
+        'timetable.getGroupTimetable': {'handler': getGroupTimetable}
     }
 
     if not infoType in types:

@@ -19,6 +19,7 @@ def cycleRefreshNews():
         print('News refreshed')
         time.sleep(3600)
 
+
 def main(event):
     if DIALOG_DEBUG:
         print('===========================')
@@ -44,9 +45,11 @@ def main(event):
     if DIALOG_DEBUG:
         print('===========================')
 
+
 app = Flask(__name__)
 setInGlobalStorage('app', app, saveLinks=True)
 doFuncAsAsync(cycleRefreshNews)
+
 
 @app.route('/', methods=['POST'])
 def content():
@@ -55,7 +58,7 @@ def content():
         print(f"""                                                                                                                                                     |
         ЗАПРОС КОТОРЫЙ ПОСТУПИЛ НАМ!                                                                                                                                       |
         {data}                                                                                                                                                             |
-        """) 
+        """)
     reqzap = main(data)
     if REQUESTS_DEBUG:
         print(f"""                                                                                                                                                     |
