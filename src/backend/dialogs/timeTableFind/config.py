@@ -13,22 +13,24 @@ def getConfig(event):
     message = ""
     tts = ""
     announces = parser("timetable.getGroupTimetable", [group, degree])
-
-    for i in announces:
-        message += f"""
-        {i['dayWeek']}\n
-        {i['date']}\n
-        {i['hours']}\n
-        {i['whatWeeks']}\n
-        {i['subjectName']}\n
-        {i['lecturerName']}\n
-        {i['classroomNumber']}\n
-        {i['classroomAddress']}\n
-        {i['classroomNavigator']}\n
-        {i['classFormat']}\n
-        ------------\n
-        """
-
+    if not announces:
+        message='Произошла какая-то ошибка'
+        tts = 'Произошла какая-то ошибка'
+    else:
+        for i in announces:
+            message += f"""
+            {i['dayWeek']}\n
+            {i['date']}\n
+            {i['hours']}\n
+            {i['whatWeeks']}\n
+            {i['subjectName']}\n
+            {i['lecturerName']}\n
+            {i['classroomNumber']}\n
+            {i['classroomAddress']}\n
+            {i['classroomNavigator']}\n
+            {i['classFormat']}\n
+            ------------\n
+            """
     return {
         "message": message,
         "tts": tts,
