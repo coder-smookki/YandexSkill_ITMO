@@ -2,12 +2,10 @@ import os
 from typing import Any
 from itertools import product
 
-from dotenv import load_dotenv
-
-load_dotenv()  # noqa
 import requests
 
 from dialogs.chessMain import config
+from utils.responseHelper import getState
 
 oauth_key = os.environ["OAUTH_IMAGE_KEY"]
 skill_id = os.environ["SKILL_ID"]
@@ -62,36 +60,35 @@ def get_config(
     return {
         'message': message,
         'tts': tts,
-        'buttons': buttons,
-        'card': card,
+        'buttons': buttons or list(),
+        'card': card or dict(),
         'session_state': session_state
     }
 
 
-def handler_not_a_move(event) -> dict | None:
+def handler_not_a_move(event, session_states) -> dict | None:
     """
     Обработчик на тот случай, если в сообщении не было найдено ходов.
     Может быть, пользователь попросил помощи или правила?
     """
     command = event["request"]["command"] + ' ' + event["request"]["original_utterance"]
     if 'помощь' in command.lower() or 'правила' in command.lower():
-        event["session"]["state"]["branch"] = "chessMain"
         return get_config(
             config.rules,
             config.rules_tts,
             config.buttons,
             None,
-            event["session"]["state"]["branch"]
+            session_states
         )
     return None
 
 
-def get_next_move(user_move: str, session_states: dict[str, Any]) -> dict:
+def get_next_move(user_move: str, event) -> dict:
     # Часть запроса к движку за ходом
     params = {
         "user_move": user_move,
-        "prev_moves": session_states.get("prev_moves"),
-        "orientation": session_states.get("orientation"),
+        "prev_moves": getState(event, 'prev_moves'),
+        "orientation": getState(event, 'orientation'),
         "skill_level": 1,  # session_states.get("skill_level")  Сделать выбор уровня сложности???
         "ram_hash": 1,  # Для ускорения апи, минимум в константах, ищите в кода апи
         "depth": 1,  # Для ускорения апи, минимум в константах, ищите в кода апи
@@ -106,7 +103,7 @@ def get_next_move(user_move: str, session_states: dict[str, Any]) -> dict:
             tts,
             config.buttons,
             None,  # Как получить прошлую картинку?
-            session_states
+            {"branch": "chessGame"}
         )
 
     return response.json()["response"]
@@ -116,13 +113,14 @@ def get_bigimage_board(
         last_move: str,
         fen: str,
         check: str,
-        session_states: dict
+        event,
+        session_states
 ) -> dict | None:
     params = {
         "last_move": last_move,
         "fen": fen,
         "check": check,
-        "orientation:": session_states["orientation"]
+        "orientation:": getState(event, 'orientation')
     }
     board_response = requests.get(api_base + 'board', params=params)
     if board_response != 200:  # Либо сервер сломался, либо неверные параметры в ходе игры.
@@ -161,8 +159,8 @@ def get_bigimage_board(
     card = {
         "type": "BigImage",
         "image_id": yandex_response.json()["image"]["id"],
-        "title": "",  # Нужен ли заголовок? Можно сделать пустым?
-        "description": "",  # Нужно ли описание? Можно сделать пустым?
+        "title": "123",  # Нужен ли заголовок? Можно сделать пустым?
+        "description": "321",  # Нужно ли описание? Можно сделать пустым?
         "button": {
             "text": "Надпись на кнопке",
             "url": f"https://lichess.org/analysis/fromPosition/{fen}",
@@ -173,34 +171,19 @@ def get_bigimage_board(
     return card
 
 
-# Удалить, если не используем
-def get_position_score(prev_moves: str, session_states: dict) -> dict | None:
-    params = {
-        "prev_moves": prev_moves
-    }
-    response = requests.get(api_base + 'position', params=params)
-    if response.status_code != 200:  # Либо сервер сломался, либо неверные параметры в ходе игры.
-        message = f'Возникла ошибка "{response.json().get("message")}", попробуйте ещё раз. ' + ask_help
-        tts = f'Возникла ошибка на сервере, попробуйте ещё раз' + ask_help
-        return get_config(
-            message,
-            tts,
-            config.buttons,
-            None,  # Как получить прошлую картинку?
-            session_states
-        )
-
-    return response.json()["response"]
-
-
 def event_move(event):
     # Часть обработки сообщения пользователя
     tokens = replace_scores_to_spaces([ru_to_eng(s.lower()) for s in event["request"]["nlu"]["tokens"]])
     moves = [token for token in tokens if token in all_squares]
-    session_states = event["session"]["state"]
 
-    if len(moves) != 2:
-        if answer_config := handler_not_a_move(event):
+    session_states = {
+        "branch": "chessGame",
+        "orientation": getState(event, 'orientation'),
+        "prev_moves": getState(event, 'prev_moves'),
+    }
+
+    if len(moves) != 2 and session_states["prev_moves"]:
+        if answer_config := handler_not_a_move(event, session_states):
             return answer_config
         message = f'Не удалось распознать ход в фразе "{event["request"]["command"]}", попробуйте ещё раз. ' + ask_help
         tts = f'Не удалось распознать ход, попробуйте ещё раз. ' + ask_help
@@ -209,21 +192,20 @@ def event_move(event):
             tts,
             config.buttons,
             None,  # Как получить прошлую картинку?
-            session_states
+            session_states,
         )
 
-    data = get_next_move(''.join(moves), session_states)
+    data = get_next_move(''.join(moves), event)
     if 'tts' in data:  # Если словарь с tts - это результат get_config
         return data
 
     stockfish_move = data["stockfish_move"]
-    card = get_bigimage_board(stockfish_move, data["fen"], data["check"], session_states)
+    card = get_bigimage_board(stockfish_move, data["fen"], data["check"], event, session_states)
     if isinstance(card, dict) and 'tts' in card:
         return card  # Если словарь с tts - это результат get_config
 
     if data['end_type'] is not None:
-        session_states.clear()
-        session_states["branch"] = "chessMain"
+        del session_states["prev_moves"]
 
         if data["check"] is not None:
             who_win = 'w' if data["orientation"] == 'b' else 'b'
@@ -237,9 +219,12 @@ def event_move(event):
             message += 'победой чёрных!'
         else:
             message += 'в ничью...'
+
+        del session_states["orientation"]
     else:
         message = f'Я сходил на "{stockfish_move}", теперь ваш ход.'
+        session_states["prev_moves"] = data["prev_moves"]
+
     tts = message
 
-    session_states["prev_moves"] = data["prev_moves"]
     return get_config(message, tts, config.buttons, card, session_states)
