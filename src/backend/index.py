@@ -30,6 +30,8 @@ def main(event):
                 continue
             return allMiddlewares[key]['getResponse'](event, allDialogs)
 
+    print(event["session"].get("state"))
+
     for key in allDialogs:
         if DIALOG_DEBUG:
             print(str(key) + ' ' + str(allDialogs[key]['isTriggered'](event)))
@@ -44,8 +46,8 @@ def main(event):
         else:
             print("Branch don't initilized")
         print('---------------------------')
-        print(getState(event, 'timeTable_group'))
-        print(getState(event, 'timeTable_course'))
+        # print(getState(event, 'timeTable_group'))
+        # print(getState(event, 'timeTable_course'))
         return branchedResponse
 
 
