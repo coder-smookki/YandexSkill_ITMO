@@ -12,11 +12,11 @@ message = \
     8. University-wide modules in the Master's program
     9. Library
     10. Educational and methodological publications
-    11. Scholarships
+    11. scholarships
     12. Ask a question
     If there is no such category, say "ask a question" and then fill in all the information so that we can know what is missing in the skill.
     """
- 
+
 tts = \
     """
     You chose English language! 
@@ -31,7 +31,7 @@ tts = \
     8. University-wide modules in the Master's program
     9. Library
     10. Educational and methodological publications
-    11. Scholarships
+    11. scholarships
     12. Ask a question
     If there is no such category, say "ask a question" and then fill in all the information so that we can know what is missing in the skill.
     """
@@ -77,7 +77,7 @@ card = {
         8. University-wide modules in the Master's program
         9. Library
         10. Educational and methodological publications
-        11. Scholarships
+        11. scholarships
         12. Ask a question
         If there is no such category, say "ask a question" and then fill in all the information so that we can know what is missing in the skill.
         """

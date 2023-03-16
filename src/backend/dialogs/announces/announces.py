@@ -3,6 +3,7 @@ from utils.responseHelper import *
 from utils.triggerHelper import *
 from utils.globalStorage import globalStorage
 
+
 def getResponse(event, allDialogs=None):
     config = getConfig()
     announces = globalStorage['news_announces']

@@ -2,7 +2,6 @@ from src.backend.utils.quiz.questions import *
 
 quest = answer_question()
 
-
 message = \
     f"""
     {quest[0]}

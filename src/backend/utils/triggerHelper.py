@@ -1,8 +1,10 @@
 def isNewSession(event):
     return event['session']['new'] is True
 
+
 def isSimilarTokens(event, tokens):
     return len(list(set(event['request']['nlu']['tokens']) & tokens)) != 0
+
 
 def isInContext(event, context):
     if not 'branch' in event['state']['session']:
@@ -15,8 +17,10 @@ def isInContext(event, context):
         return False
     return context in event['state']['session']["branch"]
 
+
 def isSimilarCommand(event, command):
     return event['request']['command'] == command
+
 
 def haveState(event, state):
     return state in event['state']['session']

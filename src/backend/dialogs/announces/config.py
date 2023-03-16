@@ -6,12 +6,13 @@ buttons = [
     "Повторить ещё раз",
     "Помощь",
     "Назад",
-    "Выйти"  
+    "Выйти"
 ]
 
 session_state = {
     "branch": "announces"
 }
+
 
 def getConfig():
     return {

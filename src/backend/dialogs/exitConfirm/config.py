@@ -2,7 +2,7 @@ message = \
     """
     Вы уверены в том, что хотите выйти?
     """
- 
+
 tts = \
     """
     Вы уверены в том, что хотите выйти из навыка?
@@ -26,6 +26,7 @@ card = {
 session_state = {
     "branch": "exitConfirm"
 }
+
 
 def getConfig():
     return {
