@@ -9,7 +9,7 @@ session_state = {"branch": "timeTable"}
 def getConfig(event):
     group = getState(event, "timeTable_group")
     course = int(getState(event, "timeTable_course"))
-    degree = int(getState(event, 'timeTable_degree'))
+    degree = getState(event, 'timeTable_degree')
 
     if 'бакал' in degree or 'unde' in degree:
         degree = 3
