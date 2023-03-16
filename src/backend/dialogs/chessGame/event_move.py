@@ -85,11 +85,11 @@ def handler_not_a_move(event, session_states) -> dict | None:
     return None
 
 
-def get_next_move(user_move: str, event) -> dict:
+def get_next_move(user_move: str, event, prev_moves: str) -> dict:
     # Часть запроса к движку за ходом
     params = {
         "user_move": user_move,
-        "prev_moves": getState(event, 'prev_moves'),
+        "prev_moves": prev_moves,
         "orientation": getState(event, 'orientation'),
         "skill_level": 1,  # session_states.get("skill_level")  Сделать выбор уровня сложности???
         "ram_hash": 1,  # Для ускорения апи, минимум в константах, ищите в кода апи
@@ -202,7 +202,7 @@ def event_move(event):
             session_states,
         )
 
-    data = get_next_move(''.join(moves), event)
+    data = get_next_move(''.join(moves), event, session_states["prev_moves"])
     if 'tts' in data:  # Если словарь с tts - это результат get_config
         return data
 
