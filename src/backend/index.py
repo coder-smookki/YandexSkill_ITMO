@@ -8,6 +8,8 @@ import time
 from utils.parser.parser import parser
 from utils.asyncHelper import doFuncAsAsync
 from dotenv import load_env
+from utils.responseHelper import *
+
 
 DIALOG_DEBUG = True
 REQUESTS_DEBUG = False
@@ -46,6 +48,8 @@ def main(event):
         else:
             print("Branch don't initilized")
         print('---------------------------')
+        print(getState(event, 'timeTable_group'))
+        print(getState(event, 'timeTable_course'))
         return branchedResponse
 
 
@@ -74,5 +78,5 @@ def content():
 if __name__ == '__main__':
     print('Server starting...')
 
-    app.run(port=2083, host='0.0.0.0', debug=False)
+    app.run()
     print('Shutdown!')

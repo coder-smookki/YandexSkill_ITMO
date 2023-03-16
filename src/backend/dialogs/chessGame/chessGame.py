@@ -5,9 +5,12 @@ from utils.triggerHelper import *
 
 
 def getResponse(event, allDialogs):
-    if event["state"]["session"].get("orientation"):
-        config = event_move(event)
-    else:
+    try:
+        if getState(event, 'orientation'):  # т.е. играет и есть цвет
+            config = event_move(event)
+        else:
+            config = event_color(event)
+    except KeyError:
         config = event_color(event)
 
     return createResponse(event, config)
