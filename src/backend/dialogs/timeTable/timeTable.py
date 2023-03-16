@@ -22,9 +22,19 @@ def getResponse(event, allDialogs=None):
         config["session_state"]["timeTable_course"] = getOriginalUtterance(event)
         return createResponse(event, config)
 
+    if 'бакал' in degree or 'unde' in degree:
+        degree = 3
+    elif 'магис' in degree or 'magis' in degree: 
+        degree = 4
+    elif 'спец' in degree or 'spec' in degree: 
+        degree = 4
+    else:
+        raise ValueError("Сould not recognize degree: " + degree)
+
+
     setStateInEvent(event, "timeTable_group", getState(event, "timeTable_group"))
     setStateInEvent(event, "timeTable_course", getState(event, "timeTable_course"))
-    setStateInEvent(event, "timeTable_degree", getOriginalUtterance(event))
+    setStateInEvent(event, "timeTable_degree", degree)
     return allDialogs["timeTableFind"]["getResponse"](event, allDialogs)
 
 
