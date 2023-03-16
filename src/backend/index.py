@@ -23,11 +23,6 @@ def cycleRefreshNews():
 def main(event):
     if DIALOG_DEBUG:
         print('===========================')
-        if 'branch' in event['state']['session']:
-            print('Branch: ' + str(event['state']['session']['branch']))
-        else:
-            print("Branch don't initilized")
-        print('---------------------------')
     if not isNewSession(event):
         for key in allMiddlewares:
             if not allMiddlewares[key]['isTriggered'](event):
@@ -41,9 +36,14 @@ def main(event):
             continue
         response = allDialogs[key]['getResponse'](event, allDialogs)
         branchedResponse = updateBranchToResponse(event, response, 'russianMenu')
+        if DIALOG_DEBUG:
+            print('===========================')
+        if branchedResponse:
+            print('Branch: ' + str(event['state']['session']['branch']))
+        else:
+            print("Branch don't initilized")
+        print('---------------------------')
         return branchedResponse
-    if DIALOG_DEBUG:
-        print('===========================')
 
 
 app = Flask(__name__)
