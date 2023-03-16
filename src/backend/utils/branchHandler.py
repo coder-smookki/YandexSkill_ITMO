@@ -5,7 +5,6 @@ from .responseHelper import createResponse
 def updateBranchToResponse(event, response, firstBranchName):
     newEvent = copy.deepcopy(event)
     newResponse = copy.deepcopy(response)
-    print(newResponse)
     if 'dontUpdateBranches' in response:
         return response
 
