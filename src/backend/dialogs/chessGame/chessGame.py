@@ -1,6 +1,6 @@
 from .event_move import event_move
 from .event_color import event_color
-from utils.dialogCreator import *
+from utils.responseHelper import *
 from utils.triggerHelper import *
 
 
