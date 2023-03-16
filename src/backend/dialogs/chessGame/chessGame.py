@@ -4,7 +4,7 @@ from utils.responseHelper import *
 from utils.triggerHelper import *
 
 
-def getResponse(event, context):
+def getResponse(event, allDialogs):
     if event["state"]["session"].get("orientation"):
         config = event_move(event)
     else:
@@ -13,7 +13,7 @@ def getResponse(event, context):
     return createResponse(event, config)
 
 
-def isTriggered(event, context):
+def isTriggered(event):
     return isInContext(event, 'chessGame')
 
 
