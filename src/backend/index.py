@@ -7,7 +7,6 @@ from utils.branchHandler import updateBranchToResponse
 import time
 from utils.parser.parser import parser
 from utils.asyncHelper import doFuncAsAsync
-from dotenv import load_env
 from utils.responseHelper import *
 
 
