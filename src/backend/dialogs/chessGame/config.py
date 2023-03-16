@@ -37,7 +37,6 @@ def get_config_choose_color():
         'message': choose_color_message,
         'tts': choose_color_tts,
         'buttons': choose_color_buttons,
-        'card': {},
     }
 
 
