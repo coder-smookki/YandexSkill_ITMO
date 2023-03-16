@@ -8,16 +8,6 @@ askGroupTts = \
     Продиктуйте вашу Группу (например, А1234)
     """
 
-askCourseMessage = \
-    """
-    Напишите номер вашего Курса
-    """
-
-askCourseTts = \
-    """
-    Продиктуйте номер вашего Курса
-    """
-
 askDegreeMessage = \
     """
     Напишите ваш вид образования (бакалавриат, магистратура, аспирантура)
@@ -45,13 +35,6 @@ def getConfig(askSubject):
         return {
             'message': askGroupMessage,
             'tts': askGroupTts,
-            'buttons': buttons,
-            'session_state': session_state
-        }
-    elif askSubject == 'course':
-        return {
-            'message': askCourseMessage,
-            'tts': askCourseTts,
             'buttons': buttons,
             'session_state': session_state
         }

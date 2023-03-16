@@ -8,12 +8,11 @@ session_state = {"branch": "timeTable"}
 
 def getConfig(event):
     group = getState(event, "timeTable_group")
-    course = int(getState(event, "timeTable_course"))
     degree = getState(event, 'timeTable_degree')
 
     message = ""
     tts = ""
-    announces = parser("timetable.getGroupTimetable", [group, course, degree])
+    announces = parser("timetable.getGroupTimetable", [group, degree])
 
     for i in announces:
         message += f"""
