@@ -24,8 +24,8 @@ from .toAForeignStudent.toAForeignStudent import toAForeignStudent
 from .educationalPublicationsFind.educationalPublicationsFind import educationalPublicationsFind
 from .toAForeignStudentBechelorCourse.toAForeignStudentBachelorCource import toAForeignStudentBechelorCourse
 from .scholarships.scholarships import scholarships
-from .chessGame.chessGame import chessGame
-from .chessMain.chessMain import chessMain
+# from .chessGame.chessGame import chessGame
+# from .chessMain.chessMain import chessMain
 
 allDialogs = {
     'generalMenu': generalMenu,
