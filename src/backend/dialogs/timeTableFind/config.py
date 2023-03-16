@@ -12,8 +12,8 @@ session_state = {
 
 
 def getConfig(event):
-    group = getState(event, 'group')
-    course = int(getState(event, 'course'))
+    group = getState(event, 'timeTable_group')
+    course = int(getState(event, 'timeTable_course'))
     message = ''
     tts = ''
 
