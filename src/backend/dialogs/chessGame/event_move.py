@@ -148,7 +148,7 @@ def get_bigimage_board(
         raise RuntimeError("Киря, бачок потик, места нема!!! КАРТИНОК БОЛЬШЕ СТА МЕГАБАЙТ")
 
     if yandex_response.status_code != 200:
-        message = f'Возникла ошибка "{yandex_response.json()["message"]}", попробуйте ещё раз. ' + ask_help
+        message = f'Возникла ошибка "{yandex_response.json().get("message")}", попробуйте ещё раз. ' + ask_help
         tts = f'Возникла ошибка на сервере, попробуйте ещё раз' + ask_help
         return get_config(
             message,
@@ -180,7 +180,7 @@ def get_position_score(prev_moves: str, session_states: dict) -> dict | None:
     }
     response = requests.get(api_base + 'position', params=params)
     if response.status_code != 200:  # Либо сервер сломался, либо неверные параметры в ходе игры.
-        message = f'Возникла ошибка "{response.json()["message"]}", попробуйте ещё раз. ' + ask_help
+        message = f'Возникла ошибка "{response.json().get("message")}", попробуйте ещё раз. ' + ask_help
         tts = f'Возникла ошибка на сервере, попробуйте ещё раз' + ask_help
         return get_config(
             message,
@@ -193,7 +193,7 @@ def get_position_score(prev_moves: str, session_states: dict) -> dict | None:
     return response.json()["response"]
 
 
-def event_handler(event):
+def event_move(event):
     # Часть обработки сообщения пользователя
     tokens = replace_scores_to_spaces([ru_to_eng(s.lower()) for s in event["request"]["nlu"]["tokens"]])
     moves = [token for token in tokens if token in all_squares]
@@ -202,7 +202,7 @@ def event_handler(event):
     if len(moves) != 2:
         if answer_config := handler_not_a_move(event):
             return answer_config
-        message = f'Не удалось распознать ход в фразе "{event["request"]}", попробуйте ещё раз. ' + ask_help
+        message = f'Не удалось распознать ход в фразе "{event["request"]["command"]}", попробуйте ещё раз. ' + ask_help
         tts = f'Не удалось распознать ход, попробуйте ещё раз. ' + ask_help
         return get_config(
             message,
