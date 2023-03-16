@@ -144,7 +144,7 @@ def get_bigimage_board(
     }
     # !!! Я не уверен в правильности форматов data и самого запроса!!!
     yandex_response = requests.post(data["Host"] + f'/api/v1/skills/{skill_id}/images',
-                                    data=data, files=board_response.content)
+                                    data=data, files={'file': board_response.content})
     if yandex_response.status_code == 429:  # Обработка момента, когда занята вся память навыка (около 2к картинок)
         raise RuntimeError("Киря, бачок потик, места нема!!! КАРТИНОК БОЛЬШЕ СТА МЕГАБАЙТ")
 
