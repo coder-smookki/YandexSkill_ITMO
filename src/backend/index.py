@@ -21,8 +21,6 @@ def cycleRefreshNews():
 
 
 def main(event):
-    print(globalStorage['timeout'])
-    
     if DIALOG_DEBUG:
         print('===========================')
         if 'branch' in event['state']['session']:
