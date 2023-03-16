@@ -4,7 +4,6 @@ from utils.triggerHelper import *
 
 def getResponse(event, allDialogs=None):
     def getReponseFunc(event, allDialogs):
-        print(event)
         config = copy.deepcopy(getConfig(event))
         return createResponse(event,config)
     return createTimeoutResponse(event, allDialogs, getReponseFunc, 'educationPublication')
