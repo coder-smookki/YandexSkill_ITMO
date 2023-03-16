@@ -18,14 +18,14 @@ def createResponse(event, originalConfig):
     }
 
 def createTimeoutResponse(event, allDialogs, getRepsonse, timeoutName):
-    if not (timeoutName + '_' + getSessionId(event) in globalStorage):
+    fieldName = timeoutName + '_' + getSessionId(event);
+    if not (fieldName in globalStorage):
     # if not 'timeout' in globalStorage:
+        print('start loading')
+        setInGlobalStorage(fieldName, {'response': '', 'isLoaded': False}, overwrite=True)
         def getAsyncResponse(event, allDialogs, timeoutName):
             response = getRepsonse(event, allDialogs)
-            setInGlobalStorage(timeoutName + '_' + getSessionId(event), {'response': response, 'isLoaded': True}, overwrite=True)
-        
-        setInGlobalStorage(timeoutName + '_' + getSessionId(event), {'response': '', 'isLoaded': False}, overwrite=True)
-        
+            setInGlobalStorage(fieldName, {'response': response, 'isLoaded': True}, overwrite=True)
         doFuncAsAsync(getAsyncResponse, [event, allDialogs, timeoutName])
         return {
             'response': {
@@ -44,8 +44,9 @@ def createTimeoutResponse(event, allDialogs, getRepsonse, timeoutName):
             'version': event['version']
         }
     
-    elif globalStorage[timeoutName + '_' + getSessionId(event)]['isLoaded'] == False:
+    elif globalStorage[fieldName]['isLoaded'] == False:
     # elif globalStorage['timeout']['isLoaded'] == False:
+        print('loading...')
         return {
             'response': {
                 'text': 'Все еще загрузка...',
@@ -64,7 +65,9 @@ def createTimeoutResponse(event, allDialogs, getRepsonse, timeoutName):
         }
 
     else:
-        return globalStorage[timeoutName + '_' + getSessionId(event)]['response']
+        print('loaded')
+        print(globalStorage[fieldName]['response'])
+        return globalStorage[fieldName]['response']
 
 def createButtons(buttons):
     result = []
