@@ -197,7 +197,7 @@ def event_move(event):
     # Часть обработки сообщения пользователя
     tokens = replace_scores_to_spaces([ru_to_eng(s.lower()) for s in event["request"]["nlu"]["tokens"]])
     moves = [token for token in tokens if token in all_squares]
-    session_states = event["session_state"]
+    session_states = event["session"]["state"]
 
     if len(moves) != 2:
         if answer_config := handler_not_a_move(event):
