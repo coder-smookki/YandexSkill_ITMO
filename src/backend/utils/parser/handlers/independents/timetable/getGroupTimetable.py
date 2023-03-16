@@ -32,7 +32,7 @@ def getGroupTimetable(args):
 
     soup = bs(r.text, "html.parser")
     lectures = soup.select('.timetable-article__row:nth-child(n+3)')
-    if lecture.select_one('.timetable-article__day') is None:
+    if lectures[0].select_one('.timetable-article__day') is None:
         return False
     for lecture in lectures:
         lectureResult = {}
