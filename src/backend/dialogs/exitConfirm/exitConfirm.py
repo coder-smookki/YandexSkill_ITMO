@@ -11,7 +11,7 @@ def getResponse(event, allDialogs=None):
     if isInContext(event, 'exitConfirm') and isSimilarCommand(event, 'да'):
         response = {
             "response": {
-                "text": "Пока",
+                "text": "ИТМО Помощник выключился",
                 "tts": "",
                 "buttons": [],
                 "end_session": True
