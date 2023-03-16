@@ -18,6 +18,16 @@ askCourseTts = \
     Продиктуйте номер вашего Курса
     """
 
+askDegreeMessage = \
+    """
+    Напишите ваш вид образования (бакалавриат, магистратура, аспирантура)
+    """
+
+askDegreeTts = \
+    """
+    Скажите ваш вид образования (бакалавриат, магистратура, аспирантура)
+    """
+
 buttons = [
     "Повторить ещё раз",
     "Помощь",
@@ -42,6 +52,13 @@ def getConfig(askSubject):
         return {
             'message': askCourseMessage,
             'tts': askCourseTts,
+            'buttons': buttons,
+            'session_state': session_state
+        }
+    elif askSubject == 'degree':
+        return {
+            'message': askDegreeMessage,
+            'tts': askDegreeTts,
             'buttons': buttons,
             'session_state': session_state
         }
