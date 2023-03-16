@@ -14,8 +14,8 @@ def getConfig(event):
     tts = ""
     announces = parser("timetable.getGroupTimetable", [group, degree])
     if not announces:
-        message='Произошла какая-то ошибка'
-        tts = 'Произошла какая-то ошибка'
+        message='Произошла какая-то ошибка. Скорее всего, вы ввели недействительные данные.'
+        tts = 'Произошла какая-то ошибка. Скорее всего, вы ввели недействительные данные.'
     else:
         for i in announces:
             message += f"""
