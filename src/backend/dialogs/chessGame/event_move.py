@@ -175,7 +175,7 @@ def get_bigimage_board(
 
 def event_move(event):
     # Часть обработки сообщения пользователя
-    tokens = replace_scores_to_spaces([ru_to_eng(s.lower()) for s in event["request"]["nlu"]["tokens"]])
+    tokens = replace_scores_to_spaces([ru_to_eng(s.lower()) for s in event["request"]["command"].lower().split()])
     moves = [token for token in tokens if token in all_squares]
 
     try:

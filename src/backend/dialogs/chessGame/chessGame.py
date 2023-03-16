@@ -12,9 +12,9 @@ def getResponse(event, allDialogs):
         else:
             config = event_color(event)
         print(f'--- {o}')
-    except KeyError:
+    except KeyError as e:
         config = event_color(event)
-        print(f'--- KE {o}')
+        print(f'--- KE {o} {e}')
 
     return createResponse(event, config)
 
