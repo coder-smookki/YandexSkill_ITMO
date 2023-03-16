@@ -125,7 +125,7 @@ def get_bigimage_board(
         "orientation:": getState(event, 'orientation')
     }
     board_response = requests.get(api_base + 'board', params=params)
-    if board_response != 200:  # Либо сервер сломался, либо неверные параметры в ходе игры.
+    if board_response.status_code != 200:  # Либо сервер сломался, либо неверные параметры в ходе игры.
         message = f'Возникла ошибка "{board_response.status_code} {board_response.text}", попробуйте ещё раз. ' \
                   + ask_help
         tts = f'Возникла ошибка на сервере, попробуйте ещё раз' + ask_help
@@ -149,7 +149,7 @@ def get_bigimage_board(
         raise RuntimeError("Киря, бачок потик, места нема!!! КАРТИНОК БОЛЬШЕ СТА МЕГАБАЙТ")
 
     if yandex_response.status_code != 200:
-        message = f'Возникла ошибка "{yandex_response.json().get("message")}", попробуйте ещё раз. ' + ask_help
+        message = f'Возникла ошибка "{yandex_response.text}", попробуйте ещё раз. ' + ask_help
         tts = f'Возникла ошибка на сервере, попробуйте ещё раз' + ask_help
         return get_config(
             message,
