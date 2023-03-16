@@ -60,7 +60,9 @@ def createTimeoutResponse(event, allDialogs, getRepsonse, timeoutName):
         }
 
     else:
-        return globalStorage[fieldName]['response']
+        response = copy.deepcopy(globalStorage[fieldName]['response'])
+        del globalStorage[fieldName]
+        return response
 
 def createButtons(buttons):
     result = []
