@@ -10,9 +10,11 @@ def getResponse(event, allDialogs=None):
     
     elif not haveState(event, 'timeTable_course'):
         config = getConfig('course')
+        config['session_state']['timeTable_course'] = 'notEntered'
         config['session_state']['timeTable_group'] = getCommand(event)
         return createResponse(event, config)
     
+    setStateInEvent(event, 'timeTable_group', getState('timeTable_group'))
     setStateInEvent(event, 'timeTable_course', getCommand(event))
     return allDialogs['timeTableFind']['getResponse'](event, allDialogs)
 
