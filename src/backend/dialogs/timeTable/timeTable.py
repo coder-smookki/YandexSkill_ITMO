@@ -22,6 +22,7 @@ def getResponse(event, allDialogs=None):
         config["session_state"]["timeTable_course"] = getOriginalUtterance(event)
         return createResponse(event, config)
 
+    degree = getState(event, "timeTable_degree")
     if 'бакал' in degree or 'unde' in degree:
         degree = 3
     elif 'магис' in degree or 'magis' in degree: 
