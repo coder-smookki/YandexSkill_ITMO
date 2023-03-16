@@ -1,6 +1,6 @@
 from dotenv import load_dotenv; load_dotenv()  # noqa
 
-from src.backend.dialogs.chessGame import config, event_move
+from dialogs.chessGame import config, event_move
 
 
 def event_color(event):
