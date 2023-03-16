@@ -22,6 +22,7 @@ def getResponse(event, allDialogs=None):
         config["session_state"]["timeTable_course"] = getOriginalUtterance(event)
         return createResponse(event, config)
 
+
     degree = getOriginalUtterance(event)
     if 'бакал' in degree or 'unde' in degree:
         degree = 3
@@ -31,7 +32,6 @@ def getResponse(event, allDialogs=None):
         degree = 4
     else:
         raise ValueError("Сould not recognize degree: " + degree)
-
 
     setStateInEvent(event, "timeTable_group", getState(event, "timeTable_group"))
     setStateInEvent(event, "timeTable_course", getState(event, "timeTable_course"))
