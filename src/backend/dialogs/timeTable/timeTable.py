@@ -14,7 +14,7 @@ def getResponse(event, allDialogs=None):
         config['session_state']['timeTable_group'] = getCommand(event)
         return createResponse(event, config)
     
-    setStateInEvent(event, 'timeTable_group', getState('timeTable_group'))
+    setStateInEvent(event, 'timeTable_group', getState(event, 'timeTable_group'))
     setStateInEvent(event, 'timeTable_course', getCommand(event))
     return allDialogs['timeTableFind']['getResponse'](event, allDialogs)
 
