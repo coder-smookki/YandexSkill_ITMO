@@ -37,6 +37,7 @@ def get_config_choose_color():
         'message': choose_color_message,
         'tts': choose_color_tts,
         'buttons': choose_color_buttons,
+        'session_state': {}
     }
 
 
@@ -46,4 +47,5 @@ def get_config_user_move_first():
         'tts': user_move_first_tts,
         'buttons': buttons,
         'card': user_move_first_card,
+        'session_state': {}
     }
