@@ -109,13 +109,20 @@ def get_next_move(user_move: str, session_states: dict[str, Any]) -> dict:
             session_states
         )
 
-    return response.json()
+    return response.json()["response"]
 
 
-def get_bigimage_board(last_move: str, fen: str, session_states: dict) -> dict | None:
+def get_bigimage_board(
+        last_move: str,
+        fen: str,
+        check: str,
+        session_states: dict
+) -> dict | None:
     params = {
         "last_move": last_move,
-        "fen": fen
+        "fen": fen,
+        "check": check,
+        "orientation:": session_states["orientation"]
     }
     board_response = requests.get(api_base + 'board', params=params)
     if board_response != 200:  # Либо сервер сломался, либо неверные параметры в ходе игры.
@@ -138,10 +145,10 @@ def get_bigimage_board(last_move: str, fen: str, session_states: dict) -> dict |
     yandex_response = requests.post(data["Host"] + f'/api/v1/skills/{skill_id}/images',
                                     data=data, files=board_response.content)
     if yandex_response.status_code == 429:  # Обработка момента, когда занята вся память навыка (около 2к картинок)
-        pass
+        raise RuntimeError("Киря, бачок потик, места нема!!! КАРТИНОК БОЛЬШЕ СТА МЕГАБАЙТ")
 
     if yandex_response.status_code != 200:
-        message = f'Возникла ошибка "{yandex_response.json()["message"]}", попробуйте ещё раз. ' + ask_help
+        message = f'Возникла ошибка "{yandex_response.json().get("message")}", попробуйте ещё раз. ' + ask_help
         tts = f'Возникла ошибка на сервере, попробуйте ещё раз' + ask_help
         return get_config(
             message,
@@ -166,13 +173,14 @@ def get_bigimage_board(last_move: str, fen: str, session_states: dict) -> dict |
     return card
 
 
+# Удалить, если не используем
 def get_position_score(prev_moves: str, session_states: dict) -> dict | None:
     params = {
         "prev_moves": prev_moves
     }
     response = requests.get(api_base + 'position', params=params)
-    if response != 200:  # Либо сервер сломался, либо неверные параметры в ходе игры.
-        message = f'Возникла ошибка "{response.json()["message"]}", попробуйте ещё раз. ' + ask_help
+    if response.status_code != 200:  # Либо сервер сломался, либо неверные параметры в ходе игры.
+        message = f'Возникла ошибка "{response.json().get("message")}", попробуйте ещё раз. ' + ask_help
         tts = f'Возникла ошибка на сервере, попробуйте ещё раз' + ask_help
         return get_config(
             message,
@@ -182,10 +190,10 @@ def get_position_score(prev_moves: str, session_states: dict) -> dict | None:
             session_states
         )
 
-    return response.json()
+    return response.json()["response"]
 
 
-def event_handler(event):
+def event_move(event):
     # Часть обработки сообщения пользователя
     tokens = replace_scores_to_spaces([ru_to_eng(s.lower()) for s in event["request"]["nlu"]["tokens"]])
     moves = [token for token in tokens if token in all_squares]
@@ -194,7 +202,7 @@ def event_handler(event):
     if len(moves) != 2:
         if answer_config := handler_not_a_move(event):
             return answer_config
-        message = f'Не удалось распознать ход в фразе "{event["request"]}", попробуйте ещё раз. ' + ask_help
+        message = f'Не удалось распознать ход в фразе "{event["request"]["command"]}", попробуйте ещё раз. ' + ask_help
         tts = f'Не удалось распознать ход, попробуйте ещё раз. ' + ask_help
         return get_config(
             message,
@@ -209,23 +217,26 @@ def event_handler(event):
         return data
 
     stockfish_move = data["stockfish_move"]
-    card = get_bigimage_board(stockfish_move, data["fen"], session_states)
+    card = get_bigimage_board(stockfish_move, data["fen"], data["check"], session_states)
     if isinstance(card, dict) and 'tts' in card:
         return card  # Если словарь с tts - это результат get_config
 
-    score = get_position_score(data["prev_moves"], session_states)
-    if 'tts' in data:  # Если словарь с tts - это результат get_config
-        return data
+    if data['end_type'] is not None:
+        session_states.clear()
+        session_states["branch"] = "chessMain"
 
-    if score['is_end']:
-        session_states["branch"] = 'chessMain'
+        if data["check"] is not None:
+            who_win = 'w' if data["orientation"] == 'b' else 'b'
+        else:
+            who_win = None
+
         message = 'Игра закончилась '
-        if score["who_win"] == "w":
+        if who_win == "w":
             message += 'победой белых!'
-        elif score["who_win"] == "b":
+        elif who_win == "b":
             message += 'победой чёрных!'
         else:
-            message += 'патом...'
+            message += 'в ничью...'
     else:
         message = f'Я сходил на "{stockfish_move}", теперь ваш ход.'
     tts = message
