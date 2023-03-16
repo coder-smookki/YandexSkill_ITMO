@@ -13,11 +13,11 @@ def getResponse(event, allDialogs=None):
         print('2')
         config = getConfig('course')
         config['session_state']['timeTable_course'] = 'notEntered'
-        config['session_state']['timeTable_group'] = getCommand(event)
+        config['session_state']['timeTable_group'] = getOriginalUtterance(event)
         return createResponse(event, config)
     
     setStateInEvent(event, 'timeTable_group', getState(event, 'timeTable_group'))
-    setStateInEvent(event, 'timeTable_course', getCommand(event))
+    setStateInEvent(event, 'timeTable_course', getOriginalUtterance(event))
     return allDialogs['timeTableFind']['getResponse'](event, allDialogs)
 
 
