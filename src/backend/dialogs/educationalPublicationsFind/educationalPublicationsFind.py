@@ -3,9 +3,11 @@ from utils.responseHelper import *
 from utils.triggerHelper import *
 
 def getResponse(event, allDialogs=None):
-    print(event)
-    config = getConfig(event)
-    return createResponse(event, config)
+    def getReponseFunc(event, allDialogs):
+        print(event)
+        config = copy.deepcopy(getConfig(event))
+        return createResponse(event,config)
+    return createTimeoutResponse(event, allDialogs, getReponseFunc, 'eductaionPublication')
 
 def isTriggered(event):
     return isInContext(event, 'educationalPublications')

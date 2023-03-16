@@ -8,9 +8,8 @@ import time
 from utils.parser.parser import parser
 from utils.asyncHelper import doFuncAsAsync
 
-DIALOG_DEBUG = True
+DIALOG_DEBUG = False
 REQUESTS_DEBUG = False
-
 
 def cycleRefreshNews():
     while True:
@@ -22,6 +21,8 @@ def cycleRefreshNews():
 
 
 def main(event):
+    print(globalStorage['timeout'])
+    
     if DIALOG_DEBUG:
         print('===========================')
         if 'branch' in event['state']['session']:
