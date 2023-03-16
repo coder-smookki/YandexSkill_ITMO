@@ -82,3 +82,6 @@ def getSessionId(event):
 
 def getUserId(event):
     return event['session']['user']['user_id']
+
+def getState(event, state):
+    return event['state']['session'][state]

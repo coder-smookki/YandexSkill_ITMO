@@ -1,16 +1,20 @@
-from .config import getConfig
+from .config import getAskConfig, getConfig
 from utils.responseHelper import *
 from utils.triggerHelper import *
 
-config = getConfig()
-
-
 def getResponse(event, allDialogs=None):
-    return createResponse(event, config)
+    if not haveState(event, 'group'):
+        config = getAskConfig('group')
+        return createResponse(event, config)
+    elif not haveState(event, 'course'):
+        config = getAskConfig('course')
+        return createResponse(event, config)
+    return allDialogs['timeTableFind']['getResponse'](event, allDialogs)
 
 
 def isTriggered(event):
     token = {"занятий", "расписание", "расписание"}
+
     return isSimilarTokens(event, token) and isInContext(event, 'russianMenu')
 
 

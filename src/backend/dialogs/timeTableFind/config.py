@@ -1,5 +1,5 @@
 from utils.parser.parser import *
-
+from utils.responseHelper import getState
 buttons = [
     "Помощь",
     "Назад",
@@ -12,11 +12,16 @@ session_state = {
 
 
 def getConfig(event):
+    group = getState(event, 'group')
+    course = int(getState(event, 'course'))
     message = ''
     tts = ''
 
-    announces = parser('timetable.getGroupTimetable', [event["request"]['original_utterance'].split()[0],
-                                                       int(event["request"]['original_utterance'].split()[1])])
+    announces = parser(
+        'timetable.getGroupTimetable', 
+        group,
+        course
+    )
 
     for i in announces:
         message += f"""

@@ -6,10 +6,9 @@ from utils.triggerHelper import *
 def getResponse(event, allDialogs=None):
     config = getConfig(event)
     return createResponse(event, config)
-
-
+    
 def isTriggered(event):
-    return isInContext(event, 'timeTable')
+    return False
 
 
 timeTableFind = {'getResponse': getResponse, 'isTriggered': isTriggered}

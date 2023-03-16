@@ -1,12 +1,21 @@
-message = \
+askGroupMessage = \
     """
-    Напишите вашу группу и курс в формате:
-    <группа> <курс>
+    Напишите вашу группу (например, А1234)
     """
 
-tts = \
+askGroupTts = \
     """
-    Продиктуйте вашу Группу и Курс. Пример может быть такой (А1234, 4)
+    Продиктуйте вашу Группу (например, А1234)
+    """
+
+askCourseMessage = \
+    """
+    Напишите намер вашего Курса
+    """
+
+askCourseTts = \
+    """
+    Продиктуйте номер вашего Курса
     """
 
 buttons = [
@@ -21,10 +30,18 @@ session_state = {
 }
 
 
-def getConfig():
-    return {
-        'message': message,
-        'tts': tts,
-        'buttons': buttons,
-        'session_state': session_state
-    }
+def getConfig(askSubject):
+    if askSubject == 'group': 
+        return {
+            'message': askGroupMessage,
+            'tts': askGroupTts,
+            'buttons': buttons,
+            'session_state': session_state
+        }
+    elif askSubject == 'course':
+        return {
+            'message': askCourseMessage,
+            'tts': askCourseTts,
+            'buttons': buttons,
+            'session_state': session_state
+        }
