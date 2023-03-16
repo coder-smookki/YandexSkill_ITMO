@@ -7,13 +7,13 @@ from dotenv import load_dotenv;
 load_dotenv()  # noqa
 import requests
 
-from src.backend.dialogs.chessMain import config
+from dialogs.chessMain import config
 
 oauth_key = os.environ["OAUTH_IMAGE_KEY"]
 skill_id = os.environ["SKILL_ID"]
 
 # Изменить на 127.0.0.1, если будем запускать в ВМ Швепса
-api_base = 'http://46.39.30.114:5000/api/chess/'
+api_base = 'http://127.0.0.1:5000/api/chess/'
 
 all_squares = {f'{c}{n}' for c, n in product('abcdefhg', '12345678')}
 ask_help = 'Скажите "Помощь", если не получится ещё раз.'
