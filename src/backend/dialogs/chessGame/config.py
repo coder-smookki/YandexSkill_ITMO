@@ -11,7 +11,7 @@ user_move_first_message = \
 user_move_first_tts = user_move_first_message
 user_move_first_card = {
     'type': 'BigImage',
-    'image_id': {},  # Айди картинки начальной позиции, сделать
+    'image_id': '937455/40f0536e426907808499',  # Айди картинки начальной позиции, сделать
     'title': 'Начальная позиция за белых',
 }
 
