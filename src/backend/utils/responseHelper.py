@@ -64,7 +64,7 @@ def createTimeoutResponse(event, allDialogs, getRepsonse, timeoutName):
         }
 
     else:
-        return globalStorage[timeoutName + '_' + getSessionId(event)]
+        return globalStorage[timeoutName + '_' + getSessionId(event)]['response']
 
 def createButtons(buttons):
     result = []

@@ -7,7 +7,7 @@ def getResponse(event, allDialogs=None):
         print(event)
         config = copy.deepcopy(getConfig(event))
         return createResponse(event,config)
-    return createTimeoutResponse(event, allDialogs, getReponseFunc, 'eductaionPublication')
+    return createTimeoutResponse(event, allDialogs, getReponseFunc, 'educationPublication')
 
 def isTriggered(event):
     return isInContext(event, 'educationalPublications')
