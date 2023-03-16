@@ -18,9 +18,8 @@ def getConfig(event):
     tts = ''
 
     announces = parser(
-        'timetable.getGroupTimetable', 
-        group,
-        course
+        'timetable.getGroupTimetable',
+        [group,course]
     )
 
     for i in announces:
