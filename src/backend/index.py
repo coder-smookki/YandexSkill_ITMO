@@ -8,7 +8,7 @@ import time
 from utils.parser.parser import parser
 from utils.asyncHelper import doFuncAsAsync
 
-DIALOG_DEBUG = False
+DIALOG_DEBUG = True
 REQUESTS_DEBUG = False
 
 def cycleRefreshNews():
