@@ -23,7 +23,7 @@ def getConfig(event):
     message = ""
     tts = ""
 
-    announces = parser("timetable.getGroupTimetable", [group, course])
+    announces = parser("timetable.getGroupTimetable", [group, course, degree])
 
     for i in announces:
         message += f"""

@@ -30,7 +30,8 @@ def getResponse(event, allDialogs=None):
         return createResponse(event, config)
 
     setStateInEvent(event, "timeTable_group", getState(event, "timeTable_group"))
-    setStateInEvent(event, "timeTable_course", getOriginalUtterance(event))
+    setStateInEvent(event, "timeTable_course", getState(event, "timeTable_course"))
+    setStateInEvent(event, "timeTable_degree", getState(event, "timeTable_degree"))
     return allDialogs["timeTableFind"]["getResponse"](event, allDialogs)
 
 
