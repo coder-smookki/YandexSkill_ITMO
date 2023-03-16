@@ -84,4 +84,14 @@ def getUserId(event):
     return event['session']['user']['user_id']
 
 def getState(event, state):
-    return event['state']['session'][state]
+    return event['session_state'][state]
+
+def getOriginalUtterance(event):
+    return event["request"]['original_utterance']
+
+def setStateInEvent(event, stateName, stateValue):
+    event['session_state'][stateName] = stateValue
+    return event
+
+def getCommand(event):
+    return event["request"]['command']

@@ -3,12 +3,17 @@ from utils.responseHelper import *
 from utils.triggerHelper import *
 
 def getResponse(event, allDialogs=None):
-    if not haveState(event, 'group'):
+    if not haveState(event, 'timeTable_group'):
         config = getConfig('group')
+        config['session_state']['timeTable_group'] = 'notEntered'
         return createResponse(event, config)
-    elif not haveState(event, 'course'):
+    
+    elif not haveState(event, 'timeTable_course'):
         config = getConfig('course')
+        config['session_state']['timeTable_group'] = getCommand(event)
         return createResponse(event, config)
+    
+    setStateInEvent(event, 'timeTable_course', getCommand(event))
     return allDialogs['timeTableFind']['getResponse'](event, allDialogs)
 
 
