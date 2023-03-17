@@ -9,10 +9,10 @@ def getResponse(event, allDialogs=None):
     countOnOnePage = 2
     if isSimilarTokens(event, nextPageTokens):
         lastElem = getState(event, 'timeTable_lastElem')
-        config = getPageConfig(event, lastElem + countOnOnePage + 1, countOnOnePage)
+        config = getPageConfig(event, lastElem, countOnOnePage)
     elif isSimilarTokens(event, pastPageTokens):
         lastElem = getState(event, 'timeTable_lastElem')
-        config = getPageConfig(event, lastElem - countOnOnePage + 1, countOnOnePage)
+        config = getPageConfig(event, lastElem, countOnOnePage)
         print(config)
     else:
         config = getConfig(event, countOnOnePage)
