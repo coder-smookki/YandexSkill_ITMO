@@ -10,7 +10,7 @@ def getPageConfig(event, startFromElem, countOnOnePage):
 
     if startFromElem < 0:
         startFromElem = 0
-    elif startFromElem >= len(pages):
+    elif startFromElem > len(pages):
         startFromElem = len(pages) - countOnOnePage + 1
     message += (
         "Страница "
