@@ -3,9 +3,9 @@ from utils.responseHelper import *
 from utils.triggerHelper import *
 
 def getResponse(event, allDialogs=None):
-    if isSimilarCommand('Следующая страница'):
+    if isSimilarCommand(event, 'Следующая страница'):
         pass
-    if isSimilarCommand('Предыдущая страница'):
+    if isSimilarCommand(event, 'Предыдущая страница'):
         pass
 
     config = getConfig(event)
