@@ -1,5 +1,6 @@
 message = \
     """
+    Тут был Naury
     """
 
 tts = \
