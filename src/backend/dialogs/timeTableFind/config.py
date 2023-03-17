@@ -13,10 +13,11 @@ def getPageConfig(event, startFromElem, countOnOnePage):
             startFromElem = 0
         elif startFromElem > len(pages):
             startFromElem = len(pages) - countOnOnePage
+        lastElem = startFromElem + countOnOnePage
         print('AFTER startFromElem:', startFromElem)
         print('arrEnd:', startFromElem + countOnOnePage)
         # maxPages = len(pages) // pageNum
-        for i in pages[startFromElem:startFromElem + countOnOnePage]:
+        for i in pages[startFromElem:lastElem]:
             message += f"""
             {i['dayWeek']}
             {i['date']}
@@ -30,7 +31,6 @@ def getPageConfig(event, startFromElem, countOnOnePage):
             ------------
             """
         # {i['classroomNavigator']}
-        lastElem = getState(event, 'timeTable_lastElem')
         session_state = {
             'branch': 'timeTable',
             'timeTable_timetable': pages,
