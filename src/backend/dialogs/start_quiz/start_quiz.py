@@ -11,7 +11,7 @@ def getResponse(event, context):
 
 def isTriggered(event, context):
     token = {"викторина", "виктори", "start_quiz", "квиз"}
-    return isSimilarTokens(event, token) and isInContext(event, 'generalMenu')
+    return isSimilarTokens(event, token) and isInContext(event, 'russianMenu')
 
 
 library = {'getResponse': getResponse, 'isTriggered': isTriggered}
