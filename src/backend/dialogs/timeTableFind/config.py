@@ -1,7 +1,7 @@
 from utils.responseHelper import *
 from utils.parser.parser import *
 
-def getConfig(event, pageNum):
+def getConfig(event, pageNum=None):
     message = ""
     tts = ""
 
