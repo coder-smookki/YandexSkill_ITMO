@@ -20,8 +20,8 @@ def getPageConfig(event, startFromElem, countOnOnePage):
         + " из "
         + str(ceil(len(pages) / countOnOnePage))
     )
-    print('lastElem:', lastElem)
     lastElem = startFromElem + countOnOnePage
+    print('lastElem:', lastElem)
     # maxPages = len(pages) // pageNum
     for i in pages[startFromElem : lastElem]:
         message += f"""
