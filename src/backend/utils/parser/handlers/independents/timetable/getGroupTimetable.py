@@ -43,7 +43,14 @@ def getGroupTimetable(args):
     lectures = soup.select('.timetable-article__row:nth-child(n+3)')
     if len(lectures) < 2:
         return False
+
+    skipFirst = False
     for lecture in lectures:
+        if not skipFirst:
+            skipFirst = True
+            continue
+        if lecture.select_one('.timetable-article__day') is None:
+            continue
         lectureResult = {}
         lectureResult['dayWeek'] = textNormalizer(lecture.select_one('.timetable-article__day').getText())
         lectureResult['date'] = textNormalizer(lecture.select_one('.timetable-article__date').getText())
