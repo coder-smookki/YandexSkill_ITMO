@@ -15,7 +15,6 @@ def getResponse(event, allDialogs=None):
         config["session_state"]["timeTable_group"] = getOriginalUtterance(event)
         return createResponse(event, config)
 
-
     degree = getOriginalUtterance(event)
     setStateInEvent(event, "timeTable_group", getState(event, "timeTable_group"))
     setStateInEvent(event, "timeTable_degree", degree)
@@ -24,11 +23,12 @@ def getResponse(event, allDialogs=None):
 
 def isTriggered(event):
     token = {"занятий", "расписание", "расписание"}
-
+    askToken = {"еще", "заново", "ещё", "заново"}
     return (
         isSimilarTokens(event, token)
         and isInContext(event, "russianMenu")
         or isInContext(event, "timeTable")
+        and isSimilarTokens(event, askToken)
     )
 
 
