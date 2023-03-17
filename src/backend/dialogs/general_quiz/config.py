@@ -22,7 +22,7 @@ def getConfig(num, event):
     correct_answer = questions["answers"][num]
     answers = questions["uncorrect_answers"]
     print(answers)
-    answers[random.randint(0, len(answers))] = correct_answer
+    answers[random.randint(0, len(answers) - 1)] = correct_answer
     buttons_response = answers + buttons
     states = {
         "count_questions": event["state"]["session"]["count_questions"],
