@@ -11,7 +11,7 @@ def getResponse(event, allDialogs=None):
         lastElem = getState(event, 'lastElem')
         config = getPageConfig(event, lastElem - countOnOnePage, countOnOnePage)
     else:
-        config = getConfig(event)
+        config = getConfig(event, countOnOnePage)
     print(config)
     return createResponse(event, config)
     
