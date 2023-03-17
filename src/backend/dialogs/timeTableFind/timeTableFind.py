@@ -3,12 +3,16 @@ from utils.responseHelper import *
 from utils.triggerHelper import *
 
 def getResponse(event, allDialogs=None):
+    countOnOnePage = 3
     if isSimilarCommand(event, 'Следующая страница'):
-        pass
-    if isSimilarCommand(event, 'Предыдущая страница'):
-        pass
-
-    config = getConfig(event)
+        lastElem = getState(event, 'lastElem')
+        config = getConfig(event, lastElem + countOnOnePage, countOnOnePage)
+    elif isSimilarCommand(event, 'Предыдущая страница'):
+        lastElem = getState(event, 'lastElem')
+        config = getConfig(event, lastElem - countOnOnePage, countOnOnePage)
+    else:
+        config = getConfig(event)
+    
     return createResponse(event, config)
     
 def isTriggered(event):
