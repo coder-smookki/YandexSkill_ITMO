@@ -21,11 +21,15 @@ def getConfig(event):
     for i in range(len(publications)):
         message += f"""{publications[i]['title']}\n------------\n"""
         tts += f'{publications[i]["title"]}'
-        buttons.insert(0, {"title": f'{i+1}', "url": f"{publications[i]['link']}", "hide": False})
+        buttons.append({"title": f"{publications[i]['title']}", "url": f"{publications[i]['link']}", "hide": False})
 
-    return {
+    result = {
         'message': message,
         'tts': tts,
         'buttons': buttons,
         'session_state': session_state
     }
+
+    buttons.clear()
+
+    return result
