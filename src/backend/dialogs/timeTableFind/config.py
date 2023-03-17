@@ -46,6 +46,7 @@ def getConfig(event, countOnOnePage):
     group = getState(event, "timeTable_group")
     degree = getState(event, 'timeTable_degree')
     timetable = parser("timetable.getGroupTimetable", [group, degree])
+    print(len(timetable))
     buttons = ["Помощь", "Назад", "Выйти"]
 
     if not timetable:
@@ -67,4 +68,5 @@ def getConfig(event, countOnOnePage):
         setStateInEvent(event, 'timeTable_timetable', timetable)
         setStateInEvent(event, 'timeTable_lastElem', 0)
         config = getPageConfig(event, 0, countOnOnePage)
+
     return config
