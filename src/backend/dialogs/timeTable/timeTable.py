@@ -28,6 +28,7 @@ def isTriggered(event):
         isSimilarTokens(event, token)
         and isInContext(event, "russianMenu")
         or isInContext(event, "timeTable")
+        or isInContext(event, "timeTable")
         and isSimilarTokens(event, askToken)
     )
 
