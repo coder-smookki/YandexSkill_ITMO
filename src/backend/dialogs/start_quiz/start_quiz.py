@@ -14,4 +14,4 @@ def isTriggered(event, context):
     return isSimilarTokens(event, token) and isInContext(event, 'russianMenu')
 
 
-library = {'getResponse': getResponse, 'isTriggered': isTriggered}
+start_quiz = {'getResponse': getResponse, 'isTriggered': isTriggered}

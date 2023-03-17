@@ -26,6 +26,8 @@ from .toAForeignStudentBechelorCourse.toAForeignStudentBachelorCource import toA
 from .scholarships.scholarships import scholarships
 from .chessGame.chessGame import chessGame
 from .chessMain.chessMain import chessMain
+from .start_quiz.start_quiz import start_quiz
+from .general_quiz.general_quiz import general_quiz
 
 allDialogs = {
     'generalMenu': generalMenu,
@@ -55,5 +57,7 @@ allDialogs = {
     'toAForeignStudentBechelorCource': toAForeignStudentBechelorCourse,
     'educationalPublicationsFind': educationalPublicationsFind,
     'scholarships': scholarships,
+    'start_quiz': start_quiz,
+    'general_quiz': general_quiz,
     'russianMenu': russianMenu
 }
