@@ -2,7 +2,7 @@ import json
 import random
 from utils.responseHelper import *
 
-with open("../../questions.json") as file:
+with open("questions.json") as file:
     questions = json.loads(file.read())
 
 buttons = [
