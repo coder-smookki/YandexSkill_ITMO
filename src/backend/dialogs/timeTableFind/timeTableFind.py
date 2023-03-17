@@ -4,8 +4,10 @@ from utils.triggerHelper import *
 
 
 def getResponse(event, allDialogs=None):
-    config = getConfig(event)
-    return createResponse(event, config)
+    def getResponseFunc():
+        config = getConfig(event)
+        createResponse(event, config)
+    return createTimeoutResponse(event, allDialogs, getRepsonseFunc, 'timeTable')
     
 def isTriggered(event):
     return isInContext(event, 'timeTable') and isSimilarTokens(event, {'еще', 'ещё', 'попробовать', 'заново'})
