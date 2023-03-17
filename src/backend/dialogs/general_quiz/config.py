@@ -21,7 +21,7 @@ session_state = {
 def getConfig(num, event):
     message = questions["questions"][num]
     correct_answer = questions["answers"][num]
-    answers = copy.deepcopy(questions["uncorrect_answers"])
+    answers = questions["uncorrect_answers"]
     answers[random.randint(0, len(answers))] = correct_answer
     buttons_response = answers + buttons
     states = {
