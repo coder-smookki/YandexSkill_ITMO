@@ -104,8 +104,10 @@ def get_next_move(user_move: str, event, prev_moves: str, session_states) -> dic
 
 def event_move(event):
     # Часть обработки сообщения пользователя
+    print(1)
     tokens = replace_scores_to_spaces([ru_to_eng(s.lower()) for s in event["request"]["tokens"]])
     move = ''.join([token for token in tokens if token in 'abcdefgh12345678'])
+    print(f'{move=}')
 
     try:
         prev_moves = getState(event, 'prev_moves')
