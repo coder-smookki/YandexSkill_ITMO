@@ -11,7 +11,7 @@ def getPageConfig(event, startFromElem, countOnOnePage):
         print('BEFORE startFromElem:', startFromElem)
         if startFromElem < 0:
             startFromElem = 0
-        elif startFromElem > len(pages):
+        elif startFromElem >= len(pages):
             startFromElem = len(pages) - countOnOnePage
         lastElem = startFromElem + countOnOnePage - 1
         print('AFTER startFromElem:', startFromElem)
