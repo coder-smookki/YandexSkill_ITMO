@@ -20,7 +20,8 @@ def getResponse(event, allDialogs):
             return createTimeoutResponse(event, allDialogs, getReponseFunc, 'chessGameTimeout')
         else:
             return event_color(event)
-    except KeyError:
+    except Exception as e:
+        print(e)
         return event_color(event)
 
 
