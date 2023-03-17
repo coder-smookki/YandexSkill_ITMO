@@ -1,4 +1,4 @@
-from .config import getConfig, check_answerm, getFinishConfig
+from .config import getConfig, check_answer, getFinishConfig
 from utils.responseHelper import *
 from utils.triggerHelper import *
 
