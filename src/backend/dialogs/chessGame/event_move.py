@@ -3,7 +3,7 @@ from itertools import product
 import requests
 from dialogs.chessMain import config
 from utils.responseHelper import getState
-from db import get_board_id
+from .db import get_board_id
 
 # Изменить на 127.0.0.1, если будем запускать в ВМ Швепса
 api_base = 'http://127.0.0.1:5000/api/chess/'
