@@ -9,8 +9,11 @@ def getResponse(event, allDialogs=None):
 
 
 def isTriggered(event):
-    token = {"еще", "факты", "факт"}
-    return isSimilarTokens(event, token) and (isInContext(event, 'russianMenu') or isInContext(event, 'randomFact'))
+    token = {"факты", "факт"}
+    tokenRepeat = {"еще"}
+    return (isSimilarTokens(event, token) and isInContext(event, "russianMenu")) or (
+        (isInContext(event, "randomFact") and isSimilarTokens(event, tokenRepeat))
+    )
 
 
-randomFact = {'getResponse': getResponse, 'isTriggered': isTriggered}
+randomFact = {"getResponse": getResponse, "isTriggered": isTriggered}

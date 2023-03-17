@@ -15,17 +15,7 @@ def getResponse(event, allDialogs=None):
         config["session_state"]["timeTable_group"] = getOriginalUtterance(event)
         return createResponse(event, config)
 
-
     degree = getOriginalUtterance(event)
-    if 'бакал' in degree or 'unde' in degree:
-        degree = 3
-    elif 'магис' in degree or 'magis' in degree: 
-        degree = 4
-    elif 'спец' in degree or 'spec' in degree: 
-        degree = 4
-    else:
-        raise ValueError("Сould not recognize degree: " + degree)
-
     setStateInEvent(event, "timeTable_group", getState(event, "timeTable_group"))
     setStateInEvent(event, "timeTable_degree", degree)
     return allDialogs["timeTableFind"]["getResponse"](event, allDialogs)
@@ -33,11 +23,13 @@ def getResponse(event, allDialogs=None):
 
 def isTriggered(event):
     token = {"занятий", "расписание", "расписание"}
-
+    askToken = {"еще", "заново", "ещё", "заново"}
     return (
         isSimilarTokens(event, token)
         and isInContext(event, "russianMenu")
         or isInContext(event, "timeTable")
+        or isInContext(event, "timeTable")
+        and isSimilarTokens(event, askToken)
     )
 
 
