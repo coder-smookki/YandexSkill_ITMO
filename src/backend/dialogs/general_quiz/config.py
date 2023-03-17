@@ -22,7 +22,7 @@ def getConfig(num, event):
     message = questions["questions"][num]
     correct_answer = questions["answers"][num]
     answers = copy.deepcopy(questions["uncorrect_answers"])
-    answers[random.randint(0, 4)] = correct_answer
+    answers[random.randint(0, 3)] = correct_answer
     buttons_response = answers + buttons
     states = {
         "count_questions": event["state"]["session"]["count_questions"],
