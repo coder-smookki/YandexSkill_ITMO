@@ -41,8 +41,8 @@ def getConfig(num, event):
 
 def getFinishConfig(event):
     return {
-        'message': "Ваш результат: " + str(getState(event, "count_correct_response")) + "/" + str(getState(event, "count_correct_response")),
-        'tts': "Ваш результат:" + str(getState(event, "count_correct_response")) + "из" + str(getState(event, "count_correct_response")),
+        'message': "Ваш результат: " + str(getState(event, "count_correct_response")) + "/" + str(getState(event, "count_questions")),
+        'tts': "Ваш результат:" + str(getState(event, "count_correct_response")) + "из" + str(getState(event, "count_questions")),
         'buttons': buttons,
         'session_state': {
             "branch": "russianMenu"
