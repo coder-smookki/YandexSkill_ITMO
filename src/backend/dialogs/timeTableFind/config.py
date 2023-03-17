@@ -28,6 +28,7 @@ def getConfig(event, pageNum=None):
             'timeTable_timetable': pages
         }
         buttons = ["Следующая страница", "Предыдущая страница", "Назад", 'Выйти']
+        print(message)
         return {
             "message": message,
             "tts": tts,
