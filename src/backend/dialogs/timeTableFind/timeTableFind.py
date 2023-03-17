@@ -13,7 +13,6 @@ def getResponse(event, allDialogs=None):
     elif isSimilarTokens(event, pastPageTokens):
         lastElem = getState(event, 'timeTable_lastElem')
         config = getPageConfig(event, lastElem - countOnOnePage, countOnOnePage)
-        print(config)
     else:
         config = getConfig(event, countOnOnePage)
     return createResponse(event, config)
