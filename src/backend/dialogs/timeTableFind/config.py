@@ -28,7 +28,7 @@ def getPageConfig(event, startFromElem, countOnOnePage):
             ------------
             """
         # {i['classroomNavigator']}
-        lastElem = getState(event, 'lastElem')
+        lastElem = getState(event, 'timeTable_lastElem')
         session_state = {
             'branch': 'timeTable',
             'timeTable_timetable': pages,
