@@ -1,10 +1,6 @@
 from utils.parser.parser import *
 from utils.responseHelper import getState
 
-buttons = ["Помощь", "Назад", "Выйти"]
-
-session_state = {"branch": "timeTable"}
-
 
 def getConfig(event):
     group = getState(event, "timeTable_group")
@@ -12,10 +8,13 @@ def getConfig(event):
 
     message = ""
     tts = ""
+    buttons = ["Помощь", "Назад", "Выйти"]
+
     announces = parser("timetable.getGroupTimetable", [group, degree])
     if not announces:
         message='Произошла какая-то ошибка. Скорее всего, вы ввели недействительные данные.'
         tts = 'Произошла какая-то ошибка. Скорее всего, вы ввели недействительные данные.'
+        buttons.insert(0, 'Попробовать еще раз')
     else:
         for i in announces:
             message += f"""
@@ -36,5 +35,4 @@ def getConfig(event):
         "message": message,
         "tts": tts,
         "buttons": buttons,
-        "session_state": session_state,
     }

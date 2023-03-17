@@ -8,7 +8,7 @@ def getResponse(event, allDialogs=None):
     return createResponse(event, config)
     
 def isTriggered(event):
-    return False
+    return isInContext('timeTable') and isSimilarTokens({'еще', 'ещё', 'попробовать', 'заново'})
 
 
 timeTableFind = {'getResponse': getResponse, 'isTriggered': isTriggered}
