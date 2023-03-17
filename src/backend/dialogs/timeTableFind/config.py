@@ -31,6 +31,7 @@ def getConfig(event):
             {i['classFormat']}\n
             ------------\n
             """
+
     return {
         "message": message,
         "tts": tts,

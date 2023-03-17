@@ -1,3 +1,3 @@
 from utils.parser.parser import parser
 
-print(parser('educationalPublications', 'лазер'))
+print(parser('timetable.getGroupTimetable', ['n3110', 3]))
