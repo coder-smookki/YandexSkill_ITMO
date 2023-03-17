@@ -1,6 +1,6 @@
 from utils.responseHelper import *
 from utils.parser.parser import *
-from math import ceil
+from math import ceil, floor
 
 
 def getPageConfig(event, startFromElem, countOnOnePage):
@@ -14,7 +14,7 @@ def getPageConfig(event, startFromElem, countOnOnePage):
         startFromElem = len(pages) - countOnOnePage + 1
     message += (
         "Страница "
-        + str(ceil(startFromElem / countOnOnePage + 1))
+        + str(floor(startFromElem / countOnOnePage + 1))
         + " из "
         + str(ceil(len(pages) / countOnOnePage))
     )
