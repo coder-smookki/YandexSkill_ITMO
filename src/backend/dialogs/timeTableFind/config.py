@@ -18,9 +18,9 @@ def getPageConfig(event, startFromElem, countOnOnePage):
         + " из "
         + str(ceil(len(pages) / countOnOnePage))
     )
-    lastElem = startFromElem + countOnOnePage - 1
+    lastElem = startFromElem + countOnOnePage
     # maxPages = len(pages) // pageNum
-    for i in pages[startFromElem : lastElem + 1]:
+    for i in pages[startFromElem : lastElem]:
         message += f"""
             {i['dayWeek']}
             {i['date']}
