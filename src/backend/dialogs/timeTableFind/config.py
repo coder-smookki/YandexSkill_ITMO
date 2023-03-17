@@ -2,10 +2,10 @@ from utils.responseHelper import *
 from utils.parser.parser import *
 
 def getConfig(event, startFromElem=None, countOnOnePage=3):
-    message = ""
-    tts = ""
-
     if not (startFromElem is None) and startFromElem >= 0:
+        message = ""
+        tts = ""
+
         pages = getState(event, 'timeTable_timetable')
 
         if startFromElem < 0:
@@ -34,7 +34,6 @@ def getConfig(event, startFromElem=None, countOnOnePage=3):
             'timeTable_timetable': pages,
         }
         buttons = ["Следующая страница", "Предыдущая страница", "Назад", 'Выйти']
-        print(message)
         return {
             "message": message,
             "tts": tts,

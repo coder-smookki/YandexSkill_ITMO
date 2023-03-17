@@ -12,7 +12,7 @@ def getResponse(event, allDialogs=None):
         config = getConfig(event, lastElem - countOnOnePage, countOnOnePage)
     else:
         config = getConfig(event)
-    
+    print(config)
     return createResponse(event, config)
     
 def isTriggered(event):
