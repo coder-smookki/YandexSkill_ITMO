@@ -6,7 +6,7 @@ def getConfig(event, startFromElem=None, countOnOnePage=3):
     tts = ""
 
     if not (startFromElem is None) and startFromElem >= 0:
-        pages = copy.deepcopy(getState(event, 'timeTable_timetable'))
+        pages = getState(event, 'timeTable_timetable')
 
         if startFromElem < 0:
             startFromElem = 0
