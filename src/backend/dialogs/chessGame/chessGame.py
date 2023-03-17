@@ -15,17 +15,13 @@ def getResponse(event, allDialogs):
             config = event_color(event)
         return createResponse(event, config)
 
-    return createTimeoutResponse(event, allDialogs, getReponseFunc, 'chessGameTimeout')
-
-    # try:
-    #     if getState(event, 'orientation'):  # т.е. играет и есть цвет
-    #         config =
-    #     else:
-    #         config = event_color(event)
-    # except KeyError:
-    #     config = event_color(event)
-    #
-    # return config
+    try:
+        if getState(event, 'orientation'):  # т.е. играет и есть цвет
+            return createTimeoutResponse(event, allDialogs, getReponseFunc, 'chessGameTimeout')
+        else:
+            return event_color(event)
+    except KeyError:
+        return event_color(event)
 
 
 def isTriggered(event):
