@@ -21,8 +21,6 @@ def getPageConfig(event, startFromElem, countOnOnePage):
         + str(ceil(len(pages) / countOnOnePage))
     )
     lastElem = startFromElem + countOnOnePage
-    if lastElem >= len(pages):
-        lastElem = len(pages) + 1
     print('lastElem:', lastElem)
     # maxPages = len(pages) // pageNum
     for i in pages[startFromElem : lastElem]:
@@ -39,8 +37,6 @@ def getPageConfig(event, startFromElem, countOnOnePage):
             ------------
             """
     # {i['classroomNavigator']}
-    if lastElem == len(pages) + 1:
-        lastElem = lastElem - 1
     session_state = {
         "branch": "timeTable",
         "timeTable_timetable": pages,
