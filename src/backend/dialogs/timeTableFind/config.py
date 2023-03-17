@@ -13,7 +13,7 @@ def getPageConfig(event, startFromElem, countOnOnePage):
             startFromElem = 0
         elif startFromElem > len(pages):
             startFromElem = len(pages) - countOnOnePage
-        lastElem = startFromElem + countOnOnePage
+        lastElem = startFromElem + countOnOnePage - 1
         print('AFTER startFromElem:', startFromElem)
         print('arrEnd:', startFromElem + countOnOnePage)
         # maxPages = len(pages) // pageNum
