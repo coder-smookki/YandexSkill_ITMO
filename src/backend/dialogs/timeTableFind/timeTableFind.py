@@ -1,4 +1,4 @@
-from .config import getConfig
+from .config import *
 from utils.responseHelper import *
 from utils.triggerHelper import *
 
@@ -6,10 +6,10 @@ def getResponse(event, allDialogs=None):
     countOnOnePage = 1
     if isSimilarCommand(event, 'Следующая страница'):
         lastElem = getState(event, 'lastElem')
-        config = getConfig(event, lastElem + countOnOnePage, countOnOnePage)
+        config = getPageConfig(event, lastElem + countOnOnePage, countOnOnePage)
     elif isSimilarCommand(event, 'Предыдущая страница'):
         lastElem = getState(event, 'lastElem')
-        config = getConfig(event, lastElem - countOnOnePage, countOnOnePage)
+        config = getPageConfig(event, lastElem - countOnOnePage, countOnOnePage)
     else:
         config = getConfig(event)
     print(config)

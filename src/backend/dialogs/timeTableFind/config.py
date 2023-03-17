@@ -1,7 +1,7 @@
 from utils.responseHelper import *
 from utils.parser.parser import *
 
-def getConfig(event, startFromElem=None, countOnOnePage=3):
+def getPageConfig(event, startFromElem, countOnOnePage):
     if not (startFromElem is None) and startFromElem >= 0:
         message = ""
         tts = ""
@@ -41,8 +41,7 @@ def getConfig(event, startFromElem=None, countOnOnePage=3):
             'session_state': session_state
         }
 
-
-
+def getConfig(event, countOnOnePage):
     group = getState(event, "timeTable_group")
     degree = getState(event, 'timeTable_degree')
     timetable = parser("timetable.getGroupTimetable", [group, degree])
@@ -52,6 +51,12 @@ def getConfig(event, startFromElem=None, countOnOnePage=3):
         message = 'Произошла какая-то ошибка. Скорее всего, вы ввели недействительные данные.'
         tts = 'Произошла какая-то ошибка. Скорее всего, вы ввели недействительные данные.'
         buttons.insert(0, 'Попробовать еще раз')
+        return {
+            "message": message,
+            "tts": tts,
+            "buttons": buttons,
+        }
+        
     else:
         session_state = {
             'branch': 'timeTable',
@@ -60,5 +65,5 @@ def getConfig(event, startFromElem=None, countOnOnePage=3):
         }
         setStateInEvent(event, 'timeTable_timetable', timetable)
         setStateInEvent(event, 'timeTable_lastElem', 0)
-        config = getConfig(event, 0, countOnOnePage)
+        config = getPageConfig(event, 0, countOnOnePage)
     return config
