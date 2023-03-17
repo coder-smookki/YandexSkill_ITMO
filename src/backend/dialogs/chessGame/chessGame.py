@@ -5,18 +5,16 @@ from utils.triggerHelper import *
 
 
 def getResponse(event, allDialogs):
-    o = 0
-    try:
-        if o := getState(event, 'orientation'):  # т.е. играет и есть цвет
-            config = event_move(event)
-        else:
+    def getReponseFunc(event, allDialogs):
+        try:
+            if getState(event, 'orientation'):  # т.е. играет и есть цвет
+                config = event_move(event)
+            else:
+                config = event_color(event)
+        except KeyError as e:
             config = event_color(event)
-        print(f'--- {o}')
-    except KeyError as e:
-        config = event_color(event)
-        print(f'--- KE {o} {e}')
-
-    return createResponse(event, config)
+        return createResponse(event, config)
+    return createTimeoutResponse(event, allDialogs, getReponseFunc, 'chessGameTimeout')
 
 
 def isTriggered(event):
