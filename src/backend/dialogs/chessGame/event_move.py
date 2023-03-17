@@ -123,7 +123,7 @@ def event_move(event):
 
     data = get_next_move(''.join(moves), event, session_states["prev_moves"], session_states)
     if 'tts' in data:  # Если словарь с tts - это результат get_config
-        print(f'{moves=}\n{tokens=}\n')
+        print(f'{event["request"]=}\n{tokens=}\n')
         return data
 
     stockfish_move = data["stockfish_move"]
