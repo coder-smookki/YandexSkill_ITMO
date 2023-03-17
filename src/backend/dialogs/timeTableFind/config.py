@@ -1,7 +1,9 @@
 from utils.parser.parser import *
 from utils.responseHelper import getState
 
-
+session_state = {
+    "branch": "timeTable"
+}
 def getConfig(event):
 
 
