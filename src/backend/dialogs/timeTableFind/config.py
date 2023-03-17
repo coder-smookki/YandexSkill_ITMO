@@ -21,6 +21,8 @@ def getPageConfig(event, startFromElem, countOnOnePage):
         + str(ceil(len(pages) / countOnOnePage))
     )
     lastElem = startFromElem + countOnOnePage
+    if lastElem >= len(pages):
+        lastElem = len(pages) - 1
     print('lastElem:', lastElem)
     # maxPages = len(pages) // pageNum
     for i in pages[startFromElem : lastElem]:
