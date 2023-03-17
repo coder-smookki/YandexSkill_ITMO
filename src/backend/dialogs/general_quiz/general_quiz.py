@@ -3,7 +3,7 @@ from utils.responseHelper import *
 from utils.triggerHelper import *
 
 
-def getResponse(event, context):
+def getResponse(event):
     check_answer(event)
     if getState(event, "count_questions") < 10:
         config = getConfig(getState(event, getState(event, "count_questions")), event)
@@ -12,7 +12,7 @@ def getResponse(event, context):
     return createResponse(event, config)
 
 
-def isTriggered(event, context):
+def isTriggered(event):
     token = {"назад", "выход"}
     return not isSimilarTokens(event, token) and isInContext(event, 'start_quiz')
 

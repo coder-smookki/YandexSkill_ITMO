@@ -5,11 +5,11 @@ from utils.triggerHelper import *
 config = getConfig()
 
 
-def getResponse(event, context):
+def getResponse(event):
     return createResponse(event, config)
 
 
-def isTriggered(event, context):
+def isTriggered(event):
     token = {"викторина", "виктори", "start_quiz", "квиз"}
     return isSimilarTokens(event, token) and isInContext(event, 'russianMenu')
 
