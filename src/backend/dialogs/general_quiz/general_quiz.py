@@ -6,7 +6,7 @@ from utils.triggerHelper import *
 def getResponse(event, allDialogs):
     check_answer(event)
     if getState(event, "count_questions") < 10:
-        config = getConfig(getState(event, getState(event, "count_questions")), event)
+        config = getConfig(getState(event, "count_questions"), event)
     else:
         config = getFinishConfig(event)
     return createResponse(event, config)
