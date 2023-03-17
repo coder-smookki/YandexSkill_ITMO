@@ -3,19 +3,15 @@ from utils.parser.parser import *
 
 
 def getPageConfig(event, startFromElem, countOnOnePage):
-    message = ""
+    pages = copy.deepcopy(getState(event, "timeTable_timetable"))
+    message = "Страница " + str(startFromElem // countOnOnePage) + ' из ' + str(len(pages) // countOnOnePage) 
     tts = ""
 
-    pages = copy.deepcopy(getState(event, "timeTable_timetable"))
-    print("len(pages):", len(pages))
-    print("BEFORE startFromElem:", startFromElem)
     if startFromElem < 0:
         startFromElem = 0
     elif startFromElem >= len(pages):
         startFromElem = len(pages) - countOnOnePage
     lastElem = startFromElem + countOnOnePage - 1
-    print("AFTER startFromElem:", startFromElem)
-    print("arrEnd:", startFromElem + countOnOnePage)
     # maxPages = len(pages) // pageNum
     for i in pages[startFromElem : lastElem + 1]:
         message += f"""
