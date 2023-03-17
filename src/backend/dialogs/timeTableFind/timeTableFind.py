@@ -12,7 +12,7 @@ def getResponse(event, allDialogs=None):
     return createResponse(event, config)
     
 def isTriggered(event):
-    return isInContext(event, 'timeTable') and (isSimilarCommand('Следующая страница') or isSimilarCommand('Предыдущая страница'))
+    return isInContext(event, 'timeTable') and (isSimilarCommand(event, 'Следующая страница') or isSimilarCommand(event, 'Предыдущая страница'))
 
 
 timeTableFind = {'getResponse': getResponse, 'isTriggered': isTriggered}
