@@ -6,7 +6,7 @@ def getPageConfig(event, startFromElem, countOnOnePage):
         message = ""
         tts = ""
 
-        pages = getState(event, 'timeTable_timetable')
+        pages = copy.deepcopy(getState(event, 'timeTable_timetable'))
 
         if startFromElem < 0:
             startFromElem = 0
