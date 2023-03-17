@@ -23,15 +23,16 @@ def getPageConfig(event, startFromElem, countOnOnePage):
             {i['subjectName']}
             {i['lecturerName']}
             {i['classroomNumber']}
-            {i['classroomNavigator']}
+            {i['classroomAddress']}
             {i['classFormat']}
             ------------
             """
-        # {i['classroomAddress']}
-
+        # {i['classroomNavigator']}
+        lastElem = getState(event, 'lastElem')
         session_state = {
             'branch': 'timeTable',
             'timeTable_timetable': pages,
+            'timeTable_lastElem': lastElem
         }
         buttons = ["Следующая страница", "Предыдущая страница", "Назад", 'Выйти']
         return {
@@ -56,7 +57,7 @@ def getConfig(event, countOnOnePage):
             "tts": tts,
             "buttons": buttons,
         }
-        
+
     else:
         session_state = {
             'branch': 'timeTable',
