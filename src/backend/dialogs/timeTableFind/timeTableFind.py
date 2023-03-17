@@ -2,12 +2,15 @@ from .config import *
 from utils.responseHelper import *
 from utils.triggerHelper import *
 
+nextPageTokens = {"дальше", "далее", "следующая", "некст", "следующий"}
+pastPageTokens = {"предыдущая", "обратно"}
+
 def getResponse(event, allDialogs=None):
     countOnOnePage = 1
-    if isSimilarCommand(event, 'Следующая страница'):
+    if isSimilarTokens(event, nextPageTokens):
         lastElem = getState(event, 'lastElem')
         config = getPageConfig(event, lastElem + countOnOnePage, countOnOnePage)
-    elif isSimilarCommand(event, 'Предыдущая страница'):
+    elif isSimilarTokens(event, pastPageTokens):
         lastElem = getState(event, 'lastElem')
         config = getPageConfig(event, lastElem - countOnOnePage, countOnOnePage)
     else:
@@ -16,8 +19,6 @@ def getResponse(event, allDialogs=None):
     return createResponse(event, config)
     
 def isTriggered(event):
-    nextPageTokens = {"дальше", "далее", "следующая", "некст", "следующий"}
-    pastPageTokens = {"предыдущая", "обратно"}
     return isInContext(event, "timeTable") and (isSimilarTokens(event, nextPageTokens) or isSimilarTokens(event, pastPageTokens))
 
 
