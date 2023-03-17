@@ -3,8 +3,13 @@ from utils.responseHelper import getState
 
 
 def getConfig(event):
+
+
     group = getState(event, "timeTable_group")
     degree = getState(event, 'timeTable_degree')
+
+    print(group)
+    print(degree)
 
     message = ""
     tts = ""
