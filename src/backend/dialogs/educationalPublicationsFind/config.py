@@ -1,4 +1,5 @@
 from utils.parser.parser import *
+import copy
 
 buttons = [
     "Назад",
@@ -23,13 +24,13 @@ def getConfig(event):
         tts += f'{publications[i]["title"]}'
         buttons.append({"title": f"{publications[i]['title']}", "url": f"{publications[i]['link']}", "hide": False})
 
-    result = {
-        'message': message,
-        'tts': tts,
-        'buttons': buttons,
-        'session_state': session_state
-    }
+    buttons_response = copy.deepcopy(buttons)
 
     buttons.clear()
 
-    return result
+    return {
+        'message': message,
+        'tts': tts,
+        'buttons': buttons_response,
+        'session_state': session_state
+    }
