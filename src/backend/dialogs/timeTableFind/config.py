@@ -9,6 +9,11 @@ def getConfig(event, pageNum=None):
         countOnOnePage = 3
         startPagesArrFrom = (pageNum - 1) * countOnOnePage
         pages = copy.deepcopy(getState(event, 'timeTable_timetable'))
+        # maxPages = len(pages) // pageNum
+        if startPagesArrFrom >= len(pages):
+            startPagesArrFrom = len(pages) - (len(pages)-1) % countOnOnePage
+            if startPagesArrFrom == len(pages):
+                startPagesArrFrom = (len(pages)-1) - 3
         for i in pages[pageNum:startPagesArrFrom + countOnOnePage]:
             message += f"""
             {i['dayWeek']}
@@ -18,11 +23,12 @@ def getConfig(event, pageNum=None):
             {i['subjectName']}
             {i['lecturerName']}
             {i['classroomNumber']}
-            {i['classroomAddress']}
             {i['classroomNavigator']}
             {i['classFormat']}
             ------------
             """
+        # {i['classroomAddress']}
+
         session_state = {
             'branch': 'timeTable',
             'timeTable_timetable': pages
@@ -52,7 +58,7 @@ def getConfig(event, pageNum=None):
         tts = 'Произошла какая-то ошибка. Скорее всего, вы ввели недействительные данные.'
         buttons.insert(0, 'Попробовать еще раз')
     else:
-        getConfig(event, 1)
+        return getConfig(event, 1)
     return {
         "message": message,
         "tts": tts,
