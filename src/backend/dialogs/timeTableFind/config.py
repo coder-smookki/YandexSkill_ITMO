@@ -20,7 +20,7 @@ def getPageConfig(event, startFromElem, countOnOnePage):
     )
     lastElem = startFromElem + countOnOnePage
     # maxPages = len(pages) // pageNum
-    for i in pages[startFromElem : lastElem]:
+    for i in pages[startFromElem : lastElem + 1]:
         message += f"""
             {i['dayWeek']}
             {i['date']}
@@ -37,7 +37,7 @@ def getPageConfig(event, startFromElem, countOnOnePage):
     session_state = {
         "branch": "timeTable",
         "timeTable_timetable": pages,
-        "timeTable_lastElem": lastElem-1,
+        "timeTable_lastElem": lastElem,
     }
     buttons = ["Следующая страница", "Предыдущая страница", "Назад", "Выйти"]
     return {
