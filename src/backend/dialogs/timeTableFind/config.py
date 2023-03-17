@@ -7,7 +7,7 @@ def getPageConfig(event, startFromElem, countOnOnePage):
         tts = ""
 
         pages = copy.deepcopy(getState(event, 'timeTable_timetable'))
-
+        print(len(pages))
         if startFromElem < 0:
             startFromElem = 0
         elif startFromElem > len(pages):
@@ -46,7 +46,6 @@ def getConfig(event, countOnOnePage):
     group = getState(event, "timeTable_group")
     degree = getState(event, 'timeTable_degree')
     timetable = parser("timetable.getGroupTimetable", [group, degree])
-    print(len(timetable))
     buttons = ["Помощь", "Назад", "Выйти"]
 
     if not timetable:
