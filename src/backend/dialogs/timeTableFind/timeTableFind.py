@@ -6,7 +6,7 @@ nextPageTokens = {"дальше", "далее", "следующая", "некс�
 pastPageTokens = {"предыдущая", "обратно"}
 
 def getResponse(event, allDialogs=None):
-    countOnOnePage = 1
+    countOnOnePage = 2
     if isSimilarTokens(event, nextPageTokens):
         lastElem = getState(event, 'timeTable_lastElem')
         config = getPageConfig(event, lastElem + countOnOnePage, countOnOnePage)
