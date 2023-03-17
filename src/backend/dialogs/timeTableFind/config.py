@@ -2,16 +2,22 @@ from utils.responseHelper import *
 from utils.parser.parser import *
 from math import ceil
 
+
 def getPageConfig(event, startFromElem, countOnOnePage):
-    pages = copy.deepcopy(getState(event, "timeTable_timetable")) 
-    message = ''
+    pages = copy.deepcopy(getState(event, "timeTable_timetable"))
+    message = ""
     tts = ""
 
     if startFromElem < 0:
         startFromElem = 0
     elif startFromElem >= len(pages):
-        startFromElem = len(pages) - countOnOnePage
-    message += "Страница " + str(ceil(startFromElem / countOnOnePage + 1)) + ' из ' + str(ceil(len(pages) / countOnOnePage))
+        startFromElem = len(pages) - countOnOnePage + 1
+    message += (
+        "Страница "
+        + str(ceil(startFromElem / countOnOnePage + 1))
+        + " из "
+        + str(ceil(len(pages) / countOnOnePage))
+    )
     lastElem = startFromElem + countOnOnePage - 1
     # maxPages = len(pages) // pageNum
     for i in pages[startFromElem : lastElem + 1]:
