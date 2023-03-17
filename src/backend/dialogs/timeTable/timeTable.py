@@ -24,6 +24,12 @@ def getResponse(event, allDialogs=None):
 def isTriggered(event):
     token = {"занятий", "расписание", "расписание"}
     askToken = {"еще", "заново", "ещё", "заново"}
+    nextPageTokens = {"дальше", "далее", "следующая", "некст", "следующий"}
+    pastPageTokens = {"предыдущая", "обратно"}
+
+    if isInContext(event, "timeTable") and (isSimilarTokens(event, nextPageTokens) or isSimilarTokens(event, pastPageTokens)):
+        return False
+        
     return (
         isSimilarTokens(event, token)
         and isInContext(event, "russianMenu")
