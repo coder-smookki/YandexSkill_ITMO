@@ -5,13 +5,13 @@ from utils.triggerHelper import *
 config = getConfig()
 
 
-def getResponse(event, context):
+def getResponse(event, allDialogs):
     return createResponse(event, config)
 
 
-def isTriggered(event, context):
+def isTriggered(event):
     token = {"викторина", "виктори", "start_quiz", "квиз"}
-    return isSimilarTokens(event, token) and isInContext(event, 'generalMenu')
+    return isSimilarTokens(event, token) and isInContext(event, 'russianMenu')
 
 
-library = {'getResponse': getResponse, 'isTriggered': isTriggered}
+start_quiz = {'getResponse': getResponse, 'isTriggered': isTriggered}
