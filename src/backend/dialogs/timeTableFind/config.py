@@ -7,17 +7,20 @@ def getPageConfig(event, startFromElem, countOnOnePage):
     pages = copy.deepcopy(getState(event, "timeTable_timetable"))
     message = ""
     tts = ""
-
+    print('len(pages):', len(pages))
+    print('BEFORE startFromElem:', startFromElem)
     if startFromElem < 0:
         startFromElem = 0
     elif startFromElem > len(pages):
         startFromElem = len(pages) - countOnOnePage + 1
+    print('AFTER startFromElem:', startFromElem)
     message += (
         "Страница "
         + str(floor(startFromElem / countOnOnePage + 1))
         + " из "
         + str(ceil(len(pages) / countOnOnePage))
     )
+    print('lastElem:', lastElem)
     lastElem = startFromElem + countOnOnePage
     # maxPages = len(pages) // pageNum
     for i in pages[startFromElem : lastElem]:
@@ -69,11 +72,6 @@ def getConfig(event, countOnOnePage):
         }
 
     else:
-        session_state = {
-            "branch": "timeTable",
-            "timeTable_timetable": timetable,
-            "timeTable_lastElem": 0,
-        }
         setStateInEvent(event, "timeTable_timetable", timetable)
         setStateInEvent(event, "timeTable_lastElem", 0)
         config = getPageConfig(event, 0, countOnOnePage)
