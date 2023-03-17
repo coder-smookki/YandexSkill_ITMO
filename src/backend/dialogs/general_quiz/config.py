@@ -21,6 +21,7 @@ def getConfig(num, event):
     message = questions["questions"][num]
     correct_answer = questions["answers"][num]
     answers = questions["uncorrect_answers"]
+    print(answers)
     answers[random.randint(0, len(answers))] = correct_answer
     buttons_response = answers + buttons
     states = {
