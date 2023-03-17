@@ -5,6 +5,7 @@ from ...utils.textNormalizer.index import textNormalizer
 def getGroupTimetable(args):
     result = []
 
+
     if not isinstance(args, list):
         raise TypeError(
             'The argument to the findGroups must be an array: [groupname(str), degree(int)].')
@@ -14,13 +15,21 @@ def getGroupTimetable(args):
     # 3 - бакалавриат
     # 4 - магистратура
     # 5 - специалитет
-    degree = args[1]
+    degreeWord = args[1]
 
-    if degree < 3 or degree > 5:
-        raise TypeError('''Degree must be:
-            3 - undergraduate (бакалавриат) 
-            4 - magistracy (магистратура)
-            5 - specialty (специалитет)''')
+    # Degree must be:
+    #     3 - undergraduate (бакалавриат) 
+    #     4 - magistracy (магистратура)
+    #     5 - specialty (специалитет)
+    if 'бакал' in degreeWord or 'unde' in degreeWord:
+        degree = 3
+    elif 'магис' in degreeWord or 'magis' in degreeWord: 
+        degree = 4
+    elif 'спец' in degreeWord or 'spec' in degreeWord: 
+        degree = 4
+    else:
+        return False
+        
 
     # https://student.itmo.ru/ru/timetable/A4130/1/4/
     # group/course/degree
