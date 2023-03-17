@@ -3,7 +3,7 @@ from utils.responseHelper import *
 from utils.triggerHelper import *
 
 def getResponse(event, allDialogs=None):
-    countOnOnePage = 3
+    countOnOnePage = 1
     if isSimilarCommand(event, 'Следующая страница'):
         lastElem = getState(event, 'lastElem')
         config = getConfig(event, lastElem + countOnOnePage, countOnOnePage)

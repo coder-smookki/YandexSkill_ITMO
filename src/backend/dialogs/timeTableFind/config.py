@@ -60,5 +60,5 @@ def getConfig(event, startFromElem=None, countOnOnePage=3):
         }
         setStateInEvent(event, 'timeTable_timetable', timetable)
         setStateInEvent(event, 'timeTable_lastElem', 0)
-        config = getConfig(event, 0)
+        config = getConfig(event, 0, countOnOnePage)
     return config
