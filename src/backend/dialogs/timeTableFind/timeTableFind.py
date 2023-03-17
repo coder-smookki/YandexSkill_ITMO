@@ -12,7 +12,7 @@ def getResponse(event, allDialogs=None):
         config = getPageConfig(event, lastElem, countOnOnePage)
     elif isSimilarTokens(event, pastPageTokens):
         lastElem = getState(event, 'timeTable_lastElem')
-        config = getPageConfig(event, lastElem, countOnOnePage)
+        config = getPageConfig(event, lastElem - countOnOnePage, countOnOnePage)
         print(config)
     else:
         config = getConfig(event, countOnOnePage)
