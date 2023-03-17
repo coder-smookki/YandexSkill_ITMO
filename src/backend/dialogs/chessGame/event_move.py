@@ -12,6 +12,10 @@ all_squares = {f'{c}{n}' for c, n in product('abcdefhg', '12345678')}
 ask_help = 'Скажите "Помощь", если не получится ещё раз.'
 
 
+def is_move(move: str) -> bool:
+    return move[:2] in all_squares and move[2:] in all_squares
+
+
 def replace_scores_to_spaces(strings: list[str]) -> list[str]:
     """
     Когда говоришь Алисе клетку, она принимает её как "c-N" (Е-4, G-3, Д-8),
@@ -100,8 +104,8 @@ def get_next_move(user_move: str, event, prev_moves: str, session_states) -> dic
 
 def event_move(event):
     # Часть обработки сообщения пользователя
-    tokens = replace_scores_to_spaces([ru_to_eng(s.lower()) for s in event["request"]["original_utterance"].lower().split()])
-    moves = [token for token in tokens if token in all_squares]
+    tokens = replace_scores_to_spaces([ru_to_eng(s.lower()) for s in event["request"]["command"].lower().split()])
+    move = ''.join([token for token in tokens if token in all_squares])
 
     try:
         prev_moves = getState(event, 'prev_moves')
@@ -114,16 +118,16 @@ def event_move(event):
         "prev_moves": prev_moves,
     }
 
-    if len(moves) != 2 and session_states["prev_moves"]:
+    if not is_move(move) and session_states["prev_moves"]:
         if answer_config := handler_not_a_move(event, session_states):
             return answer_config
-        message = f'Не удалось распознать ход в фразе "{event["request"]["original_utterance"]}", попробуйте ещё раз. ' + ask_help
+        message = f'Не удалось распознать ход в фразе "{event["request"]["command"]}", попробуйте ещё раз. ' + ask_help
         tts = f'Не удалось распознать ход, попробуйте ещё раз. ' + ask_help
         return get_config(message, tts, config.buttons, None, session_states)
 
-    data = get_next_move(''.join(moves), event, session_states["prev_moves"], session_states)
+    data = get_next_move(move, event, session_states["prev_moves"], session_states)
     if 'tts' in data:  # Если словарь с tts - это результат get_config
-        print(f'{event["request"]=}\n{tokens=}\n')
+        print(f'{event["request"]=}\n{tokens=}\n{move=}')
         return data
 
     stockfish_move = data["stockfish_move"]
