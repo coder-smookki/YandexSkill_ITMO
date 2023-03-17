@@ -27,6 +27,7 @@ def getConfig(event, pageNum):
             'branch': 'timeTable',
             'timeTable_timetable': timetable
         }
+        buttons = ["Следующая страница", "Предыдущая страница", "Назад", 'Выйти']
         return {
             "message": message,
             "tts": tts,
