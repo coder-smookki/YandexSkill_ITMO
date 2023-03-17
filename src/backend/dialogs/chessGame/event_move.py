@@ -100,7 +100,7 @@ def get_next_move(user_move: str, event, prev_moves: str, session_states) -> dic
 
 def event_move(event):
     # Часть обработки сообщения пользователя
-    tokens = replace_scores_to_spaces([ru_to_eng(s.lower()) for s in event["request"]["command"].lower().split()])
+    tokens = replace_scores_to_spaces([ru_to_eng(s.lower()) for s in event["request"]["original_utterance"].lower().split()])
     moves = [token for token in tokens if token in all_squares]
 
     try:
@@ -117,7 +117,7 @@ def event_move(event):
     if len(moves) != 2 and session_states["prev_moves"]:
         if answer_config := handler_not_a_move(event, session_states):
             return answer_config
-        message = f'Не удалось распознать ход в фразе "{event["request"]["command"]}", попробуйте ещё раз. ' + ask_help
+        message = f'Не удалось распознать ход в фразе "{event["request"]["original_utterance"]}", попробуйте ещё раз. ' + ask_help
         tts = f'Не удалось распознать ход, попробуйте ещё раз. ' + ask_help
         return get_config(message, tts, config.buttons, None, session_states)
 
