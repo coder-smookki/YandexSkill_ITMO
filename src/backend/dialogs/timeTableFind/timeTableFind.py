@@ -12,7 +12,9 @@ def getResponse(event, allDialogs=None):
     return createResponse(event, config)
     
 def isTriggered(event):
-    return False
+    nextPageTokens = {"дальше", "далее", "следующая", "некст", "следующий"}
+    pastPageTokens = {"предыдущая", "обратно"}
+    return isInContext(event, "timeTable") and (isSimilarTokens(event, nextPageTokens) or isSimilarTokens(event, pastPageTokens))
 
 
 timeTableFind = {'getResponse': getResponse, 'isTriggered': isTriggered}
