@@ -8,7 +8,7 @@ def getConfig(event, pageNum=None):
     if not (pageNum is None) and pageNum >= 1:
         countOnOnePage = 3
         startPagesArrFrom = (pageNum - 1) * countOnOnePage
-        pages = getState(event, 'timeTable_timetable')
+        pages = copy.deepcopy(getState(event, 'timeTable_timetable'))
         for i in pages[pageNum:startPagesArrFrom + countOnOnePage]:
             message += f"""
             {i['dayWeek']}
@@ -25,7 +25,7 @@ def getConfig(event, pageNum=None):
             """
         session_state = {
             'branch': 'timeTable',
-            'timeTable_timetable': timetable
+            'timeTable_timetable': pages
         }
         buttons = ["Следующая страница", "Предыдущая страница", "Назад", 'Выйти']
         return {
