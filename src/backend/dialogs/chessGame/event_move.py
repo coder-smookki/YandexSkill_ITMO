@@ -91,7 +91,7 @@ def get_next_move(user_move: str, event, prev_moves: str, session_states) -> dic
 
     response = requests.get(api_base + 'move', params)
     if response.status_code != 200:
-        message = f'Возникла ошибка "{response.json()["message"]}", попробуйте ещё раз. ' + ask_help
+        message = f'Возникла ошибка "{response.json()["message"]}", {user_move}, попробуйте ещё раз. ' + ask_help
         tts = f'Возникла ошибка на сервере, попробуйте ещё раз' + ask_help
         return get_config(message, tts, config.buttons, None, session_states)
 
