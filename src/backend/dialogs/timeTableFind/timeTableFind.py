@@ -7,7 +7,7 @@ def getResponse(event, allDialogs=None):
     def getResponseFunc():
         config = getConfig(event)
         createResponse(event, config)
-    return createTimeoutResponse(event, allDialogs, getRepsonseFunc, 'timeTable')
+    return createTimeoutResponse(event, allDialogs, getResponseFunc, 'timeTable')
     
 def isTriggered(event):
     return isInContext(event, 'timeTable') and isSimilarTokens(event, {'еще', 'ещё', 'попробовать', 'заново'})
