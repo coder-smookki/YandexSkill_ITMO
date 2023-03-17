@@ -37,7 +37,7 @@ def getPageConfig(event, startFromElem, countOnOnePage):
     session_state = {
         "branch": "timeTable",
         "timeTable_timetable": pages,
-        "timeTable_lastElem": lastElem,
+        "timeTable_lastElem": lastElem-1,
     }
     buttons = ["Следующая страница", "Предыдущая страница", "Назад", "Выйти"]
     return {
