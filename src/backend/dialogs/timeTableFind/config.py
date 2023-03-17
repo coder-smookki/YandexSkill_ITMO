@@ -16,21 +16,19 @@ def getConfig(event):
         buttons.insert(0, 'Попробовать еще раз')
     else:
         for i in announces:
-            print('loooooooooooooooop')
             message += f"""
-            {i['dayWeek']}\n
-            {i['date']}\n
-            {i['hours']}\n
-            {i['whatWeeks']}\n
-            {i['subjectName']}\n
-            {i['lecturerName']}\n
-            {i['classroomNumber']}\n
-            {i['classroomAddress']}\n
-            {i['classroomNavigator']}\n
-            {i['classFormat']}\n
-            ------------\n
+            {i['dayWeek']}
+            {i['date']}
+            {i['hours']}
+            {i['whatWeeks']}
+            {i['subjectName']}
+            {i['lecturerName']}
+            {i['classroomNumber']}
+            {i['classroomAddress']}
+            {i['classroomNavigator']}
+            {i['classFormat']}
+            ------------
             """
-    print(message)
     return {
         "message": message,
         "tts": tts,
