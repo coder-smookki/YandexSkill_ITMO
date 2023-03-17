@@ -8,11 +8,12 @@ def getPageConfig(event, startFromElem, countOnOnePage):
 
         pages = copy.deepcopy(getState(event, 'timeTable_timetable'))
         print('len(pages):', len(pages))
+        print('BEFORE startFromElem:', startFromElem)
         if startFromElem < 0:
             startFromElem = 0
         elif startFromElem > len(pages):
             startFromElem = len(pages) - countOnOnePage
-        print('startFromElem:', startFromElem)
+        print('AFTER startFromElem:', startFromElem)
         print('arrEnd:', startFromElem + countOnOnePage)
         # maxPages = len(pages) // pageNum
         for i in pages[startFromElem:startFromElem + countOnOnePage]:
