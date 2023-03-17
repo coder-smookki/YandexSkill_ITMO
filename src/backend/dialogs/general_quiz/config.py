@@ -3,9 +3,6 @@ import copy
 import random
 from utils.responseHelper import *
 
-with open("questions.json") as file:
-    questions = json.loads(file.read())
-
 buttons = [
     "Повторить ещё раз",
     "Помощь",
@@ -19,6 +16,8 @@ session_state = {
 
 
 def getConfig(num, event):
+    with open("questions.json") as file:
+        questions = json.loads(file.read())
     message = questions["questions"][num]
     correct_answer = questions["answers"][num]
     answers = questions["uncorrect_answers"]
@@ -48,6 +47,8 @@ def getFinishConfig(event):
     }
 
 def check_answer(event):
+    with open("questions.json") as file:
+        questions = json.loads(file.read())
     if questions["answers"][getState(event, "count_questions")] == getOriginalUtterance(event):
         setStateInEvent(event, "count_correct_response", getState(event, "count_correct_response") + 1)
     setStateInEvent(event, "count_questions", getState(event, "count_questions") + 1)
