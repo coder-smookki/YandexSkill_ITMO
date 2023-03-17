@@ -42,4 +42,5 @@ def getConfig(event):
         "message": message,
         "tts": tts,
         "buttons": buttons,
+        "session_state": session_state
     }
