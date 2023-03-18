@@ -16,7 +16,7 @@ user_move_first_card = {
 user_move_second_message = """
 Вы играете черными! Скажите мне что-то, чтобы я сделал первый ход.
 """
-user_move_second_tts = user_move_first_message
+user_move_second_tts = user_move_second_message
 
 buttons = [
     'Что-то',

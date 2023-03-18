@@ -18,8 +18,6 @@ rules = rules_tts = \
 Скажи "Да" или "Играть", чтобы начать играть.
     """
 
-card = dict()
-
 session_state = {
     "branch": "chessMain",
 }
@@ -30,7 +28,6 @@ def getConfig():
         'message': message,
         'tts': tts,
         'buttons': buttons,
-        'card': card,
         'session_state': session_state
     }
 
@@ -40,6 +37,5 @@ def getHelpConfig():
         'message': rules,
         'tts': rules_tts,
         'buttons': buttons,
-        'card': card,
         'session_state': session_state
     }

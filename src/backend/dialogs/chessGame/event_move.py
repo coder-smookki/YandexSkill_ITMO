@@ -7,7 +7,6 @@ from utils.responseHelper import getState
 from .db import get_board_id
 from ..chessMain.config import getHelpConfig
 
-# Изменить на 127.0.0.1, если будем запускать в ВМ Швепса
 api_base = 'http://127.0.0.1:5000/api/chess/'
 
 all_squares = {f'{c}{n}' for c, n in product('abcdefhg', '12345678')}
@@ -86,12 +85,12 @@ def get_next_move(user_move: str, event, prev_moves: str, session_states) -> dic
         "orientation": getState(event, 'orientation'),
         "skill_level": 1,  # session_states.get("skill_level")  Сделать выбор уровня сложности???
         "ram_hash": 1,  # Для ускорения апи, минимум в константах, ищите в кода апи
-        "depth": 1,  # Для ускорения апи, минимум в константах, ищите в кода апи
+        "depth": 15,  # Для ускорения апи, минимум в константах, ищите в кода апи
     }
 
     response = requests.get(api_base + 'move', params)
-    if response.status_code != 200:
-        message = f'Возникла ошибка "{response.json()["message"]}", {user_move}, попробуйте ещё раз. ' + ask_help
+    if not response:
+        message = f'Возникла ошибка {response.json()["message"]}, попробуйте ещё раз. ' + ask_help
         tts = f'Возникла ошибка на сервере, попробуйте ещё раз' + ask_help
         return get_config(message, tts, config.buttons, None, session_states)
 
@@ -99,19 +98,6 @@ def get_next_move(user_move: str, event, prev_moves: str, session_states) -> dic
 
 
 def event_move(event):
-    # try:
-    #     prev_moves = getState(event, 'prev_moves')
-    # except KeyError:
-    #     prev_moves = ''
-    #
-    # session_states = {
-    #     "branch": "chessGame",
-    #     "orientation": getState(event, 'orientation'),
-    #     "prev_moves": prev_moves,
-    # }
-    #
-    # return get_config('Тест', 'Тест', ['1', '2'], None, session_states)
-    # Часть обработки сообщения пользователя
     tokens = [ru_to_eng(str(s).lower()) for s in event["request"]["nlu"]["tokens"]]
     move = ''.join([token for token in tokens if token in 'abcdefgh12345678'])
     print(f'{move=}')

@@ -12,6 +12,9 @@ skill_id = env_vars.get("SKILL_ID")
 api_base = 'http://127.0.0.1:5000/api/chess/'
 url = f'https://dialogs.yandex.net/api/v1/skills/{skill_id}/images/'
 
+big_width, big_height = 776, 344
+small_width, small_height = 388, 172
+
 
 def create_db():
     conn = sqlite3.connect('chess.db')
@@ -31,13 +34,9 @@ def create_db():
 
 
 def redo_image(image: bytes) -> bytes:
-    """
-    На вход подаётся картинка 172x172, иначе нельзя. Возврат картинка 388x172
-    """
-
     image = Image.open(BytesIO(image), mode='r')
-    background = Image.new("RGB", (388, 172), (0, 0, 0))
-    background.paste(image, (106, 0))
+    background = Image.new("RGB", (big_width, big_height), (0, 0, 0))
+    background.paste(image, ((big_width - big_height) // 2, 0))
 
     img_byte_arr = BytesIO()
     background.save(img_byte_arr, format='PNG')
@@ -51,7 +50,7 @@ def cache_new_board_id(fen: str, orientation: str, last_move: str, check: str) -
         "orientation": orientation,
         "last_move": last_move,
         "check": check,
-        "size": 172
+        "size": big_height
     }
     board_response = requests.get(api_base + 'board', params=params)
     if board_response.status_code != 200:  # Либо сервер сломался, либо неверные параметры в ходе игры.
