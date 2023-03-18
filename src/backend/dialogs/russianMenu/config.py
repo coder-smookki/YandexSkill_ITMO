@@ -74,16 +74,8 @@ session_state = {"branch": "russianMenu"}
 import copy
 def getConfig(event):
     
-    if haveGlobalState(event, 'language'):
-        lang = getGlobalState(event, 'language')
-        print('yes lang:',lang)
-    else:
-        lang = getLanguage(event)
-        print('no lang:', lang)
+    lang = getLanguage(event)
     
-    print('getLang',getLanguage(event))
-    lang = 'ru-RU'
-    print('config:',config[lang])
     return copy.deepcopy({
         "message": config[lang]["message"],
         "tts": config[lang]["tts"],

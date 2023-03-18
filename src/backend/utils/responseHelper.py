@@ -1,6 +1,7 @@
 import copy
 from utils.globalStorage import *
 from utils.asyncHelper import doFuncAsAsync
+from utils.triggerHelper import *
 
 def createResponse(event, originalConfig):
     config = copy.deepcopy(originalConfig)
@@ -106,4 +107,8 @@ def getGlobalState(event, state):
     return event['state'][state]['value']
 
 def getLanguage(event):
-    return event['meta']['locale']
+    if haveGlobalState(event, 'language'):
+        lang = getGlobalState(event, 'language')
+    else:
+        lang = event['meta']['locale']
+    return lang
