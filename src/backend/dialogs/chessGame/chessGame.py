@@ -25,6 +25,8 @@ def getResponse(event, allDialogs):
             return createResponse(event, event_color(event))
     except Exception as error:
         print(f'{error=}')
+        if str(error).strip(""" '" """) == 'state':
+            raise error
         return createResponse(event, event_color(event))
 
 
