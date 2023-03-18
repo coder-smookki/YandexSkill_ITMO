@@ -119,9 +119,9 @@ def event_move(event):
         "prev_moves": prev_moves,
     }
 
-    if session_states["orientation"] == "b" and not is_move(move) and not session_states["prev_moves"]:
-        pass  # Cringe of day
-    else:
+    if session_states["orientation"] == "b" and not session_states["prev_moves"]:
+        pass
+    elif not is_move(move):
         if answer_config := handler_not_a_move(event, session_states):
             return answer_config
         message = f'Не удалось распознать ход в фразе "{event["request"]["command"]}", попробуйте ещё раз. ' + ask_help
