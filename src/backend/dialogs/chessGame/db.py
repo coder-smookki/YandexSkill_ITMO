@@ -58,13 +58,13 @@ def cache_new_board_id(fen: str, orientation: str, last_move: str, check: str) -
         return None
 
     headers = {
-        "Authorization": f'{oauth_key}',
+        "Authorization": f'OAuth {oauth_key}',
     }
     yandex_response = requests.post(url,
                                     headers=headers,
                                     files={'file': redo_image(board_response.content)})
 
-    if yandex_response.status_code == 429:  # Обработка момента, когда занята вся память навыка (около 6.8к картинок)
+    if yandex_response.status_code == 429:  # Обработка момента, когда занята вся память навыка (около 2к картинок)
         raise RuntimeError("Киря, бачок потик, места нема!!! КАРТИНОК БОЛЬШЕ СТА МЕГАБАЙТ")
 
     if not yandex_response:
