@@ -15,6 +15,7 @@ def getResponse(event, allDialogs):
     try:
         getState(event, 'orientation')
         values = pre_handle_move(event)
+        print(f'{type(values)=}')
         if isinstance(values, dict):
             return createResponse(event, values)
         return createTimeoutResponse(event, allDialogs, getReponseFunc, 'chessGameTimeout')

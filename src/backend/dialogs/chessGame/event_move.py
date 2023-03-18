@@ -46,7 +46,7 @@ def ru_to_eng(string: str):
     Перевод русских буковок в английские, чтоб ход понятно было что и кто.
     """
     string = string.replace('джи', 'g').replace('аш', 'h')
-    new_string = str.translate(string, str.maketrans('абсцдефгжх', 'abccdefggh'))
+    new_string = str.translate(string, str.maketrans('абсцдефгжхи', 'abccdefgghe'))
     return new_string
 
 
