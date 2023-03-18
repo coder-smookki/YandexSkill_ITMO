@@ -104,3 +104,6 @@ def getCommand(event):
 
 def getGlobalState(event, state):
     return event['state'][state]['value']
+
+def getLanguage(event):
+    return event['meta']['locale']
