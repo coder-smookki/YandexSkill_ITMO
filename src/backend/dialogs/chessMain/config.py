@@ -18,7 +18,7 @@ rules = rules_tts = \
     Скажи "Да" или "Играть", чтобы начать или продолжить играть.
     """
 
-card = None
+card = dict()
 
 session_state = {
     "branch": "chessMain",
