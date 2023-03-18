@@ -126,7 +126,11 @@ def pre_handle_move(event):
     return move, session_states
 
 
-def event_move(event, move, session_states):
+def event_move(event):
+    values = pre_handle_move(event)
+    if isinstance(values, dict):
+        return values
+    move, session_states = values
     data = get_next_move(move, event, session_states["prev_moves"], session_states)
     if 'tts' in data:  # Если словарь с tts - это результат get_config
         return data

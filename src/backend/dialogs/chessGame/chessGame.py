@@ -7,10 +7,7 @@ from utils.triggerHelper import *
 def getResponse(event, allDialogs):
     def getReponseFunc(event, allDialogs):
         getState(event, 'orientation')
-        values = pre_handle_move(event)
-        if isinstance(values, dict):
-            return createResponse(event, values)
-        return createResponse(event, event_move(event, *values))
+        return createResponse(event, event_move(event))
 
     if config := handler_not_a_move(event):
         return createResponse(event, config)
