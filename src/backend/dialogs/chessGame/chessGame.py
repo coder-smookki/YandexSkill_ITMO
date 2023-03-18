@@ -13,7 +13,7 @@ def getResponse(event, allDialogs):
             print('Orientation = 0 KAK SUDA POPALO?')
 
         if orientation:  # т.е. играет и есть цвет
-            return createTimeoutResponse(event, allDialogs, getReponseFunc, 'chessGameTimeout')
+            config = event_move(event)
         else:
             config = event_color(event)
         return createResponse(event, config)
