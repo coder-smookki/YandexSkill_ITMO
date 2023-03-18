@@ -1,12 +1,12 @@
-from .config import getConfig
-from ..chessGame.config import get_config_choose_color, getRulesConfig
+from .config import getConfig, getHelpConfig
+from ..chessGame.config import get_config_choose_color
 from utils.responseHelper import *
 from utils.triggerHelper import *
 
 
 def getResponse(event, allDialogs):
     if isInContext(event, 'chessMain') and isSimilarTokens(event, {'правила'}):
-        config = getRulesConfig()
+        config = getHelpConfig()
     elif isInContext(event, 'chessMain') and isSimilarTokens(event, {'играть', 'да'}):
         config = get_config_choose_color()
     else:

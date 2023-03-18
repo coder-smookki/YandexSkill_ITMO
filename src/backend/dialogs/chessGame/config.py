@@ -70,14 +70,3 @@ def get_config_user_move_second():
             "orientation": "b"
         }
     }
-
-
-def getRulesConfig():
-    return {
-        'message': user_move_second_message,
-        'tts': user_move_first_tts,
-        'buttons': buttons,
-        'session_state': {
-            "branch": "chessMain",
-        }
-    }

@@ -4,8 +4,8 @@ import requests
 from dialogs.chessMain import config
 from utils.responseHelper import getState
 
-from .config import getRulesConfig
 from .db import get_board_id
+from ..chessMain.config import getHelpConfig
 
 # Изменить на 127.0.0.1, если будем запускать в ВМ Швепса
 api_base = 'http://127.0.0.1:5000/api/chess/'
@@ -74,7 +74,7 @@ def handler_not_a_move(event, session_states: dict | None = None) -> dict | None
     """
     command = event["request"]["command"] + ' ' + event["request"]["original_utterance"]
     if 'правила' in command.lower():
-        return getRulesConfig()
+        return getHelpConfig()
     return None
 
 
