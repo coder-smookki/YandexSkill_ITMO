@@ -147,7 +147,7 @@ def event_move(event):
     if data['end_type'] is not None:
         del session_states["prev_moves"]
 
-        if data["check"] is not None:
+        if data["end_type"] is not None:
             who_win = 'w' if data["orientation"] == 'b' else 'b'
         else:
             who_win = None
@@ -159,10 +159,11 @@ def event_move(event):
             message += 'победой чёрных!'
         else:
             message += 'в ничью...'
+        card['title'] = 'message'
 
         del session_states["orientation"]
     else:
-        message = f'Я сходил на "{stockfish_move}", теперь ваш ход.'
+        message = 'Я сходил на "{}" {}, теперь ваш ход.'.format(stockfish_move, data['check'] or '')
         session_states["prev_moves"] = data["prev_moves"]
 
     tts = message
