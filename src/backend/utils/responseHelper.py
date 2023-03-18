@@ -4,7 +4,7 @@ from utils.asyncHelper import doFuncAsAsync
 
 def createResponse(event, originalConfig):
     config = copy.deepcopy(originalConfig)
-    return {
+    returnResponse = {
         'response': {
             'text': config['message'],
             'tts': config['tts'],
@@ -15,7 +15,10 @@ def createResponse(event, originalConfig):
         'session': event['session'],
         'session_state': config['session_state'] if 'session_state' in config else {'branch': ''},
         'version': event['version']
-    }
+    }   
+    if 'user_state_update' in config:
+        returnResponse['user_state_update'] = config['user_state_update']  
+    return returnResponse
 
 def createTimeoutResponse(event, allDialogs, getRepsonse, timeoutName):
     fieldName = timeoutName + '_' + getSessionId(event);
