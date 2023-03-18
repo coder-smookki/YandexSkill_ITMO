@@ -163,7 +163,7 @@ def event_move(event):
 
         del session_states["orientation"]
     else:
-        message = 'Я сходил на "{}" {}, теперь ваш ход.'.format(stockfish_move, data['check'] or '')
+        message = 'Я сходил на "{}" {}, теперь ваш ход.'.format(stockfish_move, 'тебе шах' if data['check'] else '')
         session_states["prev_moves"] = data["prev_moves"]
 
     tts = message
