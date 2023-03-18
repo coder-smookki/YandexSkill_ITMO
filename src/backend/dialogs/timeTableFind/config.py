@@ -11,7 +11,7 @@ def getPageConfig(event, pageNum, countOnOnePage):
     # (1 2 3) (4 5 6) (7)
 
     # pageNum = 2, countOneOnePage = 3
-    totalPages = ceil(len(pageNum) / countOnOnePage)
+    totalPages = ceil(len(pages) / countOnOnePage)
     if pageNum < 1:
         pageNum = 1
     elif pageNum > totalPages:
