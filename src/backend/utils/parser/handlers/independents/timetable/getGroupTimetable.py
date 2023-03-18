@@ -44,11 +44,7 @@ def getGroupTimetable(args):
     if len(lectures) < 2:
         return False
 
-    skipFirst = False
     for lecture in lectures:
-        if not skipFirst:
-            skipFirst = True
-            continue
         if lecture.select_one('.timetable-article__day') is None:
             continue
         lectureResult = {}
