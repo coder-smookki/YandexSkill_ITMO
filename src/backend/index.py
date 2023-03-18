@@ -9,7 +9,7 @@ from utils.parser.parser import parser
 from utils.asyncHelper import doFuncAsAsync
 from utils.responseHelper import *
 
-DIALOG_DEBUG = True
+DIALOG_DEBUG = False
 REQUESTS_DEBUG = False
 
 def cycleRefreshNews():
