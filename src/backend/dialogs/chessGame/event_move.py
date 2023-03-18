@@ -156,10 +156,6 @@ def event_move(event):
         "image_id": board_id,
         "title": "Заголовок",
         "description": "Описание",
-        "button": {
-            "text": "Кнопка",
-            "url": f"https://lichess.org/analysis/fromPosition/" + data["fen"],
-        }
     }
 
     if data['end_type'] is not None:

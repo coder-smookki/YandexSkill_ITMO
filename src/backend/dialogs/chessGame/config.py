@@ -65,7 +65,7 @@ def get_config_user_move_second():
         'message': user_move_second_message,
         'tts': user_move_first_tts,
         'buttons': buttons,
-        'card': dict(),
+        'card': None,
         'session_state': {
             "branch": "chessGame",
             "orientation": "b"
