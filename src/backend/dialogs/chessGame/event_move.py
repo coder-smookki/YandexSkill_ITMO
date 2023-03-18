@@ -103,18 +103,18 @@ def get_next_move(user_move: str, event, prev_moves: str, session_states) -> dic
 
 
 def event_move(event):
-    try:
-        prev_moves = getState(event, 'prev_moves')
-    except KeyError:
-        prev_moves = ''
-
-    session_states = {
-        "branch": "chessGame",
-        "orientation": getState(event, 'orientation'),
-        "prev_moves": prev_moves,
-    }
-
-    return get_config('Тест', 'Тест', ['1', '2'], None, session_states)
+    # try:
+    #     prev_moves = getState(event, 'prev_moves')
+    # except KeyError:
+    #     prev_moves = ''
+    #
+    # session_states = {
+    #     "branch": "chessGame",
+    #     "orientation": getState(event, 'orientation'),
+    #     "prev_moves": prev_moves,
+    # }
+    #
+    # return get_config('Тест', 'Тест', ['1', '2'], None, session_states)
     # Часть обработки сообщения пользователя
     tokens = [ru_to_eng(str(s).lower()) for s in event["request"]["nlu"]["tokens"]]
     move = ''.join([token for token in tokens if token in 'abcdefgh12345678'])
@@ -186,4 +186,4 @@ def event_move(event):
 
     tts = message
 
-    return get_config(message, tts, config.buttons, card, session_states)
+    return get_config(message, tts, config.buttons, None, session_states)
