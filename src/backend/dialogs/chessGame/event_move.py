@@ -85,7 +85,7 @@ def get_next_move(user_move: str, event, prev_moves: str, session_states) -> dic
         "orientation": getState(event, 'orientation'),
         "skill_level": 1,  # session_states.get("skill_level")  Сделать выбор уровня сложности???
         "ram_hash": 1,  # Для ускорения апи, минимум в константах, ищите в кода апи
-        "depth": 15,  # Для ускорения апи, минимум в константах, ищите в кода апи
+        "depth": 15,
     }
 
     response = requests.get(api_base + 'move', params)
@@ -136,8 +136,8 @@ def event_move(event):
     card = {
         "type": "BigImage",
         "image_id": board_id,
-        "title": "Заголовок",
-        "description": "Описание",
+        # "title": "Заголовок",
+        # "description": "Описание",
     }
 
     if data['end_type'] is not None:
