@@ -11,15 +11,19 @@ def getPageConfig(event, pageNum, countOnOnePage):
     # (1 2 3) (4 5 6) (7)
 
     # pageNum = 2, countOneOnePage = 3
-
+    totalPages = ceil(len(pageNum) / countOnOnePage)
+    if pageNum < 1:
+        pageNum = 1
+    elif pageNum > totalPages:
+        pageNum = totalPages
     lastElem = countOnOnePage * pageNum
     startFromElem = lastElem - countOnOnePage
 
     message += (
         "Страница "
-        + str(floor(startFromElem / countOnOnePage + 1))
+        + str(pageNum)
         + " из "
-        + str(ceil(len(pages) / countOnOnePage))
+        + str(totalPages)
     )
 
     # maxPages = len(pages) // pageNum
@@ -73,7 +77,7 @@ def getConfig(event, countOnOnePage):
 
     else:
         setStateInEvent(event, "timeTable_timetable", timetable)
-        setStateInEvent(event, "timeTable_lastElem", 0)
-        config = getPageConfig(event, 0, countOnOnePage)
+        setStateInEvent(event, "timeTable_lastPage", 1)
+        config = getPageConfig(event, 1, countOnOnePage)
 
     return config
