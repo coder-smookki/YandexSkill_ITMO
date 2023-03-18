@@ -7,11 +7,14 @@ from utils.triggerHelper import *
 def getResponse(event, allDialogs):
     def getReponseFunc(event, allDialogs):
         try:
-            if getState(event, 'orientation'):  # т.е. играет и есть цвет
-                config = event_move(event)
-            else:
-                config = event_color(event)
+            orientation = getState(event, 'orientation')
         except KeyError:
+            orientation = None
+            print('Orientation = 0 KAK SUDA POPALO?')
+
+        if orientation:  # т.е. играет и есть цвет
+            config = event_move(event)
+        else:
             config = event_color(event)
         return createResponse(event, config)
 
@@ -20,8 +23,8 @@ def getResponse(event, allDialogs):
             return createTimeoutResponse(event, allDialogs, getReponseFunc, 'chessGameTimeout')
         else:
             return createResponse(event, event_color(event))
-    except Exception as e:
-        print(e)
+    except Exception as error:
+        print(f'{error=}')
         return createResponse(event, event_color(event))
 
 

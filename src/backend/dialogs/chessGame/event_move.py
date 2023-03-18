@@ -104,13 +104,7 @@ def get_next_move(user_move: str, event, prev_moves: str, session_states) -> dic
 
 def event_move(event):
     # Часть обработки сообщения пользователя
-    print(1)
-    try:
-        tokens = [ru_to_eng(str(s).lower()) for s in event["request"]["nlu"]["tokens"]]
-    except KeyError as e:
-        print(e)
-        raise e
-    print(2)
+    tokens = [ru_to_eng(str(s).lower()) for s in event["request"]["nlu"]["tokens"]]
     move = ''.join([token for token in tokens if token in 'abcdefgh12345678'])
     print(f'{move=}')
 
