@@ -146,7 +146,7 @@ def event_move(event):
         return data
 
     stockfish_move = data["stockfish_move"]
-    board_id = get_board_id(data["fen"], data["orientation"], data["stockfish_move"], data["check"])
+    board_id = get_board_id(data["fen"], session_states["orientation"], data["stockfish_move"], data["check"])
     if not board_id:
         message = f'Ошибка на сервере с получением картинки. ' + ask_help
         tts = f'Ошибка на сервере с получением картинки. ' + ask_help
