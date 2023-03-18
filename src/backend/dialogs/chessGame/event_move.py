@@ -159,7 +159,7 @@ def event_move(event):
             message += 'победой чёрных!'
         else:
             message += 'в ничью...'
-        card['title'] = 'message'
+        card['title'] = message
 
         del session_states["orientation"]
     else:
