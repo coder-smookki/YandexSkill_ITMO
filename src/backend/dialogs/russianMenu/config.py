@@ -112,6 +112,7 @@ def getConfig(event):
         lang = getLanguage(event)
         print('no lang:', lang)
     
+    print('getLang',getLanguage(event))
     lang = 'en-US'
 
     return copy.deepcopy({
