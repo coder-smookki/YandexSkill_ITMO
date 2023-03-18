@@ -4,7 +4,8 @@ from utils.triggerHelper import *
 
 def getResponse(event, allDialogs=None):
     config = getConfig(event)
-    return createResponse(event, config)
+    a = createResponse(event, config)
+    return a
 
 
 def isTriggered(event):
