@@ -3,27 +3,27 @@ from utils.parser.parser import *
 from math import ceil, floor
 
 
-def getPageConfig(event, startFromElem, countOnOnePage):
+def getPageConfig(event, pageNum, countOnOnePage):
     pages = copy.deepcopy(getState(event, "timeTable_timetable"))
     message = ""
     tts = ""
-    print('len(pages):', len(pages))
-    print('BEFORE startFromElem:', startFromElem)
-    if startFromElem < 0:
-        startFromElem = 0
-    elif startFromElem > len(pages):
-        startFromElem = len(pages) - countOnOnePage + 1
-    print('AFTER startFromElem:', startFromElem)
+
+    # (1 2 3) (4 5 6) (7)
+
+    # pageNum = 2, countOneOnePage = 3
+
+    lastElem = countOnOnePage * pageNum
+    startFromElem = lastElem - countOnOnePage
+
     message += (
         "Страница "
         + str(floor(startFromElem / countOnOnePage + 1))
         + " из "
         + str(ceil(len(pages) / countOnOnePage))
     )
-    lastElem = startFromElem + countOnOnePage
-    print('lastElem:', lastElem)
+
     # maxPages = len(pages) // pageNum
-    for i in pages[startFromElem : lastElem]:
+    for i in pages[startFromElem:lastElem]:
         message += f"""
             {i['dayWeek']}
             {i['date']}
@@ -40,7 +40,7 @@ def getPageConfig(event, startFromElem, countOnOnePage):
     session_state = {
         "branch": "timeTable",
         "timeTable_timetable": pages,
-        "timeTable_lastElem": lastElem,
+        "timeTable_lastPage": pageNum,
     }
     buttons = ["Следующая страница", "Предыдущая страница", "Назад", "Выйти"]
     return {

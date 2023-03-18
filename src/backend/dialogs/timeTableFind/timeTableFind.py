@@ -8,11 +8,11 @@ pastPageTokens = {"предыдущая", "обратно"}
 def getResponse(event, allDialogs=None):
     countOnOnePage = 2
     if isSimilarTokens(event, nextPageTokens):
-        lastElem = getState(event, 'timeTable_lastElem')
-        config = getPageConfig(event, lastElem, countOnOnePage)
+        lastPage = getState(event, 'timeTable_lastPage')
+        config = getPageConfig(event, lastPage + 1, countOnOnePage)
     elif isSimilarTokens(event, pastPageTokens):
-        lastElem = getState(event, 'timeTable_lastElem')
-        config = getPageConfig(event, lastElem - countOnOnePage, countOnOnePage)
+        lastPage = getState(event, 'timeTable_lastPage')
+        config = getPageConfig(event, lastPage - 1, countOnOnePage)
     else:
         config = getConfig(event, countOnOnePage)
     return createResponse(event, config)
