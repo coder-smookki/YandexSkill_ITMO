@@ -113,7 +113,7 @@ def getConfig(event):
         print('no lang:', lang)
     
     print('getLang',getLanguage(event))
-    lang = getLanguage(event)
+    lang = 'ru-RU'
 
     return copy.deepcopy({
         "message": config[lang]["message"],
