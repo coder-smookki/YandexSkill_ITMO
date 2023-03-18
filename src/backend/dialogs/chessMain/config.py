@@ -5,8 +5,7 @@ message = tts = \
     """
 
 buttons = [
-    "Повторить ещё раз",
-    "Правила",
+    "Играть"
     "Помощь",
     "Назад",
     "Выйти"
@@ -22,7 +21,7 @@ rules = rules_tts = \
 card = None
 
 session_state = {
-    "branch": "chessGame",
+    "branch": "chessMain",
 }
 
 
@@ -30,6 +29,16 @@ def getConfig():
     return {
         'message': message,
         'tts': tts,
+        'buttons': buttons,
+        'card': card,
+        'session_state': session_state
+    }
+
+
+def getHelpConfig():
+    return {
+        'message': rules,
+        'tts': rules_tts,
         'buttons': buttons,
         'card': card,
         'session_state': session_state
