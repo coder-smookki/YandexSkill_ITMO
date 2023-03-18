@@ -9,8 +9,8 @@ user_move_first_message = """
 user_move_first_tts = user_move_first_message
 user_move_first_card = {
     'type': 'BigImage',
-    'image_id': '937455/40f0536e426907808499',  # Айди картинки начальной позиции, сделать
-    'title': 'Начальная позиция за белых',
+    'image_id': '1030494/909b379f46c1700cefe9',  # Айди картинки начальной позиции
+    'title': 'Ваш ход!',
 }
 
 user_move_second_message = """
@@ -63,7 +63,7 @@ def get_config_user_move_first():
 def get_config_user_move_second():
     return {
         'message': user_move_second_message,
-        'tts': user_move_first_tts,
+        'tts': user_move_second_tts,
         'buttons': buttons,
         'session_state': {
             "branch": "chessGame",
