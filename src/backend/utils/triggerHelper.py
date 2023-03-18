@@ -17,6 +17,16 @@ def isInContext(event, context):
         return False
     return context in event['state']['session']["branch"]
 
+def isInLastContext(event, context):
+    if not 'branch' in event['state']['session']:
+        return False
+
+    if isinstance(context, list):
+        for elem in context:
+            if elem == event['state']['session']["branch"][-1]:
+                return True
+        return False
+    return context == event['state']['session']["branch"][-1]
 
 def isSimilarCommand(event, command):
     return event['request']['command'] == command
