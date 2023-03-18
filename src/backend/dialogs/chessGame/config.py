@@ -72,7 +72,7 @@ def get_config_user_move_second():
     }
 
 
-def getRulesConfig(session_states: dict | None):
+def getRulesConfig(session_states: dict | None = None):
     return {
         'message': user_move_second_message,
         'tts': user_move_first_tts,
