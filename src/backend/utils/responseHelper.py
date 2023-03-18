@@ -18,6 +18,7 @@ def createResponse(event, originalConfig):
     }   
     if 'user_state_update' in config:
         returnResponse['user_state_update'] = config['user_state_update']  
+    return returnResponse
 
 def createTimeoutResponse(event, allDialogs, getRepsonse, timeoutName):
     fieldName = timeoutName + '_' + getSessionId(event);
