@@ -24,7 +24,7 @@ def getResponse(event, allDialogs):
         else:
             return createResponse(event, event_color(event))
     except Exception as error:
-        print(f'{e})
+        print(f'{error=}')
         return createResponse(event, event_color(event))
 
 
