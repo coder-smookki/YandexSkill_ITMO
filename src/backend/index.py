@@ -41,7 +41,7 @@ def main(event):
         branchedResponse = updateBranchToResponse(event, response, 'russianMenu')
         if DIALOG_DEBUG:
             print('===========================')
-        if branchedResponse:
+        if branchedResponse and 'session_state' in branchedResponse:
             print('Branch: ' + str(branchedResponse['session_state']['branch']))
         else:
             print("Branch don't initilized")
