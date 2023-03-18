@@ -3,6 +3,8 @@ from itertools import product
 import requests
 from dialogs.chessMain import config
 from utils.responseHelper import getState
+
+from .config import getRulesConfig
 from .db import get_board_id
 
 # Изменить на 127.0.0.1, если будем запускать в ВМ Швепса
@@ -72,13 +74,7 @@ def handler_not_a_move(event, session_states) -> dict | None:
     """
     command = event["request"]["command"] + ' ' + event["request"]["original_utterance"]
     if 'помощь' in command.lower() or 'правила' in command.lower():
-        return get_config(
-            config.rules,
-            config.rules_tts,
-            config.buttons,
-            None,
-            session_states
-        )
+        return getRulesConfig()
     return None
 
 
@@ -132,7 +128,7 @@ def event_move(event):
     }
 
     if session_states["orientation"] == "b" and not session_states["prev_moves"]:
-        pass
+        pass  # cringe of project
     elif not is_move(move):
         if answer_config := handler_not_a_move(event, session_states):
             return answer_config

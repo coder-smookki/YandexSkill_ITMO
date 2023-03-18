@@ -36,7 +36,7 @@ def redo_image(image: bytes) -> bytes:
     """
 
     image = Image.open(BytesIO(image), mode='r')
-    background = Image.new("RGB", (388, 172), (255, 255, 255))
+    background = Image.new("RGB", (388, 172), (0, 0, 0))
     background.paste(image, (106, 0))
 
     img_byte_arr = BytesIO()
@@ -48,7 +48,7 @@ def redo_image(image: bytes) -> bytes:
 def cache_new_board_id(fen: str, orientation: str, last_move: str, check: str) -> str | None:
     params = {
         "fen": fen,
-        "orientation:": orientation,
+        "orientation": orientation,
         "last_move": last_move,
         "check": check,
         "size": 172

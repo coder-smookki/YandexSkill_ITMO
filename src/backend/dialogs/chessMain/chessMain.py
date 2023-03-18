@@ -1,5 +1,5 @@
 from .config import getConfig
-from ..chessGame.config import get_config_choose_color
+from ..chessGame.config import get_config_choose_color, getRulesConfig
 from utils.responseHelper import *
 from utils.triggerHelper import *
 
