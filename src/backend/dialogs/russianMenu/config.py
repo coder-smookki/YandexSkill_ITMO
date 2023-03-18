@@ -71,15 +71,14 @@ config = {
 
 session_state = {"branch": "russianMenu"}
 
-import copy
 def getConfig(event):
     
     lang = getLanguage(event)
-    
-    return copy.deepcopy({
+
+    return {
         "message": config[lang]["message"],
         "tts": config[lang]["tts"],
         "buttons": config[lang]["buttons"],
         "card": config[lang]["card"],
         "session_state": session_state,
-    })
+    }
