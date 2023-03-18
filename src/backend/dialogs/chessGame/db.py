@@ -1,3 +1,4 @@
+import os
 import sqlite3
 from threading import Timer
 from io import BytesIO
@@ -17,7 +18,7 @@ small_width, small_height = 388, 172
 
 
 def create_db():
-    conn = sqlite3.connect('chess.db')
+    conn = sqlite3.connect(':memory:')
     cursor = conn.cursor()
     cursor.execute('''
     CREATE TABLE IF NOT EXISTS "boards" (
@@ -71,7 +72,7 @@ def cache_new_board_id(fen: str, orientation: str, last_move: str, check: str) -
         return None
     image_id = yandex_response.json()["image"]["id"]
 
-    conn = sqlite3.connect('chess.db')
+    conn = sqlite3.connect(':memory:')
     cursor = conn.cursor()
     cursor.execute("""
     INSERT INTO boards (fen, orientation, last_move, check_square, image_id) values (?, ?, ?, ?, ?)
@@ -82,7 +83,7 @@ def cache_new_board_id(fen: str, orientation: str, last_move: str, check: str) -
 
 
 def get_board_id(fen: str, orientation: str, last_move: str, check: str | None) -> str:
-    conn = sqlite3.connect('chess.db')
+    conn = sqlite3.connect(':memory:')
     cursor = conn.cursor()
 
     board_id = cursor.execute("""
@@ -97,7 +98,7 @@ def get_board_id(fen: str, orientation: str, last_move: str, check: str | None) 
 
 
 def delete_board_id(image_id: str):
-    conn = sqlite3.connect('chess.db')
+    conn = sqlite3.connect(':memory:')
     cursor = conn.cursor()
     cursor.execute("""
     DELETE FROM boards WHERE image_id = ?
