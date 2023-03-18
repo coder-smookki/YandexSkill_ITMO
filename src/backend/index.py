@@ -48,6 +48,7 @@ def main(event):
         print('---------------------------')
         # print(getState(event, 'timeTable_group'))
         # print(getState(event, 'timeTable_course'))
+        print('haveGlobalState: language:', haveGlobalState('language'))
         return branchedResponse
 
 

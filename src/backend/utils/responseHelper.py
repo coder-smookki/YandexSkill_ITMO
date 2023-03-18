@@ -97,3 +97,6 @@ def setStateInEvent(event, stateName, stateValue):
 
 def getCommand(event):
     return event["request"]['command']
+
+def getGlobalState(event, state):
+    return event['state'][state]['value']
