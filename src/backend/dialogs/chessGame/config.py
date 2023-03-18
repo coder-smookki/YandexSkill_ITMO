@@ -9,7 +9,7 @@ user_move_first_message = """
 user_move_first_tts = user_move_first_message
 user_move_first_card = {
     'type': 'BigImage',
-    'image_id': '1030494/909b379f46c1700cefe9',  # Айди картинки начальной позиции
+    'image_id': '1540737/d363e07d1d626e9cfca7',  # Айди картинки начальной позиции
     'title': 'Ваш ход!',
 }
 
