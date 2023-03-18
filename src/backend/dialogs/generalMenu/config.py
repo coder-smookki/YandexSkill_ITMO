@@ -40,5 +40,8 @@ def getConfig():
         'message': message,
         'tts': tts,
         'buttons': buttons,
-        'card': card
+        'card': card,
+        "user_state_update": {
+            "language": 'someLang'
+        }
     }
