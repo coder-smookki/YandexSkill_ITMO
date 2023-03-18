@@ -106,8 +106,10 @@ def getConfig(event):
     
     if haveGlobalState(event, 'language'):
         lang = getGlobalState(event, 'language')
+        print('yes lang:',lang)
     else:
         lang = getLanguage(event)
+        print('no lang:',lang)
     
     return {
         "message": config[lang]["message"],
