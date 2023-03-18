@@ -110,8 +110,10 @@ def getConfig(event):
         print('yes lang:',lang)
     else:
         lang = getLanguage(event)
-        print('no lang:',lang)
+        print('no lang:', lang)
     
+    lang = 'en-US'
+
     return copy.deepcopy({
         "message": config[lang]["message"],
         "tts": config[lang]["tts"],
