@@ -1,7 +1,7 @@
 from utils.responseHelper import getGlobalState, getLanguage
 from utils.triggerHelper import haveGlobalState
 config = {
-    "en-US": {
+    "ru-RU": {
         "message": """
             ты выбрал русский
             """,
