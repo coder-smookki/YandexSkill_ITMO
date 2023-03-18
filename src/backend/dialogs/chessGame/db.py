@@ -58,7 +58,7 @@ def cache_new_board_id(fen: str, orientation: str, last_move: str, check: str) -
         return None
 
     headers = {
-        "Authorization": f'{oauth_key}',
+        "Authorization": f'OAuth {oauth_key}',
     }
     yandex_response = requests.post(url,
                                     headers=headers,
