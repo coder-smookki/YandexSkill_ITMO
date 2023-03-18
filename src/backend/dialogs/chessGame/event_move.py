@@ -97,7 +97,7 @@ def get_next_move(user_move: str, event, prev_moves: str, session_states) -> dic
     return response.json()["response"]
 
 
-def event_move(event):
+def pre_handle_move(event):
     tokens = [ru_to_eng(str(s).lower()) for s in event["request"]["nlu"]["tokens"]]
     move = ''.join([token for token in tokens if token in 'abcdefgh12345678'])
     print(f'{move=}')
@@ -121,10 +121,12 @@ def event_move(event):
         message = f'Не удалось распознать ход в фразе "{event["request"]["command"]}", попробуйте ещё раз. ' + ask_help
         tts = f'Не удалось распознать ход, попробуйте ещё раз. ' + ask_help
         return get_config(message, tts, config.buttons, None, session_states)
+    return move, session_states
 
+
+def event_move(event, move, session_states):
     data = get_next_move(move, event, session_states["prev_moves"], session_states)
     if 'tts' in data:  # Если словарь с tts - это результат get_config
-        print(f'{event["request"]=}\n{tokens=}\n{move=}')
         return data
 
     stockfish_move = data["stockfish_move"]
@@ -136,8 +138,6 @@ def event_move(event):
     card = {
         "type": "BigImage",
         "image_id": board_id,
-        # "title": "Заголовок",
-        # "description": "Описание",
     }
 
     if data['end_type'] is not None:
