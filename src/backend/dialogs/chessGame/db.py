@@ -32,7 +32,7 @@ def create_db():
     )''')
     conn.commit()
 
-    cursor.execute("DELETE board")
+    cursor.execute("DELETE FROM boards")
     conn.commit()
 
     conn.close()
