@@ -4,10 +4,10 @@ from dialogs.chessGame import config, event_move
 
 
 def event_color(event):
-    if 'бел' in event["request"]["command"].lower():
+    if 'белы' in event["request"]["command"].lower():
         return config.get_config_user_move_first()
 
-    if 'черн' in event["request"]["command"].lower().replace('ё', 'e'):
+    if 'черн' in event["request"]["command"].lower() or 'чёрн' in event["request"]["command"].lower():
         return config.get_config_user_move_second()
 
     return config.get_config_choose_color()
