@@ -67,7 +67,7 @@ def cache_new_board_id(fen: str, orientation: str, last_move: str, check: str) -
     if yandex_response.status_code == 429:  # Обработка момента, когда занята вся память навыка (около 6.8к картинок)
         raise RuntimeError("Киря, бачок потик, места нема!!! КАРТИНОК БОЛЬШЕ СТА МЕГАБАЙТ")
 
-    if not yandex_response.status_code:
+    if not yandex_response:
         print(f'Возникла ошибка {yandex_response.status_code} "{yandex_response.text}"')
         return None
     image_id = yandex_response.json()["image"]["id"]
