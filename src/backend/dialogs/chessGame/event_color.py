@@ -13,5 +13,4 @@ def event_color(event):
         return config.get_config_user_move_second()
         # return event_move.event_move(event)
 
-    cfg = config.get_config_choose_color()
-    return cfg
+    return config.get_config_choose_color()

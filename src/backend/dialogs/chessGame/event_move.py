@@ -1,22 +1,19 @@
-import os                                                                          
-from typing import Any                                                             
-from itertools import product                                                      
-import requests                                                                    
-from dialogs.chessMain import config                                               
-from utils.responseHelper import getState                                          
-from dotenv import dotenv_values                  
-
-env_vars = dotenv_values(".env")                                                   
-oauth_key = env_vars.get("OAUTH_IMAGE_KEY")                                        
-skill_id = env_vars.get("SKILL_ID")                                                
-#oauth_key = os.getenv("OAUTH_IMAGE_KEY")                                          
-#skill_id = os.getenv("SKILL_ID")
+from typing import Any
+from itertools import product
+import requests
+from dialogs.chessMain import config
+from utils.responseHelper import getState
+from .db import get_board_id
 
 # Изменить на 127.0.0.1, если будем запускать в ВМ Швепса
 api_base = 'http://127.0.0.1:5000/api/chess/'
 
 all_squares = {f'{c}{n}' for c, n in product('abcdefhg', '12345678')}
 ask_help = 'Скажите "Помощь", если не получится ещё раз.'
+
+
+def is_move(move: str) -> bool:
+    return move[:2] in all_squares and move[2:] in all_squares
 
 
 def replace_scores_to_spaces(strings: list[str]) -> list[str]:
@@ -85,7 +82,7 @@ def handler_not_a_move(event, session_states) -> dict | None:
     return None
 
 
-def get_next_move(user_move: str, event, prev_moves: str) -> dict:
+def get_next_move(user_move: str, event, prev_moves: str, session_states) -> dict:
     # Часть запроса к движку за ходом
     params = {
         "user_move": user_move,
@@ -98,86 +95,24 @@ def get_next_move(user_move: str, event, prev_moves: str) -> dict:
 
     response = requests.get(api_base + 'move', params)
     if response.status_code != 200:
-        message = f'Возникла ошибка "{response.json()["message"]}", попробуйте ещё раз. ' + ask_help
+        message = f'Возникла ошибка "{response.json()["message"]}", {user_move}, попробуйте ещё раз. ' + ask_help
         tts = f'Возникла ошибка на сервере, попробуйте ещё раз' + ask_help
-        return get_config(
-            message,
-            tts,
-            config.buttons,
-            None,  # Как получить прошлую картинку?
-            {"branch": "chessGame"}
-        )
+        return get_config(message, tts, config.buttons, None, session_states)
 
     return response.json()["response"]
 
 
-def get_bigimage_board(
-        last_move: str,
-        fen: str,
-        check: str,
-        event,
-        session_states
-) -> dict | None:
-    params = {
-        "last_move": last_move,
-        "fen": fen,
-        "check": check,
-        "orientation:": getState(event, 'orientation')
-    }
-    board_response = requests.get(api_base + 'board', params=params)
-    if board_response.status_code != 200:  # Либо сервер сломался, либо неверные параметры в ходе игры.
-        message = f'Возникла ошибка "{board_response.status_code} {board_response.text}", попробуйте ещё раз. ' \
-                  + ask_help
-        tts = f'Возникла ошибка на сервере, попробуйте ещё раз' + ask_help
-        return get_config(
-            message,
-            tts,
-            config.buttons,
-            None,  # Как получить прошлую картинку?
-            session_states
-        )
-
-    data = {
-        "Host": "https://dialogs.yandex.net",
-        "Authorization": f'OAuth {oauth_key}',
-        "Content-Type": "multipart/form-data"
-    }
-    # !!! Я не уверен в правильности форматов data и самого запроса!!!
-    yandex_response = requests.post(data["Host"] + f'/api/v1/skills/{skill_id}/images',
-                                    data=data, files={'file': board_response.content})
-    if yandex_response.status_code == 429:  # Обработка момента, когда занята вся память навыка (около 2к картинок)
-        raise RuntimeError("Киря, бачок потик, места нема!!! КАРТИНОК БОЛЬШЕ СТА МЕГАБАЙТ")
-
-    if yandex_response.status_code != 200:
-        message = f'Возникла ошибка "{yandex_response.text}", попробуйте ещё раз. ' + ask_help
-        tts = f'Возникла ошибка на сервере, попробуйте ещё раз' + ask_help
-        return get_config(
-            message,
-            tts,
-            config.buttons,
-            None,  # Как получить прошлую картинку?
-            session_states
-        )
-
-    card = {
-        "type": "BigImage",
-        "image_id": yandex_response.json()["image"]["id"],
-        "title": "123",  # Нужен ли заголовок? Можно сделать пустым?
-        "description": "321",  # Нужно ли описание? Можно сделать пустым?
-        "button": {
-            "text": "Надпись на кнопке",
-            "url": f"https://lichess.org/analysis/fromPosition/{fen}",
-            "payload": {}
-        }
-    }
-
-    return card
-
-
 def event_move(event):
     # Часть обработки сообщения пользователя
-    tokens = replace_scores_to_spaces([ru_to_eng(s.lower()) for s in event["request"]["command"].lower().split()])
-    moves = [token for token in tokens if token in all_squares]
+    print(1)
+    try:
+        tokens = [ru_to_eng(str(s).lower()) for s in event["request"]["nlu"]["tokens"]]
+    except KeyError as e:
+        print(e)
+        raise e
+    print(2)
+    move = ''.join([token for token in tokens if token in 'abcdefgh12345678'])
+    print(f'{move=}')
 
     try:
         prev_moves = getState(event, 'prev_moves')
@@ -190,27 +125,35 @@ def event_move(event):
         "prev_moves": prev_moves,
     }
 
-    if len(moves) != 2 and session_states["prev_moves"]:
+    if not is_move(move) and session_states["prev_moves"]:
         if answer_config := handler_not_a_move(event, session_states):
             return answer_config
         message = f'Не удалось распознать ход в фразе "{event["request"]["command"]}", попробуйте ещё раз. ' + ask_help
         tts = f'Не удалось распознать ход, попробуйте ещё раз. ' + ask_help
-        return get_config(
-            message,
-            tts,
-            config.buttons,
-            None,  # Как получить прошлую картинку?
-            session_states,
-        )
+        return get_config(message, tts, config.buttons, None, session_states)
 
-    data = get_next_move(''.join(moves), event, session_states["prev_moves"])
+    data = get_next_move(move, event, session_states["prev_moves"], session_states)
     if 'tts' in data:  # Если словарь с tts - это результат get_config
+        print(f'{event["request"]=}\n{tokens=}\n{move=}')
         return data
 
     stockfish_move = data["stockfish_move"]
-    card = get_bigimage_board(stockfish_move, data["fen"], data["check"], event, session_states)
-    if isinstance(card, dict) and 'tts' in card:
-        return card  # Если словарь с tts - это результат get_config
+    board_id = get_board_id(data["fen"], data["orientation"], data["last_move"], data["check"])
+    if not board_id:
+        message = f'Ошибка на сервере с получением картинки. ' + ask_help
+        tts = f'Ошибка на сервере с получением картинки. ' + ask_help
+        return get_config( message, tts, config.buttons, None, session_states)
+    card = {
+        "type": "BigImage",
+        "image_id": board_id,
+        "title": "Заголовок",
+        "description": "Описание",
+        "button": {
+            "text": "Кнопка",
+            "url": f"https://lichess.org/analysis/fromPosition/" + data["fen"],
+            "payload": {}
+        }
+    }
 
     if data['end_type'] is not None:
         del session_states["prev_moves"]
