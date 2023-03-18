@@ -12,7 +12,7 @@ def getResponse(event, allDialogs):
             else:
                 config = event_color(event)
         except KeyError:
-            config = event_color(event)
+            raise KeyError('Kak suda mozhet popast?')
         return createResponse(event, config)
 
     try:
