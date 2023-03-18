@@ -8,15 +8,11 @@ def getResponse(event, allDialogs):
     def getReponseFunc(event, allDialogs):
         try:
             orientation = getState(event, 'orientation')
-        except KeyError:
-            orientation = None
-            print('Orientation = 0 KAK SUDA POPALO?')
+        except KeyError as e:
+            raise KeyError('Orientation = 0 KAK SUDA POPALO?')
+            # raise e
 
-        if orientation:  # т.е. играет и есть цвет
-            config = event_move(event)
-        else:
-            config = event_color(event)
-        return createResponse(event, config)
+        return createResponse(event, event_move(event))
 
     try:
         orientation = getState(event, 'orientation')
