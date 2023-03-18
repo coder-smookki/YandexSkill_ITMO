@@ -19,6 +19,7 @@ user_move_second_message = """
 user_move_second_tts = user_move_first_message
 
 buttons = [
+    'Что-то',
     "Назад",
     "Выйти",
     "Помощь",

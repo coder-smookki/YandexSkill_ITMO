@@ -119,7 +119,9 @@ def event_move(event):
         "prev_moves": prev_moves,
     }
 
-    if not is_move(move) and session_states["prev_moves"]:
+    if session_states["orientation"] == "b" and not is_move(move) and not session_states["prev_moves"]:
+        pass  # Cringe of day
+    else:
         if answer_config := handler_not_a_move(event, session_states):
             return answer_config
         message = f'Не удалось распознать ход в фразе "{event["request"]["command"]}", попробуйте ещё раз. ' + ask_help
@@ -132,7 +134,7 @@ def event_move(event):
         return data
 
     stockfish_move = data["stockfish_move"]
-    board_id = get_board_id(data["fen"], data["orientation"], data["last_move"], data["check"])
+    board_id = get_board_id(data["fen"], data["orientation"], data["stockfish_move"], data["check"])
     if not board_id:
         message = f'Ошибка на сервере с получением картинки. ' + ask_help
         tts = f'Ошибка на сервере с получением картинки. ' + ask_help
