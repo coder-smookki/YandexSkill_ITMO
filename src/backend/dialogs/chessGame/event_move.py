@@ -74,8 +74,6 @@ def handler_not_a_move(event, session_states: dict | None = None) -> dict | None
     command = event["request"]["command"] + ' ' + event["request"]["original_utterance"]
     if 'правила' in command.lower():
         return getHelpConfig()
-    if 'проверить' in command.lower():
-        return 'проверить'
     return None
 
 
