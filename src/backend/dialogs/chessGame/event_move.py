@@ -185,4 +185,4 @@ def event_move(event):
 
     tts = message
 
-    return get_config(message, tts, config.buttons, None, session_states)
+    return get_config(message, tts, config.buttons, card, session_states)
