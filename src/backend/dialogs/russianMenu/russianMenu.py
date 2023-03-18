@@ -5,6 +5,7 @@ from utils.triggerHelper import *
 def getResponse(event, allDialogs=None):
     config = getConfig(event)
     a = createResponse(event, config)
+    print(a)
     return a
 
 
