@@ -7,12 +7,13 @@ from utils.triggerHelper import *
 def getResponse(event, allDialogs):
     def getReponseFunc(event, allDialogs):
         try:
-            orientation = getState(event, 'orientation')
+            getState(event, 'orientation')
         except KeyError as e:
             raise KeyError('Orientation = 0 KAK SUDA POPALO?')
             # raise e
-
-        return createResponse(event, event_move(event))
+        a = createResponse(event, event_move(event))
+        print(a)
+        return a
 
     try:
         orientation = getState(event, 'orientation')
