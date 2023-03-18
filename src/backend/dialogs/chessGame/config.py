@@ -72,13 +72,10 @@ def get_config_user_move_second():
     }
 
 
-def getRulesConfig():
+def getRulesConfig(session_states: dict | None):
     return {
         'message': user_move_second_message,
         'tts': user_move_first_tts,
         'buttons': buttons,
-        'session_state': {
-            "branch": "chessGame",
-            "orientation": "b"
-        }
+        'session_state': session_states
     }

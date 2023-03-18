@@ -1,4 +1,4 @@
-from .event_move import event_move
+from .event_move import event_move, handler_not_a_move
 from .event_color import event_color
 from utils.responseHelper import *
 from utils.triggerHelper import *
@@ -15,6 +15,8 @@ def getResponse(event, allDialogs):
         print(a)
         return a
 
+    if config := handler_not_a_move(event):
+        return createResponse(event, config)
     try:
         orientation = getState(event, 'orientation')
     except KeyError:

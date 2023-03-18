@@ -67,14 +67,14 @@ def get_config(
     }
 
 
-def handler_not_a_move(event, session_states) -> dict | None:
+def handler_not_a_move(event, session_states: dict | None = None) -> dict | None:
     """
     Обработчик на тот случай, если в сообщении не было найдено ходов.
     Может быть, пользователь попросил помощи или правила?
     """
     command = event["request"]["command"] + ' ' + event["request"]["original_utterance"]
     if 'помощь' in command.lower() or 'правила' in command.lower():
-        return getRulesConfig()
+        return getRulesConfig(session_states)
     return None
 
 
