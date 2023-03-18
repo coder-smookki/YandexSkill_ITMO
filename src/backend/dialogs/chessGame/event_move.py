@@ -159,7 +159,6 @@ def event_move(event):
         "button": {
             "text": "Кнопка",
             "url": f"https://lichess.org/analysis/fromPosition/" + data["fen"],
-            "payload": {}
         }
     }
 

@@ -92,7 +92,7 @@ def get_board_id(fen: str, orientation: str, last_move: str, check: str | None) 
     if not board_id:
         board_id = [cache_new_board_id(fen, orientation, last_move, check)]
     board_id = board_id[0]
-    del_thread = Timer(30, delete_board_id, args=(board_id,))
+    del_thread = Timer(60, delete_board_id, args=(board_id,))
     del_thread.start()
     return board_id
 
