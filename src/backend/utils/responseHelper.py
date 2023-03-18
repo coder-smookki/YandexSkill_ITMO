@@ -107,7 +107,8 @@ def getGlobalState(event, state):
     return event['state'][state]['value']
 
 def getLanguage(event):
-    if haveGlobalState(event, 'language'):
+    allowedLangs = ['ru-RU', 'en-US']
+    if haveGlobalState(event, 'language') and getGlobalState(event, 'language') in allowedLangs:
         lang = getGlobalState(event, 'language')
     else:
         lang = event['meta']['locale']
