@@ -42,6 +42,6 @@ def getConfig():
         'buttons': buttons,
         'card': card,
         "user_state_update": {
-            "language": 'someLang'
-        }
+            "value": 'someValue'
+        },
     }
