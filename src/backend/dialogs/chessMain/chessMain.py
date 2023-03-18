@@ -16,7 +16,7 @@ def getResponse(event, allDialogs):
 
 def isTriggered(event):
     token = {"шахматы", "шахмат"}
-    return isSimilarTokens(event, token)
+    return isSimilarTokens(event, token) or isInContext(event, 'chessMain')
 
 
 chessMain = {'getResponse': getResponse, 'isTriggered': isTriggered}
