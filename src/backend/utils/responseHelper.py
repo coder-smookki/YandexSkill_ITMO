@@ -27,6 +27,7 @@ def createTimeoutResponse(event, allDialogs, getRepsonse, timeoutName):
         doFuncAsAsync(getAsyncResponse, [event, allDialogs, timeoutName])
         session_state = event['state']['session']
         session_state['branch'] = event['state']['session']['branch'][-1]
+        print('SESSIONS_STATE:',session_state)
         return {
             'response': {
                 'text': 'Загрузка...',
