@@ -26,6 +26,7 @@ def createTimeoutResponse(event, allDialogs, getRepsonse, timeoutName):
             setInGlobalStorage(fieldName, {'response': response, 'isLoaded': True}, overwrite=True)
         doFuncAsAsync(getAsyncResponse, [event, allDialogs, timeoutName])
         session_state = event['state']['session']
+        session_state['state']['session']['branch'] = event['state']['session']['branch'][-1]
         return {
             'response': {
                 'text': 'Загрузка...',
@@ -45,6 +46,7 @@ def createTimeoutResponse(event, allDialogs, getRepsonse, timeoutName):
     elif globalStorage[fieldName]['isLoaded'] == False:
         print('loading...')
         session_state = event['state']['session']
+        session_state['state']['session']['branch'] = event['state']['session']['branch'][-1]
         return {
             'response': {
                 'text': 'Все еще загрузка...',
