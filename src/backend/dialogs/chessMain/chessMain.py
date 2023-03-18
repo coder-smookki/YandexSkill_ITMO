@@ -10,6 +10,7 @@ def getResponse(event, allDialogs):
     elif isInContext(event, 'chessMain') and isSimilarTokens(event, {'играть', 'да'}):
         config = get_config_choose_color()
     else:
+        print('123', event)
         config = getConfig()
     return createResponse(event, config)
 

@@ -106,7 +106,7 @@ def delete_board_id(image_id: str):
     conn.commit()
 
     headers = {
-        "Authorization": f'{oauth_key}',
+        "Authorization": f'OAuth {oauth_key}',
     }
     yandex_response = requests.delete(url + image_id, headers=headers)
     if not yandex_response:
