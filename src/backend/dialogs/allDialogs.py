@@ -28,6 +28,7 @@ from .chessGame.chessGame import chessGame
 from .chessMain.chessMain import chessMain
 from .start_quiz.start_quiz import start_quiz
 from .general_quiz.general_quiz import general_quiz
+from .OfficeConsultation.OfficeConsultation import OfficeConsultation
 
 allDialogs = {
     'generalMenu': generalMenu,
@@ -39,6 +40,7 @@ allDialogs = {
     'howToCheckRelevance': howToCheckRelevance,
     'forFreshman': forFreshman,
     'studentOfficeAbout': studentOfficeAbout,
+    'OfficeConsultation': OfficeConsultation,
     'studentOfficeWhy': studentOfficeWhy,
     'documentOnPreviousEducation': documentOnPreviousEducation,
     'universityWideUndergraduateModules': universityWideUndergraduateModules,
