@@ -73,8 +73,8 @@ def handler_not_a_move(event, session_states: dict | None = None) -> dict | None
     Может быть, пользователь попросил помощи или правила?
     """
     command = event["request"]["command"] + ' ' + event["request"]["original_utterance"]
-    if 'помощь' in command.lower() or 'правила' in command.lower():
-        return getRulesConfig(session_states)
+    if 'правила' in command.lower():
+        return getRulesConfig()
     return None
 
 
