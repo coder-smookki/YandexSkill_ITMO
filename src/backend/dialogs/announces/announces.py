@@ -7,15 +7,17 @@ from utils.globalStorage import globalStorage
 def getResponse(event, allDialogs=None):
     config = getConfig()
     announces = globalStorage['news_announces']
-
+    buttonsResponse = []
     for i in announces:
         config['message'] += f"""
         {i['text']}.\n
-        {i['link']}.\n
         {i['date']}.\n
         ------------\n
         """
+        buttonsResponse.append({'title': i['text'], 'url': i['link']})
         config['tts'] += f'Вы направились в категорию "Анонсы". {i["text"]} будет {i["date"]} '
+
+    config['buttons'].insert(buttonsResponse)
     return createResponse(event, config)
 
 
