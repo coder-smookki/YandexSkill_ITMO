@@ -10,7 +10,7 @@ def getResponse(event, allDialogs=None):
     print(event['request']['nlu']['tokens'])
     if isInLastContext(event, 'chooseLanguage'):
         print('choosLang context')
-        if isSimilarTokens(event, {'рус', 'рас', 'rus'}):
+        if 'рус' in getCommand(event) or  'рас' in getCommand(event) or 'rus' in getCommand(event):
             print('rus tokens')
             setGlobalStateInEvent(event, 'language', 'ru-RU')
         else:
