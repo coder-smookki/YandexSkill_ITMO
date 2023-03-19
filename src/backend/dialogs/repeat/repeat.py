@@ -2,9 +2,6 @@ from utils.triggerHelper import *
 from utils.responseHelper import *
 from utils.branchHandler import getDialogResponseFromEnd
 
-config = getConfig()
-
-
 def getResponse(event, allDialogs=None):
     return allDialogs[getState('branch')[-1]]['getResponse'](event, allDialogs)
 
