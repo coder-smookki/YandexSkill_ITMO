@@ -9,9 +9,12 @@ def getResponse(event, allDialogs=None):
 
 
     if isInLastContext(event, 'chooseLanguage'):
+        print('choosLang context')
         if isSimilarTokens(event, {'рус', 'рас', 'rus'}):
+            print('rus tokens')
             setGlobalStateInEvent(event, 'language', 'ru-RU')
         else:
+            print('another tokens')
             setGlobalStateInEvent(event, 'language', 'en-US')
 
     print('state language:', getGlobalState(event, 'language'))
