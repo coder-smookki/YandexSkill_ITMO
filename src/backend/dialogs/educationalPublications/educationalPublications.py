@@ -13,7 +13,7 @@ def getResponse(event, allDialogs=None):
 
 def isTriggered(event):
     token = {"учебные", "издания", "учебны"}
-    return isSimilarTokens(event, token) and isInContext(event, 'russianMenu')
+    return isSimilarTokens(event, token) and isInContext(event, 'mainMenu')
 
 
 educationalPublications = {'getResponse': getResponse, 'isTriggered': isTriggered}
