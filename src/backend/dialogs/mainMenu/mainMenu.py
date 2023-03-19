@@ -15,7 +15,7 @@ def getResponse(event, allDialogs=None):
 
     changeLangTokens = {'язык', 'language', 'lang'}
     if isSimilarTokens(event, changeLangTokens):
-        return allDialogs['changeLanguage']['getResponse'](event, allDialogs)
+        return allDialogs['chooseLanguage']['getResponse'](event, allDialogs)
     print('state language:', getGlobalState(event, 'language'))
     print('getLanguage:', getLanguage(event))
     config = getConfig(event)
