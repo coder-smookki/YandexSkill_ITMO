@@ -43,7 +43,14 @@ def getPageConfig(event, pageNum, countOnOnePage):
         "timeTable_timetable": pages,
         "timeTable_lastPage": pageNum,
     }
-    buttons = ["Следующая страница", "Предыдущая страница", "Помощь", "Назад", "Выйти"]
+    buttons = [
+        "Следующая страница",
+        "Предыдущая страница",
+        "Что ты умеешь?",
+        "Помощь",
+        "Назад",
+        "Выйти"
+    ]
     return {
         "message": message,
         "tts": tts,

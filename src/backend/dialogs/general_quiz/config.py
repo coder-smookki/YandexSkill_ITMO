@@ -8,6 +8,7 @@ with open("questions.json") as file:
 
 buttons = [
     "Повторить ещё раз",
+    "Что ты умеешь?",
     "Помощь",
     "Назад",
     "Выйти"
