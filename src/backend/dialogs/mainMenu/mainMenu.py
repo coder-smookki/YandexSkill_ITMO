@@ -7,7 +7,7 @@ def getResponse(event, allDialogs=None):
     if isNewSession(event) and not haveGlobalState(event, 'language'):
         return allDialogs['chooseLanguage']['getResponse'](event, allDialogs)
 
-
+    print(event['request']['nlu']['tokens'])
     if isInLastContext(event, 'chooseLanguage'):
         print('choosLang context')
         if isSimilarTokens(event, {'рус', 'рас', 'rus'}):
