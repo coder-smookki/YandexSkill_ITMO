@@ -62,7 +62,7 @@ eng_choose_color_buttons = [
 
 eng_buttons = [
     'Something',
-    "Rules"
+    "Rules",
     "Назад",
     "Выйти",
     "Помощь",
