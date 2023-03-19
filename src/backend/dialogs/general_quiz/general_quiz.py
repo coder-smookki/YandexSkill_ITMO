@@ -4,7 +4,7 @@ from utils.triggerHelper import *
 
 
 def getResponse(event, allDialogs):
-    # Пока юзаю фиксированое число вопросов
+
     if getState(event, "count_questions") < 5:
         check_answer(event)
         config = getConfig(event)

@@ -46,7 +46,7 @@ def getFinishConfig(event):
             getState(event, "count_questions")),
         'tts': "Ваш результат:" + str(getState(event, "count_correct_response") + 1) + "из" + str(
             getState(event, "count_questions")),
-        'buttons': buttons.append('Меню'),
+        'buttons': copy.deepcopy(buttons).append('Меню'),
         'session_state': {
             "branch": "mainMenu"
         }
