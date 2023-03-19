@@ -1,15 +1,18 @@
-from dotenv import load_dotenv;
+from dotenv import load_dotenv
+load_dotenv()
 
-load_dotenv()  # noqa
+from utils.responseHelper import *
 
 from dialogs.chessGame import config, event_move
 
 
 def event_color(event):
-    if 'белы' in event["request"]["command"].lower():
-        return config.get_config_user_move_first()
+    lang = getLanguage(event)
+    if 'белы' in event["request"]["command"].lower() or 'white' in event["request"]["command"].lower():
+        return config.get_config_user_move_first(lang)
 
-    if 'черн' in event["request"]["command"].lower() or 'чёрн' in event["request"]["command"].lower():
-        return config.get_config_user_move_second()
+    if ('черн' in event["request"]["command"].lower() or 'чёрн' in event["request"]["command"].lower()
+            or 'black' in event["request"]["command"].lower()):
+        return config.get_config_user_move_second(lang)
 
-    return config.get_config_choose_color()
+    return config.get_config_choose_color(lang)

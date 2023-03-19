@@ -5,17 +5,18 @@ from utils.triggerHelper import *
 
 
 def getResponse(event, allDialogs):
-    if isInContext(event, 'chessMain') and isSimilarTokens(event, {'правила'}):
-        config = getHelpConfig()
-    elif isInContext(event, 'chessMain') and isSimilarTokens(event, {'играть', 'да'}):
-        config = get_config_choose_color()
+    lang = getLanguage(event)
+    if isInContext(event, 'chessMain') and isSimilarTokens(event, {'правила', 'rules'}):
+        config = getHelpConfig(lang)
+    elif isInContext(event, 'chessMain') and isSimilarTokens(event, {'играть', 'да', 'play', 'yes'}):
+        config = get_config_choose_color(lang)
     else:
-        config = getConfig()
+        config = getConfig(lang)
     return createResponse(event, config)
 
 
 def isTriggered(event):
-    token = {"шахматы", "шахмат"}
+    token = {"шахматы", "шахмат", 'chess'}
     return isSimilarTokens(event, token) or isInContext(event, 'chessMain')
 
 

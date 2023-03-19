@@ -1,8 +1,8 @@
 from typing import Any
 from itertools import product
 import requests
-from dialogs.chessMain import config
-from utils.responseHelper import getState
+from .config import game, messages
+from utils.responseHelper import getState, getLanguage
 
 from .db import get_board_id
 from ..chessMain.config import getHelpConfig
@@ -10,7 +10,6 @@ from ..chessMain.config import getHelpConfig
 api_base = 'http://127.0.0.1:5000/api/chess/'
 
 all_squares = {f'{c}{n}' for c, n in product('abcdefhg', '12345678')}
-ask_help = 'Скажите "Помощь", если не получится ещё раз.'
 
 
 def is_move(move: str) -> bool:
@@ -66,23 +65,24 @@ def get_config(
     }
 
 
-def handler_not_a_move(event, session_states: dict | None = None) -> dict | None | str:
+def handler_not_a_move(event) -> dict | None | str:
     """
     Обработчик на тот случай, если в сообщении не было найдено ходов.
     Может быть, пользователь попросил помощи или правила?
     """
+    lang = getLanguage(event)
     command = event["request"]["command"] + ' ' + event["request"]["original_utterance"]
-    if 'правила' in command.lower():
-        return getHelpConfig()
+    if 'правила' in command.lower() or 'rules' in command.lower():
+        return getHelpConfig(lang)
     return None
 
 
-def get_next_move(user_move: str, event, prev_moves: str, session_states) -> dict:
+def get_next_move(user_move: str, orientation: str, prev_moves: str, lang: str, session_states) -> dict:
     # Часть запроса к движку за ходом
     params = {
         "user_move": user_move,
         "prev_moves": prev_moves,
-        "orientation": getState(event, 'orientation'),
+        "orientation": orientation,
         "skill_level": 1,  # session_states.get("skill_level")  Сделать выбор уровня сложности???
         "ram_hash": 1,  # Для ускорения апи, минимум в константах, ищите в кода апи
         "depth": 15,
@@ -90,17 +90,18 @@ def get_next_move(user_move: str, event, prev_moves: str, session_states) -> dic
 
     response = requests.get(api_base + 'move', params)
     if not response:
-        message = f'Возникла ошибка {response.json()["message"]}, попробуйте ещё раз. ' + ask_help
-        tts = f'Возникла ошибка на сервере, попробуйте ещё раз' + ask_help
-        return get_config(message, tts, config.buttons, None, session_states)
+        message = game[lang]['error'](response.json()["message"])
+        tts = game[lang]['error_tts']
+        buttons = messages[lang]["buttons"]
+        return get_config(message, tts, buttons, None, session_states)
 
     return response.json()["response"]
 
 
 def pre_handle_move(event):
+    lang = getLanguage(event)
     tokens = [ru_to_eng(str(s).lower()) for s in event["request"]["nlu"]["tokens"]]
     move = ''.join([token for token in tokens if token in 'abcdefgh12345678'])
-    print(f'{move=}')
 
     try:
         prev_moves = getState(event, 'prev_moves')
@@ -116,11 +117,12 @@ def pre_handle_move(event):
     if session_states["orientation"] == "b" and not session_states["prev_moves"]:
         pass  # cringe of project
     elif not is_move(move):
-        if answer_config := handler_not_a_move(event, session_states):
+        if answer_config := handler_not_a_move(event):
             return answer_config
-        message = f'Не удалось распознать ход в фразе "{event["request"]["command"]}", попробуйте ещё раз. ' + ask_help
-        tts = f'Не удалось распознать ход, попробуйте ещё раз. ' + ask_help
-        return get_config(message, tts, config.buttons, None, session_states)
+        message = game[lang]["unknown_move"](event["request"]["command"])
+        tts = game[lang]["unknown_move_tts"]
+        buttons = messages[lang]["buttons"]
+        return get_config(message, tts, buttons, None, session_states)
     return move, session_states
 
 
@@ -129,43 +131,43 @@ def event_move(event):
     if isinstance(values, dict):
         return values
     move, session_states = values
-    data = get_next_move(move, event, session_states["prev_moves"], session_states)
+    lang = getLanguage(event)
+    orientation = getState(event, 'orientation')
+    data = get_next_move(move, orientation, session_states["prev_moves"], lang, session_states)
     if 'tts' in data:  # Если словарь с tts - это результат get_config
         return data
 
     stockfish_move = data["stockfish_move"]
     board_id = get_board_id(data["fen"], session_states["orientation"], data["stockfish_move"], data["check"])
     if not board_id:
-        message = f'Ошибка на сервере с получением картинки. ' + ask_help
-        tts = f'Ошибка на сервере с получением картинки. ' + ask_help
-        return get_config(message, tts, config.buttons, None, session_states)
+        message = game[lang]["board_image_error"]
+        tts = game[lang]["board_image_error_tts"]
+        buttons = messages[lang]["buttons"]
+        return get_config(message, tts, buttons, None, session_states)
     card = {
         "type": "BigImage",
         "image_id": board_id,
     }
 
     if data['end_type'] is not None:
-        del session_states["prev_moves"]
-
         if data["end_type"] is not None:
             who_win = 'w' if data["orientation"] == 'b' else 'b'
         else:
             who_win = None
 
-        message = 'Игра закончилась '
         if who_win == "w":
-            message += 'победой белых!'
+            message = game[lang]['end_game']['white']
         elif who_win == "b":
-            message += 'победой чёрных!'
+            message = game[lang]['end_game']['black']
         else:
-            message += 'в ничью...'
+            message = game[lang]['end_game']['draw']
         card['title'] = message
-
+        del session_states["prev_moves"]
         del session_states["orientation"]
     else:
-        message = 'Я сходил на "{}" {}, теперь ваш ход.'.format(stockfish_move, 'тебе шах' if data['check'] else '')
+        message = game[lang]["skill_do_move"](stockfish_move, 'тебе шах' if data['check'] else '')
         session_states["prev_moves"] = data["prev_moves"]
 
     tts = message
-
-    return get_config(message, tts, config.buttons, card, session_states)
+    buttons = messages[lang]["buttons"]
+    return get_config(message, tts, buttons, card, session_states)
