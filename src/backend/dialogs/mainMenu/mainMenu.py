@@ -11,6 +11,8 @@ def getResponse(event, allDialogs=None):
             setGlobalStateInEvent(event, 'language', 'en-US')
 
     config = getConfig(event)
+    print('state language:', getGlobalState(event, 'language'))
+    print('getLanguage:', getLanguage(event))
     return createResponse(event, config)
 
 
