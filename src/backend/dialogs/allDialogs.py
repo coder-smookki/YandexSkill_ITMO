@@ -32,8 +32,8 @@ from .OfficeConsultation.OfficeConsultation import OfficeConsultation
 from .officeOtherFeatures.officeOtherFeatures import officeOtherFeatures
 
 allDialogs = {
-    'chooseLanguage': chooseLanguage,
     'exitConfirm': exitConfirm,
+    'chooseLanguage': chooseLanguage,
     'backDialog': backDialog,
     'help': help,
     'whoIsCreator': whoIsCreator,
