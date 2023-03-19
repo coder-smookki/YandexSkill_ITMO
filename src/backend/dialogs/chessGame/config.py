@@ -62,7 +62,7 @@ eng_choose_color_buttons = [
 
 eng_buttons = [
     'Something',
-    "Rules"
+    "Rules",
     "Назад",
     "Выйти",
     "Помощь",
@@ -70,8 +70,8 @@ eng_buttons = [
 
 messages = {
     "ru-RU": {
-        "choose_color_message": ru_choose_color_message,
-        "choose_color_tts": ru_choose_color_tts,
+        "user_choose_color_message": ru_choose_color_message,
+        "user_choose_color_tts": ru_choose_color_tts,
         "user_move_first_message": ru_user_move_first_message,
         "user_move_first_tts": ru_user_move_first_tts,
         "user_move_second_message": ru_user_move_second_message,
@@ -81,8 +81,8 @@ messages = {
         "buttons": ru_buttons
     },
     "en-US": {
-        "choose_color_message": eng_choose_color_message,
-        "choose_color_tts": eng_choose_color_tts,
+        "user_choose_color_message": eng_choose_color_message,
+        "user_choose_color_tts": eng_choose_color_tts,
         "user_move_first_message": eng_user_move_first_message,
         "user_move_first_tts": eng_user_move_first_tts,
         "user_move_second_message": eng_user_move_second_message,
@@ -136,9 +136,9 @@ game = {
 
 def get_config_choose_color(lang: str):
     return {
-        'message': messages[lang]["choose_color_message"],
-        'tts': messages[lang]["choose_color_tts"],
-        'buttons': messages[lang]["choose_color_buttons"],
+        'message': messages[lang]["user_choose_color_message"],
+        'tts': messages[lang]["user_choose_color_tts"],
+        'buttons': messages[lang]["user_choose_color_buttons"],
         'session_state': {
             "branch": "chessGame"
         }
