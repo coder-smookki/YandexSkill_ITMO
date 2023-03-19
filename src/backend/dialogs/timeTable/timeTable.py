@@ -4,8 +4,6 @@ from utils.triggerHelper import *
 
 
 def getResponse(event, allDialogs=None):
-    print('command:', getCommand(event))
-    print('orgiUtter:', getOriginalUtterance(event))
     if not haveState(event, "timeTable_step"):
         config = copy.deepcopy(getConfig("group"))
         config["session_state"]["timeTable_step"] = 1
@@ -14,12 +12,12 @@ def getResponse(event, allDialogs=None):
     elif getState(event, "timeTable_step") == 1:
         config = copy.deepcopy(getConfig("degree"))
         config["session_state"]["timeTable_step"] = 2
-        config["session_state"]["timeTable_group"] = getOriginalUtterance(event)
+        config["session_state"]["timeTable_group"] = getCommand(event).lower()
         return createResponse(event, config)
 
     degree = getOriginalUtterance(event)
     setStateInEvent(event, "timeTable_group", getState(event, "timeTable_group"))
-    setStateInEvent(event, "timeTable_degree", degree)
+    setStateInEvent(event, "timeTable_degree", degree.lower())
     return allDialogs["timeTableFind"]["getResponse"](event, allDialogs)
 
 
