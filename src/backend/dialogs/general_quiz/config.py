@@ -3,6 +3,9 @@ import copy
 import random
 from utils.responseHelper import *
 
+with open("questions.json") as file:
+    questions = json.loads(file.read())
+
 buttons = [
     "Повторить ещё раз",
     "Помощь",
@@ -15,11 +18,9 @@ session_state = {
 }
 
 
-def getConfig(num, event):
-    with open("questions.json") as file:
-        questions = json.loads(file.read())
-    message = questions["questions"][num]
-    correct_answer = questions["answers"][num]
+def getConfig(event):
+    message = questions["questions"][getState(event, "questions_list")[-1]]
+    correct_answer = questions["answers"][getState(event, "questions_list")[-1]]
     answers = questions["uncorrect_answers"]
     answers[random.randint(0, len(answers) - 1)] = correct_answer
     buttons_response = answers + buttons
@@ -49,8 +50,15 @@ def getFinishConfig(event):
     }
 
 def check_answer(event):
-    with open("questions.json") as file:
-        questions = json.loads(file.read())
     if questions["answers"][getState(event, "count_questions")] == getOriginalUtterance(event):
         setStateInEvent(event, "count_correct_response", getState(event, "count_correct_response") + 1)
     setStateInEvent(event, "count_questions", getState(event, "count_questions") + 1)
+
+    questions_list = getState(event, "questions_list")
+    track_question = random.randint(0, len(questions['questions']))
+    while track_question in questions_list:
+        track_question = random.randint(0, len(questions['questions']))
+
+    questions_list.append(track_question)
+
+    setStateInEvent(event, "questions_list", questions_list)

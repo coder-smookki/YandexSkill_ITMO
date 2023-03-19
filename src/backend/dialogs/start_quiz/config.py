@@ -36,7 +36,8 @@ card = {
 session_state = {
     "branch": "start_quiz",
     "count_questions": 0,
-    "count_correct_response": 0
+    "count_correct_response": 0,
+    "questions_list": []
 }
 
 
