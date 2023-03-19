@@ -30,7 +30,7 @@ buttons = [
 
 card = {
     'type': 'BigImage',
-    'image_id': '937455/40f0536e426907808499',
+    'image_id': '1540737/1c8b2e480345c6cc8635',
     'title': 'БИБЛИОТЕКА',
     'description': \
         """

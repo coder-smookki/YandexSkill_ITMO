@@ -18,7 +18,7 @@ buttons = [
 
 card = {
     'type': 'BigImage',
-    'image_id': '937455/40f0536e426907808499',
+    'image_id': '997614/e38bbfd1a2235c7229b1',
     'title': 'УЧЕБНЫЕ ИЗДАНИЯ',
     'description': \
         """

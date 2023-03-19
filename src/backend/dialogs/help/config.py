@@ -29,7 +29,7 @@ buttons = [
 
 card = {
     'type': 'BigImage',
-    'image_id': '937455/40f0536e426907808499',
+    'image_id': '1521359/059aaefcfb0a6b5d9cb4',
     'title': 'ПОМОЩЬ',
     'description':
         """

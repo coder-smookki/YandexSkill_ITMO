@@ -37,7 +37,7 @@ buttons = [
 
 card = {
     'type': 'BigImage',
-    'image_id': '937455/40f0536e426907808499',
+    'image_id': '965417/877ccf979621f858aefe',
     'title': 'ПЕРВОКУРСНИКАМ',
     'description': \
         """
