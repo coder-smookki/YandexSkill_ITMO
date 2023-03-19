@@ -4,6 +4,8 @@ from utils.triggerHelper import *
 
 
 def getResponse(event, allDialogs=None):
+    print('command:', getCommand(event))
+    print('orgiUtter:', getOriginalUtterance(event))
     if not haveState(event, "timeTable_step"):
         config = copy.deepcopy(getConfig("group"))
         config["session_state"]["timeTable_step"] = 1
