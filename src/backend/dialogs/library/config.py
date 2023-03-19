@@ -51,7 +51,7 @@ config = {
     Register a campus card with a librarian or coworking administrator as a library card and enjoy all the opportunities!
             """,
         "buttons": [
-            "Repeat one more time"
+            "Repeat one more time",
             "What can you do?",
             "Help",
             "Back",
