@@ -60,9 +60,9 @@ def check_answer(event):
     setStateInEvent(event, "count_questions", getState(event, "count_questions") + 1)
 
     questions_list = getState(event, "questions_list")
-    track_question = random.randint(0, len(questions['questions']))
+    track_question = random.randint(0, len(questions['questions'] - 1))
     while track_question in questions_list:
-        track_question = random.randint(0, len(questions['questions']))
+        track_question = random.randint(0, len(questions['questions'] - 1))
 
     questions_list.append(track_question)
 
