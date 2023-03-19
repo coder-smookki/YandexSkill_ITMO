@@ -70,8 +70,8 @@ eng_buttons = [
 
 messages = {
     "ru-RU": {
-        "choose_color_message": ru_choose_color_message,
-        "choose_color_tts": ru_choose_color_tts,
+        "user_choose_color_message": ru_choose_color_message,
+        "user_choose_color_tts": ru_choose_color_tts,
         "user_move_first_message": ru_user_move_first_message,
         "user_move_first_tts": ru_user_move_first_tts,
         "user_move_second_message": ru_user_move_second_message,
@@ -81,8 +81,8 @@ messages = {
         "buttons": ru_buttons
     },
     "en-US": {
-        "choose_color_message": eng_choose_color_message,
-        "choose_color_tts": eng_choose_color_tts,
+        "user_choose_color_message": eng_choose_color_message,
+        "user_choose_color_tts": eng_choose_color_tts,
         "user_move_first_message": eng_user_move_first_message,
         "user_move_first_tts": eng_user_move_first_tts,
         "user_move_second_message": eng_user_move_second_message,
