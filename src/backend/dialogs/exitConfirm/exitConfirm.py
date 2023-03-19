@@ -2,10 +2,8 @@ from .config import getConfig
 from utils.triggerHelper import *
 from utils.responseHelper import *
 from utils.branchHandler import getDialogResponseFromEnd
-import copy
 
 config = getConfig()
-
 
 def getResponse(event, allDialogs=None):
     if isInContext(event, 'exitConfirm') and isSimilarCommand(event, 'да'):

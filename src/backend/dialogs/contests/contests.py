@@ -6,16 +6,7 @@ from utils.globalStorage import globalStorage
 
 def getResponse(event, allDialogs=None):
     config = getConfig()
-    contests = globalStorage['news_contests']
-
-    for i in contests:
-        config['message'] += f"""
-        {i['text']}\n
-        {i['link']}\n
-        {i['date']}\n
-        ------------\n
-        """
-        config['tts'] += f'Вы направились в категорию "Контесты". {i["text"]} будет {i["date"]} '
+    
     return createResponse(event, config)
 
 
