@@ -68,7 +68,7 @@ def getConfig(event, countOnOnePage):
     groupNums = re.findall(r'\d+', origGroup)
     groupNums = ''.join(groupNums)
 
-    group = rusLetterToEng(groupLetter) + groupNums
+    group = (rusLetterToEng(groupLetter) + groupNums).upper()
 
     degree = re.findall(r'[а-яА-Яa-zA-Z]', origDegree)
     degree = ''.join(degree)
