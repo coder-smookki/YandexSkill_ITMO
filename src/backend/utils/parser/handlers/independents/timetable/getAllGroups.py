@@ -48,7 +48,6 @@ def getAllGroups(args):
 
         result['groups'].append(groupResult)
 
-    # print(totalFounded)
     return result
 
 
