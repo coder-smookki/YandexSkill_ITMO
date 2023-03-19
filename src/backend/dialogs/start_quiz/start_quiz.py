@@ -11,7 +11,7 @@ def getResponse(event, allDialogs):
 
 def isTriggered(event):
     token = {"викторина", "виктори", "start_quiz", "квиз"}
-    return isSimilarTokens(event, token) and isInContext(event, 'russianMenu')
+    return isSimilarTokens(event, token) and isInContext(event, 'mainMenu')
 
 
 start_quiz = {'getResponse': getResponse, 'isTriggered': isTriggered}
