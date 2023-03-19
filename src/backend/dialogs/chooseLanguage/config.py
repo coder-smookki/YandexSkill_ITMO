@@ -34,6 +34,9 @@ card = {
         """
 }
 
+session_state = {
+    'branch': 'chooseLanguage'
+}
 
 def getConfig():
     return {
@@ -41,4 +44,5 @@ def getConfig():
         'tts': tts,
         'buttons': buttons,
         'card': card,
+        'session_state': session_state
     }
