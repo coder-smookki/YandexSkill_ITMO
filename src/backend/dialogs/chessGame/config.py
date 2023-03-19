@@ -136,9 +136,9 @@ game = {
 
 def get_config_choose_color(lang: str):
     return {
-        'message': messages[lang]["choose_color_message"],
-        'tts': messages[lang]["choose_color_tts"],
-        'buttons': messages[lang]["choose_color_buttons"],
+        'message': messages[lang]["user_choose_color_message"],
+        'tts': messages[lang]["user_choose_color_tts"],
+        'buttons': messages[lang]["user_choose_color_buttons"],
         'session_state': {
             "branch": "chessGame"
         }
