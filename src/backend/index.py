@@ -30,8 +30,6 @@ def main(event):
                 continue
             return allMiddlewares[key]['getResponse'](event, allDialogs)
 
-    print(event["state"].get("session"))
-
     for key in allDialogs:
         if DIALOG_DEBUG:
             print(str(key) + ' ' + str(allDialogs[key]['isTriggered'](event)))
