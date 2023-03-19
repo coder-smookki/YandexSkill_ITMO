@@ -128,7 +128,8 @@ session_state = {"branch": "mainMenu"}
 
 
 def getConfig(event):
-    lang = getLanguage(event)
+    # lang = getLanguage(event)
+    lang = "ru-RU"
 
     return {
         "tts": config[lang]["tts"],
