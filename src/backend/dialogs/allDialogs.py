@@ -63,5 +63,5 @@ allDialogs = {
     'scholarships': scholarships,
     'start_quiz': start_quiz,
     'general_quiz': general_quiz,
-    'russianMenu': russianMenu
+    'mainMenu': mainMenu
 }
