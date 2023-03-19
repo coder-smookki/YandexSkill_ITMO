@@ -4,6 +4,7 @@ from utils.parser.parser import *
 from math import ceil, floor
 from utils.languageTransliter import rusLetterToEng
 
+
 def getPageConfig(event, pageNum, countOnOnePage):
     pages = copy.deepcopy(getState(event, "timeTable_timetable"))
     message = ""
@@ -20,12 +21,7 @@ def getPageConfig(event, pageNum, countOnOnePage):
     lastElem = countOnOnePage * pageNum
     startFromElem = lastElem - countOnOnePage
 
-    message += (
-            "Страница "
-            + str(pageNum)
-            + " из "
-            + str(totalPages)
-    )
+    message += "Страница " + str(pageNum) + " из " + str(totalPages)
 
     # maxPages = len(pages) // pageNum
     for i in pages[startFromElem:lastElem]:
@@ -47,7 +43,14 @@ def getPageConfig(event, pageNum, countOnOnePage):
         "timeTable_timetable": pages,
         "timeTable_lastPage": pageNum,
     }
-    buttons = ["Следующая страница", "Предыдущая страница", "Назад", "Выйти"]
+    buttons = [
+        "Следующая страница",
+        "Предыдущая страница",
+        "Что ты умеешь?",
+        "Помощь",
+        "Назад",
+        "Выйти"
+    ]
     return {
         "message": message,
         "tts": tts,
@@ -55,23 +58,24 @@ def getPageConfig(event, pageNum, countOnOnePage):
         "session_state": session_state,
     }
 
-#[а-яА-Яa-zA-Z\d]+
+
+# [а-яА-Яa-zA-Z\d]+
+
 
 def getConfig(event, countOnOnePage):
     origGroup = getState(event, "timeTable_group").lower()
     origDegree = getState(event, "timeTable_degree").lower()
 
+    groupLetter = re.findall(r"[а-яА-Яa-zA-Z]+", origGroup)
+    groupLetter = "".join(groupLetter)
 
-    groupLetter = re.findall(r'[а-яА-Яa-zA-Z]+', origGroup)
-    groupLetter = ''.join(groupLetter)
-    
-    groupNums = re.findall(r'\d+', origGroup)
-    groupNums = ''.join(groupNums)
+    groupNums = re.findall(r"\d+", origGroup)
+    groupNums = "".join(groupNums)
 
     group = (rusLetterToEng(groupLetter) + groupNums).upper()
 
-    degree = re.findall(r'[а-яА-Яa-zA-Z]', origDegree)
-    degree = ''.join(degree)
+    degree = re.findall(r"[а-яА-Яa-zA-Z]", origDegree)
+    degree = "".join(degree)
     print(group)
     print(degree)
 

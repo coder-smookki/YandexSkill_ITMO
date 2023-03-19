@@ -30,10 +30,13 @@ from .start_quiz.start_quiz import start_quiz
 from .general_quiz.general_quiz import general_quiz
 from .OfficeConsultation.OfficeConsultation import OfficeConsultation
 from .officeOtherFeatures.officeOtherFeatures import officeOtherFeatures
-
+from .repeat.repeat import repeat
+from .whatYouCan.whatYouCan import whatYouCan
 allDialogs = {
     'exitConfirm': exitConfirm,
+    'repeat': repeat,
     'chooseLanguage': chooseLanguage,
+    'whatYouCan': whatYouCan,
     'backDialog': backDialog,
     'help': help,
     'whoIsCreator': whoIsCreator,
