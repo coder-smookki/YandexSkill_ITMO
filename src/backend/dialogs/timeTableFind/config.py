@@ -63,10 +63,10 @@ def getConfig(event, countOnOnePage):
 
 
     groupLetter = re.findall(r'[а-яА-Яa-zA-Z]+', origGroup)
-    groupLetter = ''.join(group)
+    groupLetter = ''.join(origGroup)
     
     groupNums = re.findall(r'\d+', origGroup)
-    groupNums = ''.join(group)
+    groupNums = ''.join(origGroup)
 
     group = rusLetterToEng(groupLetter) + groupNums
 
