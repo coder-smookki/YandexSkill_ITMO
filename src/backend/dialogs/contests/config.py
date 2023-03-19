@@ -3,7 +3,7 @@ from utils.globalStorage import globalStorage
 def getConfig():
     message = 'Вы направились в категорию "Контесты.\n'
 
-    tts = 'Контесты. '
+    tts = ''
 
     buttons = [
         "Повторить ещё раз",
@@ -18,16 +18,18 @@ def getConfig():
 
     contests = globalStorage['news_contests']
 
-    for i in contests:
-        message += f"""
-        {i['text']}\n
-        {i['link']}\n
-        {i['date']}\n
-        ------------\n
-        """
-        tts += f'{i["text"]} будет {i["date"]}. '
-
-
+    if len(contests) <= 0:
+        message += 'К сожалению, контестов сейчас нет =('
+        tts += 'К сожалению, контестов сейчас нет'
+    else:
+        for i in contests:
+            message += f"""
+            {i['text']}\n
+            {i['link']}\n
+            {i['date']}\n
+            ------------\n
+            """
+            tts += f'{i["text"]} будет {i["date"]}. '
 
     return {
         'message': message,
