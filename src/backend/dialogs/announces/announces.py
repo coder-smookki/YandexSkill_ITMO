@@ -17,7 +17,7 @@ def getResponse(event, allDialogs=None):
         buttonsResponse.append({'title': i['text'], 'url': i['link']})
         config['tts'] += f'Вы направились в категорию "Анонсы". {i["text"]} будет {i["date"]} '
 
-    config['buttons'].insert(buttonsResponse)
+    config['buttons'].insert(0, buttonsResponse)
     return createResponse(event, config)
 
 
