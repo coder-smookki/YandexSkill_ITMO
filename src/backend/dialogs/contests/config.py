@@ -1,6 +1,8 @@
-message = ''
+from utils.globalStorage import globalStorage
 
-tts = ''
+message = 'Вы направились в категорию "Контесты.\n'
+
+tts = 'Контесты. '
 
 buttons = [
     "Повторить ещё раз",
@@ -12,6 +14,17 @@ buttons = [
 session_state = {
     "branch": "contests"
 }
+
+contests = globalStorage['news_contests']
+
+for i in contests:
+    message += f"""
+    {i['text']}\n
+    {i['link']}\n
+    {i['date']}\n
+    ------------\n
+    """
+    tts += f'{i["text"]} будет {i["date"]}. '
 
 
 def getConfig():
