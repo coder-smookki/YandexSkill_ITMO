@@ -1,4 +1,3 @@
-from .config import getConfig
 from utils.triggerHelper import *
 from utils.responseHelper import *
 from utils.branchHandler import getDialogResponseFromEnd
