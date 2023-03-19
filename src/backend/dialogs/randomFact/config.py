@@ -1,7 +1,10 @@
 import random
+from utils.responseHelper import getGlobalState, getLanguage
 
-facts = [
-    "Опросы показывают, что студенты, которые принимают заметки вручную, имеют более высокие оценки, чем те, кто использует ноутбуки для заметок. Один из возможных объяснений этого явления заключается в том, что ручное письмо способствует более глубокому пониманию материала.",
+config = {
+    "ru-RU": {
+        'facts': [
+"Опросы показывают, что студенты, которые принимают заметки вручную, имеют более высокие оценки, чем те, кто использует ноутбуки для заметок. Один из возможных объяснений этого явления заключается в том, что ручное письмо способствует более глубокому пониманию материала.",
     "Исследования показывают, что физическая активность, такая как занятия спортом, может помочь студентам улучшить свои результаты в учебе. Это связано с тем, что упражнения способствуют лучшему кровообращению в мозге и улучшению когнитивных функций.",
     "Учёные утверждают, что обучение в группах может способствовать более эффективному усвоению материала. Общение со своими коллегами может помочь студентам более глубоко понять тему и осознать её применение в реальной жизни.",
     "Сон играет важную роль в учебном процессе. Исследования показывают, что студенты, которые получают достаточно сна, имеют лучшие результаты в учебе, чем те, кто страдает от недостатка сна. Для взрослых людей рекомендуется спать от 7 до 9 часов в сутки.",
@@ -20,28 +23,69 @@ facts = [
     "Некоторые исследования показывают, что небольшие паузы во время учёбы, когда вы занимаетесь чем-то другим, могут помочь улучшить запоминание информации.",
     "Постоянное участие в академических мероприятиях, таких как лекции, семинары и конференции, может помочь улучшить понимание и знания в вашей области.",
     "Чтение и написание своих собственных заметок может помочь вам улучшить понимание материала и организовать свои мысли.",
-    "Сон играет важную роль в процессе запоминания и консолидации информации. Старайтесь спать достаточное количество часов, чтобы ваш мозг мог обработать и закрепить информацию, полученную в течение дня."]
+    "Сон играет важную роль в процессе запоминания и консолидации информации. Старайтесь спать достаточное количество часов, чтобы ваш мозг мог обработать и закрепить информацию, полученную в течение дня."
+        ],
+        "message": 'Случайный факт: \n',
+        "buttons": [
+            "Еще факт",
+            "Повторить ещё раз",
+            'Что ты умеешь?',
+            "Помощь",
+            "Назад",
+            "Выйти"
+        ],
+    },
 
-message = 'Случайный факт: \n'
+    "en-US": {
+        'facts': [
+"Surveys show that students who take notes by hand score higher than those who use laptops to take notes. One possible explanation for this phenomenon is that handwriting contributes to a deeper understanding of the material.",
+     "Studies show that physical activity, such as playing sports, can help students improve their academic performance. This is because exercise improves blood flow to the brain and improves cognitive function.",
+     "Scientists argue that learning in groups can contribute to more effective assimilation of the material. Communication with their colleagues can help students understand the topic more deeply and realize its application in real life.",
+     "Sleep plays an important role in the learning process. Research shows that students who get enough sleep have better academic results than those who suffer from lack of sleep. For adults, it is recommended to sleep 7 to 9 hours a night.",
+     "Scientists also say that taking regular breaks while studying can help improve your performance. This is because our brains can process information better when we change activities regularly.",
+     "Studies show that using color when taking notes and highlighting key words in text can help improve information retention. This can be especially helpful when preparing for exams.",
+     "Students who play sports usually have better academic results than those who do not play sports.",
+     "Some research shows that people remember information better when they write it down by hand, rather than typing it on a computer.",
+     "Reading aloud can help students remember information better than just reading in their heads.",
+     "Students who get enough sleep often have better academic results than those who don't.",
+     "Studies show that students who study in a brightly lit room have better academic results than those who study in a dark room.",
+     "Some experts advise exercising before studying to improve blood circulation in the brain and improve the ability to concentrate.",
+     "Students who use colored pens to write lectures and notes retain information better than those who use only one color.",
+     "Regular repetition and reinforcement over a long period of time helps improve retention and reduce forgetting.",
+     "Using mnemonics such as acronyms helps memorize and organize information.",
+     "Studying the subject in practice can help you better understand the theoretical material. For example, when learning a language, you can practice communicating in this language with native speakers.",
+     "Some research shows that taking small breaks while you're studying while you're doing something else can help improve memory retention.",
+     "Continued participation in academic activities such as lectures, seminars, and conferences can help improve understanding and knowledge in your field.",
+     "Reading and writing your own notes can help you improve your understanding and organize your thoughts.",
+     "Sleep plays an important role in the process of remembering and consolidating information. Try to get enough sleep so that your brain can process and consolidate the information received during the day."
+        ],
+        "message": 'Random fact: \n',
+        "buttons": [
+            "Another fact",
+            "Repeat one more time",
+            'What can you do?',
+            "Help",
+            "Back",
+            "Exit"
 
-buttons = [
-    "Еще факт",
-    "Повторить ещё раз",
-    'Что ты умеешь?',
-    "Помощь",
-    "Назад",
-    "Выйти"
-]
+        ],
+    }
+}
 
 session_state = {
     "branch": "randomFact"
 }
 
 
-def getConfig():
+def getConfig(event):
+    lang = getLanguage(event)
+    # lang = "ru-RU"
+    messageResponse = config[lang]["message"] + config[lang]['facts'][random.randint(0, len(facts))]
+
     return {
-        'message': message + facts[random.randint(0, len(facts))],
-        'tts': message,
-        'buttons': buttons,
-        'session_state': session_state
+        "message": messageResponse,
+        "tts": messageResponse,
+        "buttons": config[lang]["buttons"],
+        "session_state": session_state,
     }
+

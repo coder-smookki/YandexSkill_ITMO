@@ -10,7 +10,7 @@ def getResponse(event, allDialogs=None):
 
 
 def isTriggered(event):
-    token = {"что", "такое"}
+    token = {"что", "такое", "what", "is"}
     return isSimilarTokens(event, token) and isInContext(event, 'studentOffice')
 
 
