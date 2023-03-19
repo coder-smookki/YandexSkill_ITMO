@@ -30,10 +30,10 @@ def isTriggered(event):
         (
             isInContext(event, "exitConfirm")
             and (
-                isSimilarCommand(event, "да")
-                or isSimilarCommand(event, "конечно")
-                or isSimilarCommand(event, "уверен")
-                or isSimilarCommand(event, "точно")
+                "да" in getCommand(event)
+                or "конечно" in getCommand(event)
+                or "уверен" in getCommand(event)
+                or "точно" in getCommand(event)
                 or "выйти" in getCommand(event)
                 or "выход" in getCommand(event)
                 or "выйди" in getCommand(event)
