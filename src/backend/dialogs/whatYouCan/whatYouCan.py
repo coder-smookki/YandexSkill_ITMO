@@ -17,4 +17,4 @@ def isTriggered(event):
     )
 
 
-news = {"getResponse": getResponse, "isTriggered": isTriggered}
+whatYouCan = {"getResponse": getResponse, "isTriggered": isTriggered}
