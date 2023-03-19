@@ -4,17 +4,8 @@ from utils.triggerHelper import *
 
 
 def getResponse(event, allDialogs=None):
-    if not isInLastContext(event, 'mainMenu'):
-        print('notLastContext')
-        if 'рус' in getCommand(event):
-            print('ru in command')
-            setGlobalStateInEvent(event, 'language', 'ru-RU')
-        else:
-            print('else in command')
-            setGlobalStateInEvent(event, 'language', 'en-US')
-
     changeLangTokens = {'язык', 'language', 'lang'}
-    if isSimilarTokens(event, changeLangTokens):
+    if isInLastContext(event, 'mainMenu') and isSimilarTokens(event, changeLangTokens):
         return allDialogs['chooseLanguage']['getResponse'](event, allDialogs)
     print('state language:', getGlobalState(event, 'language'))
     print('getLanguage:', getLanguage(event))
