@@ -59,7 +59,7 @@ def getPageConfig(event, pageNum, countOnOnePage):
 
 def getConfig(event, countOnOnePage):
     origGroup = getState(event, "timeTable_group")
-    degree = getState(event, "timeTable_degree")
+    origDegree = getState(event, "timeTable_degree")
 
 
     groupLetter = re.findall(r'[а-яА-Яa-zA-Z]+', origGroup)
@@ -69,6 +69,11 @@ def getConfig(event, countOnOnePage):
     groupNums = ''.join(groupNums)
 
     group = rusLetterToEng(groupLetter) + groupNums
+
+    degree = re.findall(r'[а-яА-Яa-zA-Z]', origDegree)
+    degree = ''.join(degree)
+    print(group)
+    print(degree)
 
     timetable = parser("timetable.getGroupTimetable", [group, degree])
     buttons = ["Помощь", "Назад", "Выйти"]
