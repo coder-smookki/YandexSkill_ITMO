@@ -80,7 +80,7 @@ session_state = {
 def getConfig(event):
     lang = getLanguage(event)
     # lang = "ru-RU"
-    messageResponse = config[lang]["message"] + config[lang]['facts'][random.randint(0, len(facts))]
+    messageResponse = config[lang]["message"] + config[lang]['facts'][random.randint(0, len(config[lang]['facts']))]
 
     return {
         "message": messageResponse,
