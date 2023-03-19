@@ -5,14 +5,17 @@ from utils.triggerHelper import *
 
 def getResponse(event, allDialogs=None):
     if not isInLastContext(event, 'mainMenu'):
-        if 'ру' in getCommand(event):
+        print('notLastContext')
+        if 'рус' in getCommand(event):
+            print('ru in command')
             setGlobalStateInEvent(event, 'language', 'ru-RU')
         else:
+            print('else in command')
             setGlobalStateInEvent(event, 'language', 'en-US')
 
-    config = getConfig(event)
     print('state language:', getGlobalState(event, 'language'))
     print('getLanguage:', getLanguage(event))
+    config = getConfig(event)
     return createResponse(event, config)
 
 
