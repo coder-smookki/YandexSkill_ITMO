@@ -10,8 +10,7 @@ def getResponse(event, allDialogs=None):
 
 
 def isTriggered(event):
-    tokens = {'язык', 'language', 'lang'}
-    return not haveGlobalState(event, 'language') or isSimilarTokens(event, tokens) and isInLastContext(event, 'mainMenu')
+    return False
 
 
 chooseLanguage = {'getResponse': getResponse, 'isTriggered': isTriggered}

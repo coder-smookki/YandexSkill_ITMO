@@ -13,6 +13,9 @@ def getResponse(event, allDialogs=None):
             print('else in command')
             setGlobalStateInEvent(event, 'language', 'en-US')
 
+    changeLangTokens = {'язык', 'language', 'lang'}
+    if isSimilarTokens(event, changeLangTokens):
+        return allDialogs['changeLanguage']['getResponse'](event, allDialogs)
     print('state language:', getGlobalState(event, 'language'))
     print('getLanguage:', getLanguage(event))
     config = getConfig(event)
