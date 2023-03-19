@@ -6,8 +6,10 @@ def getResponse(event, allDialogs=None):
     config = getConfig(event)
     if isInLastContext(event, 'chooseLanguage'):
         if 'русский' in getCommand(event) or 'рус' in getCommand(event) or 'ру' in getCommand(event):
+            print('setted ru-RU')
             setGlobalStateInEvent(event, 'language', 'ru-RU')
         else:
+            print('setted en-US')
             setGlobalStateInEvent(event, 'language', 'en-US')
     return createResponse(event, config)
 
