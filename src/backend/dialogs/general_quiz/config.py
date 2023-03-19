@@ -41,12 +41,14 @@ def getConfig(event):
 
 
 def getFinishConfig(event):
+    buttonsResponse = copy.deepcopy(buttons)
+    buttonsResponse.append('меню')
     return {
         'message': "Ваш результат: " + str(getState(event, "count_correct_response") + 1) + "/" + str(
             getState(event, "count_questions")),
         'tts': "Ваш результат:" + str(getState(event, "count_correct_response") + 1) + "из" + str(
             getState(event, "count_questions")),
-        'buttons': copy.deepcopy(buttons).append('Меню'),
+        'buttons': buttonsResponse,
         'session_state': {
             "branch": "mainMenu"
         }
