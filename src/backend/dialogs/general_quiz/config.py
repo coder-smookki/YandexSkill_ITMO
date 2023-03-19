@@ -26,7 +26,8 @@ def getConfig(event):
     buttons_response = answers + buttons
     states = {
         "count_questions": event["state"]["session"]["count_questions"],
-        "count_correct_response": event["state"]["session"]["count_correct_response"]
+        "count_correct_response": event["state"]["session"]["count_correct_response"],
+        "questions_list": event['state']['session']['questions_list']
     }
 
     states.update(session_state)
@@ -50,7 +51,7 @@ def getFinishConfig(event):
     }
 
 def check_answer(event):
-    if questions["answers"][getState(event, "count_questions")] == getOriginalUtterance(event):
+    if questions["answers"][getState(event, "questions_list")[-1]] == getOriginalUtterance(event):
         setStateInEvent(event, "count_correct_response", getState(event, "count_correct_response") + 1)
     setStateInEvent(event, "count_questions", getState(event, "count_questions") + 1)
 
