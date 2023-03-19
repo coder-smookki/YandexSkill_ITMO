@@ -2,6 +2,8 @@ from utils.parser.parser import *
 import copy
 
 buttons = [
+    "Повторить еще раз",
+    "Что ты умеешь?",
     "Назад",
     "Выйти",
     "Помощь"
