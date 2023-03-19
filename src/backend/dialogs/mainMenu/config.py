@@ -81,4 +81,7 @@ def getConfig(event):
         "buttons": config[lang]["buttons"],
         "card": config[lang]["card"],
         "session_state": session_state,
+        "user_state_update": {
+            "language": lang
+        },
     }
