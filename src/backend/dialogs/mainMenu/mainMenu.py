@@ -4,9 +4,8 @@ from utils.triggerHelper import *
 
 
 def getResponse(event, allDialogs=None):
-    rusTokens = {'рус', 'ру'}
     if not isInLastContext(event, 'mainMenu'):
-        if isSimilarTokens(event, rusTokens):
+        if 'ру' in getCommand(event):
             setGlobalStateInEvent(event, 'language', 'ru-RU')
         else:
             setGlobalStateInEvent(event, 'language', 'en-US')
