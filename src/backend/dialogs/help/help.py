@@ -10,7 +10,7 @@ def getResponse(event, allDialogs=None):
 
 
 def isTriggered(event):
-    return isSimilarCommand(event, 'помощь')
+    return 'помощь' in getCommand(event)
 
 
 help = {'getResponse': getResponse, 'isTriggered': isTriggered}
