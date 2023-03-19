@@ -7,7 +7,7 @@ def createResponse(event, originalConfig):
     config = copy.deepcopy(originalConfig)
     returnResponse = {
         'response': {
-            'text': config['message'] if 'message' in config else None,
+            'text': config['message'] if 'message' in config else '',
             'tts': config['tts'],
             'card': config['card'] if 'card' in config else None,
             'buttons': createButtons(config['buttons']),
