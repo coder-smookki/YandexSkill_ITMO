@@ -11,7 +11,7 @@ def getResponse(event, allDialogs=None):
 
 def isTriggered(event):
     token = {"новости", "новость", "новост"}
-    return isSimilarTokens(event, token) and isInContext(event, 'russianMenu')
+    return isSimilarTokens(event, token) and isInLastContext(event, 'mainMenu')
 
 
 news = {'getResponse': getResponse, 'isTriggered': isTriggered}
