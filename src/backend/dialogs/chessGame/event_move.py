@@ -79,6 +79,8 @@ def handler_not_a_move(event) -> dict | None | str:
 
 def get_next_move(user_move: str, orientation: str, prev_moves: str, lang: str, session_states) -> dict:
     # Часть запроса к движку за ходом
+    if not prev_moves and orientation == 'b':
+        user_move = None
     params = {
         "user_move": user_move,
         "prev_moves": prev_moves,

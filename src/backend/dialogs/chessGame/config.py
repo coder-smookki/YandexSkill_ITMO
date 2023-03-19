@@ -19,7 +19,7 @@ ru_user_move_second_message = ru_user_move_second_tts = """
 ru_choose_color_buttons = [
     'Белый',
     'Черный',
-    "Правила"
+    "Правила",
     "Назад",
     "Выйти",
     "Помощь",
@@ -27,7 +27,7 @@ ru_choose_color_buttons = [
 
 ru_buttons = [
     'Что-то',
-    "Правила"
+    "Правила",
     "Назад",
     "Выйти",
     "Помощь",
@@ -54,7 +54,7 @@ eng_user_move_first_card = {
 eng_choose_color_buttons = [
     'White',
     'Black',
-    "Rules"
+    "Rules",
     "Назад",
     "Выйти",
     "Помощь",
