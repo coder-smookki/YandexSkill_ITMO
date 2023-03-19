@@ -63,7 +63,21 @@ config = {
     },
     "en-US": {
         "tts": """
-            you chose english
+        You chose English language! 
+        Choose the right category that will help you.
+        1. News
+        2. Student Office
+        3. For freshmen
+        4. Class schedule
+        5. Session schedule
+        6. For international students
+        7. University-wide modules in the Bachelor's degree
+        8. University-wide modules in the Master's program
+        9. Library
+        10. Educational and methodological publications
+        11. scholarships
+        12. Ask a question
+        If there is no such category, say "ask a question" and then fill in all the information so that we can know what is missing in the skill.
         """,
         "buttons": [
             "News",
@@ -87,7 +101,21 @@ config = {
             "image_id": "937455/40f0536e426907808499",
             "title": "CATALOG",
             "description": """
-                so english text :3
+            You chose English language! 
+            Choose the right category that will help you.
+            1. News
+            2. Student Office
+            3. For freshmen
+            4. Class schedule
+            5. Session schedule
+            6. For international students
+            7. University-wide modules in the Bachelor's degree
+            8. University-wide modules in the Master's program
+            9. Library
+            10. Educational and methodological publications
+            11. scholarships
+            12. Ask a question
+            If there is no such category, say "ask a question" and then fill in all the information so that we can know what is missing in the skill.
             """,
         },
     }
