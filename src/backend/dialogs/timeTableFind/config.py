@@ -58,7 +58,7 @@ def getPageConfig(event, pageNum, countOnOnePage):
 def getConfig(event, countOnOnePage):
     group = getState(event, "timeTable_group")
     degree = getState(event, "timeTable_degree")
-    timetable = parser("timetable.getGroupTimetable", [group, degree])
+    timetable = parser("timetable.getGroupTimetable", [group.upper(), degree])
     buttons = ["Помощь", "Назад", "Выйти"]
 
     if not timetable:
