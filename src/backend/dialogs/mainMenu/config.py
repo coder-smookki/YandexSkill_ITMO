@@ -69,7 +69,7 @@ config = {
     }
 }
 
-session_state = {"branch": "russianMenu"}
+session_state = {"branch": "mainMenu"}
 
 def getConfig(event):
     

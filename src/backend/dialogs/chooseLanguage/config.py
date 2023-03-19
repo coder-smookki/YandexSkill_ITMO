@@ -41,7 +41,4 @@ def getConfig():
         'tts': tts,
         'buttons': buttons,
         'card': card,
-        "user_state_update": {
-            "language": 'en-US'
-        },
     }
