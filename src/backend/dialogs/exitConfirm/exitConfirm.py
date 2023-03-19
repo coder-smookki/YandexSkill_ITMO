@@ -6,6 +6,7 @@ from utils.branchHandler import getDialogResponseFromEnd
 config = getConfig()
 
 def getResponse(event, allDialogs=None):
+    print('exitConfirm')
     if isInContext(event, 'exitConfirm') and isSimilarCommand(event, 'да'):
         response = {
             "response": {
