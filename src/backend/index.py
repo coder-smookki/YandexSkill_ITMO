@@ -38,7 +38,7 @@ def main(event):
         if not allDialogs[key]['isTriggered'](event):
             continue
         response = allDialogs[key]['getResponse'](event, allDialogs)
-        branchedResponse = updateBranchToResponse(event, response, 'russianMenu')
+        branchedResponse = updateBranchToResponse(event, response, 'mainMenu')
         if DIALOG_DEBUG:
             print('===========================')
         if branchedResponse and 'session_state' in branchedResponse:
