@@ -106,7 +106,7 @@ config = {
             "Why should I contact the Student Office?",
             "How to apply for a certificate/document of previous education?",
             "How to get a consultation at the Student Office?",
-            "I don't know who to ask the question. Can the student office help?"
+            "I don't know who to ask the question."
             'What can you do?',
             "Help",
             "Back",
