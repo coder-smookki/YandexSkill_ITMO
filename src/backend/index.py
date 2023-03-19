@@ -46,9 +46,6 @@ def main(event):
         else:
             print("Branch don't initilized")
         print('---------------------------')
-        # print(getState(event, 'timeTable_group'))
-        # print(getState(event, 'timeTable_course'))
-        print(event['state'])
         return branchedResponse
 
 
