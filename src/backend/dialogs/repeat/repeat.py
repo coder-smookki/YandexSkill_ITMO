@@ -3,7 +3,7 @@ from utils.responseHelper import *
 from utils.branchHandler import getDialogResponseFromEnd
 
 def getResponse(event, allDialogs=None):
-    return allDialogs[getState('branch')[-1]]['getResponse'](event, allDialogs)
+    return allDialogs[getState(event, 'branch')[-1]]['getResponse'](event, allDialogs)
 
 def isTriggered(event):
     return (
