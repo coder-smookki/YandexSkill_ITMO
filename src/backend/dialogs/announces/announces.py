@@ -8,9 +8,15 @@ def getResponse(event, allDialogs=None):
     config = getConfig()
     announces = globalStorage['news_announces']
     buttonsResponse = []
+<<<<<<< HEAD
     if len(announces) <= 0:
         config['message'] += 'К сожалению, анонсов сейчас нет =('
         config['tts'] += 'К сожалению, анонсов сейчас нет'
+=======
+    if len(announces) == 0:
+        config['message'] = "Новый новостей на данный момент нет."
+        config['tts'] = "Новый новостей на данный момент нет"
+>>>>>>> 89a0f4675af16e98a0b66d8019b2a42f4b4b7da0
     else:
         for i in announces:
             config['message'] += f"""
@@ -18,10 +24,14 @@ def getResponse(event, allDialogs=None):
             {i['date']}.\n
             ------------\n
             """
+<<<<<<< HEAD
             buttonsResponse.append({'title': i['text'], 'url': i['link']})
+=======
+            buttonsResponse.append({'title': i['text'], 'url': i['link'], 'hide': False})
+>>>>>>> 89a0f4675af16e98a0b66d8019b2a42f4b4b7da0
             config['tts'] += f'Вы направились в категорию "Анонсы". {i["text"]} будет {i["date"]} '
 
-    config['buttons'].insert(0, buttonsResponse)
+        config['buttons'] = buttonsResponse + config['buttons']
     return createResponse(event, config)
 
 
