@@ -7,9 +7,12 @@ def getResponse(event, allDialogs=None):
     if isNewSession(event) and not haveGlobalState(event, 'language'):
         return allDialogs['chooseLanguage']['getResponse'](event, allDialogs)
 
-    changeLangTokens = {'язык', 'language', 'lang'}
-    if isInLastContext(event, 'mainMenu') and isSimilarTokens(event, changeLangTokens):
-        return allDialogs['chooseLanguage']['getResponse'](event, allDialogs)
+
+    if isInLastContext(event, 'chooseLanguage'):
+        if isSimilarTokens(event, {'рус', 'рас', 'rus'}):
+            setGlobalStateInEvent(event, 'language', 'ru-RU')
+        else:
+            setGlobalStateInEvent(event, 'language', 'en-US')
 
     print('state language:', getGlobalState(event, 'language'))
     print('getLanguage:', getLanguage(event))
