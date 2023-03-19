@@ -17,4 +17,4 @@ def isTriggered(event):
 )
 
 
-exitConfirm = {"getResponse": getResponse, "isTriggered": isTriggered}
+repeat = {"getResponse": getResponse, "isTriggered": isTriggered}
