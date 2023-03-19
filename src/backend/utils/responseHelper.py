@@ -100,11 +100,15 @@ def setStateInEvent(event, stateName, stateValue):
     event['state']['session'][stateName] = stateValue
     return event
 
+def setGlobalStateInEvent(event, stateName, stateValue):
+    event['state']['user'][stateName] = stateValue
+    return event
+
 def getCommand(event):
     return event["request"]['command']
 
 def getGlobalState(event, state):
-    return event['state'][state]['value']
+    return event['state']['user'][state]
 
 def getLanguage(event):
     allowedLangs = ['ru-RU', 'en-US']

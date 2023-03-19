@@ -13,4 +13,4 @@ def isTriggered(event):
     return isNewSession(event)
 
 
-generalMenu = {'getResponse': getResponse, 'isTriggered': isTriggered}
+chooseLanguage = {'getResponse': getResponse, 'isTriggered': isTriggered}

@@ -36,4 +36,4 @@ def haveState(event, state):
     return state in event['state']['session']
 
 def haveGlobalState(event, state):
-    return state in event['state'] and 'value' in event['state'][state] 
+    return 'user' in event['state'] and state in event['state']['user'] 

@@ -1,5 +1,5 @@
-from .generalMenu.generalMenu import generalMenu
-from .russianMenu.russianMenu import russianMenu
+from .chooseLanguage.chooseLanguage import chooseLanguage
+from .mainMenu.mainMenu import mainMenu
 from .forFreshman.forFreshman import forFreshman
 from .studentOffice.studentOffice import studentOffice
 from .studentOfficeAbout.studentOfficeAbout import studentOfficeAbout
@@ -32,7 +32,7 @@ from .OfficeConsultation.OfficeConsultation import OfficeConsultation
 from .officeOtherFeatures.officeOtherFeatures import officeOtherFeatures
 
 allDialogs = {
-    'generalMenu': generalMenu,
+    'chooseLanguage': chooseLanguage,
     'exitConfirm': exitConfirm,
     'backDialog': backDialog,
     'help': help,
