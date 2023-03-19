@@ -27,13 +27,23 @@ def getResponse(event, allDialogs=None):
 
 def isTriggered(event):
     return (
-        'выйти' in getCommand(event)
-        or 'выход' in getCommand(event)
-        or 'выйди' in getCommand(event)
-        or isSimilarCommand(event, 'все')
-        or isSimilarCommand(event, 'всё')
-        or isInContext(event, "exitConfirm")
-        and isSimilarCommand(event, "да")
+        (
+            isInContext(event, "exitConfirm")
+            and (
+                isSimilarCommand(event, "да")
+                or isSimilarCommand(event, "конечно")
+                or isSimilarCommand(event, "уверен")
+                or isSimilarCommand(event, "точно")
+                or "выйти" in getCommand(event)
+                or "выход" in getCommand(event)
+                or "выйди" in getCommand(event)
+            )
+        )
+        or "выйти" in getCommand(event)
+        or "выход" in getCommand(event)
+        or "выйди" in getCommand(event)
+        or isSimilarCommand(event, "все")
+        or isSimilarCommand(event, "всё")
     )
 
 
