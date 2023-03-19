@@ -100,7 +100,6 @@ def getConfig(event):
     lang = getLanguage(event)
 
     return {
-        "message": config[lang]["message"],
         "tts": config[lang]["tts"],
         "buttons": config[lang]["buttons"],
         "card": config[lang]["card"],
