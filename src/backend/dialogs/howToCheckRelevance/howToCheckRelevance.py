@@ -10,7 +10,7 @@ def getResponse(event, allDialogs=None):
 
 
 def isTriggered(event):
-    return isSimilarCommand(event, 'как узнать актуальность навыка на данный момент')
+    return isSimilarCommand(event, 'как узнать актуальность навыка на данный момент') or isSimilarCommand(event, 'how to find out the relevance of a skill at the moment')
 
 
 howToCheckRelevance = {'getResponse': getResponse, 'isTriggered': isTriggered}

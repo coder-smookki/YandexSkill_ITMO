@@ -10,7 +10,7 @@ def getResponse(event, allDialogs=None):
 
 
 def isTriggered(event):
-    return isSimilarCommand(event, 'как связаться с разработчиками')
+    return isSimilarCommand(event, 'как связаться с разработчиками') or isSimilarCommand(event, 'how to contact developers')
 
 
 howToConnectWithDevelopers = {'getResponse': getResponse, 'isTriggered': isTriggered}

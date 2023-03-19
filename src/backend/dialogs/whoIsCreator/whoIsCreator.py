@@ -10,7 +10,7 @@ def getResponse(event, allDialogs=None):
 
 
 def isTriggered(event):
-    return isSimilarCommand(event, 'кто создатели навыка')
+    return isSimilarCommand(event, 'кто создатели навыка') or isSimilarCommand(event, 'who are the creators of the skill')
 
 
 whoIsCreator = {'getResponse': getResponse, 'isTriggered': isTriggered}
