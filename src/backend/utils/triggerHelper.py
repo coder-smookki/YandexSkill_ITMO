@@ -17,6 +17,7 @@ def isInContext(event, context):
         return False
     return context in event['state']['session']["branch"]
 
+
 def isInLastContext(event, context):
     if not 'branch' in event['state']['session']:
         return False
@@ -28,6 +29,7 @@ def isInLastContext(event, context):
         return False
     return context == event['state']['session']["branch"][-1]
 
+
 def isSimilarCommand(event, command):
     return event['request']['command'] == command
 
@@ -35,5 +37,6 @@ def isSimilarCommand(event, command):
 def haveState(event, state):
     return state in event['state']['session']
 
+
 def haveGlobalState(event, state):
-    return 'user' in event['state'] and state in event['state']['user'] 
+    return 'user' in event['state'] and state in event['state']['user']

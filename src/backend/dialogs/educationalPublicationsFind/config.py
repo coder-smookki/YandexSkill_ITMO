@@ -11,6 +11,7 @@ session_state = {
     "branch": "educationalPublications"
 }
 
+
 def getConfig(event):
     message = ''
     tts = ''

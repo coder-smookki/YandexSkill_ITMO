@@ -5,6 +5,8 @@ from utils.globalStorage import globalStorage
 
 
 """
+
+
 def doFuncAsAsync(func, args=[]):
     def async_func(func, args):
         with globalStorage['app'].app_context():

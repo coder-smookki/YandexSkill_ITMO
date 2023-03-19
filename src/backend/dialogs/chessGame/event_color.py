@@ -1,4 +1,6 @@
-from dotenv import load_dotenv; load_dotenv()  # noqa
+from dotenv import load_dotenv;
+
+load_dotenv()  # noqa
 
 from dialogs.chessGame import config, event_move
 

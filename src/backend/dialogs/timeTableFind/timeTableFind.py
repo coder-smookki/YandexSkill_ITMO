@@ -5,6 +5,7 @@ from utils.triggerHelper import *
 nextPageTokens = {"дальше", "далее", "следующая", "некст", "следующий"}
 pastPageTokens = {"предыдущая", "обратно"}
 
+
 def getResponse(event, allDialogs=None):
     countOnOnePage = 2
     if isSimilarTokens(event, nextPageTokens):
@@ -16,9 +17,11 @@ def getResponse(event, allDialogs=None):
     else:
         config = getConfig(event, countOnOnePage)
     return createResponse(event, config)
-    
+
+
 def isTriggered(event):
-    return isInContext(event, "timeTable") and (isSimilarTokens(event, nextPageTokens) or isSimilarTokens(event, pastPageTokens))
+    return isInContext(event, "timeTable") and (
+                isSimilarTokens(event, nextPageTokens) or isSimilarTokens(event, pastPageTokens))
 
 
 timeTableFind = {'getResponse': getResponse, 'isTriggered': isTriggered}

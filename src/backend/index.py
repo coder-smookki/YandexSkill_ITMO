@@ -12,6 +12,7 @@ from utils.responseHelper import *
 DIALOG_DEBUG = False
 REQUESTS_DEBUG = False
 
+
 def cycleRefreshNews():
     while True:
         print('Start refreshing news')

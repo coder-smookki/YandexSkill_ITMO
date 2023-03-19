@@ -5,9 +5,10 @@ from utils.globalStorage import *
 import copy
 
 config = getConfig()
+
+
 def getResponse(event, allDialogs=None):
     return createResponse(event, config)
-
 
 
 def isTriggered(event):

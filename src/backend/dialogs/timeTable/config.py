@@ -31,7 +31,7 @@ session_state = {
 
 
 def getConfig(askSubject):
-    if askSubject == 'group': 
+    if askSubject == 'group':
         return {
             'message': askGroupMessage,
             'tts': askGroupTts,

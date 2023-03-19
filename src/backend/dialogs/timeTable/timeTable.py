@@ -27,15 +27,16 @@ def isTriggered(event):
     nextPageTokens = {"дальше", "далее", "следующая", "некст", "следующий"}
     pastPageTokens = {"предыдущая", "обратно"}
 
-    if isInContext(event, "timeTable") and (isSimilarTokens(event, nextPageTokens) or isSimilarTokens(event, pastPageTokens)):
+    if isInContext(event, "timeTable") and (
+            isSimilarTokens(event, nextPageTokens) or isSimilarTokens(event, pastPageTokens)):
         return False
-        
+
     return (
-        isSimilarTokens(event, token)
-        and isInContext(event, "russianMenu")
-        or isInContext(event, "timeTable")
-        or isInContext(event, "timeTable")
-        and isSimilarTokens(event, askToken)
+            isSimilarTokens(event, token)
+            and isInContext(event, "russianMenu")
+            or isInContext(event, "timeTable")
+            or isInContext(event, "timeTable")
+            and isSimilarTokens(event, askToken)
     )
 
 

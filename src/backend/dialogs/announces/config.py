@@ -15,7 +15,6 @@ session_state = {
 
 
 def getConfig(lang='ru'):
-    
     return {
         'message': message,
         'tts': tts,

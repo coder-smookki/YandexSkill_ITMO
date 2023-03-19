@@ -4,7 +4,6 @@ from pathlib import Path
 
 from src.backend.dialogs.chessGame.event_handler import event_handler
 
-
 with open(Path().absolute() / 'configs.json', 'r', encoding='utf-8') as f:
     configs = json.load(f)
 

@@ -2,6 +2,7 @@ from .config import getConfig
 from utils.responseHelper import *
 from utils.triggerHelper import *
 
+
 def getResponse(event, allDialogs=None):
     if not isInLastContext(event, 'mainMenu'):
         if 'русский' in getCommand(event) or 'рус' in getCommand(event) or 'ру' in getCommand(event):

@@ -1,5 +1,6 @@
 from utils.responseHelper import getGlobalState, getLanguage
 from utils.triggerHelper import haveGlobalState
+
 config = {
     "ru-RU": {
         "tts": """
@@ -125,8 +126,8 @@ config = {
 
 session_state = {"branch": "mainMenu"}
 
+
 def getConfig(event):
-    
     lang = getLanguage(event)
 
     return {

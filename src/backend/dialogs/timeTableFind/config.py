@@ -20,10 +20,10 @@ def getPageConfig(event, pageNum, countOnOnePage):
     startFromElem = lastElem - countOnOnePage
 
     message += (
-        "Страница "
-        + str(pageNum)
-        + " из "
-        + str(totalPages)
+            "Страница "
+            + str(pageNum)
+            + " из "
+            + str(totalPages)
     )
 
     # maxPages = len(pages) // pageNum

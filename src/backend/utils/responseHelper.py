@@ -3,6 +3,7 @@ from utils.globalStorage import *
 from utils.asyncHelper import doFuncAsAsync
 from utils.triggerHelper import *
 
+
 def createResponse(event, originalConfig):
     config = copy.deepcopy(originalConfig)
     returnResponse = {
@@ -16,18 +17,21 @@ def createResponse(event, originalConfig):
         'session': event['session'],
         'session_state': config['session_state'] if 'session_state' in config else {'branch': ''},
         'version': event['version']
-    }   
+    }
     if 'user_state_update' in config:
-        returnResponse['user_state_update'] = config['user_state_update']  
+        returnResponse['user_state_update'] = config['user_state_update']
     return returnResponse
+
 
 def createTimeoutResponse(event, allDialogs, getRepsonse, timeoutName):
     fieldName = timeoutName + '_' + getSessionId(event);
     if not (fieldName in globalStorage):
         setInGlobalStorage(fieldName, {'response': '', 'isLoaded': False}, overwrite=True)
+
         def getAsyncResponse(event, allDialogs, timeoutName):
             response = getRepsonse(event, allDialogs)
             setInGlobalStorage(fieldName, {'response': response, 'isLoaded': True}, overwrite=True)
+
         doFuncAsAsync(getAsyncResponse, [event, allDialogs, timeoutName])
         session_state = copy.deepcopy(event['state']['session'])
         session_state['branch'] = event['state']['session']['branch'][-1]
@@ -46,7 +50,7 @@ def createTimeoutResponse(event, allDialogs, getRepsonse, timeoutName):
             'session_state': session_state,
             'version': event['version']
         }
-    
+
     elif globalStorage[fieldName]['isLoaded'] == False:
         session_state = copy.deepcopy(event['state']['session'])
         session_state['branch'] = event['state']['session']['branch'][-1]
@@ -71,6 +75,7 @@ def createTimeoutResponse(event, allDialogs, getRepsonse, timeoutName):
         del globalStorage[fieldName]
         return response
 
+
 def createButtons(buttons):
     result = []
     for button in buttons:
@@ -84,38 +89,47 @@ def createButtons(buttons):
 
     return result
 
+
 def getSessionId(event):
     return event['session']['session_id']
+
 
 def getUserId(event):
     return event['session']['user']['user_id']
 
+
 def getState(event, state):
     return event['state']['session'][state]
 
+
 def getOriginalUtterance(event):
     return event["request"]['original_utterance']
+
 
 def setStateInEvent(event, stateName, stateValue):
     event['state']['session'][stateName] = stateValue
     return event
 
+
 def setGlobalStateInEvent(event, stateName, stateValue):
     event['state']['user'][stateName] = stateValue
     return event
 
+
 def getCommand(event):
     return event["request"]['command']
 
+
 def getGlobalState(event, state):
     return event['state']['user'][state]
+
 
 def getLanguage(event):
     allowedLangs = ['ru-RU', 'en-US']
     if haveGlobalState(event, 'language'):
         lang = getGlobalState(event, 'language')
         if not (lang in allowedLangs):
-            lang = 'en-US'
+            lang = 'ru-RU'
     else:
         print('dont have state :(')
         lang = event['meta']['locale']
