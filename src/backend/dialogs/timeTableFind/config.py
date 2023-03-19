@@ -58,8 +58,8 @@ def getPageConfig(event, pageNum, countOnOnePage):
 #[а-яА-Яa-zA-Z\d]+
 
 def getConfig(event, countOnOnePage):
-    origGroup = getState(event, "timeTable_group")
-    origDegree = getState(event, "timeTable_degree")
+    origGroup = getState(event, "timeTable_group").lower()
+    origDegree = getState(event, "timeTable_degree").lower()
 
 
     groupLetter = re.findall(r'[а-яА-Яa-zA-Z]+', origGroup)

@@ -12,12 +12,12 @@ def getResponse(event, allDialogs=None):
     elif getState(event, "timeTable_step") == 1:
         config = copy.deepcopy(getConfig("degree"))
         config["session_state"]["timeTable_step"] = 2
-        config["session_state"]["timeTable_group"] = getCommand(event).lower()
+        config["session_state"]["timeTable_group"] = getCommand(event)
         return createResponse(event, config)
 
     degree = getOriginalUtterance(event)
     setStateInEvent(event, "timeTable_group", getState(event, "timeTable_group"))
-    setStateInEvent(event, "timeTable_degree", degree.lower())
+    setStateInEvent(event, "timeTable_degree", degree)
     return allDialogs["timeTableFind"]["getResponse"](event, allDialogs)
 
 
