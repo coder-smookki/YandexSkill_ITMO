@@ -34,7 +34,7 @@ config = {
             Skill creators: Ilyin Kirill plays the role of Team Leader. Plyusnin Alexander plays the role of the Chief Developer of the skill and its foundation. Karavaev Ivan plays the role of the Developer. Lesovoy Kirill plays the role of Skill Tester and Game Algorithm Developer. Kutnikov Rodion plays the role of Chief Designer in the project, including UI and UX.
             """,
         "buttons": [
-            "Repeat one more time"
+            "Repeat one more time",
             'What can you do?',
             "Back",
             "Exit"

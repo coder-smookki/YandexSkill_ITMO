@@ -57,7 +57,7 @@ config = {
                 'url': 'https://student.itmo.ru/en/university_modules_bach/',
                 'hide': False
             },
-            "Repeat one more time"
+            "Repeat one more time",
             'What can you do?',
             "Help",
             "Back",

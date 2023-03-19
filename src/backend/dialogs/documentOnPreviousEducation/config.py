@@ -31,7 +31,7 @@ config = {
             You are headed to the category "How to apply for a document of previous education?" You need to go to the ISU portal, and then everything is simple! Submit an application through the form offered by the system.
             """,
         "buttons": [
-            "Repeat one more time"
+            "Repeat one more time",
             "What can you do?",
             "Help",
             "Back",

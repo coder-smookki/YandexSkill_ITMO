@@ -36,7 +36,7 @@ config = {
             "Who are the creators of the skill?",
             "How to contact the developers?",
             "How to find out the relevance of a skill at the moment?",
-            "Repeat one more time"
+            "Repeat one more time",
             "Help",
             "Back",
             "Exit",

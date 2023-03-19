@@ -36,7 +36,7 @@ config = {
     All contacts are described in the written part of the skill, unfortunately it will not be possible to voice contacts. Because there are problems with pronunciation.
             """,
         "buttons": [
-            "Repeat one more time"
+            "Repeat one more time",
             "What can you do?",
             "Back",
             "Exit"

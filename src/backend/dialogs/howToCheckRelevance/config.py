@@ -35,7 +35,7 @@ config = {
             Our skill is currently fully relevant, and is also fully operational. If suddenly you have errors with one or another skill block, report the error to Team Leader Ilyin Kirill. this way you can help keep the skill fully functional!
             """,
         "buttons": [
-            "Repeat one more time"
+            "Repeat one more time",
             "What can you do?",
             "Back",
             "Exit"

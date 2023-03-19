@@ -42,7 +42,7 @@ config = {
             Come to our office at St. Lomonosov, d.9. Managers will receive you on a first-come, first-served basis. You can also sign up for a consultation through the Electronic Queue application in your ISU personal account.
             """,
         "buttons": [
-            "Repeat one more time"
+            "Repeat one more time",
             'What can you do?',
             "Help",
             "Back",
