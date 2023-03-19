@@ -1,7 +1,8 @@
+import re
 from utils.responseHelper import *
 from utils.parser.parser import *
 from math import ceil, floor
-
+from utils.languageTransliter import rusLetterToEng
 
 def getPageConfig(event, pageNum, countOnOnePage):
     pages = copy.deepcopy(getState(event, "timeTable_timetable"))
@@ -54,11 +55,22 @@ def getPageConfig(event, pageNum, countOnOnePage):
         "session_state": session_state,
     }
 
+#[а-яА-Яa-zA-Z\d]+
 
 def getConfig(event, countOnOnePage):
-    group = getState(event, "timeTable_group")
+    origGroup = getState(event, "timeTable_group")
     degree = getState(event, "timeTable_degree")
-    timetable = parser("timetable.getGroupTimetable", [group.upper(), degree])
+
+
+    groupLetter = re.findall(r'[а-яА-Яa-zA-Z]+', origGroup)
+    groupLetter = ''.join(group)
+    
+    groupNums = re.findall(r'\d+', origGroup)
+    groupNums = ''.join(group)
+
+    group = rusLetterToEng(groupLetter) + groupNums
+
+    timetable = parser("timetable.getGroupTimetable", [group, degree])
     buttons = ["Помощь", "Назад", "Выйти"]
 
     if not timetable:
