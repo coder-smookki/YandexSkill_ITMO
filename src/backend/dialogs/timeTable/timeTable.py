@@ -30,6 +30,7 @@ def isTriggered(event):
     if isInContext(event, "timeTable") and (
             isSimilarTokens(event, nextPageTokens) or isSimilarTokens(event, pastPageTokens)):
         return False
+
     return (
             isSimilarTokens(event, token)
             and isInContext(event, "mainMenu")
