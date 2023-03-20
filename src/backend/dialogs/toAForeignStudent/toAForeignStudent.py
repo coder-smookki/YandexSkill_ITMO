@@ -7,7 +7,7 @@ bechelorConfig = getBechelorConfig()
 magistracyConfig = getMagistracyConfig()
 internationalMagistracyConfig = getInternationalMagistracyConfig()
 additionalOpportsConfig = getAdditionalOpportsConfig()
-
+migrationDocumentsConfig = migrationDocumentsConfig()
 
 def getResponse(event, allDialogs=None):
     if not isInLastContext(event, 'toAForeignStudent'):
@@ -23,7 +23,7 @@ def getResponse(event, allDialogs=None):
         return createResponse(event, magistracyConfig)
 
     if 'докум' in getCommand(event):
-        return createResponse(event, mainConfig)
+        return createResponse(event, migrationDocumentsConfig)
 
     if 'возм' in getCommand(event) or 'доп' in getCommand(event):
         return createResponse(event, additionalOpportsConfig)

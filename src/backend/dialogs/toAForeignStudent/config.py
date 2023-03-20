@@ -307,3 +307,14 @@ def getAdditionalOpportsConfig():
             "session_state": additionalOpportsConfig['session_state'],
         },
     )
+
+def getMigrationDocumentsConfig():
+    return (
+        {
+            "message": migrationDocumentsConfig['message'],
+            "tts": migrationDocumentsConfig['tts'],
+            "buttons": migrationDocumentsConfig['buttons'],
+            "card": migrationDocumentsConfig['card'],
+            "session_state": migrationDocumentsConfig['session_state'],
+        },
+    )
