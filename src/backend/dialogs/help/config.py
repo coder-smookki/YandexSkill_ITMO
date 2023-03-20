@@ -2,8 +2,7 @@ from utils.responseHelper import getGlobalState, getLanguage
 
 config = {
     "ru-RU": {
-        "tts":
-            """
+        "tts": """
             Выберите раздел, который вам поможет в решение вашего вопроса.
             Кто создатели навыка?
             Как связаться с разработчиками?
@@ -19,59 +18,51 @@ config = {
             "Назад",
             "Выйти",
         ],
-
         "card": {
-            'type': 'BigImage',
-            'image_id': '1521359/ffc9c8afbe8b9f6f95c9',
-            'title': 'ПОМОЩЬ',
-            'description':
-                """
+            "type": "BigImage",
+            "image_id": "1521359/ffc9c8afbe8b9f6f95c9",
+            "title": "ПОМОЩЬ",
+            "description": """
                     Выберите раздел, который вам поможет в решение вашего вопроса.
                     Кто создатели навыка?
                     Как связаться с разработчиками?
                     Как узнать актуальность навыка на данный момент?
-                """
-        }
+                """,
+        },
     },
-
     "en-US": {
-        "tts":
-            """
-            You have moved to the "Help" section.
+        "tts": """
             Select the section that will help you resolve your issue.
             Who are the creators of the skill?
             How to contact the developers?
             How to find out the relevance of a skill at the moment?
+            To all these questions, you can get an answer if you ask the skill the question you are interested in.
             """,
         "buttons": [
             "Who are the creators of the skill?",
             "How to contact the developers?",
             "How to find out the relevance of a skill at the moment?",
-            "Repeat one more time",
+            "Say it again",
             "What can you do?",
+            "Help",
             "Back",
             "Exit",
         ],
-
         "card": {
-            'type': 'BigImage',
-            'image_id': '1521359/059aaefcfb0a6b5d9cb4',
-            'title': 'HELP',
-            'description':
-                """
-                    Select the section that will help you resolve your issue.
-                    Who are the creators of the skill?
-                    How to contact the developers?
-                    How to find out the relevance of a skill at the moment?
-                """
-
-        }
-    }
+            "type": "BigImage",
+            "image_id": "1521359/059aaefcfb0a6b5d9cb4",
+            "title": "HELP",
+            "description": """
+                Select the section that will help you resolve your issue.
+                Who are the creators of the skill?
+                How to contact the developers?
+                How to find out the relevance of a skill at the moment?
+                """,
+        },
+    },
 }
 
-session_state = {
-    "branch": "help"
-}
+session_state = {"branch": "help"}
 
 
 def getConfig(event):

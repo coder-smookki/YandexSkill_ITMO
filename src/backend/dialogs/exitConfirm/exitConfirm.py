@@ -3,10 +3,9 @@ from utils.triggerHelper import *
 from utils.responseHelper import *
 from utils.branchHandler import getDialogResponseFromEnd
 
-config = getConfig()
-
 
 def getResponse(event, allDialogs=None):
+    config = getConfig(event)
     if isInContext(event, "exitConfirm") and (
         "да" in getCommand(event)
         or "конечно" in getCommand(event)
@@ -15,6 +14,16 @@ def getResponse(event, allDialogs=None):
         or "выйти" in getCommand(event)
         or "выход" in getCommand(event)
         or "выйди" in getCommand(event)
+        or "yes" in getCommand(event)
+        or "sure" in getCommand(event)
+        or "йес" in getCommand(event)
+        or "иес" in getCommand(event)
+        or "йез" in getCommand(event)
+        or "иез" in getCommand(event)
+        or "шур" in getCommand(event)
+        or "сюр" in getCommand(event)
+        or "шьюр" in getCommand(event)
+        or "сьюр" in getCommand(event)
     ):
         return getConfirmResponse(event)
     elif isInContext(event, "exitConfirm"):

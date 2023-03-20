@@ -48,11 +48,11 @@ config = {
                 'url': 'https://student.itmo.ru/ru/',
                 'hide': False
             },
-            "Repeat one more time",
+            "Say it again",
             "What can you do?",
             "Help",
             "Back",
-            "Exit"
+            "Exit",
         ],
 
         "card": {
