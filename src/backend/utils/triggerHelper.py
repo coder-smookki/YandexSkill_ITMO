@@ -1,3 +1,5 @@
+from utils.responseHelper import getCommand
+
 def isNewSession(event):
     return event['session']['new'] is True
 
@@ -5,6 +7,19 @@ def isNewSession(event):
 def isSimilarTokens(event, tokens):
     return len(list(set(event['request']['nlu']['tokens']) & tokens)) != 0
 
+def isInCommandOr(event, arr):
+    command = getCommand()
+    for elem in arr:
+        if elem in command:
+            return True
+    return False
+
+def isInCommandAnd(event, arr):
+    command = getCommand()
+    for elem in arr:
+        if not (elem in command):
+            return False
+    return True
 
 def isInContext(event, context):
     if not 'branch' in event['state']['session']:

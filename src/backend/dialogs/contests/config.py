@@ -48,7 +48,7 @@ def getConfig(event):
     emptyArr = words[lang]["emptyArr"]
     annBetween = words[lang]["annBetween"]
 
-    session_state = {"branch": "announces"}
+    session_state = {"branch": "contests"}
     contests = globalStorage["news_contests_" + lang]
 
     buttonsResponse = []
