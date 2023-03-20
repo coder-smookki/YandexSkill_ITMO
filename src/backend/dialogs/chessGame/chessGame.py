@@ -5,15 +5,16 @@ from utils.triggerHelper import *
 
 
 def getResponse(event, allDialogs):
-    def getReponseFunc(event, allDialogs):
-        getState(event, 'orientation')
-        return createResponse(event, event_move(event))
+    # def getReponseFunc(event, allDialogs):
+    #     getState(event, 'orientation')
+    #     return createResponse(event, event_move(event))
 
     if config := handler_not_a_move(event):
         return createResponse(event, config)
     try:
         getState(event, 'orientation')
-        return createTimeoutResponse(event, allDialogs, getReponseFunc, 'chessGameTimeout')
+        return createResponse(event, event_move(event))
+        # return createTimeoutResponse(event, allDialogs, getReponseFunc, 'chessGameTimeout')
     except KeyError:
         return createResponse(event, event_color(event))
 
