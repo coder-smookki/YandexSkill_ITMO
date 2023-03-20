@@ -5,6 +5,7 @@ from .studentOffice.studentOffice import studentOffice
 from .studentOfficeAbout.studentOfficeAbout import studentOfficeAbout
 from .studentOfficeWhy.studentOfficeWhy import studentOfficeWhy
 from .universityWideUndergraduateModules.universityWideUndergraduateModules import universityWideUndergraduateModules
+from .universityWideMagistracyModules.universityWideUndergraduateModules import universityWideMagistracyModules
 from .documentOnPreviousEducation.documentOnPreviousEducation import documentOnPreviousEducation
 from .library.library import library
 from .news.news import news
@@ -47,6 +48,7 @@ allDialogs = {
     'OfficeConsultation': OfficeConsultation,
     'studentOfficeWhy': studentOfficeWhy,
     'documentOnPreviousEducation': documentOnPreviousEducation,
+    'universityWideMagistracyModules': universityWideMagistracyModules,
     'universityWideUndergraduateModules': universityWideUndergraduateModules,
     'educationalPublications': educationalPublications,
     'library': library,
