@@ -18,7 +18,7 @@ def isTriggered(event):
         or "lang" in getCommand(event)
         or "язык" in getCommand(event)
         or "езык" in getCommand(event)
-    ) and not isInLastContext('mainMenu')
+    ) and not isInLastContext(event, 'mainMenu')
 
 
 chooseLanguage = {"getResponse": getResponse, "isTriggered": isTriggered}
