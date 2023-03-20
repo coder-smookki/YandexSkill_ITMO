@@ -26,12 +26,12 @@ def getConfig(lang='ru'):
     else:
         for i in announces:
             message += f"""
-            {i['text']}.\n
-            {i['date']}.\n
+            {i['text']}\n
+            {i['date']}\n
             ------------\n
             """
             buttonsResponse.append({'title': i['text'], 'url': i['link']})
-            tts += f'{i["text"]} будет {i["date"]}'
+            tts += f'{i["text"]}. будет {i["date"]}.'
 
         buttons = buttonsResponse + buttons
 
