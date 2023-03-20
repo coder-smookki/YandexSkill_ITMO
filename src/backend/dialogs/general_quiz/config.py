@@ -57,16 +57,28 @@ def getFinishConfig(event):
     lang = getLanguage(event)
     buttonsResponse = copy.deepcopy(buttons[lang])
     buttonsResponse.append('меню')
-    return {
-        'message': "Ваш результат: " + str(getState(event, "count_correct_response")) + "/" + str(
-            getState(event, "count_questions") - 1),
-        'tts': "Ваш результат:" + str(getState(event, "count_correct_response")) + "из" + str(
-            getState(event, "count_questions") - 1),
-        'buttons': buttonsResponse,
-        'session_state': {
-            "branch": "mainMenu"
+    if lang = "ru-RU":
+        return {
+            'message': "Ваш результат: " + str(getState(event, "count_correct_response")) + "/" + str(
+                getState(event, "count_questions") - 1),
+            'tts': "Ваш результат:" + str(getState(event, "count_correct_response")) + "из" + str(
+                getState(event, "count_questions") - 1),
+            'buttons': buttonsResponse,
+            'session_state': {
+                "branch": "mainMenu"
+            }
         }
-    }
+    else:
+        return {
+            'message': "Your result: " + str(getState(event, "count_correct_response")) + "/" + str(
+                getState(event, "count_questions") - 1),
+            'tts': "Your result: " + str(getState(event, "count_correct_response")) + "out of" + str(
+                getState(event, "count_questions") - 1),
+            'buttons': buttonsResponse,
+            'session_state': {
+                "branch": "mainMenu"
+            }
+        }
 
 
 def check_answer(event):
