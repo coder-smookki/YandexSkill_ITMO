@@ -6,13 +6,24 @@ from utils.responseHelper import *
 with open("questions.json") as file:
     questions = json.loads(file.read())
 
-buttons = [
-    "Повторить ещё раз",
-    "Что ты умеешь?",
-    "Помощь",
-    "Назад",
-    "Выйти"
-]
+buttons = {
+    "ru-RU":
+        [
+        "Повторить ещё раз",
+        "Что ты умеешь?",
+        "Помощь",
+        "Назад",
+        "Выйти"
+        ],
+    "en-US":
+        [
+        "Repeat",
+        "What can you do?",
+        "Help",
+        "Back",
+        "Exit"
+    ],
+}
 
 session_state = {
     "branch": "start_quiz"
@@ -20,11 +31,12 @@ session_state = {
 
 
 def getConfig(event):
-    message = questions["questions"][getState(event, "questions_list")[-1]]
-    correct_answer = questions["answers"][getState(event, "questions_list")[-1]]
-    answers = copy.deepcopy(questions["uncorrect_answers"][getState(event, "questions_list")[-1]])
+    lang = getLanguage(event)
+    message = questions[lang]["questions"][getState(event, "questions_list")[-1]]
+    correct_answer = questions[lang]["answers"][getState(event, "questions_list")[-1]]
+    answers = copy.deepcopy(questions[lang]["uncorrect_answers"][getState(event, "questions_list")[-1]])
     answers[random.randint(0, len(answers) - 1)] = correct_answer
-    buttons_response = answers + buttons
+    buttons_response = answers + buttons[lang]
     states = {
         "count_questions": event["state"]["session"]["count_questions"],
         "count_correct_response": event["state"]["session"]["count_correct_response"],
@@ -42,7 +54,8 @@ def getConfig(event):
 
 
 def getFinishConfig(event):
-    buttonsResponse = copy.deepcopy(buttons)
+    lang = getLanguage(event)
+    buttonsResponse = copy.deepcopy(buttons[lang])
     buttonsResponse.append('меню')
     return {
         'message': "Ваш результат: " + str(getState(event, "count_correct_response")) + "/" + str(
@@ -57,10 +70,11 @@ def getFinishConfig(event):
 
 
 def check_answer(event):
+    lang = getLanguage(event)
     questions_list = getState(event, "questions_list")
 
     if len(questions_list) != 0:
-        if questions["answers"][questions_list[-1]].lower() in getOriginalUtterance(event).lower() or questions["answers"][questions_list[-1]].lower() == getOriginalUtterance(event).lower():
+        if questions[lang]["answers"][questions_list[-1]].lower() in getOriginalUtterance(event).lower() or questions[lang]["answers"][questions_list[-1]].lower() == getOriginalUtterance(event).lower():
             setStateInEvent(event, "count_correct_response", getState(event, "count_correct_response") + 1)
 
     setStateInEvent(event, "count_questions", getState(event, "count_questions") + 1)
