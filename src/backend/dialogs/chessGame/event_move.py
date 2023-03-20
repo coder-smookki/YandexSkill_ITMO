@@ -85,9 +85,10 @@ def get_next_move(user_move: str, orientation: str, prev_moves: str, lang: str, 
         "user_move": user_move,
         "prev_moves": prev_moves,
         "orientation": orientation,
-        "skill_level": 1,  # session_states.get("skill_level")  Сделать выбор уровня сложности???
-        "ram_hash": 1,  # Для ускорения апи, минимум в константах, ищите в кода апи
+        "skill_level": 10,  # session_states.get("skill_level")  Сделать выбор уровня сложности???
+        "ram_hash": 128,
         "depth": 15,
+        "max_time": 350  # Для ускорения апи, минимум в константах, ищите в кода апи
     }
 
     response = requests.get(api_base + 'move', params)
