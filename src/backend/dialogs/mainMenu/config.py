@@ -68,14 +68,19 @@ config = {
         """,
         "buttons": [
             "News",
-            "Student Office" "Freshmen" "Timetable of classes",
+            "Student Office",
+            "For freshmens",
+            "Timetable of classes",
             "University-wide modules in undergraduate studies",
             "University-wide modules in the magistracy",
-            "foreign student" "Library",
+            "foreign student",
+            "Library",
             "Educational and methodical publications",
-            "Scholarships" "Chess",
+            "Scholarships",
+            "Chess",
             "Quiz",
-            "Random Fact" "Chess",
+            "Random Fact",
+            "Chess",
             "Change language",
             "What can you do?",
             "Help",
@@ -94,6 +99,7 @@ config = {
 }
 
 session_state = {"branch": "mainMenu"}
+
 
 def getConfig(event):
     lang = getLanguage(event)
