@@ -15,6 +15,7 @@ def getResponse(event, allDialogs=None):
 def isTriggered(event):
     return (
         "educ" in getCommand(event)
+        or "meth" in getCommand(event)
         or "acad" in getCommand(event)
         or "учеб" in getCommand(event)
         or "едук" in getCommand(event)
@@ -24,6 +25,8 @@ def isTriggered(event):
         or "акад" in getCommand(event)
         or "акед" in getCommand(event)
         or "акэд" in getCommand(event)
+        or "мэф" in getCommand(event)
+        or "меф" in getCommand(event)
     ) and (
         "edit" in getCommand(event)
         or "publ" in getCommand(event)
