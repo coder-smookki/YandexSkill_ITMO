@@ -16,7 +16,7 @@ config = {
 
         "card": {
             'type': 'BigImage',
-            'image_id': '937455/40f0536e426907808499',
+            'image_id': '1521359/65fa68f782fa6af3f071',
             'title': 'КАК ПОПАСТЬ НА КОНСУЛЬТАЦИЮ В СТУДЕНЧЕСКИЙ ОФИС?',
             'description': \
                 """
@@ -57,7 +57,6 @@ session_state = {
 
 def getConfig(event):
     lang = getLanguage(event)
-    # lang = "ru-RU"
 
     return {
         "tts": config[lang]["tts"],
