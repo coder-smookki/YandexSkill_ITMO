@@ -41,7 +41,7 @@ def getConfig(event):
     annBetween = words[lang]["annBetween"]
 
     session_state = {"branch": "announces"}
-    announces = globalStorage["news_announces"]
+    announces = globalStorage["news_announces_" + lang]
 
     buttonsResponse = []
     if len(announces) <= 0:

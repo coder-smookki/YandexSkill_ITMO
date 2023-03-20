@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup as bs
-from .handlers.announces import announces
-from .handlers.contests import contests
+from .handlers.independents.announces import announces
+from .handlers.independents.contests import contests
 from .handlers.independents.educationalPublications import educationalPublications
 from .handlers.independents.timetable.getAllGroups import getAllGroups
 from .handlers.independents.timetable.getGroupTimetable import getGroupTimetable
@@ -17,10 +17,13 @@ from .handlers.independents.timetable.getGroupTimetable import getGroupTimetable
 #  - timetable.getAllGroups - получить все группы по форме обучения и курсу
 #  - timetable.getGroupTimetable - получить все занятия группы по имени группы и форме обучения
 
-def parser(infoType, query=''):
+def parser(infoType, query='', lang='ru-RU'):
     types = {
-        'announces': {'url': 'https://news.itmo.ru/ru/events/', 'handler': announces},
-        'contests': {'url': 'https://news.itmo.ru/ru/events/', 'handler': contests},
+        # 'url': 'https://news.itmo.ru/ru/events/', 
+        # 'url': 'https://news.itmo.ru/ru/events/', 
+        
+        'announces': {'handler': announces},
+        'contests': {'handler': contests},
         'educationalPublications': {'handler': educationalPublications},
         'timetable.getAllGroups': {'handler': getAllGroups},
         'timetable.getGroupTimetable': {'handler': getGroupTimetable}
@@ -30,7 +33,7 @@ def parser(infoType, query=''):
         raise TypeError('Unknown type')
 
     if not 'url' in types[infoType]:
-        return types[infoType]['handler'](query)
+        return types[infoType]['handler'](query, lang)
 
     try:
         r = requests.get(types[infoType]['url'])
