@@ -1,5 +1,3 @@
-from utils.responseHelper import getCommand
-
 def isNewSession(event):
     return event['session']['new'] is True
 
