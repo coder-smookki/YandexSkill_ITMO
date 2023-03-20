@@ -8,7 +8,7 @@ def getResponse(event, allDialogs=None):
 
 
 def isTriggered(event):
-    words = ["назад", "back", "бэк", "бек", "бак"]
+    words = ["назад", "back", "бэк", "бек"]
 
     return isInCommandOr(event, words)
 
