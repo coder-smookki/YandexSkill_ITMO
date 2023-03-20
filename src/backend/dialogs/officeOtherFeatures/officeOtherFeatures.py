@@ -25,7 +25,7 @@ def isTriggered(event):
         or "кеш" in getCommand(event)
         or "que" in getCommand(event)
         or "ans" in getCommand(event)
-    ) and isInContext(event, "studentOffice")
+    ) and isInLastContext(event, "studentOffice")
 
 
 officeOtherFeatures = {"getResponse": getResponse, "isTriggered": isTriggered}
