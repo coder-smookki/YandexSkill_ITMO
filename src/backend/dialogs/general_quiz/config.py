@@ -57,7 +57,7 @@ def getFinishConfig(event):
     lang = getLanguage(event)
     buttonsResponse = copy.deepcopy(buttons[lang])
     buttonsResponse.append('меню')
-    if lang = "ru-RU":
+    if lang == "ru-RU":
         return {
             'message': "Ваш результат: " + str(getState(event, "count_correct_response")) + "/" + str(
                 getState(event, "count_questions") - 1),
