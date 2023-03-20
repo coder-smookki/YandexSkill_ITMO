@@ -10,10 +10,12 @@ def getResponse(event, allDialogs=None):
 
     if (
         "бакал" in getCommand(event)
-        or "benc" in getCommand(event)
-        or "banc" in getCommand(event)
+        or "bec" in getCommand(event)
+        or "bac" in getCommand(event)
         or "бэнч" in getCommand(event)
         or "банч" in getCommand(event)
+        or "бэч" in getCommand(event)
+        or "бач" in getCommand(event)
     ):
         return createResponse(event, getBechelorConfig(event))
 
