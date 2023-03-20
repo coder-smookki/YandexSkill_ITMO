@@ -45,9 +45,9 @@ def getFinishConfig(event):
     buttonsResponse = copy.deepcopy(buttons)
     buttonsResponse.append('меню')
     return {
-        'message': "Ваш результат: " + str(getState(event, "count_correct_response") + 1) + "/" + str(
+        'message': "Ваш результат: " + str(getState(event, "count_correct_response")) + "/" + str(
             getState(event, "count_questions")),
-        'tts': "Ваш результат:" + str(getState(event, "count_correct_response") + 1) + "из" + str(
+        'tts': "Ваш результат:" + str(getState(event, "count_correct_response")) + "из" + str(
             getState(event, "count_questions")),
         'buttons': buttonsResponse,
         'session_state': {
@@ -58,7 +58,8 @@ def getFinishConfig(event):
 
 def check_answer(event):
     questions_list = getState(event, "questions_list")
-    print(questions_list)
+    print(questions["answers"][questions_list[-1]])
+    print(getCommand(event))
     if len(questions_list) != 0:
         if questions["answers"][questions_list[-1]] in getCommand(event):
             setStateInEvent(event, "count_correct_response", getState(event, "count_correct_response") + 1)
