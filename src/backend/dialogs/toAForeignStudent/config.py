@@ -180,13 +180,14 @@ magistracyConfig = {
 
 internationalMagistracyConfig = {
     "ru-RU": {
-        "tts": """
-        Хотите вывести своё образование и карьерные перспективы на международный уровень? 
-        Международные магистерские программы Университета ИТМО – это целый мир новых возможностей и открытий!
-        Университет ИТМО приглашает бакалавров и специалистов стать частью международных магистерских программ. 
-        Обучение построено по принципу полного погружения в научную среду и сотрудничества с ведущими международными учеными и экспертами в выбранной области. 
-        Более того, ряд программ международной магистратуры ИТМО включает в себя уникальную возможность получения двух магистерских дипломов за два года обучения.
-        """,
+        "tts":
+            """
+            Хотите вывести своё образование и карьерные перспективы на международный уровень? 
+            Международные магистерские программы Университета ИТМО – это целый мир новых возможностей и открытий!
+            Университет ИТМО приглашает бакалавров и специалистов стать частью международных магистерских программ. 
+            Обучение построено по принципу полного погружения в научную среду и сотрудничества с ведущими международными учеными и экспертами в выбранной области. 
+            Более того, ряд программ международной магистратуры ИТМО включает в себя уникальную возможность получения двух магистерских дипломов за два года обучения.
+            """,
         "buttons": [
             "Повторить ещё раз",
             "Что ты умеешь?",
@@ -198,20 +199,22 @@ internationalMagistracyConfig = {
             "type": "BigImage",
             "image_id": "1030494/e955cc538c12dfb9bd3a",
             "title": "ИНОСТРАННОМУ СТУДЕНТУ (МЕЖДУНАРОДНАЯ МАГИСТРАТУРА)",
-            "description": """
-        Развивайте карьеру, знакомьтесь с другими культурами и стройте своё будущее!
-        """,
+            "description":
+                """
+                Развивайте карьеру, знакомьтесь с другими культурами и стройте своё будущее!
+                """,
         },
         "session_state": {"branch": "toAForeignStudent"},
     },
     "en-US": {
-        "tts": """
-        Do you want to take your education and career prospects to the international level?
-        International master's programs at ITMO University are a whole world of new opportunities and discoveries!
-        ITMO University invites bachelors and specialists to become part of international master's programs.
-        The training is built on the principle of full immersion in the scientific environment and cooperation with leading international scientists and experts in the chosen field.
-        Moreover, a number of ITMO's international master's programs include a unique opportunity to receive two master's degrees in two years of study.
-        """,
+        "tts":
+            """
+            Do you want to take your education and career prospects to the international level?
+            International master's programs at ITMO University are a whole world of new opportunities and discoveries!
+            ITMO University invites bachelors and specialists to become part of international master's programs.
+            The training is built on the principle of full immersion in the scientific environment and cooperation with leading international scientists and experts in the chosen field.
+            Moreover, a number of ITMO's international master's programs include a unique opportunity to receive two master's degrees in two years of study.
+            """,
         "buttons": [
             "Repeat",
             "What can you do?",
@@ -223,7 +226,10 @@ internationalMagistracyConfig = {
             "type": "BigImage",
             "image_id": "1030494/e955cc538c12dfb9bd3a",
             "title": "FOR A FOREIGN STUDENT (INTERNATIONAL MASTER)",
-            "description": """Develop your career, meet other cultures and build your future!""",
+            "description":
+                """
+                Develop your career, meet other cultures and build your future!
+                """,
         },
         "session_state": {"branch": "toAForeignStudent"},
     },
@@ -231,12 +237,13 @@ internationalMagistracyConfig = {
 
 additionalOpportsConfig = {
     "ru-RU": {
-        "tts": """
-    Прием-прием нашим самым классным, умным и талантливым иностранным абитуриентам!
-    Как насчет поступить в Университет ИТМО без экзаменов или на бесплатную основу обучения (или, для самых отважных, и то и другое вместе?)
-    Мы предлагаем море таких возможностей: для бакалавриата и магистратуры, асов в математике и информатике, гениев русского языка и абитуриентов с уникальными достижениями.
-    Выбирай! 
-    """,
+        "tts":
+            """
+            Прием-прием нашим самым классным, умным и талантливым иностранным абитуриентам!
+            Как насчет поступить в Университет ИТМО без экзаменов или на бесплатную основу обучения (или, для самых отважных, и то и другое вместе?)
+            Мы предлагаем море таких возможностей: для бакалавриата и магистратуры, асов в математике и информатике, гениев русского языка и абитуриентов с уникальными достижениями.
+            Выбирай! 
+            """,
         "buttons": [
             "Повторить ещё раз",
             "Что ты умеешь?",
@@ -248,21 +255,23 @@ additionalOpportsConfig = {
             "type": "BigImage",
             "image_id": "1030494/e955cc538c12dfb9bd3a",
             "title": "ДОПОЛНИТЕЛЬНЫЕ ВОЗМОЖНОСТИ ПОСТУПЛЕНИЯ",
-            "description": """
-        Прием-прием нашим самым классным, умным и талантливым иностранным абитуриентам!
-        """,
+            "description":
+                """
+                Прием-прием нашим самым классным, умным и талантливым иностранным абитуриентам!
+                """,
         },
         "session_state": {"branch": "toAForeignStudent"},
     },
     "en-US": {
-        "tts": """
-    Welcome to our coolest, smartest and most talented international students!
-     How about entering ITMO University without exams or on a free basis of study (or, for the most courageous, both?)
-     We offer a sea of such opportunities: for undergraduate and graduate students, aces in mathematics and computer science, geniuses of the Russian language and applicants with unique achievements.
-     Choose! 
-    """,
+        "tts":
+            """
+            Welcome to our coolest, smartest and most talented international students!
+            How about entering ITMO University without exams or on a free basis of study (or, for the most courageous, both?)
+            We offer a sea of such opportunities: for undergraduate and graduate students, aces in mathematics and computer science, geniuses of the Russian language and applicants with unique achievements.
+            Choose!
+            """,
         "buttons": [
-            "Say it again",
+            "Repeat",
             "What can you do?",
             "Help",
             "Back",
@@ -272,7 +281,10 @@ additionalOpportsConfig = {
             "type": "BigImage",
             "image_id": "1030494/e955cc538c12dfb9bd3a",
             "title": "ADDITIONAL ENTRY OPPORTUNITIES",
-            "description": """Welcome to our coolest, smartest and most talented international students!""",
+            "description":
+                """
+                Welcome to our coolest, smartest and most talented international students!
+                """,
         },
         "session_state": {"branch": "toAForeignStudent"},
     },
@@ -280,13 +292,14 @@ additionalOpportsConfig = {
 
 migrationDocumentsConfig = {
     "ru-RU": {
-        "tts": """
-ДОКУМЕНТЫ, КОТОРЫЕ НУЖНО ИМЕТЬ ПРИ СЕБЕ, КОГДА ВЫ НАХОДИТЕСЬ НА ТЕРРИТОРИИ РОССИЙСКОЙ ФЕДЕРАЦИИ
-Иностранный гражданин (студент) может находиться и свободно перемещаться по территории Российской Федерации лишь при наличии следующих документов:
-национальный паспорт (с действующей визой для визовых граждан);
-миграционная карта с отметкой о пересечении границы (за исключением граждан Республики Беларусь);
-отрывная часть бланка уведомления о прибытии иностранного гражданина/лица без гражданства в РФ по месту вашего временного пребывания (временная регистрация).
-    """,
+        "tts":
+            """
+            ДОКУМЕНТЫ, КОТОРЫЕ НУЖНО ИМЕТЬ ПРИ СЕБЕ, КОГДА ВЫ НАХОДИТЕСЬ НА ТЕРРИТОРИИ РОССИЙСКОЙ ФЕДЕРАЦИИ
+            Иностранный гражданин (студент) может находиться и свободно перемещаться по территории Российской Федерации лишь при наличии следующих документов:
+            национальный паспорт (с действующей визой для визовых граждан);
+            миграционная карта с отметкой о пересечении границы (за исключением граждан Республики Беларусь);
+            отрывная часть бланка уведомления о прибытии иностранного гражданина/лица без гражданства в РФ по месту вашего временного пребывания (временная регистрация).
+            """,
         "buttons": [
             "Повторить ещё раз",
             "Что ты умеешь?",
@@ -298,21 +311,25 @@ migrationDocumentsConfig = {
             "type": "BigImage",
             "image_id": "1030494/e955cc538c12dfb9bd3a",
             "title": "МИГРАЦИОННЫЕ ДОКУМЕНТЫ",
-            "description": """
-        МИГРАЦИОННАЯ ПОДДЕРЖКА: Адрес - Ул. Ломоносова, д. 9, оф. 2139d, Санкт-Петербург, Россия, 191002. Отдел миграционного учета - ХАЛИЛОВА АЛЕКСАНДРА АХМЕТОВНА. Почта - aakhalilova@itmo.ru. Телефон - +7 (812) 315-05-21
-        """,
+            "description":
+                """
+                МИГРАЦИОННАЯ ПОДДЕРЖКА: Адрес - Ул. Ломоносова, д. 9, оф. 2139d, Санкт-Петербург, Россия, 191002.
+                Отдел миграционного учета - ХАЛИЛОВА АЛЕКСАНДРА АХМЕТОВНА. Почта - aakhalilova@itmo.ru. Телефон - +7 (812) 315-05-21
+                """,
         },
         "session_state": {"branch": "toAForeignStudent"},
     },
     "en-US": {
-        "tts": """
-DOCUMENTS YOU SHOULD HAVE WITH YOU WHEN YOU ARE IN THE RUSSIAN FEDERATION
-A foreign citizen (student) may stay and move freely within the territory of the Russian Federation only if he/she has the following documents:
-national passport (with a valid visa for visa citizens);
-migration card with a mark on crossing the border (except for citizens of the Republic of Belarus);
-a detachable part of the form of notification of the arrival of a foreign citizen/stateless person in the Russian Federation at the place of your temporary stay (temporary registration).    """,
+        "tts":
+            """
+DOCU        DOCUMENTS YOU SHOULD HAVE WITH YOU WHEN YOU ARE IN THE RUSSIAN FEDERATION
+            A foreign citizen (student) may stay and move freely within the territory of the Russian Federation only if he/she has the following documents:
+            national passport (with a valid visa for visa citizens);
+            migration card with a mark on crossing the border (except for citizens of the Republic of Belarus);
+            a detachable part of the form of notification of the arrival of a foreign citizen/stateless person in the Russian Federation at the place of your temporary stay (temporary registration).
+            """,
         "buttons": [
-            "Say it again",
+            "Repeat",
             "What can you do?",
             "Help",
             "Back",
@@ -322,8 +339,11 @@ a detachable part of the form of notification of the arrival of a foreign citize
             "type": "BigImage",
             "image_id": "1030494/e955cc538c12dfb9bd3a",
             "title": "MIGRATION DOCUMENTS",
-            "description": """
-        MIGRATION SUPPORT: Address - st. Lomonosov, d. 9, of. 2139d, St. Petersburg, Russia, 191002. Department of Migration Registration - KHALILOVA ALEKSANDRA AKHMETOVNA. Mail - aakhalilova@itmo.ru. Phone - +7 (812) 315-05-21""",
+            "description":
+                """
+                MIGRATION SUPPORT: Address - st. Lomonosov, d. 9, of. 2139d, St. Petersburg, Russia, 191002.
+                Department of Migration Registration - KHALILOVA ALEKSANDRA AKHMETOVNA. Mail - aakhalilova@itmo.ru. Phone - +7 (812) 315-05-21
+                """,
         },
         "session_state": {"branch": "toAForeignStudent"},
     },
