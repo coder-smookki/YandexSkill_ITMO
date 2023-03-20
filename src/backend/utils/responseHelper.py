@@ -12,7 +12,7 @@ def createResponse(event, originalConfig):
     returnResponse = {
         "response": {
             "text": config["message"] if "message" in config else "",
-            "tts": replaceNumbersWithWords(config["tts"]) if lang == 'ru-RU' else config["tts"],
+            "tts": replaceNumbersWithWords(config["tts"]) if lang == 'en-US' else config["tts"],
             "card": config["card"] if "card" in config else None,
             "buttons": createButtons(config["buttons"]),
             "end_session": config["end_session"] if "end_session" in config else False,
