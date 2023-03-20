@@ -81,7 +81,7 @@ config = {
             "Why should I contact the Student Office?",
             "How to apply for a certificate/document of previous education?",
             "How to get a consultation at the Student Office?",
-            "I don't know who to ask the question."
+            "I don't know who to ask the question.",
             "Repeat",
             "What can you do?",
             "Help",
