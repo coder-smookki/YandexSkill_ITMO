@@ -1,21 +1,39 @@
-message = ''
-
-tts = ''
-
-buttons = [
-    "Повторить ещё раз",
-    "Что ты умеешь?",
-    "Помощь",
-    "Назад",
-    "Выйти"
-]
-
-session_state = {
-    "branch": "announces"
-}
-
+from utils.globalStorage import globalStorage
 
 def getConfig(lang='ru'):
+    message = ''
+
+    tts = ''
+
+    buttons = [
+        "Повторить ещё раз",
+        "Что ты умеешь?",
+        "Помощь",
+        "Назад",
+        "Выйти"
+    ]
+
+    session_state = {
+        "branch": "announces"
+    }
+    
+    announces = globalStorage['news_announces']
+    buttonsResponse = []
+    if len(announces) <= 0:
+        message += 'К сожалению, анонсов сейчас нет =('
+        tts += 'К сожалению, анонсов сейчас нет'
+    else:
+        for i in announces:
+            message += f"""
+            {i['text']}.\n
+            {i['date']}.\n
+            ------------\n
+            """
+            buttonsResponse.append({'title': i['text'], 'url': i['link']})
+            tts += f'Вы направились в категорию "Анонсы". {i["text"]} будет {i["date"]} '
+
+        buttons = buttonsResponse + buttons
+    
     return {
         'message': message,
         'tts': tts,
