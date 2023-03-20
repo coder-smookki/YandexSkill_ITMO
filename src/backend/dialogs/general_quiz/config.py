@@ -63,8 +63,10 @@ def check_answer(event):
         if questions["answers"][questions_list[-1]].lower() in getOriginalUtterance(event).lower() or questions["answers"][questions_list[-1]].lower() == getOriginalUtterance(event).lower():
             setStateInEvent(event, "count_correct_response", getState(event, "count_correct_response") + 1)
 
-    setStateInEvent(event, "count_questions", getState(event, "count_questions") + 1)
-    if getState(event, "count_questions") < 6:
+    if getState(event, "count_questions") < 5:
+
+        setStateInEvent(event, "count_questions", getState(event, "count_questions") + 1)
+
         track_question = random.randint(0, len(questions['questions']) - 1)
         while track_question in questions_list:
             track_question = random.randint(0, len(questions['questions']) - 1)
