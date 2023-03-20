@@ -16,11 +16,12 @@ config = {
         },
     },
     "en-US": {
-        "tts": """
-            To apply for a document on previous education, you need to go to the UIS portal, and then everything is simple! Submit an application through the form offered by the system.
+        "tts":
+            """
+            You need to go to the ISU portal, and then everything is simple! Submit an application through the form offered by the system.
             """,
         "buttons": [
-            "Say it again",
+            "Repeat",
             "What can you do?",
             "Help",
             "Back",
@@ -30,8 +31,9 @@ config = {
             "type": "BigImage",
             "image_id": "1521359/65fa68f782fa6af3f071",
             "title": "PREVIOUS EDUCATION DOCUMENT",
-            "description": """
-                You need to go to the UIS portal, and then everything is simple! Submit an application through the form offered by the system.
+            "description":
+                """
+                You need to go to the ISU portal, and then everything is simple! Submit an application through the form offered by the system.
                 """,
         },
     },

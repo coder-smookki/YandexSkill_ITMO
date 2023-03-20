@@ -3,22 +3,23 @@ from utils.triggerHelper import haveGlobalState
 
 config = {
     "ru-RU": {
-        "tts": """
-        Выберите нужную категорию, которая поможет вам.
-        Новости,
-        Студенческий офис,
-        Первокурсникам,
-        Расписание занятий,
-        Общеуниверситетские модули в бакалавриате,
-        Общеуниверситетские модули в магистратуре,
-        Иностранному студенту,
-        Библиотека,
-        Учебные и методические издания,
-        Стипендии,
-        Шахматы,
-        Викторина,
-        Случайный факт,
-        """,
+        "tts":
+            """
+            Выберите нужную категорию, которая поможет вам.
+            Новости,
+            Студенческий офис,
+            Первокурсникам,
+            Расписание занятий,
+            Общеуниверситетские модули в бакалавриате,
+            Общеуниверситетские модули в магистратуре,
+            Иностранному студенту,
+            Библиотека,
+            Учебные и методические издания,
+            Стипендии,
+            Шахматы,
+            Викторина,
+            Случайный факт,
+            """,
         "buttons": [
             "Новости",
             "Студенческий офис",
@@ -35,6 +36,7 @@ config = {
             "Случайный факт",
             "Шахматы",
             "Сменить язык",
+            "Повторить ещё раз",
             "Что ты умеешь?",
             "Помощь",
             "Назад",
@@ -44,28 +46,30 @@ config = {
             "type": "BigImage",
             "image_id": "937455/40f0536e426907808499",
             "title": "КАТАЛОГ",
-            "description": """
-            Выберите нужную категорию, которая поможет вам.
-            """,
+            "description":
+                """
+                Выберите нужную категорию, которая поможет вам.
+                """,
         },
     },
     "en-US": {
-        "tts": """
-        Choose the right category to help you.
-        News,
-        student office,
-        Freshmen
-        Timetable of classes,
-        University-wide undergraduate modules,
-        University-wide modules in the magistracy,
-        foreign student,
-        Library,
-        Educational and methodical publications,
-        scholarships,
-        Chess,
-        Quiz,
-        random fact,
-        """,
+        "tts":
+            """
+            Choose the right category to help you.
+            News,
+            student office,
+            Freshmen
+            Timetable of classes,
+            University-wide undergraduate modules,
+            University-wide modules in the magistracy,
+            foreign student,
+            Library,
+            Educational and methodical publications,
+            scholarships,
+            Chess,
+            Quiz,
+            random fact,
+            """,
         "buttons": [
             "News",
             "Student Office",
@@ -80,8 +84,8 @@ config = {
             "Chess",
             "Quiz",
             "Random Fact",
-            "Chess",
             "Change language",
+            "Repeat",
             "What can you do?",
             "Help",
             "Back",
@@ -91,9 +95,10 @@ config = {
             "type": "BigImage",
             "image_id": "937455/40f0536e426907808499",
             "title": "CATALOG",
-            "description": """
-            Choose the right category to help you.
-            """,
+            "description":
+                """
+                Choose the right category to help you.
+                """,
         },
     },
 }

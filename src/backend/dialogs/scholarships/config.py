@@ -2,21 +2,22 @@ from utils.responseHelper import getGlobalState, getLanguage
 
 config = {
     "ru-RU": {
-        "tts": """
+        "tts":
+            """
             Вы направились в категорию "Стипендии".
-        Учеба идет проще, когда тебя хвалят, именно поэтому в Университете ИТМО существуют разные стипендиальные выплаты. Они нацелены на стимулирование и поддержку студентов во время обучения.
-        Существует множество видов стипендиальных выплат:
-        Государственная академическая стипендия;
-        Повышенная государственная академическая стипендия;
-        Государственная стипендия аспирантам, ординаторам, ассистентам-стажёрам;
-        Государственная социальная стипендия;
-        Материальная поддержка студентам и аспирантам;
-        Стипендия Президента РФ и Правительства РФ;
-        Конкурс стипендий Президента РФ для обучения за рубежом;
-        Именная стипендия Правительства Санкт-Петербурга;
-        Стипендия «Альфа-Шанс»;
-        Стипендия фонда Владимира Потанина.
-        Есть вопросы? - Задайте их Стипендиальной комиссии!
+            Учеба идет проще, когда тебя хвалят, именно поэтому в Университете ИТМО существуют разные стипендиальные выплаты. Они нацелены на стимулирование и поддержку студентов во время обучения.
+            Существует множество видов стипендиальных выплат:
+            Государственная академическая стипендия;
+            Повышенная государственная академическая стипендия;
+            Государственная стипендия аспирантам, ординаторам, ассистентам-стажёрам;
+            Государственная социальная стипендия;
+            Материальная поддержка студентам и аспирантам;
+            Стипендия Президента РФ и Правительства РФ;
+            Конкурс стипендий Президента РФ для обучения за рубежом;
+            Именная стипендия Правительства Санкт-Петербурга;
+            Стипендия «Альфа-Шанс»;
+            Стипендия фонда Владимира Потанина.
+            Есть вопросы? - Задайте их Стипендиальной комиссии!
             """,
         "buttons": [
             {
@@ -34,27 +35,29 @@ config = {
             "type": "BigImage",
             "image_id": "1533899/b86b0073c0e88e67d092",
             "title": "СТИПЕНДИИ",
-            "description": """
+            "description":
+                """
                 Есть вопросы? Задайте их Стипендиальной комиссии! Почта - ursi@itmo.ru
                 """,
         },
     },
     "en-US": {
-        "tts": """
-            Extract in the classification "Scholarships".
-        Studying is easier when you are praised, which is why ITMO University offers various scholarships. These include incentives and student support during the course.
-        There are many types of scholarships:
-State academic scholarship;
-        Increased state academic scholarship;
-        State scholarship for graduate students, residents, assistant trainees;
-        State social scholarship;
-        Financial support for students and graduate students;
-        Scholarship of the President of the Russian Federation and the Government of the Russian Federation;
-        Competition of scholarships of the President of the Russian Federation for studying abroad;
-        Personal scholarship of the Government of St. Petersburg;
-        Scholarship "Alfa-Chance";
-        Vladimir Potanin Foundation Scholarship.
-        Have questions? - Ask them to the Scholarship Commission!
+        "tts":
+            """
+            You are headed to the "Scholarships" category.
+            Studying is easier when you are praised, which is why ITMO University offers different scholarships. They are aimed at stimulating and supporting students during their studies.
+            There are many types of scholarships:
+            State academic scholarship;
+            Increased state academic scholarship;
+            State scholarship for graduate students, residents, assistant trainees;
+            State social scholarship;
+            Financial support for students and graduate students;
+            Scholarship of the President of the Russian Federation and the Government of the Russian Federation;
+            Competition of scholarships of the President of the Russian Federation for studying abroad;
+            Personal scholarship of the Government of St. Petersburg;
+            Scholarship "Alfa-Chance";
+            Vladimir Potanin Foundation Scholarship.
+            Have questions? - Ask them to the Scholarship Commission!
             """,
         "buttons": [
             {
@@ -62,7 +65,7 @@ State academic scholarship;
                 "url": "https://student.itmo.ru/en/scholarship/",
                 "hide": False,
             },
-            "Say it again",
+            "Repeat",
             "What can you do?",
             "Help",
             "Back",
@@ -72,7 +75,8 @@ State academic scholarship;
             "type": "BigImage",
             "image_id": "1533899/b86b0073c0e88e67d092",
             "title": "SCHOLARSHIPS",
-            "description": """
+            "description":
+                """
                 Have questions? Ask them to the Scholarship Commission! Email - ursi@itmo.ru
                 """,
         },

@@ -2,29 +2,32 @@ from utils.responseHelper import getLanguage
 
 words = {
     "ru-RU": {
-        "tts": """
-        Выберите раздел новостей, который хотите посмотреть.
-        Анонсы или Контесты.
-        """,
+        "tts":
+            """
+            Выберите раздел новостей, который хотите посмотреть.
+            Анонсы или Контесты.
+            """,
         "buttons": ["Анонсы", "Контесты", "Что ты умеешь?", "Помощь", "Назад", "Выйти"],
         "card": {
             "type": "BigImage",
             "image_id": "937455/40f0536e426907808499",
             "title": "НОВОСТИ",
-            "description": """
-            Выберите раздел новостей: Анонсы или Контесты.
-            """,
+            "description":
+                """
+                Выберите раздел новостей: Анонсы или Контесты.
+                """,
         },
     },
     "en-US": {
-        "tts": """
-        Select the news section you want to watch.
-        Announcements or Contests.
-        """,
+        "tts":
+            """
+            Select the news section you want to watch.
+            Announcements or Contests.
+            """,
         "buttons": [
             "Announcements",
             "Contests",
-            "Say it again",
+            "Repeat",
             "What can you do?",
             "Help",
             "Back",
@@ -34,9 +37,10 @@ words = {
             "type": "BigImage",
             "image_id": "937455/40f0536e426907808499",
             "title": "NEWS",
-            "description": """
-            Select the news section: Announcements or Contests.
-            """,
+            "description":
+                """
+                Select the news section: Announcements or Contests.
+                """,
         },
     },
 }

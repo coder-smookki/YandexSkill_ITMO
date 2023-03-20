@@ -36,11 +36,10 @@ config = {
     "en-US": {
         "tts":
             """
-            You've made it to the freshman category.
             Friends. Congratulations! Your first academic year at ITMO University has started!
-            All questions that arise during the training can be solved by clicking on the "ITMO" button.
+            All questions that arise during the training can be solved by clicking on the link.
             To always be in the know, download useful mobile apps for ITMO University students.
-            The application on IOS and on Android is called - my.itmo
+            The application for iOS and Android is called - my, dot, itmo.
             """,
         "buttons": [
             {
@@ -48,7 +47,7 @@ config = {
                 'url': 'https://student.itmo.ru/ru/',
                 'hide': False
             },
-            "Say it again",
+            "Repeat",
             "What can you do?",
             "Help",
             "Back",
@@ -61,7 +60,7 @@ config = {
             'title': 'FRESHENERS',
             'description': \
                 """
-                All questions that arise during the training can be solved by clicking on the link
+                All questions that arise during the training can be solved by clicking on the link.
                 """
         }
     }

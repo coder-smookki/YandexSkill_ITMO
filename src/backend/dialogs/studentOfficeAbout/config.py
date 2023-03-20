@@ -2,26 +2,30 @@ from utils.responseHelper import getGlobalState, getLanguage
 
 config = {
     "ru-RU": {
-        "tts": """
-                Студенческий офис – это компас студента в мире сложных и непонятных вопросов. 
-    Менеджеры офиса вряд ли помогут решить задачу по математике, но точно подскажут, как заселиться в общежитие или получить социальную стипендию.
+        "tts":
+            """
+            Студенческий офис – это компас студента в мире сложных и непонятных вопросов. 
+            Менеджеры офиса вряд ли помогут решить задачу по математике, но точно подскажут, как заселиться в общежитие или получить социальную стипендию.
             """,
         "buttons": ["Повторить ещё раз", "Что ты умеешь?", "Помощь", "Назад", "Выйти"],
         "card": {
             "type": "BigImage",
             "image_id": "1521359/65fa68f782fa6af3f071",
             "title": "ЧТО ТАКОЕ СТУДЕНЧЕСКИЙ ОФИС?",
-            "description": """
+            "description":
+                """
                 Студенческий офис – это компас студента в мире сложных и непонятных вопросов.
                 """,
         },
     },
     "en-US": {
-        "tts": """
+        "tts":
+            """
             The student office is the student's compass in the world of complex and incomprehensible issues.
-    Office managers are unlikely to help solve a math problem, but they will definitely tell you how to move into a hostel or get a social scholarship.""",
+            Office managers are unlikely to help solve a math problem, but they will definitely tell you how to move into a hostel or get a social scholarship.
+            """,
         "buttons": [
-            "Say it again",
+            "Repeat",
             "What can you do?",
             "Help",
             "Back",
@@ -31,7 +35,10 @@ config = {
             "type": "BigImage",
             "image_id": "1521359/65fa68f782fa6af3f071",
             "title": "WHAT IS THE STUDENT OFFICE?",
-            "description": """The student office is the student's compass in the world of complex and incomprehensible issues.""",
+            "description":
+                """
+                The student office is the student's compass in the world of complex and incomprehensible issues.
+                """,
         },
     },
 }

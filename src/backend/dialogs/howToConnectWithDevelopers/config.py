@@ -10,7 +10,7 @@ config = {
         "message": """Contact the team by general mail - SuperScriptsDebugers@yandex.ru""",
         "tts": """Contact the team by general mail - Super. Scripts. debuggers. at. yandex. dot. ru.""",
         "buttons": [
-            "Say it again",
+            "Repeat",
             "What can you do?",
             "Help",
             "Back",

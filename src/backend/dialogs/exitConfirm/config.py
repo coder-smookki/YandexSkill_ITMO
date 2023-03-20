@@ -2,7 +2,8 @@ from utils.responseHelper import getLanguage
 
 config = {
     "ru-RU": {
-        "tts": """
+        "tts":
+            """
             Вы уверены в том, что хотите выйти?
             """,
         "buttons": [
@@ -13,13 +14,15 @@ config = {
             "type": "BigImage",
             "image_id": "937455/40f0536e426907808499",
             "title": "ВЫЙТИ ИЗ НАВЫКА?",
-            "description": """
+            "description":
+                """
                 Вы уверены в том, что хотите выйти?
                 """,
         },
     },
     "en-US": {
-        "tts": """
+        "tts":
+            """
             Are you sure you want to exit?
             """,
         "buttons": [
@@ -30,7 +33,8 @@ config = {
             "type": "BigImage",
             "image_id": "937455/40f0536e426907808499",
             "title": "EXIT SKILL?",
-            "description": """
+            "description":
+                """
                 Are you sure you want to exit?
                 """,
         },

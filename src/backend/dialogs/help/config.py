@@ -2,7 +2,8 @@ from utils.responseHelper import getGlobalState, getLanguage
 
 config = {
     "ru-RU": {
-        "tts": """
+        "tts":
+            """
             Выберите раздел, который вам поможет в решение вашего вопроса.
             Кто создатели навыка?
             Как связаться с разработчиками?
@@ -22,17 +23,19 @@ config = {
             "type": "BigImage",
             "image_id": "1521359/ffc9c8afbe8b9f6f95c9",
             "title": "ПОМОЩЬ",
-            "description": """
-                    Выберите раздел, который вам поможет в решение вашего вопроса.
-                    Кто создатели навыка?
-                    Как связаться с разработчиками?
-                    Как узнать актуальность навыка на данный момент?
+            "description":
+                """
+                Выберите раздел, который вам поможет в решение вашего вопроса.
+                Кто создатели навыка?
+                Как связаться с разработчиками?
+                Как узнать актуальность навыка на данный момент?
                 """,
         },
     },
     "en-US": {
-        "tts": """
-            Select the section that will help you resolve your issue.
+        "tts":
+            """
+            Select the section that will help you answer your question.
             Who are the creators of the skill?
             How to contact the developers?
             How to find out the relevance of a skill at the moment?
@@ -42,7 +45,7 @@ config = {
             "Who are the creators of the skill?",
             "How to contact the developers?",
             "How to find out the relevance of a skill at the moment?",
-            "Say it again",
+            "Repeat",
             "What can you do?",
             "Help",
             "Back",
@@ -52,7 +55,8 @@ config = {
             "type": "BigImage",
             "image_id": "1521359/059aaefcfb0a6b5d9cb4",
             "title": "HELP",
-            "description": """
+            "description":
+                """
                 Select the section that will help you resolve your issue.
                 Who are the creators of the skill?
                 How to contact the developers?
