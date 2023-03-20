@@ -58,7 +58,7 @@ def getFinishConfig(event):
 
 def check_answer(event):
     questions_list = getState(event, "questions_list")
-
+    print(questions_list)
     if len(questions_list) != 0:
         if questions["answers"][questions_list[-1]] in getCommand(event):
             setStateInEvent(event, "count_correct_response", getState(event, "count_correct_response") + 1)
