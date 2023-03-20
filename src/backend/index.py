@@ -1,3 +1,4 @@
+import os
 from utils.globalStorage import *
 from dialogs.allDialogs import allDialogs
 from flask import Flask, request
@@ -8,10 +9,12 @@ import time
 from utils.parser.parser import parser
 from utils.asyncHelper import doFuncAsAsync
 from utils.responseHelper import *
+from dotenv import load_dotenv
 
 DIALOG_DEBUG = False
 REQUESTS_DEBUG = False
 
+load_dotenv()
 
 def cycleRefreshNews():
     while True:
@@ -23,6 +26,9 @@ def cycleRefreshNews():
 
 
 def main(event):
+    if event['session']['skill_id'] == trueSkillId:
+        return
+
     if DIALOG_DEBUG:
         print('===========================')
     if not isNewSession(event):
@@ -50,6 +56,8 @@ def main(event):
 
 
 app = Flask(__name__)
+trueSkillId = os.environ['SKILL_ID']
+
 setInGlobalStorage('app', app, saveLinks=True)
 doFuncAsAsync(cycleRefreshNews)
 
