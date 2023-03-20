@@ -8,7 +8,7 @@ import copy
 
 
 def getResponse(event, allDialogs=None):
-    config = getConfig()
+    config = getConfig(event)
     return createResponse(event, config)
 
 
