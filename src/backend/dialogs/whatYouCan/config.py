@@ -9,7 +9,6 @@ config = {
         Для любителей настольных игр в навыке есть возможность сыграть партию шахмат, а для желающих проверить свои знания - интересные викторины и случайные факты об окружающем мире и ИТМО. 
         Кроме того, в "ИТМО помощнике" можно найти учебные материалы и методические пособия.
         Также для иностранных студентов есть поддержка английского языка.
-        С помощью "ИТМО помощника" учиться и жить в ИТМО станет проще и удобнее.
         """,
         "buttons": ["Повторить ещё раз", "Что ты умеешь?", "Помощь", "Назад", "Выйти"],
         "card": {
@@ -23,7 +22,6 @@ config = {
             Для любителей настольных игр в навыке есть возможность сыграть партию шахмат, а для желающих проверить свои знания - интересные викторины и случайные факты об окружающем мире и ИТМО. 
             Кроме того, в "ИТМО помощнике" можно найти учебные материалы и методические пособия.
             Также для иностранных студентов есть поддержка английского языка.
-            С помощью "ИТМО помощника" учиться и жить в ИТМО станет проще и удобнее.
             """,
         },
     },
@@ -35,7 +33,6 @@ config = {
         For fans of board games, there is an opportunity to play a game of chess in the skill, and for those who want to test their knowledge, there are interesting quizzes and random facts about the world and ITMO.
         In addition, you can find educational materials and teaching aids in ITMO Assistant.
         There is also English language support for foreign students.
-        With the help of ITMO Assistant, studying and living at ITMO will become easier and more convenient.
         """,
         "buttons": [
             "Repeat",
@@ -55,7 +52,6 @@ config = {
             For fans of board games, there is an opportunity to play a game of chess in the skill, and for those who want to test their knowledge, there are interesting quizzes and random facts about the world and ITMO.
             In addition, you can find educational materials and teaching aids in ITMO Assistant.
             There is also English language support for foreign students.
-            With the help of ITMO Assistant, studying and living at ITMO will become easier and more convenient.
             """,
         },
     },
