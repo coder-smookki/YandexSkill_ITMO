@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup as bs
 from ...utils.textNormalizer.index import textNormalizer
 
 
-def getGroupTimetable(args):
+def getGroupTimetable(args, lang):
     result = []
 
     if not isinstance(args, list):

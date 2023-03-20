@@ -20,8 +20,10 @@ load_dotenv()
 def cycleRefreshNews():
     while True:
         print('Start refreshing news')
-        setInGlobalStorage('news_announces', parser('announces'), overwrite=True)
-        setInGlobalStorage('news_contests', parser('contests'), overwrite=True)
+        setInGlobalStorage('news_announces_ru-RU', parser('announces', '', 'ru-RU'), overwrite=True)
+        setInGlobalStorage('news_contests_ru-RU', parser('contests', '', 'ru-RU'), overwrite=True)
+        setInGlobalStorage('news_announces_en-US', parser('announces', '', 'en-US'), overwrite=True)
+        setInGlobalStorage('news_contests_en-US', parser('contests', '', 'en-US'), overwrite=True)
         print('News refreshed')
         time.sleep(3600)
 

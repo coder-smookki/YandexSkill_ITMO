@@ -4,7 +4,7 @@ import re
 from ...utils.textNormalizer.index import textNormalizer
 
 
-def getAllGroups(args):
+def getAllGroups(args, lang):
     if not isinstance(args, list):
         raise TypeError(
             'The argument to the findGroups must be an array: [degree(int), course(int)].')
