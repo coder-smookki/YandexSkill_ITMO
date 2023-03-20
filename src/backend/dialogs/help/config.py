@@ -53,7 +53,7 @@ config = {
         ],
         "card": {
             "type": "BigImage",
-            "image_id": "1521359/059aaefcfb0a6b5d9cb4",
+            "image_id": "1521359/ffc9c8afbe8b9f6f95c9",
             "title": "HELP",
             "description":
                 """
