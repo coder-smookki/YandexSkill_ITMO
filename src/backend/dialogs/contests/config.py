@@ -1,5 +1,6 @@
 from utils.globalStorage import globalStorage
 from utils.responseHelper import getLanguage
+
 # news_contests
 # for i in contests:
 #             message += f"""
@@ -9,6 +10,7 @@ from utils.responseHelper import getLanguage
 #             ------------\n
 #             """
 #             tts += f'{i["text"]} будет {i["date"]}.'
+
 
 def getConfig(event):
     words = {
@@ -66,6 +68,7 @@ def getConfig(event):
             buttonsResponse.append({"title": i["text"], "url": i["link"]})
             tts += f'{i["text"]}{annBetween}{i["date"]}.'
 
+        buttons = buttonsResponse + buttons
 
     return {
         "message": message,

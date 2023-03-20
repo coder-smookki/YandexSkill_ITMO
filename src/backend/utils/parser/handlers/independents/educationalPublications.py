@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup as bs
 from ..utils.textNormalizer.index import textNormalizer
 
 
-def educationalPublications(query):
+def educationalPublications(query, lang):
     if not query:
         raise TypeError('Empty query is not allowed')
     result = []
