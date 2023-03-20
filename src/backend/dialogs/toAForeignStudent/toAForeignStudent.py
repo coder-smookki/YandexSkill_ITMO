@@ -3,40 +3,76 @@ from utils.responseHelper import *
 from utils.triggerHelper import *
 from utils.branchHandler import getDialogResponseFromEnd
 
-mainConfig = getMainConfig()
-bechelorConfig = getBechelorConfig()
-magistracyConfig = getMagistracyConfig()
-internationalMagistracyConfig = getInternationalMagistracyConfig()
-additionalOpportsConfig = getAdditionalOpportsConfig()
-migrationDocumentsConfig = getMigrationDocumentsConfig()
-
 
 def getResponse(event, allDialogs=None):
-    if not isInLastContext(event, 'toAForeignStudent'):
-        return createResponse(event, mainConfig)
+    if not isInLastContext(event, "toAForeignStudent"):
+        return createResponse(event, getMainConfig(event))
 
-    if 'бакал' in getCommand(event):
-        return createResponse(event, bechelorConfig)
+    if (
+        "бакал" in getCommand(event)
+        or "bench" in getCommand(event)
+        or "бэнч" in getCommand(event)
+        or "банч" in getCommand(event)
+    ):
+        return createResponse(event, getBechelorConfig(event))
 
-    if ('между' in getCommand(event) or 'народ' in getCommand(event)) and 'магис' in getCommand(event):
-        return createResponse(event, internationalMagistracyConfig)
+    if (
+        "между" in getCommand(event)
+        or "народ" in getCommand(event)
+        or "inter" in getCommand(event)
+        or "интер" in getCommand(event)
+        or "nation" in getCommand(event)
+    ) and (
+        "магис" in getCommand(event)
+        or "magic" in getCommand(event)
+        or "мег" in getCommand(event)
+        or "мэг" in getCommand(event)
+        or "маг" in getCommand(event)
+    ):
+        return createResponse(event, getInternationalMagistracyConfig(event))
 
-    if 'магис' in getCommand(event):
-        return createResponse(event, magistracyConfig)
+    if (
+        "магис" in getCommand(event)
+        or "magic" in getCommand(event)
+        or "мег" in getCommand(event)
+        or "мэг" in getCommand(event)
+        or "маг" in getCommand(event)
+    ):
+        return createResponse(event, getMagistracyConfig(event))
 
-    if 'докум' in getCommand(event):
-        return createResponse(event, migrationDocumentsConfig)
+    if (
+        "докум" in getCommand(event)
+        or "docum" in getCommand(event)
+        or "дакум" in getCommand(event)
+        or "декум" in getCommand(event)
+        or "дэкум" in getCommand(event)
+    ):
+        return createResponse(event, getMigrationDocumentsConfig(event))
 
-    if 'возм' in getCommand(event) or 'доп' in getCommand(event):
-        return createResponse(event, additionalOpportsConfig)
+    if (
+        "возм" in getCommand(event)
+        or "доп" in getCommand(event)
+        or "ад" in getCommand(event)
+        or "add" in getCommand(event)
+    ):
+        return createResponse(event, getAdditionalOpportsConfig(event))
 
-    return createResponse(event, mainConfig)
+    return createResponse(event, getMainConfig(event))
 
 
 def isTriggered(event):
-    token = {"иностранный", "иностранному", "иностранцу"}
-    return isInLastContext(event, 'toAForeignStudent') or isSimilarTokens(event, token) and isInContext(event,
-                                                                                                        'mainMenu')
+    return isInLastContext(event, "toAForeignStudent") or (
+        (
+            "между" in getCommand(event)
+            or "народ" in getCommand(event)
+            or "inter" in getCommand(event)
+            or "интер" in getCommand(event)
+            or "nation" in getCommand(event)
+            or "иност" in getCommand(event)
+            or "мигр" in getCommand(event)
+        )
+        and isInContext(event, "mainMenu")
+    )
 
 
-toAForeignStudent = {'getResponse': getResponse, 'isTriggered': isTriggered}
+toAForeignStudent = {"getResponse": getResponse, "isTriggered": isTriggered}

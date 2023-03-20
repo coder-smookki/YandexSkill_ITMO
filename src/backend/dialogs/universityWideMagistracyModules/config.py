@@ -41,15 +41,15 @@ config = {
     "en-US": {
         "tts":
             """
-            You have been directed to the category "University undergraduate modules".
-    University-wide modules are the starting point for studying at ITMO University for both undergraduate and graduate programs. This is a block of fundamental training, on the basis of which students begin to study professional disciplines. Everything is thought out: first, soft skills are formed that are necessary for life and work in a digital economy, after that, depending on the educational program and specialization, hard skills.
-    List of university-wide modules:
-    The first is digital culture.
-    The second is Entrepreneurial Culture and Technological Entrepreneurship.
-    Third - Foreign language, first course.
-    Fourth - Foreign language, from the second to the fourth year.
-    Fifth - Soft Skills.
-    And the sixth is thinking.
+            The university-wide modules are what starts education at the University of ITM + O, both in the undergraduate and graduate programs. This is a block of fundamental training on the basis of which students begin to study professional disciplines. Everything is thought out: first, the soft skills necessary for life and work in the digital economy are formed. After that, depending on the educational program and specialization - hard skills.
+     List of university-wide modules:
+     Applied artificial intelligence.
+     Foreign language.
+     Entrepreneurial culture or Knowledge-intensive entrepreneurship.
+     Soft Skills.
+     Thinking.
+     Creative technologies.
+     To find out more, click on the "Official site" button below the text.
             """,
         "buttons": [
             {
@@ -57,8 +57,8 @@ config = {
                 'url': 'https://student.itmo.ru/en/university_modules_bach/',
                 'hide': False
             },
-            "Repeat one more time",
-            'What can you do?',
+            "Say it again",
+            "What can you do?",
             "Help",
             "Back",
             "Exit",
@@ -70,8 +70,7 @@ config = {
             'title': 'UNIVERSITY GENERAL MODULES IN BACHELORS',
             'description': \
                 """
-                You can find out more on the website
-                """
+                To learn more, follow the link - https://student.itmo.ru/ru/university_modules_bach/"""
         }
     }
 }

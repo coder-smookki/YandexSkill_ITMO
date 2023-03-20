@@ -9,8 +9,18 @@ def getResponse(event, allDialogs=None):
 
 
 def isTriggered(event):
-    return isSimilarCommand(event, 'кто создатели навыка') or isSimilarCommand(event,
-                                                                               'who are the creators of the skill')
+    return (
+        "who" in getCommand(event)
+        or "creator" in getCommand(event)
+        or "ху" in getCommand(event)
+        or "креа" in getCommand(event)
+        or "креэ" in getCommand(event)
+        or "крэ" in getCommand(event)
+        or "созда" in getCommand(event)
+        or "сдела" in getCommand(event)
+        or "разраб" in getCommand(event)
+        or "прогр" in getCommand(event)
+    )
 
 
-whoIsCreator = {'getResponse': getResponse, 'isTriggered': isTriggered}
+whoIsCreator = {"getResponse": getResponse, "isTriggered": isTriggered}

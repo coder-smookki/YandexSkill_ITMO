@@ -9,8 +9,16 @@ def getResponse(event, allDialogs=None):
 
 
 def isTriggered(event):
-    token = {"общеуниверситетские", "модули", "university-wide", "modules"}
-    return isSimilarTokens(event, token) and isInContext(event, 'mainMenu')
+    return (
+        "уайд" in getCommand(event)
+        or "уайт" in getCommand(event)
+        or "модул" in getCommand(event)
+        or "wide" in getCommand(event)
+        or "modul" in getCommand(event)
+    ) and isInContext(event, "mainMenu")
 
 
-universityWideUndergraduateModules = {'getResponse': getResponse, 'isTriggered': isTriggered}
+universityWideUndergraduateModules = {
+    "getResponse": getResponse,
+    "isTriggered": isTriggered,
+}
