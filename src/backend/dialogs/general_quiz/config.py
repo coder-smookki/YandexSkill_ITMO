@@ -64,11 +64,11 @@ def check_answer(event):
             setStateInEvent(event, "count_correct_response", getState(event, "count_correct_response") + 1)
 
     setStateInEvent(event, "count_questions", getState(event, "count_questions") + 1)
-
-    track_question = random.randint(0, len(questions['questions']) - 1)
-    while track_question in questions_list:
+    if getState(event, "count_questions") < 6:
         track_question = random.randint(0, len(questions['questions']) - 1)
+        while track_question in questions_list:
+            track_question = random.randint(0, len(questions['questions']) - 1)
 
-    questions_list.append(track_question)
+        questions_list.append(track_question)
 
-    setStateInEvent(event, "questions_list", questions_list)
+        setStateInEvent(event, "questions_list", questions_list)
