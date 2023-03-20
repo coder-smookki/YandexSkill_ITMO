@@ -10,7 +10,7 @@ additionalOpportsConfig = getAdditionalOpportsConfig()
 
 
 def getResponse(event, allDialogs=None):
-    if not isInLastContext('toAForeignStudent'):
+    if not isInLastContext(event, 'toAForeignStudent'):
         return createResponse(event, mainConfig)
     
     if 'бакал' in getCommand(event):
@@ -33,7 +33,7 @@ def getResponse(event, allDialogs=None):
 
 def isTriggered(event):
     token = {"иностранный", "иностранному", "иностранцу"}
-    return isInLastContext('toAForeignStudent') or isSimilarTokens(event, token) and isInContext(event, 'mainMenu')
+    return isInLastContext(event, 'toAForeignStudent') or isSimilarTokens(event, token) and isInContext(event, 'mainMenu')
 
 
 toAForeignStudent = {'getResponse': getResponse, 'isTriggered': isTriggered}
