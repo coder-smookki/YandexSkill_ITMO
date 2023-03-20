@@ -16,6 +16,7 @@ def isTriggered(event):
         or "аноус" in getCommand(event)
         or "анноус" in getCommand(event)
         or "анус" in getCommand(event)
+        or "анос" in getCommand(event)
         or "аннус" in getCommand(event)
         or "announ" in getCommand(event)
     )
