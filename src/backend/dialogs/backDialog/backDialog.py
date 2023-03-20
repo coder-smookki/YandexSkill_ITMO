@@ -7,7 +7,7 @@ def getResponse(event, allDialogs=None):
 
 
 def isTriggered(event):
-    return isSimilarCommand(event, 'назад')
+    return isSimilarCommand(event, 'назад') or isSimilarCommand(event, 'back')
 
 
 backDialog = {'getResponse': getResponse, 'isTriggered': isTriggered}

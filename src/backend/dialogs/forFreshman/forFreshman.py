@@ -4,12 +4,12 @@ from utils.triggerHelper import *
 
 
 def getResponse(event, allDialogs=None):
-    config = getConfig()
+    config = getConfig(event)
     return createResponse(event, config)
 
 
 def isTriggered(event):
-    token = {"первокурсникам", "первокурс", "первокурсник", "первокурснкм", "первокрснкам"}
+    token = {"первокурсникам", "первокурс", "первокурсник", "первокурснкм", "первокрснкам", "freshmen", "freshman"}
     return isSimilarTokens(event, token) and isInContext(event, 'mainMenu')
 
 

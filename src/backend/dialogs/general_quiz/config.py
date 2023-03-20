@@ -58,7 +58,7 @@ def getFinishConfig(event):
 
 def check_answer(event):
     try:
-        if questions["answers"][getState(event, "questions_list")[-1]] == getOriginalUtterance(event):
+        if questions["answers"][getState(event, "questions_list")[-1]] in getOriginalUtterance(event):
             setStateInEvent(event, "count_correct_response", getState(event, "count_correct_response") + 1)
     except:
         pass
