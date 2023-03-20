@@ -89,7 +89,7 @@ bechelorConfig = {
             Процесс поступления в Университет ИТМО для иностранных граждан практически ничем не отличается от такового для российских абитуриентов – обо всех нюансах вы можете узнать, нажав на кнопку под текстом.
             """,
         },
-        "session_state": {"branch": "toAForeignStudentBech"},
+        "session_state": {"branch": "toAForeignStudent"},
     },
     "en-US": {
         "tts": """ITMO University follows modern trends in the labor market and in global scientific research.
@@ -113,7 +113,7 @@ The process of admission to ITMO University for foreign citizens is practically 
             The process of admission to ITMO University for foreign citizens is practically no different from that for Russian applicants - you can learn about all the nuances by clicking on the button below the text.
             """,
         },
-        "session_state": {"branch": "toAForeignStudentBech"},
+        "session_state": {"branch": "toAForeignStudent"},
     },
 }
 
@@ -142,7 +142,7 @@ magistracyConfig = {
             Процесс поступления в Университет ИТМО для иностранных граждан практически ничем не отличается от такового для российских абитуриентов – обо всех нюансах вы можете узнать, нажав на кнопку под текстом.
             """,
         },
-        "session_state": {"branch": "toAForeignStudentMag"},
+        "session_state": {"branch": "toAForeignStudent"},
     },
     "en-US": {
         "tts": """
@@ -168,7 +168,7 @@ magistracyConfig = {
             The process of admission to ITMO University for foreign citizens is practically no different from that for Russian applicants - you can learn about all the nuances by clicking on the button below the text.
             """,
         },
-        "session_state": {"branch": "toAForeignStudentMag"},
+        "session_state": {"branch": "toAForeignStudent"},
     },
 }
 
@@ -196,7 +196,7 @@ internationalMagistracyConfig = {
                 Развивайте карьеру, знакомьтесь с другими культурами и стройте своё будущее!
                 """,
         },
-        "session_state": {"branch": "toAForeignStudentIntMag"},
+        "session_state": {"branch": "toAForeignStudent"},
     },
     "en-US": {
         "tts": """
@@ -221,7 +221,7 @@ internationalMagistracyConfig = {
                 Develop your career, meet other cultures and build your future!
                 """,
         },
-        "session_state": {"branch": "toAForeignStudentIntMag"},
+        "session_state": {"branch": "toAForeignStudent"},
     },
 }
 
@@ -248,7 +248,7 @@ additionalOpportsConfig = {
                 Прием-прием нашим самым классным, умным и талантливым иностранным абитуриентам!
                 """,
         },
-        "session_state": {"branch": "toAForeignStudentAddOprts"},
+        "session_state": {"branch": "toAForeignStudent"},
     },
     "en-US": {
         "tts": """
@@ -272,7 +272,7 @@ additionalOpportsConfig = {
                 Welcome to our coolest, smartest and most talented international students!
                 """,
         },
-        "session_state": {"branch": "toAForeignStudentAddOprts"},
+        "session_state": {"branch": "toAForeignStudent"},
     },
 }
 
@@ -301,7 +301,7 @@ migrationDocumentsConfig = {
                 Отдел миграционного учета - ХАЛИЛОВА АЛЕКСАНДРА АХМЕТОВНА. Почта - aakhalilova@itmo.ru. Телефон - +7 (812) 315-05-21
                 """,
         },
-        "session_state": {"branch": "toAForeignStudentMigrDocs"},
+        "session_state": {"branch": "toAForeignStudent"},
     },
     "en-US": {
         "tts": """
@@ -327,7 +327,7 @@ DOCU        DOCUMENTS YOU SHOULD HAVE WITH YOU WHEN YOU ARE IN THE RUSSIAN FEDER
                 Department of Migration Registration - KHALILOVA ALEKSANDRA AKHMETOVNA. Mail - aakhalilova@itmo.ru. Phone - +7 (812) 315-05-21
                 """,
         },
-        "session_state": {"branch": "toAForeignStudentMigrDocs"},
+        "session_state": {"branch": "toAForeignStudent"},
     },
 }
 
