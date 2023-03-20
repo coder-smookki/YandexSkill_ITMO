@@ -10,7 +10,6 @@ additionalOpportsConfig = getAdditionalOpportsConfig()
 migrationDocumentsConfig = getMigrationDocumentsConfig()
 
 def getResponse(event, allDialogs=None):
-    print(mainConfig)
     if not isInLastContext(event, 'toAForeignStudent'):
         return createResponse(event, mainConfig)
     
@@ -29,7 +28,7 @@ def getResponse(event, allDialogs=None):
     if 'возм' in getCommand(event) or 'доп' in getCommand(event):
         return createResponse(event, additionalOpportsConfig)
 
-    return getDialogResponseFromEnd(event, 1, allDialogs)
+    return getDialogResponseFromEnd(event=event, dialogNumber=1, dialogs=allDialogs)
 
 
 def isTriggered(event):
