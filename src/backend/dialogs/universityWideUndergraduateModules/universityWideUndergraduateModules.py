@@ -9,7 +9,6 @@ def getResponse(event, allDialogs=None):
 
 
 def isTriggered(event):
-    print(getCommand(event))
     return (
         "уайд" in getCommand(event)
         or "уайт" in getCommand(event)

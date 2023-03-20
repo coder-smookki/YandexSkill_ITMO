@@ -11,7 +11,7 @@ from utils.asyncHelper import doFuncAsAsync
 from utils.responseHelper import *
 from dotenv import load_dotenv
 
-DIALOG_DEBUG = False
+DIALOG_DEBUG = True
 REQUESTS_DEBUG = False
 
 load_dotenv()
