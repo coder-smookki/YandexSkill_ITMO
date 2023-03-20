@@ -8,8 +8,7 @@ def getResponse(event, allDialogs=None):
     return createResponse(event, getMainConfig(event))
 
 def isTriggered(event):
-    return isInLastContext(event, "toAForeignStudent") or (
-        (
+    return (
             "между" in getCommand(event)
             or "народ" in getCommand(event)
             or "inter" in getCommand(event)
@@ -24,9 +23,8 @@ def isTriggered(event):
             or "фаре" in getCommand(event)
             or "фэрэ" in getCommand(event)
             or "фэре" in getCommand(event)
-        )
-        and isInContext(event, "mainMenu")
-    )
+        ) and isInContext(event, "mainMenu")
+    
 
 
 
@@ -66,11 +64,14 @@ def isTriggeredInter(event):
         or "mast" in getCommand(event)
         or "маст" in getCommand(event)
         or "маг" in getCommand(event)
-    )) or isInLastContext(event, 'toAForeignStudentIntMag')
+    )) or isInLastContext(event, 'toAForeignStudent')
 
 
 
 def getResponseMag(event, allDialogs):
+    return createResponse(event, getMagistracyConfig(event))
+
+def isTriggeredMag(event):
     return (
         "магис" in getCommand(event)
         or "magic" in getCommand(event)
@@ -80,12 +81,7 @@ def getResponseMag(event, allDialogs):
         or "мег" in getCommand(event)
         or "мэг" in getCommand(event)
         or "маг" in getCommand(event)
-    ) or isInLastContext(event, 'toAForeignStudentMag')
-
-def isTriggeredMag(event):
-    return createResponse(event, getMagistracyConfig(event))
-
-
+    ) or isInLastContext(event, 'toAForeignStudent')
 
 
 
@@ -96,7 +92,8 @@ def isTriggeredDocum(event):
         or "дакум" in getCommand(event)
         or "декум" in getCommand(event)
         or "дэкум" in getCommand(event)
-    ) or isInLastContext(event, 'toAForeignStudentMigrDocs')
+    ) or isInLastContext(event, 'toAForeignStudent')
+
 def getResponseDocum(event, allDialogs):
     return createResponse(event, getMigrationDocumentsConfig(event))     
 
@@ -111,7 +108,7 @@ def isTriggeredAdd(event):
         or "доп" in getCommand(event)
         or "ад" in getCommand(event)
         or "add" in getCommand(event)
-    ) or isInLastContext(event, 'toAForeignStudentAddOprts')
+    ) or isInLastContext(event, 'toAForeignStudent')
 
 
 
