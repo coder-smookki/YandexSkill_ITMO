@@ -8,14 +8,14 @@ def isSimilarTokens(event, tokens):
     return len(list(set(event['request']['nlu']['tokens']) & tokens)) != 0
 
 def isInCommandOr(event, arr):
-    command = getCommand()
+    command = event["request"]['command']
     for elem in arr:
         if elem in command:
             return True
     return False
 
 def isInCommandAnd(event, arr):
-    command = getCommand()
+    command = event["request"]['command']
     for elem in arr:
         if not (elem in command):
             return False
