@@ -22,6 +22,13 @@ config = {
     },
 
     "en-US": {
+        'message': """
+        Ilyin Kirill (Team Leader).
+        Plyusnin Alexander (Chief Developer).
+        Karavaev Ivan (Developer).
+        Lesovoy Kirill (Tester).
+        Kutnikov Rodion (UI|UX Designer).
+        """,
         "tts":
             """
             Skill creators: Ilyin Kirill plays the role of Team Leader. Plyusnin Alexander plays the role of the Chief Developer of the skill and its foundation. Karavaev Ivan plays the role of the Developer. Lesovoy Kirill plays the role of Skill Tester and Game Algorithm Developer. Kutnikov Rodion plays the role of Chief Designer in the project, including UI and UX.
@@ -33,19 +40,7 @@ config = {
             "Exit"
         ],
 
-        "card": {
-            'type': 'BigImage',
-            'image_id': '965417/877ccf979621f858aefe',
-            'title': 'FRESHENERS',
-            'description': \
-                """
-                Ilyin Kirill (Team Leader).
-                Plyusnin Alexander (Chief Developer).
-                Karavaev Ivan (Developer).
-                Lesovoy Kirill (Tester).
-                Kutnikov Rodion (UI Designerㅤ|ㅤUX).
-                """
-        }
+        
     }
 }
 
@@ -59,6 +54,7 @@ def getConfig(event):
     # lang = "ru-RU"
 
     return {
+        "message": config[lang]["message"],
         "tts": config[lang]["tts"],
         "buttons": config[lang]["buttons"],
         "session_state": session_state,
