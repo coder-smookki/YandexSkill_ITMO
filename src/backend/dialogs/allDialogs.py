@@ -61,7 +61,6 @@ allDialogs = {
     'timeTable': timeTable,
     'timeTableFind': timeTableFind,
     'toAForeignStudent': toAForeignStudent,
-    'toAForeignStudentBechelorCource': toAForeignStudentBechelorCourse,
     'educationalPublicationsFind': educationalPublicationsFind,
     'scholarships': scholarships,
     'start_quiz': start_quiz,
