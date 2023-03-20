@@ -21,6 +21,7 @@ config = {
         "buttons": [
             "Announcements",
             "Contests",
+            "Say it again",
             "What can you do?",
             "Help",
             "Back",

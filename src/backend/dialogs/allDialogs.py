@@ -39,7 +39,6 @@ allDialogs = {
     'chooseLanguage': chooseLanguage,
     'whatYouCan': whatYouCan,
     'backDialog': backDialog,
-    'help': help,
     'whoIsCreator': whoIsCreator,
     'howToConnectWithDevelopers': howToConnectWithDevelopers,
     'howToCheckRelevance': howToCheckRelevance,
@@ -67,5 +66,6 @@ allDialogs = {
     'scholarships': scholarships,
     'start_quiz': start_quiz,
     'general_quiz': general_quiz,
+    'help': help,
     'mainMenu': mainMenu
 }
