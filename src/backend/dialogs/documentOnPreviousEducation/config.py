@@ -28,7 +28,7 @@ config = {
         ],
         "card": {
             "type": "BigImage",
-            "image_id": "937455/40f0536e426907808499",
+            "image_id": "1521359/65fa68f782fa6af3f071",
             "title": "PREVIOUS EDUCATION DOCUMENT",
             "description": """
                 You need to go to the UIS portal, and then everything is simple! Submit an application through the form offered by the system.
