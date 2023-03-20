@@ -29,7 +29,7 @@ from .help.help import help
 from .randomFact.randomFact import randomFact
 from .timeTable.timeTable import timeTable
 from .timeTableFind.timeTableFind import timeTableFind
-from .toAForeignStudent.toAForeignStudent import toAForeignStudent
+from .toAForeignStudent.toAForeignStudent import toAForeignStudent, toAForeignStudentDocum, toAForeignStudentAdd, toAForeignStudentBench, toAForeignStudentInter, toAForeignStudentMag
 from .educationalPublicationsFind.educationalPublicationsFind import (
     educationalPublicationsFind,
 )
@@ -69,12 +69,12 @@ allDialogs = {
     "randomFact": randomFact,
     "timeTable": timeTable,
     "timeTableFind": timeTableFind,
+    "toAForeignStudentMigrDocs": toAForeignStudentDocum,
+    "toAForeignStudentAddOprts": toAForeignStudentAdd,
+    "toAForeignStudentIntMag": toAForeignStudentInter,
+    "toAForeignStudentMag": toAForeignStudentMag,
+    "toAForeignStudentBech": toAForeignStudentBench,
     "toAForeignStudent": toAForeignStudent,
-    "toAForeignStudentMigrDocs": toAForeignStudent,
-    "toAForeignStudentAddOprts": toAForeignStudent,
-    "toAForeignStudentIntMag": toAForeignStudent,
-    "toAForeignStudentMag": toAForeignStudent,
-    "toAForeignStudentBech": toAForeignStudent,
     "educationalPublicationsFind": educationalPublicationsFind,
     "scholarships": scholarships,
     "start_quiz": start_quiz,

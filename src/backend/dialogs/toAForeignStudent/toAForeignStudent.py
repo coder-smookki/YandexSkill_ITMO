@@ -5,69 +5,7 @@ from utils.branchHandler import getDialogResponseFromEnd
 
 
 def getResponse(event, allDialogs=None):
-    if isInContext(event, 'toAForeignStudent') and not isInLastContext(event, 'toAForeignStudent'): 
-        return createResponse(event, getMainConfig(event))
-    if (
-        "бакал" in getCommand(event)
-        or "bec" in getCommand(event)
-        or "bac" in getCommand(event)
-        or "бэнч" in getCommand(event)
-        or "банч" in getCommand(event)
-        or "бэч" in getCommand(event)
-        or "бач" in getCommand(event)
-    ) or isInLastContext(event, 'toAForeignStudentBech'):
-        return createResponse(event, getBechelorConfig(event))
-
-    if ((
-        "между" in getCommand(event)
-        or "народ" in getCommand(event)
-        or "inter" in getCommand(event)
-        or "интер" in getCommand(event)
-        or "nation" in getCommand(event)
-    ) and (
-        "магис" in getCommand(event)
-        or "mast" in getCommand(event)
-        or "magic" in getCommand(event)
-        or "magis" in getCommand(event)
-        or "мег" in getCommand(event)
-        or "мэг" in getCommand(event)
-        or "mast" in getCommand(event)
-        or "маст" in getCommand(event)
-        or "маг" in getCommand(event)
-    )) or isInLastContext(event, 'toAForeignStudentIntMag'):
-        return createResponse(event, getInternationalMagistracyConfig(event))
-
-    if (
-        "магис" in getCommand(event)
-        or "magic" in getCommand(event)
-        or "magis" in getCommand(event)
-        or "mast" in getCommand(event)
-        or "маст" in getCommand(event)
-        or "мег" in getCommand(event)
-        or "мэг" in getCommand(event)
-        or "маг" in getCommand(event)
-    ) or isInLastContext(event, 'toAForeignStudentMag'):
-        return createResponse(event, getMagistracyConfig(event))
-
-    if (
-        "докум" in getCommand(event)
-        or "docum" in getCommand(event)
-        or "дакум" in getCommand(event)
-        or "декум" in getCommand(event)
-        or "дэкум" in getCommand(event)
-    ) or isInLastContext(event, 'toAForeignStudentMigrDocs'):
-        return createResponse(event, getMigrationDocumentsConfig(event))
-
-    if (
-        "возм" in getCommand(event)
-        or "доп" in getCommand(event)
-        or "ад" in getCommand(event)
-        or "add" in getCommand(event)
-    ) or isInLastContext(event, 'toAForeignStudentAddOprts'):
-        return createResponse(event, getAdditionalOpportsConfig(event))
-
     return createResponse(event, getMainConfig(event))
-
 
 def isTriggered(event):
     return isInLastContext(event, "toAForeignStudent") or (
@@ -91,4 +29,95 @@ def isTriggered(event):
     )
 
 
+
+def getBenchResponse(event, allDialogs):
+    return createResponse(event, getBechelorConfig(event))
+    
+def isTriggeredBench(event):
+    return (
+        "бакал" in getCommand(event)
+        or "bec" in getCommand(event)
+        or "bac" in getCommand(event)
+        or "бэнч" in getCommand(event)
+        or "банч" in getCommand(event)
+        or "бэч" in getCommand(event)
+        or "бач" in getCommand(event)
+    ) or isInLastContext(event, 'toAForeignStudent')
+        
+
+
+def getInterResponse(event, allDialogs):
+    return createResponse(event, getInternationalMagistracyConfig(event))
+
+def isTriggeredInter(event):
+    return ((
+        "между" in getCommand(event)
+        or "народ" in getCommand(event)
+        or "inter" in getCommand(event)
+        or "интер" in getCommand(event)
+        or "nation" in getCommand(event)
+    ) and (
+        "магис" in getCommand(event)
+        or "mast" in getCommand(event)
+        or "magic" in getCommand(event)
+        or "magis" in getCommand(event)
+        or "мег" in getCommand(event)
+        or "мэг" in getCommand(event)
+        or "mast" in getCommand(event)
+        or "маст" in getCommand(event)
+        or "маг" in getCommand(event)
+    )) or isInLastContext(event, 'toAForeignStudentIntMag')
+
+
+
+def getResponseMag(event, allDialogs):
+    return (
+        "магис" in getCommand(event)
+        or "magic" in getCommand(event)
+        or "magis" in getCommand(event)
+        or "mast" in getCommand(event)
+        or "маст" in getCommand(event)
+        or "мег" in getCommand(event)
+        or "мэг" in getCommand(event)
+        or "маг" in getCommand(event)
+    ) or isInLastContext(event, 'toAForeignStudentMag')
+
+def isTriggeredMag(event):
+    return createResponse(event, getMagistracyConfig(event))
+
+
+
+
+
+def isTriggeredDocum(event):
+    return (
+        "докум" in getCommand(event)
+        or "docum" in getCommand(event)
+        or "дакум" in getCommand(event)
+        or "декум" in getCommand(event)
+        or "дэкум" in getCommand(event)
+    ) or isInLastContext(event, 'toAForeignStudentMigrDocs')
+def getResponseDocum(event, allDialogs):
+    return createResponse(event, getMigrationDocumentsConfig(event))     
+
+
+
+def getResponseAdd(event, allDialogs):
+    return createResponse(event, getAdditionalOpportsConfig(event))
+
+def isTriggeredAdd(event):
+    return (
+        "возм" in getCommand(event)
+        or "доп" in getCommand(event)
+        or "ад" in getCommand(event)
+        or "add" in getCommand(event)
+    ) or isInLastContext(event, 'toAForeignStudentAddOprts')
+
+
+
 toAForeignStudent = {"getResponse": getResponse, "isTriggered": isTriggered}
+toAForeignStudentBench = {"getResponse": getBenchResponse, "isTriggered": isTriggeredBench}
+toAForeignStudentAdd = {"getResponse": getResponseAdd, "isTriggered": isTriggeredAdd}
+toAForeignStudentDocum = {"getResponse": getResponseDocum, "isTriggered": isTriggeredDocum}
+toAForeignStudentMag = {"getResponse": getResponseMag, "isTriggered": isTriggeredMag}
+toAForeignStudentInter = {"getResponse": getInterResponse, "isTriggered": isTriggeredInter}
