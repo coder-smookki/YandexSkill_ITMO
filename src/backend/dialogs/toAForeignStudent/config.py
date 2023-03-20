@@ -202,7 +202,7 @@ additionalOpportsConfig = {
         "image_id": "1030494/e955cc538c12dfb9bd3a",
         "title": "ИНОСТРАННОМУ СТУДЕНТУ",
         "description": """
-        международная магистратура.
+        возможности поступления.
         """,
     },
     "session_state": {"branch": "toAForeignStudent"},
@@ -245,7 +245,7 @@ migrationDocumentsConfig = {
         "image_id": "1030494/e955cc538c12dfb9bd3a",
         "title": "ИНОСТРАННОМУ СТУДЕНТУ",
         "description": """
-        доп. возможности для поступления.
+        мигр. документы.
         """,
     },
     "session_state": {"branch": "toAForeignStudent"},
