@@ -72,7 +72,6 @@ bechelorConfig = {
         Университет ИТМО следует современным тенденциям на рынке труда и в мире научных исследований. 
         Атмосфера неклассического вуза дает возможности для развития полезных навыков и умений у студентов – в образовательной и научной сферах, в предпринимательской, инновационной и социально-ориентированной деятельности. 
         Здесь по-настоящему любят своих студентов, и именно это чувство – любовь – является ключом к пониманию миссии университета, его успехов и достижений.
-        Обучение ведется на русском языке. 
         Для иностранных абитуриентов, не владеющих или плохо владеющих русским языком, в Университете ИТМО действует Подготовительное отделение. 
         Программа обучения включает в себя интенсивный курс русского языка и подготовку по профильным предметам, необходимую для сдачи вступительных испытаний.
         Процесс поступления в Университет ИТМО для иностранных граждан практически ничем не отличается от такового для российских абитуриентов – обо всех нюансах вы можете узнать, нажав на кнопку под текстом.
@@ -180,8 +179,7 @@ magistracyConfig = {
 
 internationalMagistracyConfig = {
     "ru-RU": {
-        "tts":
-            """
+        "tts": """
             Хотите вывести своё образование и карьерные перспективы на международный уровень? 
             Международные магистерские программы Университета ИТМО – это целый мир новых возможностей и открытий!
             Университет ИТМО приглашает бакалавров и специалистов стать частью международных магистерских программ. 
@@ -199,16 +197,14 @@ internationalMagistracyConfig = {
             "type": "BigImage",
             "image_id": "1030494/e955cc538c12dfb9bd3a",
             "title": "ИНОСТРАННОМУ СТУДЕНТУ (МЕЖДУНАРОДНАЯ МАГИСТРАТУРА)",
-            "description":
-                """
+            "description": """
                 Развивайте карьеру, знакомьтесь с другими культурами и стройте своё будущее!
                 """,
         },
         "session_state": {"branch": "toAForeignStudent"},
     },
     "en-US": {
-        "tts":
-            """
+        "tts": """
             Do you want to take your education and career prospects to the international level?
             International master's programs at ITMO University are a whole world of new opportunities and discoveries!
             ITMO University invites bachelors and specialists to become part of international master's programs.
@@ -226,8 +222,7 @@ internationalMagistracyConfig = {
             "type": "BigImage",
             "image_id": "1030494/e955cc538c12dfb9bd3a",
             "title": "FOR A FOREIGN STUDENT (INTERNATIONAL MASTER)",
-            "description":
-                """
+            "description": """
                 Develop your career, meet other cultures and build your future!
                 """,
         },
@@ -237,8 +232,7 @@ internationalMagistracyConfig = {
 
 additionalOpportsConfig = {
     "ru-RU": {
-        "tts":
-            """
+        "tts": """
             Прием-прием нашим самым классным, умным и талантливым иностранным абитуриентам!
             Как насчет поступить в Университет ИТМО без экзаменов или на бесплатную основу обучения (или, для самых отважных, и то и другое вместе?)
             Мы предлагаем море таких возможностей: для бакалавриата и магистратуры, асов в математике и информатике, гениев русского языка и абитуриентов с уникальными достижениями.
@@ -255,16 +249,14 @@ additionalOpportsConfig = {
             "type": "BigImage",
             "image_id": "1030494/e955cc538c12dfb9bd3a",
             "title": "ДОПОЛНИТЕЛЬНЫЕ ВОЗМОЖНОСТИ ПОСТУПЛЕНИЯ",
-            "description":
-                """
+            "description": """
                 Прием-прием нашим самым классным, умным и талантливым иностранным абитуриентам!
                 """,
         },
         "session_state": {"branch": "toAForeignStudent"},
     },
     "en-US": {
-        "tts":
-            """
+        "tts": """
             Welcome to our coolest, smartest and most talented international students!
             How about entering ITMO University without exams or on a free basis of study (or, for the most courageous, both?)
             We offer a sea of such opportunities: for undergraduate and graduate students, aces in mathematics and computer science, geniuses of the Russian language and applicants with unique achievements.
@@ -281,8 +273,7 @@ additionalOpportsConfig = {
             "type": "BigImage",
             "image_id": "1030494/e955cc538c12dfb9bd3a",
             "title": "ADDITIONAL ENTRY OPPORTUNITIES",
-            "description":
-                """
+            "description": """
                 Welcome to our coolest, smartest and most talented international students!
                 """,
         },
@@ -292,8 +283,7 @@ additionalOpportsConfig = {
 
 migrationDocumentsConfig = {
     "ru-RU": {
-        "tts":
-            """
+        "tts": """
             ДОКУМЕНТЫ, КОТОРЫЕ НУЖНО ИМЕТЬ ПРИ СЕБЕ, КОГДА ВЫ НАХОДИТЕСЬ НА ТЕРРИТОРИИ РОССИЙСКОЙ ФЕДЕРАЦИИ
             Иностранный гражданин (студент) может находиться и свободно перемещаться по территории Российской Федерации лишь при наличии следующих документов:
             национальный паспорт (с действующей визой для визовых граждан);
@@ -311,8 +301,7 @@ migrationDocumentsConfig = {
             "type": "BigImage",
             "image_id": "1030494/e955cc538c12dfb9bd3a",
             "title": "МИГРАЦИОННЫЕ ДОКУМЕНТЫ",
-            "description":
-                """
+            "description": """
                 МИГРАЦИОННАЯ ПОДДЕРЖКА: Адрес - Ул. Ломоносова, д. 9, оф. 2139d, Санкт-Петербург, Россия, 191002.
                 Отдел миграционного учета - ХАЛИЛОВА АЛЕКСАНДРА АХМЕТОВНА. Почта - aakhalilova@itmo.ru. Телефон - +7 (812) 315-05-21
                 """,
@@ -320,8 +309,7 @@ migrationDocumentsConfig = {
         "session_state": {"branch": "toAForeignStudent"},
     },
     "en-US": {
-        "tts":
-            """
+        "tts": """
 DOCU        DOCUMENTS YOU SHOULD HAVE WITH YOU WHEN YOU ARE IN THE RUSSIAN FEDERATION
             A foreign citizen (student) may stay and move freely within the territory of the Russian Federation only if he/she has the following documents:
             national passport (with a valid visa for visa citizens);
@@ -339,8 +327,7 @@ DOCU        DOCUMENTS YOU SHOULD HAVE WITH YOU WHEN YOU ARE IN THE RUSSIAN FEDER
             "type": "BigImage",
             "image_id": "1030494/e955cc538c12dfb9bd3a",
             "title": "MIGRATION DOCUMENTS",
-            "description":
-                """
+            "description": """
                 MIGRATION SUPPORT: Address - st. Lomonosov, d. 9, of. 2139d, St. Petersburg, Russia, 191002.
                 Department of Migration Registration - KHALILOVA ALEKSANDRA AKHMETOVNA. Mail - aakhalilova@itmo.ru. Phone - +7 (812) 315-05-21
                 """,
