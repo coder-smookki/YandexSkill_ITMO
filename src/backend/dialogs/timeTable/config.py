@@ -18,7 +18,7 @@ words = {
             """
             Скажите ваш вид образования. Бакалавриат, магистратура, специалитет.
             """,
-        "buttons": ["Повторить ещё раз", "Что ты умеешь?", "Помощь", "Назад", "Выйти"],
+        "buttons": ["Что ты умеешь?", "Помощь", "Назад", "Выйти"],
     },
     "en-US": {
         "askGroupMessage":
@@ -38,7 +38,6 @@ words = {
             Tell me your type of education. Bachelor's, Master's, Specialist.
             """,
         "buttons": [
-            "Repeat",
             "What can you do?",
             "Help",
             "Back",
