@@ -2,3 +2,4 @@ flask
 requests
 pymysql
 BeautifulSoup4
+num2words
