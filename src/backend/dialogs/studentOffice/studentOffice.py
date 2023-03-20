@@ -9,8 +9,12 @@ def getResponse(event, allDialogs=None):
 
 
 def isTriggered(event):
-    token = {"студенческий", "студенчески", "студенческ", "офис", "офисс", "офи", 'student', 'office'}
-    return isSimilarTokens(event, token) and isInLastContext(event, 'mainMenu')
+    return (
+        "офис" in getCommand(event)
+        or "афис" in getCommand(event)
+        or "офес" in getCommand(event)
+        or "афес" in getCommand(event)
+    ) and isInLastContext(event, "mainMenu")
 
 
-studentOffice = {'getResponse': getResponse, 'isTriggered': isTriggered}
+studentOffice = {"getResponse": getResponse, "isTriggered": isTriggered}

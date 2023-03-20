@@ -10,7 +10,16 @@ def getResponse(event, allDialogs=None):
 
 def isTriggered(event):
     token = {"что", "такое", "what", "is"}
-    return isSimilarTokens(event, token) and isInContext(event, 'studentOffice')
+    return (
+        "ват" in getCommand(event)
+        or "уат" in getCommand(event)
+        or "хат" in getCommand(event)
+        or "уэт" in getCommand(event)
+        or "ует" in getCommand(event)
+        or "what" in getCommand(event)
+        or ("что" in getCommand(event) and "такое" in getCommand(event))
+    ) and isInContext(event, "studentOffice")
+    # return isSimilarTokens(event, token) and isInContext(event, 'studentOffice')
 
 
-studentOfficeAbout = {'getResponse': getResponse, 'isTriggered': isTriggered}
+studentOfficeAbout = {"getResponse": getResponse, "isTriggered": isTriggered}

@@ -4,7 +4,6 @@ config = {
     "ru-RU": {
         "tts":
             """
-        Вы направились в категорию "Студенческий офис"
     О нас:
     Каждый день у студента возникает миллион вопросов. Как получить справку? Как заменить студенческий билет?
     Возможно ли продлить сессию? На эти и многие другие вопросы знает ответ Студенческий офис.
@@ -54,7 +53,6 @@ config = {
     "en-US": {
         "tts":
             """
-            You went to the category "Student office"
      About Us:
      Every day a student has a million questions. How to get help? How to replace a student card?
      Is it possible to extend the session? The Student Office knows the answers to these and many other questions.
@@ -84,10 +82,11 @@ config = {
             "How to apply for a certificate/document of previous education?",
             "How to get a consultation at the Student Office?",
             "I don't know who to ask the question."
-            'What can you do?',
+            "Say it again",
+            "What can you do?",
             "Help",
             "Back",
-            "Exit"
+            "Exit",
         ],
 
         "card": {

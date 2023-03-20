@@ -42,8 +42,8 @@ config = {
      temporarily receive your document on education. Certificate or diploma.
             """,
         "buttons": [
-            "Repeat one more time",
-            'What can you do?',
+            "Say it again",
+            "What can you do?",
             "Help",
             "Back",
             "Exit",

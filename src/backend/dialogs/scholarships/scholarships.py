@@ -14,7 +14,9 @@ def isTriggered(event):
         "стип" in getCommand(event)
         or "степ" in getCommand(event)
         or "школ" in getCommand(event)
-        or "ш" in getCommand(event)
+        or "шчо" in getCommand(event)
+        or "шо" in getCommand(event)
+        or "ше" in getCommand(event)
     ) and isInContext(event, "mainMenu")
 
 
