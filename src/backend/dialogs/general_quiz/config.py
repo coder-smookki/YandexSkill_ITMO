@@ -60,9 +60,7 @@ def check_answer(event):
     questions_list = getState(event, "questions_list")
 
     if len(questions_list) != 0:
-        print(questions["answers"][questions_list[-1]])
-        print(getCommand(event))
-        if questions["answers"][questions_list[-1]] in getCommand(event):
+        if questions["answers"][questions_list[-1]].lower() in getCommand(event):
             setStateInEvent(event, "count_correct_response", getState(event, "count_correct_response") + 1)
             print('+1')
 
