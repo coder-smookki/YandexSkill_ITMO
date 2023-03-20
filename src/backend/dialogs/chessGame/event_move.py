@@ -94,7 +94,8 @@ def get_next_move(user_move: str, orientation: str, prev_moves: str, lang: str, 
     response = requests.get(api_base + 'move', params)
     if not response:
         message = game[lang]['error'](response.json()["message"])
-        tts = game[lang]['error_tts']
+        tts = game[lang]['error_tts'] if 'illegal' not in response.json()["message"] else \
+            game[lang]["illegal_move_tts"](user_move)
         buttons = messages[lang]["buttons"]
         return get_config(message, tts, buttons, None, session_states)
 

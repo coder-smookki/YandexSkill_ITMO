@@ -100,6 +100,8 @@ game = {
                  '\nСкажите "Правила", если снова не получится'.format,
         "error_tts": "Возникла ошибка, попробуйте ещё раз."
                      '\nСкажите "Правила", если снова не получится',
+        "illegal_move_tts": "{} - невозможный ход, попробуйте ещё раз."
+                     '\nСкажите "Правила", если снова не получится'.format,
         "unknown_move": 'Не удалось распознать ход в фразе "{}", попробуйте ещё раз.'
                         '\nСкажите "Правила", если снова не получится'.format,
         "unknown_move_tts": f'Не удалось распознать ход, попробуйте ещё раз'
@@ -118,6 +120,8 @@ game = {
                  '\nSay "Rules" if it doesnt work out again'.format,
         "error_tts": "An error occurred, try again."
                      '\nSay "Rules" if it doesnt work out again.',
+        "illegal_move_tts": "{} - illegal move, try again."
+                            '\nSay "Rules" if it doesnt work out again.'.format,
         "unknown_move": 'Failed to recognize the move in the phrase "{}", try again.'
                         '\nSay "Rules" if it doesnt work out again'.format,
         "unknown_move_tts": f'Failed to recognize the move, try again'
