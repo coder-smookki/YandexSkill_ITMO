@@ -5,9 +5,8 @@ from utils.branchHandler import getDialogResponseFromEnd
 
 
 def getResponse(event, allDialogs=None):
-    if isInLastContext(event, 'toAForeignStudent'):
+    if isInContext(event, 'toAForeignStudent') and not isInLastContext(event, 'toAForeignStudent'): 
         return createResponse(event, getMainConfig(event))
-
     if (
         "бакал" in getCommand(event)
         or "bec" in getCommand(event)
