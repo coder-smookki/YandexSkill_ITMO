@@ -2,51 +2,40 @@ from utils.responseHelper import getGlobalState, getLanguage
 
 config = {
     "ru-RU": {
-        'message': """
+        "message": """
         Ильин Кирилл (ТимЛидер).
         Плюснин Александр (Главный Разработчик).
         Караваев Иван (Разработчик).
         Лесовой Кирилл (Тестировщик).
         Кутников Родион (Дизайнер UI|UX).
         """,
-        "tts":
-            """ 
+        "tts": """ 
                 Создатели навыка: Ильин Кирилл, исполняет роль Тим Лидера. Плюснин Александр, исполняет роль Главного Разработчика навыка и его основы. Караваев Иван, исполняет роль Разработчика. Лесовой Кирилл, исполняет роль Тестировщика навыка и Разработчика по алгоритмизации игр. Кутников Родион, исполняет роль Главного Дизайнера в проекте, в том числе UI и UX.
             """,
-        "buttons": [
-            "Повторить ещё раз",
-            'Что ты умеешь?',
-            "Назад",
-            "Выйти"
-        ],
+        "buttons": ["Повторить ещё раз", "Что ты умеешь?", "Назад", "Выйти"],
     },
-
     "en-US": {
-        'message': """
+        "message": """
         Ilyin Kirill (Team Leader).
         Plyusnin Alexander (Chief Developer).
         Karavaev Ivan (Developer).
         Lesovoy Kirill (Tester).
         Kutnikov Rodion (UI|UX Designer).
         """,
-        "tts":
-            """
+        "tts": """
             Skill creators: Ilyin Kirill plays the role of Team Leader. Plyusnin Alexander plays the role of the Chief Developer of the skill and its foundation. Karavaev Ivan plays the role of the Developer. Lesovoy Kirill plays the role of Skill Tester and Game Algorithm Developer. Kutnikov Rodion plays the role of Chief Designer in the project, including UI and UX.
             """,
         "buttons": [
-            "Repeat one more time",
-            'What can you do?',
+            "Say it again",
+            "What can you do?",
+            "Help",
             "Back",
-            "Exit"
+            "Exit",
         ],
-
-        
-    }
+    },
 }
 
-session_state = {
-    "branch": "whoIsCreator"
-}
+session_state = {"branch": "whoIsCreator"}
 
 
 def getConfig(event):
@@ -59,4 +48,3 @@ def getConfig(event):
         "buttons": config[lang]["buttons"],
         "session_state": session_state,
     }
-
