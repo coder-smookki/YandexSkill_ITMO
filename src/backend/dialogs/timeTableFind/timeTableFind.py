@@ -21,7 +21,7 @@ def getResponse(event, allDialogs=None):
 
 def isTriggered(event):
     return isInContext(event, "timeTable") and (
-                isSimilarTokens(event, nextPageTokens) or isSimilarTokens(event, pastPageTokens))
+            isSimilarTokens(event, nextPageTokens) or isSimilarTokens(event, pastPageTokens))
 
 
 timeTableFind = {'getResponse': getResponse, 'isTriggered': isTriggered}

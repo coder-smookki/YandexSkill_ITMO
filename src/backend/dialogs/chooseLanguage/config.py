@@ -1,6 +1,6 @@
 message = \
     """
-    Привет Студент! Чтобы пользоваться навыком, выбери язык.
+    Чтобы пользоваться навыком, выбери язык.
     Hello Student! To use the skill, choose a language.
         1. Русский Язык (Russian Language)
         2. Английский Язык (English Language)
@@ -25,12 +25,12 @@ buttons = [
 
 card = {
     'type': 'BigImage',
-    'image_id': '1540737/07a6bc185a8dcec1b266',
-    'title': 'ГЛАВНОЕ МЕНЮ (GENERAL MENU)',
+    'image_id': '1533899/e3380fce2ac794126e7c',
+    'title': 'СМЕНИТЬ ЯЗЫК (CHANGE THE LANGUAGE)',
     'description': \
         """
-        Выберите язык - Русский или Английский...
-        Select language - Russian or English...
+        Выберите язык - Русский или Английский.
+        Select language - Russian or English.
         """
 }
 

@@ -1,5 +1,6 @@
 from .utils.textNormalizer.index import textNormalizer
- 
+
+
 def announces(soup):
     result = []
 

@@ -16,6 +16,7 @@ REQUESTS_DEBUG = False
 
 load_dotenv()
 
+
 def cycleRefreshNews():
     while True:
         print('Start refreshing news')
@@ -52,7 +53,7 @@ def main(event):
         else:
             print("Branch don't initilized")
         print('---------------------------')
-        
+
         return branchedResponse
 
 

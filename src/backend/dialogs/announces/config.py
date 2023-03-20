@@ -1,9 +1,10 @@
 from utils.globalStorage import globalStorage
 
-def getConfig(lang='ru'):
-    message = ''
 
-    tts = ''
+def getConfig(lang='ru'):
+    message = 'Анонсы:\n'
+
+    tts = 'Анонсы:\n'
 
     buttons = [
         "Повторить ещё раз",
@@ -16,12 +17,12 @@ def getConfig(lang='ru'):
     session_state = {
         "branch": "announces"
     }
-    
+
     announces = globalStorage['news_announces']
     buttonsResponse = []
     if len(announces) <= 0:
-        message += 'К сожалению, анонсов сейчас нет =('
-        tts += 'К сожалению, анонсов сейчас нет'
+        message = 'К сожалению, анонсов сейчас нет.'
+        tts = 'К сожалению, анонсов сейчас нет.'
     else:
         for i in announces:
             message += f"""
@@ -30,10 +31,10 @@ def getConfig(lang='ru'):
             ------------\n
             """
             buttonsResponse.append({'title': i['text'], 'url': i['link']})
-            tts += f'Вы направились в категорию "Анонсы". {i["text"]} будет {i["date"]} '
+            tts += f'{i["text"]} будет {i["date"]}'
 
         buttons = buttonsResponse + buttons
-    
+
     return {
         'message': message,
         'tts': tts,

@@ -26,17 +26,29 @@ def getPageConfig(event, pageNum, countOnOnePage):
     # maxPages = len(pages) // pageNum
     for i in pages[startFromElem:lastElem]:
         message += f"""
-            {i['dayWeek']}
-            {i['date']}
-            {i['hours']}
-            {i['whatWeeks']}
-            {i['subjectName']}
-            {i['lecturerName']}
-            {i['classroomNumber']}
-            {i['classroomAddress']}
-            {i['classFormat']}
+            День недели: {i['dayWeek']}.
+            Дата: {i['date']}.
+            Часы: {i['hours']}.
+            Номера недель: {i['whatWeeks']}.
+            Название предмета: {i['subjectName']}.
+            Лектор: {i['lecturerName']}.
+            Кабинет: {i['classroomNumber']}.
+            Адрес: {i['classroomAddress']}.
+            Формат обучения: {i['classFormat']}.
             ------------
             """
+        tts += f"""
+                День недели: {i['dayWeek']}.
+                Дата: {i['date']}.
+                Часы: {i['hours']}.
+                Номера недель: {i['whatWeeks']}.
+                Название предмета: {i['subjectName']}.
+                Лектор: {i['lecturerName']}.
+                Кабинет: {i['classroomNumber']}.
+                Адрес: {i['classroomAddress']}.
+                Формат обучения: {i['classFormat']}.
+                ------------
+                """
     # {i['classroomNavigator']}
     session_state = {
         "branch": "timeTable",

@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup as bs
 from ..utils.textNormalizer.index import textNormalizer
 
- 
+
 def educationalPublications(query):
     if not query:
         raise TypeError('Empty query is not allowed')
@@ -17,7 +17,7 @@ def educationalPublications(query):
     for post in posts:
         title = post.select('h4')[0].getText()
         textArr = post.findAll(text=True, recursive=False)
-        text = textNormalizer(textArr[0]) + post.select('span')[0].getText() + textNormalizer(textArr[1]) 
+        text = textNormalizer(textArr[0]) + post.select('span')[0].getText() + textNormalizer(textArr[1])
         link = 'http://books.ifmo.ru' + post.select('p a')[0].get('href')
         result.append({
             'title': textNormalizer(title),

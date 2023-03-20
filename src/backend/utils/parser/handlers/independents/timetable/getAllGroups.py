@@ -2,7 +2,8 @@ import requests
 from bs4 import BeautifulSoup as bs
 import re
 from ...utils.textNormalizer.index import textNormalizer
- 
+
+
 def getAllGroups(args):
     if not isinstance(args, list):
         raise TypeError(
@@ -72,7 +73,6 @@ def _fillGroups(groupTag):
     groupList = groupTag.select('.timetable-cards__group-list-item > a')
 
     for group in groupList:
-
         groupName = textNormalizer(group.getText())
         groupResult['list'].append(groupName)
     return groupResult

@@ -7,7 +7,7 @@ buttons = [
     "Помощь",
     "Назад",
     "Выйти",
-    
+
 ]
 
 session_state = {
@@ -17,7 +17,7 @@ session_state = {
 
 def getConfig(event):
     message = ''
-    tts = ''
+    tts = 'Учебные издания:\n'
 
     publications = parser('educationalPublications', event['request']['command'])
 

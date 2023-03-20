@@ -1,9 +1,10 @@
 from utils.globalStorage import globalStorage
 
-def getConfig():
-    message = 'Вы направились в категорию "Контесты.\n'
 
-    tts = ''
+def getConfig():
+    message = 'Контесты:\n'
+
+    tts = 'Контесты:\n'
 
     buttons = [
         "Повторить ещё раз",
@@ -20,8 +21,8 @@ def getConfig():
     contests = globalStorage['news_contests']
 
     if len(contests) <= 0:
-        message += 'К сожалению, контестов сейчас нет =('
-        tts += 'К сожалению, контестов сейчас нет'
+        message = 'К сожалению, контестов сейчас нет.'
+        tts = 'К сожалению, контестов сейчас нет'
     else:
         for i in contests:
             message += f"""

@@ -61,7 +61,7 @@ body = {
 
 def asd():
     startTime = datetime.now()
-    res = requests.post('https://ssdteam.ru:2083/', json=body)
+    res = requests.post('', json=body)
     endTime = datetime.now()
     print('Time: ' + str(endTime - startTime))
     print(res)
