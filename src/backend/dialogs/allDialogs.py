@@ -4,9 +4,15 @@ from .forFreshman.forFreshman import forFreshman
 from .studentOffice.studentOffice import studentOffice
 from .studentOfficeAbout.studentOfficeAbout import studentOfficeAbout
 from .studentOfficeWhy.studentOfficeWhy import studentOfficeWhy
-from .universityWideUndergraduateModules.universityWideUndergraduateModules import universityWideUndergraduateModules
-from .universityWideMagistracyModules.universityWideUndergraduateModules import universityWideMagistracyModules
-from .documentOnPreviousEducation.documentOnPreviousEducation import documentOnPreviousEducation
+from .universityWideUndergraduateModules.universityWideUndergraduateModules import (
+    universityWideUndergraduateModules,
+)
+from .universityWideMagistracyModules.universityWideUndergraduateModules import (
+    universityWideMagistracyModules,
+)
+from .documentOnPreviousEducation.documentOnPreviousEducation import (
+    documentOnPreviousEducation,
+)
 from .library.library import library
 from .news.news import news
 from .announces.announces import announces
@@ -15,14 +21,18 @@ from .exitConfirm.exitConfirm import exitConfirm
 from .backDialog.backDialog import backDialog
 from .educationalPublications.educationalPublications import educationalPublications
 from .howToCheckRelevance.howToCheckRelevance import howToCheckRelevance
-from .howToConnectWithDevelopers.howToConnectWithDevelopers import howToConnectWithDevelopers
+from .howToConnectWithDevelopers.howToConnectWithDevelopers import (
+    howToConnectWithDevelopers,
+)
 from .whoIsCreator.whoIsCreator import whoIsCreator
 from .help.help import help
 from .randomFact.randomFact import randomFact
 from .timeTable.timeTable import timeTable
 from .timeTableFind.timeTableFind import timeTableFind
 from .toAForeignStudent.toAForeignStudent import toAForeignStudent
-from .educationalPublicationsFind.educationalPublicationsFind import educationalPublicationsFind
+from .educationalPublicationsFind.educationalPublicationsFind import (
+    educationalPublicationsFind,
+)
 from .scholarships.scholarships import scholarships
 from .chessGame.chessGame import chessGame
 from .chessMain.chessMain import chessMain
@@ -34,43 +44,43 @@ from .repeat.repeat import repeat
 from .whatYouCan.whatYouCan import whatYouCan
 
 allDialogs = {
-    'exitConfirm': exitConfirm,
-    'repeat': repeat,
-    'chooseLanguage': chooseLanguage,
-    'whatYouCan': whatYouCan,
-    'backDialog': backDialog,
-    'forFreshman': forFreshman,
-    'studentOfficeAbout': studentOfficeAbout,
-    'officeOtherFeatures': officeOtherFeatures,
-    'OfficeConsultation': OfficeConsultation,
-    'studentOfficeWhy': studentOfficeWhy,
-    'whoIsCreator': whoIsCreator,
-    'howToConnectWithDevelopers': howToConnectWithDevelopers,
-    'howToCheckRelevance': howToCheckRelevance,
-    'documentOnPreviousEducation': documentOnPreviousEducation,
-    'UniversityWideMagistracyModules': universityWideMagistracyModules,
-    'UniversityWideUndergraduateModules': universityWideUndergraduateModules,
-    'educationalPublications': educationalPublications,
-    'library': library,
-    'chessGame': chessGame,
-    'chessMain': chessMain,
-    'news': news,
-    'studentOffice': studentOffice,
-    'announces': announces,
-    'contests': contests,
-    'randomFact': randomFact,
-    'timeTable': timeTable,
-    'timeTableFind': timeTableFind,
-    'toAForeignStudent': toAForeignStudent,
-    'toAForeignStudentMigrDocs': toAForeignStudent,
-    'toAForeignStudentAddOprts': toAForeignStudent,
-    'toAForeignStudentIntMag': toAForeignStudent,
-    'toAForeignStudentMag': toAForeignStudent,
-    'toAForeignStudentBech': toAForeignStudent,
-    'educationalPublicationsFind': educationalPublicationsFind,
-    'scholarships': scholarships,
-    'start_quiz': start_quiz,
-    'general_quiz': general_quiz,
-    'help': help,
-    'mainMenu': mainMenu
+    "exitConfirm": exitConfirm,
+    "repeat": repeat,
+    "chooseLanguage": chooseLanguage,
+    "whatYouCan": whatYouCan,
+    "backDialog": backDialog,
+    "forFreshman": forFreshman,
+    "studentOfficeAbout": studentOfficeAbout,
+    "officeOtherFeatures": officeOtherFeatures,
+    "OfficeConsultation": OfficeConsultation,
+    "studentOfficeWhy": studentOfficeWhy,
+    "whoIsCreator": whoIsCreator,
+    "howToConnectWithDevelopers": howToConnectWithDevelopers,
+    "howToCheckRelevance": howToCheckRelevance,
+    "documentOnPreviousEducation": documentOnPreviousEducation,
+    "UniversityWideMagistracyModules": universityWideMagistracyModules,
+    "UniversityWideUndergraduateModules": universityWideUndergraduateModules,
+    "educationalPublications": educationalPublications,
+    "library": library,
+    "news": news,
+    "studentOffice": studentOffice,
+    "announces": announces,
+    "contests": contests,
+    "randomFact": randomFact,
+    "timeTable": timeTable,
+    "timeTableFind": timeTableFind,
+    "toAForeignStudent": toAForeignStudent,
+    "toAForeignStudentMigrDocs": toAForeignStudent,
+    "toAForeignStudentAddOprts": toAForeignStudent,
+    "toAForeignStudentIntMag": toAForeignStudent,
+    "toAForeignStudentMag": toAForeignStudent,
+    "toAForeignStudentBech": toAForeignStudent,
+    "educationalPublicationsFind": educationalPublicationsFind,
+    "scholarships": scholarships,
+    "start_quiz": start_quiz,
+    "general_quiz": general_quiz,
+    "help": help,
+    "chessGame": chessGame,
+    "chessMain": chessMain,
+    "mainMenu": mainMenu,
 }
