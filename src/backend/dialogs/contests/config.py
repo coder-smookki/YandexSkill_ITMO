@@ -31,7 +31,7 @@ def getConfig():
             {i['date']}\n
             ------------\n
             """
-            tts += f'{i["text"]} будет {i["date"]}. '
+            tts += f'{i["text"]} будет {i["date"]}.'
 
     return {
         'message': message,
