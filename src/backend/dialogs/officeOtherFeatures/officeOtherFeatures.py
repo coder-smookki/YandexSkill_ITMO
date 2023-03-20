@@ -9,17 +9,6 @@ def getResponse(event, allDialogs=None):
 
 
 def isTriggered(event):
-    token = {
-        "знаю",
-        "кому",
-        "задать",
-        "вопрос",
-        "поможет",
-        "know",
-        "to whom",
-        "ask",
-        "question",
-    }
     return (
         "вопр" in getCommand(event)
         or "прос" in getCommand(event)
