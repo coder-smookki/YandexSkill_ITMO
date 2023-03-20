@@ -28,7 +28,7 @@ def getResponse(event, allDialogs=None):
     if 'возм' in getCommand(event) or 'доп' in getCommand(event):
         return createResponse(event, additionalOpportsConfig)
 
-    return getDialogResponseFromEnd(event, 2, allDialogs)
+    return createResponse(event, mainConfig)
 
 
 def isTriggered(event):
