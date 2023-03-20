@@ -29,7 +29,7 @@ config = {
         ],
         "card": {
             "type": "BigImage",
-            "image_id": "937455/40f0536e426907808499",
+            "image_id": "1521359/65fa68f782fa6af3f071",
             "title": "HOW TO GET THE CONSULTATION IN THE STUDENT OFFICE?",
             "description": """
                     Come to our office located in St. Petersburg at st. Lomonosov, d.9. Managers will receive you on a first-come, first-served basis. You can also sign up for a consultation through the Electronic Queue application in your UIS personal account.""",
