@@ -9,18 +9,11 @@ def getResponse(event, allDialogs=None):
 
 
 def isTriggered(event):
-    return (
-        "who" in getCommand(event)
-        or "creator" in getCommand(event)
-        or "ху" in getCommand(event)
-        or "креа" in getCommand(event)
-        or "креэ" in getCommand(event)
-        or "крэ" in getCommand(event)
-        or "созда" in getCommand(event)
-        or "сдела" in getCommand(event)
-        or "разраб" in getCommand(event)
-        or "прогр" in getCommand(event)
-    )
+    words_ru_1 = ['кто', 'созда']
+    words_ru_2 = ['кто', 'разраб']
+    words_ru_3 = ['кто', 'сдела']
+    words_en = ['creator', "who", "ху", "креа", "креэ"]
+    return isInCommandAnd(event, words_ru_1) or isInCommandAnd(event, words_ru_2) or isInCommandAnd(event, words_ru_3) or isInCommandOr(event, words_en)
 
 
 whoIsCreator = {"getResponse": getResponse, "isTriggered": isTriggered}
