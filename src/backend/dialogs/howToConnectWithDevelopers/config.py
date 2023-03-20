@@ -8,7 +8,7 @@ config = {
     },
     "en-US": {
         "message": """Contact the team by general mail - SuperScriptsDebugers@yandex.ru""",
-        "tts": """Contact the team by general mail - Super. Scripts. debuggers. @yandex. dot. ru.""",
+        "tts": """Contact the team by general mail - Super. Scripts. debuggers. at. yandex. dot. ru.""",
         "buttons": [
             "Say it again",
             "What can you do?",
