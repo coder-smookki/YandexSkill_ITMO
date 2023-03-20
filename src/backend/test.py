@@ -1,4 +1,4 @@
 from utils.parser.parser import parser
 
-a = parser('announces', '', 'en-US')
+a = parser('contests', '', 'en-US')
 print(a)

@@ -4,9 +4,11 @@ from bs4 import BeautifulSoup as bs
 
 def announces(query, lang):
     result = []
-    parserLink = 'https://news.itmo.ru' 
+
     if lang == 'en-US':
-        parserLink += '/en'
+        parserLink = 'https://news.itmo.ru/en/events/'
+    else:
+        parserLink = 'https://news.itmo.ru/ru/events/'
 
     try:
         r = requests.get(parserLink)
@@ -18,12 +20,12 @@ def announces(query, lang):
     for post in posts:
         a = post.select('h4>a')
         text = a[0].getText()
-        link = parserLink + a[0].get('href')
+        link = 'https://news.itmo.ru/' + a[0].get('href')
         date = post.select('.information>span')[0].getText()
         result.append({
             'text': textNormalizer(text),
             'link': textNormalizer(link),
             'date': textNormalizer(date)
         })
-
+    
     return result
