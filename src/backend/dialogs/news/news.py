@@ -14,7 +14,6 @@ def isTriggered(event):
         or "ньюс" in getCommand(event)
         or "нюс" in getCommand(event)
         or "нус" in getCommand(event)
-        or "нос" in getCommand(event)
         or "ниус" in getCommand(event)
         or "ньус" in getCommand(event)
         or "ньос" in getCommand(event)
