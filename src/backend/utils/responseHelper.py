@@ -62,7 +62,7 @@ def createTimeoutResponse(event, allDialogs, getRepsonse, timeoutName):
                     "end_session": False,
                 },
                 "session": event["session"],
-                "session_state": session_state,
+                "session_state": None,
                 "version": event["version"],
             },
             "stillLoading": {
@@ -73,7 +73,7 @@ def createTimeoutResponse(event, allDialogs, getRepsonse, timeoutName):
                     "end_session": False,
                 },
                 "session": event["session"],
-                "session_state": session_state,
+                "session_state": None,
                 "version": event["version"],
             }
         }
