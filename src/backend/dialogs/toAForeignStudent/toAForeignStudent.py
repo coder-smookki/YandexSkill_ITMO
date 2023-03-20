@@ -10,7 +10,8 @@ def getResponse(event, allDialogs=None):
 
     if (
         "бакал" in getCommand(event)
-        or "bench" in getCommand(event)
+        or "benc" in getCommand(event)
+        or "banc" in getCommand(event)
         or "бэнч" in getCommand(event)
         or "банч" in getCommand(event)
     ):
@@ -24,9 +25,12 @@ def getResponse(event, allDialogs=None):
         or "nation" in getCommand(event)
     ) and (
         "магис" in getCommand(event)
+        or "mast" in getCommand(event)
         or "magic" in getCommand(event)
         or "мег" in getCommand(event)
         or "мэг" in getCommand(event)
+        or "mast" in getCommand(event)
+        or "маст" in getCommand(event)
         or "маг" in getCommand(event)
     ):
         return createResponse(event, getInternationalMagistracyConfig(event))
@@ -34,6 +38,8 @@ def getResponse(event, allDialogs=None):
     if (
         "магис" in getCommand(event)
         or "magic" in getCommand(event)
+        or "mast" in getCommand(event)
+        or "маст" in getCommand(event)
         or "мег" in getCommand(event)
         or "мэг" in getCommand(event)
         or "маг" in getCommand(event)
