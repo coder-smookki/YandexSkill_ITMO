@@ -7,71 +7,104 @@ from utils.triggerHelper import *
 def createResponse(event, originalConfig):
     config = copy.deepcopy(originalConfig)
     returnResponse = {
-        'response': {
-            'text': config['message'] if 'message' in config else '',
-            'tts': config['tts'],
-            'card': config['card'] if 'card' in config else None,
-            'buttons': createButtons(config['buttons']),
-            'end_session': config['end_session'] if 'end_session' in config else False
+        "response": {
+            "text": config["message"] if "message" in config else "",
+            "tts": config["tts"],
+            "card": config["card"] if "card" in config else None,
+            "buttons": createButtons(config["buttons"]),
+            "end_session": config["end_session"] if "end_session" in config else False,
         },
-        'session': event['session'],
-        'session_state': config['session_state'] if 'session_state' in config else {'branch': ''},
-        'version': event['version']
+        "session": event["session"],
+        "session_state": config["session_state"]
+        if "session_state" in config
+        else {"branch": ""},
+        "version": event["version"],
     }
-    if 'user_state_update' in config:
-        returnResponse['user_state_update'] = config['user_state_update']
+    if "user_state_update" in config:
+        returnResponse["user_state_update"] = config["user_state_update"]
     return returnResponse
 
 
 def createTimeoutResponse(event, allDialogs, getRepsonse, timeoutName):
-    fieldName = timeoutName + '_' + getSessionId(event);
+    lang = getLanguage(event)
+
+    responses = {
+        "ru-RU": {
+            "loading": {
+                "response": {
+                    "text": "Загрузка...",
+                    "tts": "загрузка",
+                    "buttons": createButtons(["Проверить", "Назад", "Выход"]),
+                    "end_session": False,
+                },
+                "session": event["session"],
+                "session_state": None,
+                "version": event["version"],
+            },
+            "stillLoading": {
+                "response": {
+                    "text": "Все еще загрузка...",
+                    "tts": "все еще загрузка",
+                    "buttons": createButtons(["Проверить", "Назад", "Выход"]),
+                    "end_session": False,
+                },
+                "session": event["session"],
+                "session_state": None,
+                "version": event["version"],
+            }
+        },
+        "en-US": {
+            "loading": {
+                "response": {
+                    "text": "Loading...",
+                    "tts": "loading",
+                    "buttons": createButtons(["Check", "Back", "Exit"]),
+                    "end_session": False,
+                },
+                "session": event["session"],
+                "session_state": session_state,
+                "version": event["version"],
+            },
+            "stillLoading": {
+                "response": {
+                    "text": "Still loading...",
+                    "tts": "Still loading",
+                    "buttons": createButtons(["Check", "Back", "Exit"]),
+                    "end_session": False,
+                },
+                "session": event["session"],
+                "session_state": session_state,
+                "version": event["version"],
+            }
+        }
+    }
+
+    fieldName = timeoutName + "_" + getSessionId(event)
     if not (fieldName in globalStorage):
-        setInGlobalStorage(fieldName, {'response': '', 'isLoaded': False}, overwrite=True)
+        setInGlobalStorage(
+            fieldName, {"response": "", "isLoaded": False}, overwrite=True
+        )
 
         def getAsyncResponse(event, allDialogs, timeoutName):
             response = getRepsonse(event, allDialogs)
-            setInGlobalStorage(fieldName, {'response': response, 'isLoaded': True}, overwrite=True)
+            setInGlobalStorage(
+                fieldName, {"response": response, "isLoaded": True}, overwrite=True
+            )
 
         doFuncAsAsync(getAsyncResponse, [event, allDialogs, timeoutName])
-        session_state = copy.deepcopy(event['state']['session'])
-        session_state['branch'] = event['state']['session']['branch'][-1]
-        return {
-            'response': {
-                'text': 'Загрузка...',
-                'tts': 'азазазазаз',
-                'buttons': createButtons([
-                    'Проверить',
-                    'Назад',
-                    'Выход'
-                ]),
-                'end_session': False
-            },
-            'session': event['session'],
-            'session_state': session_state,
-            'version': event['version']
-        }
+        session_state = copy.deepcopy(event["state"]["session"])
+        session_state["branch"] = event["state"]["session"]["branch"][-1]
+        responses[lang]['loading']['session_state'] = session_state 
+        return responses[lang]['loading']
 
-    elif globalStorage[fieldName]['isLoaded'] == False:
-        session_state = copy.deepcopy(event['state']['session'])
-        session_state['branch'] = event['state']['session']['branch'][-1]
-        return {
-            'response': {
-                'text': 'Все еще загрузка...',
-                'tts': 'зызызызыз',
-                'buttons': createButtons([
-                    'Проверить',
-                    'Назад',
-                    'Выход'
-                ]),
-                'end_session': False
-            },
-            'session': event['session'],
-            'session_state': session_state,
-            'version': event['version']
-        }
+    elif globalStorage[fieldName]["isLoaded"] == False:
+        session_state = copy.deepcopy(event["state"]["session"])
+        session_state["branch"] = event["state"]["session"]["branch"][-1]
+        responses[lang]['loading']['session_state'] = session_state 
+        return responses[lang]['stillLoading']
 
     else:
-        response = copy.deepcopy(globalStorage[fieldName]['response'])
+        response = copy.deepcopy(globalStorage[fieldName]["response"])
         del globalStorage[fieldName]
         return response
 
@@ -80,10 +113,7 @@ def createButtons(buttons):
     result = []
     for button in buttons:
         if isinstance(button, str):
-            result.append({
-                'title': button,
-                'hide': True
-            })
+            result.append({"title": button, "hide": True})
             continue
         result.append(button)
 
@@ -91,46 +121,46 @@ def createButtons(buttons):
 
 
 def getSessionId(event):
-    return event['session']['session_id']
+    return event["session"]["session_id"]
 
 
 def getUserId(event):
-    return event['session']['user']['user_id']
+    return event["session"]["user"]["user_id"]
 
 
 def getState(event, state):
-    return event['state']['session'][state]
+    return event["state"]["session"][state]
 
 
 def getOriginalUtterance(event):
-    return event["request"]['original_utterance']
+    return event["request"]["original_utterance"]
 
 
 def setStateInEvent(event, stateName, stateValue):
-    event['state']['session'][stateName] = stateValue
+    event["state"]["session"][stateName] = stateValue
     return event
 
 
 def setGlobalStateInEvent(event, stateName, stateValue):
-    event['state']['user'][stateName] = stateValue
+    event["state"]["user"][stateName] = stateValue
     return event
 
 
 def getCommand(event):
-    return event["request"]['command']
+    return event["request"]["command"]
 
 
 def getGlobalState(event, state):
-    return event['state']['user'][state]
+    return event["state"]["user"][state]
 
 
 def getLanguage(event):
-    allowedLangs = ['ru-RU', 'en-US']
-    if haveGlobalState(event, 'language'):
-        lang = getGlobalState(event, 'language')
+    allowedLangs = ["ru-RU", "en-US"]
+    if haveGlobalState(event, "language"):
+        lang = getGlobalState(event, "language")
         if not (lang in allowedLangs):
-            lang = 'en-US'
+            lang = "en-US"
     else:
-        print('dont have state :(')
-        lang = event['meta']['locale']
+        print("dont have state :(")
+        lang = event["meta"]["locale"]
     return lang
