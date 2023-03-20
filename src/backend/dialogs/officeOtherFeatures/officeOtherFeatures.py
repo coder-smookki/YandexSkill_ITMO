@@ -13,8 +13,6 @@ def isTriggered(event):
         "вопр" in getCommand(event)
         or "прос" in getCommand(event)
         or "помож" in getCommand(event)
-        or "help" in getCommand(event)
-        or "хелп" in getCommand(event)
         or "аск" in getCommand(event)
         or "куэш" in getCommand(event)
         or "куеш" in getCommand(event)
