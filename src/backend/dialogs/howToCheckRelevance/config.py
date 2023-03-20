@@ -4,9 +4,9 @@ config = {
     "ru-RU": {
         "message":
             """
-            Наш навык имеет на данный момент полную актуальность, а так же является полностью рабочим. 
-            Если вдруг у вас возникли ошибки с тем или иным блоком навыка, сообщите ошибку по почте общей почте команды. 
-            Таким образом, вы можете помочь держать навык полностью функциональным!
+Наш навык имеет на данный момент полную актуальность, а так же является полностью рабочим. 
+Если вдруг у вас возникли ошибки с тем или иным блоком навыка, сообщите ошибку по почте общей почте команды. 
+Таким образом, вы можете помочь держать навык полностью функциональным!
             """,
         "tts":
             """
@@ -19,9 +19,9 @@ config = {
     "en-US": {
         "message":
             """
-            Our skill is currently fully relevant, and is also fully operational.
-            If suddenly you have errors with one or another skill block, report the error by mail to the team's general mail.
-            This way you can help keep the skill fully functional!
+Our skill is currently fully relevant, and is also fully operational.
+If suddenly you have errors with one or another skill block, report the error by mail to the team's general mail.
+This way you can help keep the skill fully functional!
             """,
         "tts":
             """

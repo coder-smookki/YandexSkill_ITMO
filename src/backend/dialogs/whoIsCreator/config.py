@@ -3,11 +3,11 @@ from utils.responseHelper import getGlobalState, getLanguage
 config = {
     "ru-RU": {
         "message": """
-        Ильин Кирилл (Тимлид).
-        Плюснин Александр (Главный Разработчик).
-        Караваев Иван (Разработчик).
-        Лесовой Кирилл (Тестировщик).
-        Кутников Родион (Дизайнер UI|UX).
+Ильин Кирилл (Тимлид).
+Плюснин Александр (Главный Разработчик).
+Караваев Иван (Разработчик).
+Лесовой Кирилл (Тестировщик).
+Кутников Родион (Дизайнер UI|UX).
         """,
         "tts": """ 
         Создатели навыка: Ильин Кирилл, исполняет роль Тим Лидера. 
@@ -20,11 +20,11 @@ config = {
     },
     "en-US": {
         "message": """
-        Ilyin Kirill (Teamlead).
-        Plusnin Alexander (Chief Developer).
-        Karavaev Ivan (Developer).
-        Lesovoy Kirill (Tester).
-        Kutnikov Rodion (UI|UX Designer).
+Ilyin Kirill (Teamlead).
+Plusnin Alexander (Chief Developer).
+Karavaev Ivan (Developer).
+Lesovoy Kirill (Tester).
+Kutnikov Rodion (UI|UX Designer).
         """,
         "tts": """
         Skill creators: Ilyin Kirill, plays the role of Team Leader.
