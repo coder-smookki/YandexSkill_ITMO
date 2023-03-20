@@ -92,7 +92,7 @@ def isTriggeredDocum(event):
         or "дакум" in getCommand(event)
         or "декум" in getCommand(event)
         or "дэкум" in getCommand(event)
-    ) or isInLastContext(event, 'toAForeignStudent')
+    ) or isInLastContext(event, 'toAForeignStudent') 
 
 def getResponseDocum(event, allDialogs):
     return createResponse(event, getMigrationDocumentsConfig(event))     
@@ -109,7 +109,6 @@ def isTriggeredAdd(event):
         or "ад" in getCommand(event)
         or "add" in getCommand(event)
     ) or isInLastContext(event, 'toAForeignStudent')
-
 
 
 toAForeignStudent = {"getResponse": getResponse, "isTriggered": isTriggered}
