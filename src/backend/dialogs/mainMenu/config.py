@@ -77,7 +77,7 @@ config = {
             "Timetable of classes",
             "University-wide modules in undergraduate studies",
             "University-wide modules in the magistracy",
-            "foreign student",
+            "Foreign student",
             "Library",
             "Educational and methodical publications",
             "Scholarships",
