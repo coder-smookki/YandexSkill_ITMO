@@ -92,13 +92,12 @@ bechelorConfig = {
         "session_state": {"branch": "toAForeignStudent"},
     },
     "en-US": {
-        "tts": """
-        Университет ИТМО следует современным тенденциям рынка труда и в мировых научных исследованиях.
-Атмосфера неклассического вуза дает возможности для развития полезных навыков и умений у студентов – в образовательной и научной сфере, в предпринимательской, инновационной и социально-ориентированной деятельности.
-Здесь по-настоящему любят своих студентов, и именно это чувство – любовь – является ключом к пониманию миссии университета, его достижений и достижений.
-Для иностранных абитуриентов, не владеющих или плохо владеющих русским языком, в Университете ИТМО действует Подготовительное отделение.
-Программа обучения включает в себя интенсивный курс русского языка и подготовку по профильным предметам, предназначенным для сдачи вступительных испытаний.
-Процесс поступления в Университет ИТМО для иностранных граждан практически ничем не отличается от такового для российских абитуриентов.""",
+        "tts": """ITMO University follows modern trends in the labor market and in global scientific research.
+The atmosphere of a non-classical university provides opportunities for the development of useful skills and abilities of students - in the educational and scientific sphere, in entrepreneurial, innovative and socially oriented activities.
+Here they truly love their students, and it is this feeling - love - that is the key to understanding the mission of the university, its achievements and achievements.
+For foreign applicants who do not speak or have a poor command of Russian, ITMO University has a Preparatory Department.
+The training program includes an intensive Russian language course and training in specialized subjects designed for entrance examinations.
+The process of admission to ITMO University for foreign citizens is practically no different from that for Russian applicants.""",
         "buttons": [
             "Repeat",
             "What can you do?",
