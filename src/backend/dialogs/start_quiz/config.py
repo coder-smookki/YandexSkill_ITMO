@@ -40,7 +40,7 @@ config = {
             Are you ready for the quiz?
             """,
         "buttons": [
-            "Begin",
+            "Start",
             "Repeat",
             'What can you do?',
             "Help",
