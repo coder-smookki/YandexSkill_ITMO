@@ -62,11 +62,11 @@ config = {
         "message": 'Random fact: \n',
         "buttons": [
             "Another fact",
-            "Repeat one more time",
-            'What can you do?',
+            "Say it again",
+            "What can you do?",
             "Help",
             "Back",
-            "Exit"
+            "Exit",
 
         ],
     }
