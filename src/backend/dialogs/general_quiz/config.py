@@ -46,9 +46,9 @@ def getFinishConfig(event):
     buttonsResponse.append('меню')
     return {
         'message': "Ваш результат: " + str(getState(event, "count_correct_response")) + "/" + str(
-            getState(event, "count_questions")),
+            getState(event, "count_questions") - 1),
         'tts': "Ваш результат:" + str(getState(event, "count_correct_response")) + "из" + str(
-            getState(event, "count_questions")),
+            getState(event, "count_questions") - 1),
         'buttons': buttonsResponse,
         'session_state': {
             "branch": "mainMenu"
@@ -63,14 +63,12 @@ def check_answer(event):
         if questions["answers"][questions_list[-1]].lower() in getOriginalUtterance(event).lower() or questions["answers"][questions_list[-1]].lower() == getOriginalUtterance(event).lower():
             setStateInEvent(event, "count_correct_response", getState(event, "count_correct_response") + 1)
 
-    if getState(event, "count_questions") < 5:
+    setStateInEvent(event, "count_questions", getState(event, "count_questions") + 1)
 
-        setStateInEvent(event, "count_questions", getState(event, "count_questions") + 1)
-
+    track_question = random.randint(0, len(questions['questions']) - 1)
+    while track_question in questions_list:
         track_question = random.randint(0, len(questions['questions']) - 1)
-        while track_question in questions_list:
-            track_question = random.randint(0, len(questions['questions']) - 1)
 
-        questions_list.append(track_question)
+    questions_list.append(track_question)
 
-        setStateInEvent(event, "questions_list", questions_list)
+    setStateInEvent(event, "questions_list", questions_list)
