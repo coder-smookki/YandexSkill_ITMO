@@ -22,7 +22,6 @@ def getResponse(event, allDialogs=None):
     config = getConfig(event)
     return createResponse(event, config)
 
-
 def isTriggered(event):
     # return isSimilarTokens(event, {'главное', 'меню'})
     return True
