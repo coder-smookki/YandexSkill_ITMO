@@ -7,7 +7,7 @@ bechelorConfig = getBechelorConfig()
 magistracyConfig = getMagistracyConfig()
 internationalMagistracyConfig = getInternationalMagistracyConfig()
 additionalOpportsConfig = getAdditionalOpportsConfig()
-migrationDocumentsConfig = migrationDocumentsConfig()
+migrationDocumentsConfig = getMigrationDocumentsConfig()
 
 def getResponse(event, allDialogs=None):
     if not isInLastContext(event, 'toAForeignStudent'):
