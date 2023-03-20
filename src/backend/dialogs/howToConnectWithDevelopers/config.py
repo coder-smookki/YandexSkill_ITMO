@@ -3,7 +3,7 @@ from utils.responseHelper import getLanguage
 config = {
     "ru-RU": {
         "message": """Обращайтесь по общей почте команды - SuperScriptsDebugers@yandex.ru""",
-        "tts": """Обращайтесь по общей почте команды - Super, Scripts, Debugers, @ yandex, точка, ru.""",
+        "tts": """Обращайтесь по общей почте команды - Super. Scripts. Debugers. @ yandex. точка. ru.""",
         "buttons": ["Повторить ещё раз", "Что ты умеешь?", "Назад", "Выйти"],
     },
     "en-US": {
