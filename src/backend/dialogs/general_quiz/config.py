@@ -62,6 +62,7 @@ def check_answer(event):
     if len(questions_list) != 0:
         if questions["answers"][questions_list[-1]] in getCommand(event):
             setStateInEvent(event, "count_correct_response", getState(event, "count_correct_response") + 1)
+            print('+1')
 
     setStateInEvent(event, "count_questions", getState(event, "count_questions") + 1)
 
