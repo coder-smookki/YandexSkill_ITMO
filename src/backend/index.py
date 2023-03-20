@@ -11,7 +11,7 @@ from utils.asyncHelper import doFuncAsAsync
 from utils.responseHelper import *
 from dotenv import load_dotenv
 
-DIALOG_DEBUG = True
+DIALOG_DEBUG = False
 REQUESTS_DEBUG = False
 
 load_dotenv()
@@ -29,10 +29,8 @@ def cycleRefreshNews():
 
 
 def main(event):
-    if event['session']['skill_id'] != os.environ['SKILL_ID']:
-        print('bad skill_id')
-        return 'bad skill_id'
-    print('good skill_id')
+    if 'session' in event and 'skill_id' in event['session'] and event['session']['skill_id'] != os.environ['SKILL_ID']:
+        return 'привет =)'
     if DIALOG_DEBUG:
         print('===========================')
     if not isNewSession(event):
