@@ -19,8 +19,6 @@ config = {
         "tts": """
             Come to our office located in St. Petersburg at st. Lomonosov, d.9. Managers will receive you on a first-come, first-served basis. You can also sign up for a consultation through the Electronic Queue application in your UIS personal account.""",
         "buttons": [
-            "Announcements",
-            "Contests",
             "Say it again",
             "What can you do?",
             "Help",
