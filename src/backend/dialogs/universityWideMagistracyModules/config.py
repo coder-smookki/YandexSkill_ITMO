@@ -60,7 +60,7 @@ config = {
         ],
         "card": {
             "type": "BigImage",
-            "image_id": "937455/40f0536e426907808499",
+            "image_id": "213044/70ec763b4e6221c9bf9a",
             "title": "GENERAL UNIVERSITY MODULES IN MASTER STUDIES",
             "description": """
             To find out more, click on the button below
