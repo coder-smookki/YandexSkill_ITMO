@@ -11,7 +11,15 @@ def getResponse(event, allDialogs=None):
 
 def isTriggered(event):
     token = {"аннонс", "анонс", "анонсы"}
-    return isSimilarTokens(event, token) and isInContext(event, 'news')
+    return (
+        "аннонс" in getCommand(event)
+        or "анонс" in getCommand(event)
+        or "аноус" in getCommand(event)
+        or "анноус" in getCommand(event)
+        or "анус" in getCommand(event)
+        or "аннус" in getCommand(event)
+        or "announ" in getCommand(event)
+    )
 
 
-announces = {'getResponse': getResponse, 'isTriggered': isTriggered}
+announces = {"getResponse": getResponse, "isTriggered": isTriggered}
