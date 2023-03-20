@@ -4,16 +4,35 @@ from utils.triggerHelper import *
 from utils.globalStorage import *
 import copy
 
-config = getConfig()
+
 
 
 def getResponse(event, allDialogs=None):
+    config = getConfig()
     return createResponse(event, config)
 
 
 def isTriggered(event):
-    token = {"учебные", "издания", "учебны"}
-    return isSimilarTokens(event, token) and isInContext(event, 'mainMenu')
+    return (
+        "educ" in getCommand(event)
+        or "acad" in getCommand(event)
+        or "учеб" in getCommand(event)
+        or "едук" in getCommand(event)
+        or "эдук" in getCommand(event)
+        or "экед" in getCommand(event)
+        or "эдэм" in getCommand(event)
+        or "акад" in getCommand(event)
+        or "акед" in getCommand(event)
+        or "акэд" in getCommand(event)
+    ) and (
+        "edit" in getCommand(event)
+        or "publ" in getCommand(event)
+        or "эдит" in getCommand(event)
+        or "едит" in getCommand(event)
+        or "публ" in getCommand(event)
+        or "пабл" in getCommand(event)
+        or "побл" in getCommand(event)
+    )
 
 
-educationalPublications = {'getResponse': getResponse, 'isTriggered': isTriggered}
+educationalPublications = {"getResponse": getResponse, "isTriggered": isTriggered}

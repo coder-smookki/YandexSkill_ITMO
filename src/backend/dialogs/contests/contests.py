@@ -5,13 +5,12 @@ from utils.globalStorage import globalStorage
 
 
 def getResponse(event, allDialogs=None):
-    config = getConfig()
+    config = getConfig(event)
 
     return createResponse(event, config)
 
 
 def isTriggered(event):
-    token = {"контесты", "контест", "контестс"}
     return (
         "контест" in getCommand(event)
         or "контэст" in getCommand(event)

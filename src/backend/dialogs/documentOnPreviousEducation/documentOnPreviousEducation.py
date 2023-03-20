@@ -9,8 +9,24 @@ def getResponse(event, allDialogs=None):
 
 
 def isTriggered(event):
-    token = {"как", "подать", "заявку", "на", "получение", "справки", "документа", "о", "предыдущем", "образовании", "previous", "education", "document"}
-    return isSimilarTokens(event, token) and isInContext(event, 'studentOffice')
+    return (
+        (
+            "пред" in getCommand(event)
+            or "prev" in getCommand(event)
+            or "прев" in getCommand(event)
+            or "прив" in getCommand(event)
+            or "паст" in getCommand(event)
+        )
+        and (
+            "образ" in getCommand(event)
+            or "обуч" in getCommand(event)
+            or "lear" in getCommand(event)
+            or "educ" in getCommand(event)
+            or "едук" in getCommand(event)
+            or "эдук" in getCommand(event)
+            or "идук" in getCommand(event)
+        )
+    )
 
 
-documentOnPreviousEducation = {'getResponse': getResponse, 'isTriggered': isTriggered}
+documentOnPreviousEducation = {"getResponse": getResponse, "isTriggered": isTriggered}
