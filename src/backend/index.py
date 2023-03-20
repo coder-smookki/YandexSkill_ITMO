@@ -26,9 +26,10 @@ def cycleRefreshNews():
 
 
 def main(event):
-    if event['session']['skill_id'] == trueSkillId:
+    if event['session']['skill_id'] != os.environ['SKILL_ID']:
+        print('bad skill_id')
         return
-
+    print('good skill_id')
     if DIALOG_DEBUG:
         print('===========================')
     if not isNewSession(event):
@@ -56,7 +57,8 @@ def main(event):
 
 
 app = Flask(__name__)
-trueSkillId = os.environ['SKILL_ID']
+
+app.config['SKILL_ID'] = os.environ['SKILL_ID']
 
 setInGlobalStorage('app', app, saveLinks=True)
 doFuncAsAsync(cycleRefreshNews)
