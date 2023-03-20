@@ -28,7 +28,7 @@ def cycleRefreshNews():
 def main(event):
     if event['session']['skill_id'] != os.environ['SKILL_ID']:
         print('bad skill_id')
-        return
+        return 'bad skill_id'
     print('good skill_id')
     if DIALOG_DEBUG:
         print('===========================')
