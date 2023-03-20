@@ -44,7 +44,7 @@ config = {
         "buttons": [
             {
                 'title': 'Official site',
-                'url': 'https://student.itmo.ru/ru/',
+                'url': 'https://student.itmo.ru/en/',
                 'hide': False
             },
             "Repeat",
