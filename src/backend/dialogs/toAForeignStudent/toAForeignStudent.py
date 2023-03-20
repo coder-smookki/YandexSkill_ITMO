@@ -29,6 +29,7 @@ def getResponse(event, allDialogs=None):
         "магис" in getCommand(event)
         or "mast" in getCommand(event)
         or "magic" in getCommand(event)
+        or "magis" in getCommand(event)
         or "мег" in getCommand(event)
         or "мэг" in getCommand(event)
         or "mast" in getCommand(event)
