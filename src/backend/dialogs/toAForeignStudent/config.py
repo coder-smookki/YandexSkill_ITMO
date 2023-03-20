@@ -165,7 +165,6 @@ migrationDocumentsConfig = {
 
 def getMainConfig():
     return {
-        "message": mainConfig["message"],
         "tts": mainConfig["tts"],
         "buttons": mainConfig["buttons"],
         "card": mainConfig["card"],
@@ -175,7 +174,6 @@ def getMainConfig():
 
 def getBechelorConfig():
     return {
-        "message": bechelorConfig["message"],
         "tts": bechelorConfig["tts"],
         "buttons": bechelorConfig["buttons"],
         "card": bechelorConfig["card"],
@@ -185,7 +183,6 @@ def getBechelorConfig():
 
 def getMagistracyConfig():
     return {
-        "message": magistracyConfig["message"],
         "tts": magistracyConfig["tts"],
         "buttons": magistracyConfig["buttons"],
         "card": magistracyConfig["card"],
@@ -195,7 +192,6 @@ def getMagistracyConfig():
 
 def getInternationalMagistracyConfig():
     return {
-        "message": internationalMagistracyConfig["message"],
         "tts": internationalMagistracyConfig["tts"],
         "buttons": internationalMagistracyConfig["buttons"],
         "card": internationalMagistracyConfig["card"],
@@ -205,7 +201,6 @@ def getInternationalMagistracyConfig():
 
 def getAdditionalOpportsConfig():
     return {
-        "message": additionalOpportsConfig["message"],
         "tts": additionalOpportsConfig["tts"],
         "buttons": additionalOpportsConfig["buttons"],
         "card": additionalOpportsConfig["card"],
@@ -215,7 +210,6 @@ def getAdditionalOpportsConfig():
 
 def getMigrationDocumentsConfig():
     return {
-        "message": migrationDocumentsConfig["message"],
         "tts": migrationDocumentsConfig["tts"],
         "buttons": migrationDocumentsConfig["buttons"],
         "card": migrationDocumentsConfig["card"],
