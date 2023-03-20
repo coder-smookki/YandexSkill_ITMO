@@ -11,6 +11,9 @@ config = {
         "buttons": ["Повторить ещё раз", "Что ты умеешь?", "Назад", "Выйти"],
     },
     "en-US": {
+        "message": """Our skill is currently fully relevant, and is also fully operational.
+If suddenly you have errors with one or another skill block, report the error by mail to the team's general mail.
+This way you can help keep the skill fully functional!""",
         "tts": """
             Our skill is currently fully relevant, and is also fully operational. If suddenly you have errors with one or another skill block, report the error to Team Leader Ilyin Kirill. this way you can help keep the skill fully functional!
             """,
@@ -21,14 +24,6 @@ config = {
             "Back",
             "Exit",
         ],
-        "card": {
-            "type": "BigImage",
-            "image_id": "937455/40f0536e426907808499",
-            "title": "ACTUALITY",
-            "description": """
-                Our skill is currently fully relevant, and is also fully operational. If suddenly you have errors with one or another skill block, report the error to Team Leader Ilyin Kirill. this way you can help keep the skill fully functional!
-                """,
-        },
     },
 }
 
