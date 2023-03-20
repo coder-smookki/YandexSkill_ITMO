@@ -59,7 +59,6 @@ def getConfig(event):
     # lang = "ru-RU"
 
     return {
-        "message": config[lang]['message'],
         "tts": config[lang]["tts"],
         "buttons": config[lang]["buttons"],
         "session_state": session_state,
