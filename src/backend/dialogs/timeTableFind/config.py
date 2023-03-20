@@ -57,10 +57,7 @@ def getPageConfig(event, pageNum, countOnOnePage):
     pages = copy.deepcopy(getState(event, "timeTable_timetable"))
     message = ""
     tts = ""
-
-    # (1 2 3) (4 5 6) (7)
-
-    # pageNum = 2, countOneOnePage = 3
+    
     totalPages = ceil(len(pages) / countOnOnePage)
     if pageNum < 1:
         pageNum = 1
@@ -91,13 +88,8 @@ def getPageConfig(event, pageNum, countOnOnePage):
             {words[lang]["dayWeek"]}: {i['dayWeek']}.
             {words[lang]["date"]}: {i['date']}.
             {words[lang]["hours"]}: {i['hours']}.
-            {words[lang]["whatWeeks"]}: {i['whatWeeks']}.
             {words[lang]["subjectName"]}: {i['subjectName']}.
             {words[lang]["lecturerName"]}: {i['lecturerName']}.
-            {words[lang]["classroomNumber"]}: {i['classroomNumber']}.
-            {words[lang]["classroomAddress"]}: {i['classroomAddress']}.
-            {words[lang]["classFormat"]}: {i['classFormat']}.
-            ------------
             """
     # {i['classroomNavigator']}
     session_state = {
@@ -150,8 +142,6 @@ def getConfig(event, countOnOnePage):
 
     degree = re.findall(r"[а-яА-Яa-zA-Z]", origDegree)
     degree = "".join(degree)
-    print(group)
-    print(degree)
 
     timetable = parser("timetable.getGroupTimetable", [group, degree], lang)
 
