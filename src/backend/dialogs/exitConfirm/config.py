@@ -42,10 +42,35 @@ session_state = {"branch": "exitConfirm"}
 
 def getConfig(event):
     lang = getLanguage(event)
-    
     return {
-        "tts": config[lang]['tts'],
-        "buttons": config[lang]['buttons'],
-        "card": config[lang]['card'],
-        "session_state": config[lang]['session_state'],
+        "tts": config[lang]["tts"],
+        "buttons": config[lang]["buttons"],
+        "card": config[lang]["card"],
+        "session_state": config[lang]["session_state"],
     }
+
+
+def getConfirmResponse(event):
+    lang = getLanguage(event)
+    if lang == "ru-RU":
+        return {
+            "response": {
+                "text": "До скорых встреч! Были рады вас видеть в нашем навыке!",
+                "tts": "До скорых встреч! Были рады вас видеть в нашем навыке!",
+                "buttons": [],
+                "end_session": True,
+            },
+            "version": event["version"],
+            "dontUpdateBranches": True,
+        }
+    else:
+        return {
+            "response": {
+                "text": "See you soon! We were glad to see you in our skill!",
+                "tts": "See you soon! We were glad to see you in our skill!",
+                "buttons": [],
+                "end_session": True,
+            },
+            "version": event["version"],
+            "dontUpdateBranches": True,
+        }
