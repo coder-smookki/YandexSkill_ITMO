@@ -46,7 +46,7 @@ def getConfig(event):
         "tts": config[lang]["tts"],
         "buttons": config[lang]["buttons"],
         "card": config[lang]["card"],
-        "session_state": config[lang]["session_state"],
+        "session_state": config[lang][session_state],
     }
 
 
