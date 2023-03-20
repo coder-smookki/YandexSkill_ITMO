@@ -14,6 +14,7 @@ def isTriggered(event):
         or "афис" in getCommand(event)
         or "офес" in getCommand(event)
         or "афес" in getCommand(event)
+        or "office" in getCommand(event)
     ) and isInLastContext(event, "mainMenu")
 
 
