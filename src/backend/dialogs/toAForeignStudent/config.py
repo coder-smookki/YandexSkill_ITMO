@@ -35,7 +35,7 @@ mainConfig = {
         "title": "ИНОСТРАННОМУ СТУДЕНТУ",
         "description": """
         Выберите раздел, который подходит вам.
-        """
+        """,
     },
     "session_state": {"branch": "toAForeignStudent"},
 }
@@ -77,7 +77,7 @@ bechelorConfig = {
         "title": "ИНОСТРАННОМУ СТУДЕНТУ",
         "description": """
         бакалавриат
-        """
+        """,
     },
     "session_state": {"branch": "toAForeignStudent"},
 }
@@ -119,7 +119,7 @@ magistracyConfig = {
         "title": "ИНОСТРАННОМУ СТУДЕНТУ",
         "description": """
         магистратура.
-        """
+        """,
     },
     "session_state": {"branch": "toAForeignStudent"},
 }
@@ -161,7 +161,7 @@ internationalMagistracyConfig = {
         "title": "ИНОСТРАННОМУ СТУДЕНТУ",
         "description": """
         международная магистратура.
-        """
+        """,
     },
     "session_state": {"branch": "toAForeignStudent"},
 }
@@ -203,7 +203,7 @@ additionalOpportsConfig = {
         "title": "ИНОСТРАННОМУ СТУДЕНТУ",
         "description": """
         международная магистратура.
-        """
+        """,
     },
     "session_state": {"branch": "toAForeignStudent"},
 }
@@ -246,75 +246,67 @@ migrationDocumentsConfig = {
         "title": "ИНОСТРАННОМУ СТУДЕНТУ",
         "description": """
         доп. возможности для поступления.
-        """
+        """,
     },
     "session_state": {"branch": "toAForeignStudent"},
-} 
-
+}
 
 
 def getMainConfig():
-    return (
-        {
-            "message": mainConfig['message'],
-            "tts": mainConfig['tts'],
-            "buttons": mainConfig['buttons'],
-            "card": mainConfig['card'],
-            "session_state": mainConfig['session_state'],
-        },
-    )
+    return {
+        "message": mainConfig["message"],
+        "tts": mainConfig["tts"],
+        "buttons": mainConfig["buttons"],
+        "card": mainConfig["card"],
+        "session_state": mainConfig["session_state"],
+    }
+
 
 def getBechelorConfig():
-    return (
-        {
-            "message": bechelorConfig['message'],
-            "tts": bechelorConfig['tts'],
-            "buttons": bechelorConfig['buttons'],
-            "card": bechelorConfig['card'],
-            "session_state": bechelorConfig['session_state'],
-        },
-    )
+    return {
+        "message": bechelorConfig["message"],
+        "tts": bechelorConfig["tts"],
+        "buttons": bechelorConfig["buttons"],
+        "card": bechelorConfig["card"],
+        "session_state": bechelorConfig["session_state"],
+    }
+
 
 def getMagistracyConfig():
-    return (
-        {
-            "message": magistracyConfig['message'],
-            "tts": magistracyConfig['tts'],
-            "buttons": magistracyConfig['buttons'],
-            "card": magistracyConfig['card'],
-            "session_state": magistracyConfig['session_state'],
-        },
-    )
+    return {
+        "message": magistracyConfig["message"],
+        "tts": magistracyConfig["tts"],
+        "buttons": magistracyConfig["buttons"],
+        "card": magistracyConfig["card"],
+        "session_state": magistracyConfig["session_state"],
+    }
+
 
 def getInternationalMagistracyConfig():
-    return (
-        {
-            "message": internationalMagistracyConfig['message'],
-            "tts": internationalMagistracyConfig['tts'],
-            "buttons": internationalMagistracyConfig['buttons'],
-            "card": internationalMagistracyConfig['card'],
-            "session_state": internationalMagistracyConfig['session_state'],
-        },
-    )
+    return {
+        "message": internationalMagistracyConfig["message"],
+        "tts": internationalMagistracyConfig["tts"],
+        "buttons": internationalMagistracyConfig["buttons"],
+        "card": internationalMagistracyConfig["card"],
+        "session_state": internationalMagistracyConfig["session_state"],
+    }
+
 
 def getAdditionalOpportsConfig():
-    return (
-        {
-            "message": additionalOpportsConfig['message'],
-            "tts": additionalOpportsConfig['tts'],
-            "buttons": additionalOpportsConfig['buttons'],
-            "card": additionalOpportsConfig['card'],
-            "session_state": additionalOpportsConfig['session_state'],
-        },
-    )
+    return {
+        "message": additionalOpportsConfig["message"],
+        "tts": additionalOpportsConfig["tts"],
+        "buttons": additionalOpportsConfig["buttons"],
+        "card": additionalOpportsConfig["card"],
+        "session_state": additionalOpportsConfig["session_state"],
+    }
+
 
 def getMigrationDocumentsConfig():
-    return (
-        {
-            "message": migrationDocumentsConfig['message'],
-            "tts": migrationDocumentsConfig['tts'],
-            "buttons": migrationDocumentsConfig['buttons'],
-            "card": migrationDocumentsConfig['card'],
-            "session_state": migrationDocumentsConfig['session_state'],
-        },
-    )
+    return {
+        "message": migrationDocumentsConfig["message"],
+        "tts": migrationDocumentsConfig["tts"],
+        "buttons": migrationDocumentsConfig["buttons"],
+        "card": migrationDocumentsConfig["card"],
+        "session_state": migrationDocumentsConfig["session_state"],
+    }
