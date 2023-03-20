@@ -10,6 +10,7 @@ additionalOpportsConfig = getAdditionalOpportsConfig()
 migrationDocumentsConfig = getMigrationDocumentsConfig()
 
 def getResponse(event, allDialogs=None):
+    print(mainConfig)
     if not isInLastContext(event, 'toAForeignStudent'):
         return createResponse(event, mainConfig)
     
