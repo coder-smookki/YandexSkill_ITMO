@@ -2,14 +2,17 @@ import copy
 from utils.globalStorage import *
 from utils.asyncHelper import doFuncAsAsync
 from utils.triggerHelper import *
-
+from utils.languageTransliter import replaceNumbersWithWords
 
 def createResponse(event, originalConfig):
     config = copy.deepcopy(originalConfig)
+
+    lang = getLanguage(event)
+
     returnResponse = {
         "response": {
             "text": config["message"] if "message" in config else "",
-            "tts": config["tts"],
+            "tts": replaceNumbersWithWords(config["tts"]) if lang == 'ru-RU' else config["tts"],
             "card": config["card"] if "card" in config else None,
             "buttons": createButtons(config["buttons"]),
             "end_session": config["end_session"] if "end_session" in config else False,

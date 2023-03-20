@@ -1,3 +1,7 @@
+import re
+from num2words import num2words
+
+
 # a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z,.
 dic = {
     'эй': 'a',
@@ -133,3 +137,14 @@ def rusLetterToEng(string):
     if string in dic:
         return dic[string.lower()]
     return string
+
+def replaceNumbersWithWords(text):
+    # find all numbers in the text using regular expressions
+    numbers = re.findall(r'\d+', text)
+    
+    # replace each number with its word equivalent
+    for number in numbers:
+        word = num2words(int(number))
+        text = text.replace(number, word)
+    
+    return text
