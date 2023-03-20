@@ -21,7 +21,7 @@ from .help.help import help
 from .randomFact.randomFact import randomFact
 from .timeTable.timeTable import timeTable
 from .timeTableFind.timeTableFind import timeTableFind
-from .toAForeignStudent.toAForeignStudent import toAForeignStudent
+# from .toAForeignStudent.toAForeignStudent import toAForeignStudent
 from .educationalPublicationsFind.educationalPublicationsFind import educationalPublicationsFind
 from .scholarships.scholarships import scholarships
 from .chessGame.chessGame import chessGame
@@ -61,7 +61,7 @@ allDialogs = {
     'randomFact': randomFact,
     'timeTable': timeTable,
     'timeTableFind': timeTableFind,
-    'toAForeignStudent': toAForeignStudent,
+    # 'toAForeignStudent': toAForeignStudent,
     'educationalPublicationsFind': educationalPublicationsFind,
     'scholarships': scholarships,
     'start_quiz': start_quiz,
