@@ -5,6 +5,7 @@ from utils.branchHandler import getDialogResponseFromEnd
 
 
 def getResponse(event, allDialogs=None):
+
     if not isInLastContext(event, "toAForeignStudent"):
         return createResponse(event, getMainConfig(event))
 
@@ -16,10 +17,10 @@ def getResponse(event, allDialogs=None):
         or "банч" in getCommand(event)
         or "бэч" in getCommand(event)
         or "бач" in getCommand(event)
-    ):
+    ) or isInLastContext(event, 'toAForeignStudentBech'):
         return createResponse(event, getBechelorConfig(event))
 
-    if (
+    if ((
         "между" in getCommand(event)
         or "народ" in getCommand(event)
         or "inter" in getCommand(event)
@@ -35,7 +36,7 @@ def getResponse(event, allDialogs=None):
         or "mast" in getCommand(event)
         or "маст" in getCommand(event)
         or "маг" in getCommand(event)
-    ):
+    )) or isInLastContext(event, 'toAForeignStudentIntMag'):
         return createResponse(event, getInternationalMagistracyConfig(event))
 
     if (
@@ -47,7 +48,7 @@ def getResponse(event, allDialogs=None):
         or "мег" in getCommand(event)
         or "мэг" in getCommand(event)
         or "маг" in getCommand(event)
-    ):
+    ) or isInLastContext(event, 'toAForeignStudentMag'):
         return createResponse(event, getMagistracyConfig(event))
 
     if (
@@ -56,7 +57,7 @@ def getResponse(event, allDialogs=None):
         or "дакум" in getCommand(event)
         or "декум" in getCommand(event)
         or "дэкум" in getCommand(event)
-    ):
+    ) or isInLastContext(event, 'toAForeignStudentMigrDocs'):
         return createResponse(event, getMigrationDocumentsConfig(event))
 
     if (
@@ -64,7 +65,7 @@ def getResponse(event, allDialogs=None):
         or "доп" in getCommand(event)
         or "ад" in getCommand(event)
         or "add" in getCommand(event)
-    ):
+    ) or isInLastContext(event, 'toAForeignStudentAddOprts'):
         return createResponse(event, getAdditionalOpportsConfig(event))
 
     return createResponse(event, getMainConfig(event))
