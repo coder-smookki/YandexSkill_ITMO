@@ -35,6 +35,7 @@ def isTriggered(event):
         or "публ" in getCommand(event)
         or "пабл" in getCommand(event)
         or "побл" in getCommand(event)
+        or "издан" in getCommand(event)
     )
 
 
