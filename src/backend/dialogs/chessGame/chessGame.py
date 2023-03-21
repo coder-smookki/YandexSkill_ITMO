@@ -8,7 +8,7 @@ def getResponse(event, allDialogs):
     # def getReponseFunc(event, allDialogs):
     #     getState(event, 'orientation')
     #     return createResponse(event, event_move(event))
-
+    print(event)
     if config := handler_not_a_move(event):
         return createResponse(event, config)
     try:
