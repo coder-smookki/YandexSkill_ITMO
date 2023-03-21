@@ -15,7 +15,8 @@ def getResponse(event, allDialogs):
         getState(event, 'orientation')
         return createResponse(event, event_move(event))
         # return createTimeoutResponse(event, allDialogs, getReponseFunc, 'chessGameTimeout')
-    except KeyError:
+    except KeyError as e:
+        print(e)
         return createResponse(event, event_color(event))
 
 
