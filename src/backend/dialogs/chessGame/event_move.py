@@ -172,7 +172,7 @@ def event_move(event):
     else:
         message = game[lang]["skill_do_move"](stockfish_move,
                                               game[lang]['check'] if data['check'] else '',
-                                              random.choice(your_turn["lang"]))
+                                              random.choice(your_turn[lang]))
         session_states["prev_moves"] = data["prev_moves"]
 
     tts = message
