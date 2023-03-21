@@ -113,7 +113,8 @@ game = {
             "black": "Игра закончилась победой чёрных!",
             "draw": "Игра закончилась в ничью..."
         },
-        "skill_do_move": 'Я сходил на "{}" {}, теперь ваш ход.'.format
+        "skill_do_move": 'Я сходил на "{}" {}, {}.'.format,
+        "check": "тебе шах!"
     },
     "en-US": {
         "error": "An error occurred - {}, try again."
@@ -133,8 +134,30 @@ game = {
             "black": "The game ended with Black winning!",
             "draw": "The game ended in a draw..."
         },
-        "skill_do_move": 'I made a move on "{}" {}, now its your turn.'.format
+        "skill_do_move": 'I made a move on "{}" {}, {}}.'.format,
+        "check": "check!"
+
     }
+}
+
+
+your_turn = {
+    "ru-RU":
+        ['твой ход',
+         'твоя очередь',
+         'теперь твой ход',
+         'теперь твоя очередь',
+         'теперь ходи ты',
+         'давай, ходи',
+         'я жду твой хода'],
+    "en-US":
+        ['your move',
+         'your turn',
+         'now its your turn',
+         'now its your move',
+         'les go, move',
+         'come on, les go',
+         'im waiting for your move'],
 }
 
 

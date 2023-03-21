@@ -1,7 +1,8 @@
+import random
 from typing import Any
 from itertools import product
 import requests
-from .config import game, messages
+from .config import game, messages, your_turn
 from utils.responseHelper import getState, getLanguage
 
 from .db import get_board_id
@@ -169,7 +170,9 @@ def event_move(event):
         del session_states["prev_moves"]
         del session_states["orientation"]
     else:
-        message = game[lang]["skill_do_move"](stockfish_move, 'тебе шах' if data['check'] else '')
+        message = game[lang]["skill_do_move"](stockfish_move,
+                                              game[lang]['check'] if data['check'] else '',
+                                              random.choice(your_turn["lang"]))
         session_states["prev_moves"] = data["prev_moves"]
 
     tts = message
