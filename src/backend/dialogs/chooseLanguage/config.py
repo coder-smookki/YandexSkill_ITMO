@@ -25,7 +25,7 @@ buttons = [
 
 card = {
     'type': 'BigImage',
-    'image_id': '1533899/e3380fce2ac794126e7c',
+    'image_id': '1540737/e54d76e58a6f6c0a6a96',
     'title': 'СМЕНИТЬ ЯЗЫК (CHANGE THE LANGUAGE)',
     'description': \
         """

@@ -26,7 +26,6 @@ ru_choose_color_buttons = [
 ]
 
 ru_buttons = [
-    'Что-то',
     "Правила",
     "Назад",
     "Выйти",
@@ -55,17 +54,16 @@ eng_choose_color_buttons = [
     'White',
     'Black',
     "Rules",
-    "Назад",
-    "Выйти",
-    "Помощь",
+    "Help",
+    "Back",
+    "Exit",
 ]
 
 eng_buttons = [
-    'Something',
     "Rules",
-    "Назад",
-    "Выйти",
-    "Помощь",
+    "Help",
+    "Back",
+    "Exit",
 ]
 
 messages = {
