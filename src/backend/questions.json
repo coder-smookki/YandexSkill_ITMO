@@ -13,7 +13,8 @@
       "Сколько возможных значений у переменной типа bool?",
       "Третий месяц летних каникул",
       "Является ли 25 точным квадратом?",
-      "Для чего чаще всего используется Python?"
+      "Для чего чаще всего используется Python?",
+      "Что такое класс?"
     ],
     "answers": [
       "100 рублей",
@@ -28,7 +29,8 @@
       "два",
       "август",
       "да",
-      "машинное обучение"
+      "машинное обучение",
+      "это тип данных, определяемый пользователем"
     ],
     "uncorrect_answers": [
       [
@@ -95,6 +97,11 @@
         "создание игр",
         "верстка сайтов",
         "не для чего не используется"
+      ],
+      [
+        "это описание набора инструкций",
+        "это экземпляр класса",
+        "базовый тип данных"
       ]
     ]
   },
@@ -112,7 +119,8 @@
       "How many possible values does a bool variable have?",
       "Third month of summer vacation",
       "Is 25 an exact square?",
-      "What is Python most commonly used for?"
+      "What is Python most commonly used for?",
+      "What is a class?"
     ],
     "answers": [
       "100 rubles",
@@ -127,7 +135,8 @@
       "two",
       "august",
       "yes",
-      "machine learning"
+      "machine learning",
+      "this is a user-defined data type"
     ],
     "uncorrect_answers": [
       [
@@ -194,6 +203,11 @@
         "creating games",
         "site layout",
         "not used for anything"
+      ],
+      [
+        "this is a description of the instruction set",
+        "this is an instance of a class",
+        "base data type"
       ]
     ]
   }
