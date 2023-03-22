@@ -42,6 +42,7 @@ from .OfficeConsultation.OfficeConsultation import OfficeConsultation
 from .officeOtherFeatures.officeOtherFeatures import officeOtherFeatures
 from .repeat.repeat import repeat
 from .whatYouCan.whatYouCan import whatYouCan
+from .learnMoreAboutTheSkill import learnMoreAboutTheSkill
 
 allDialogs = {
     "exitConfirm": exitConfirm,
@@ -57,6 +58,7 @@ allDialogs = {
     "whoIsCreator": whoIsCreator,
     "howToConnectWithDevelopers": howToConnectWithDevelopers,
     "howToCheckRelevance": howToCheckRelevance,
+    "learnMoreAboutTheSkill": learnMoreAboutTheSkill,
     "documentOnPreviousEducation": documentOnPreviousEducation,
     "UniversityWideMagistracyModules": universityWideMagistracyModules,
     "UniversityWideUndergraduateModules": universityWideUndergraduateModules,
