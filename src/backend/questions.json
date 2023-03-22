@@ -7,7 +7,13 @@
       "Чему равна одна двенадцатая часть часа?",
       "Что это за Теорема? C в квадрате равно A в квадрате плюс B в квадрате",
       "Чем отличаются противоположные числа?",
-      "Если функция нечётная, то её график?"
+      "Если функция нечётная, то её график?",
+      "Для чего нужен оператор break",
+      "Выберите правильную запись оператора присваивания",
+      "Сколько возможных значений у переменной типа bool?",
+      "Третий месяц летних каникул",
+      "Является ли 25 точным квадратом?",
+      "Для чего чаще всего используется Python?"
     ],
     "answers": [
       "100 рублей",
@@ -16,7 +22,13 @@
       "5 минут",
       "теорема Пифагора",
       "знаком",
-      "симметричен относительно начала координат"
+      "симметричен относительно начала координат",
+      "остановить цикл",
+      "=",
+      "два",
+      "август",
+      "да",
+      "машинное обучение"
     ],
     "uncorrect_answers": [
       [
@@ -53,6 +65,36 @@
         "симметричен относительно оси x",
         "симметричен относительно оси y",
         "не симметричен относительно начала координат"
+      ],
+      [
+        "пропустить итерацию цикла",
+        "остановить программу",
+        "выбросить исключение"
+      ],
+      [
+        "==",
+        "!=",
+        "->"
+      ],
+      [
+        "один",
+        "восемь",
+        "бесконечное множество"
+      ],
+      [
+        "сентябрь",
+        "июнь",
+        "май"
+      ],
+      [
+        "нет",
+        "что?",
+        "пять"
+      ],
+      [
+        "создание игр",
+        "верстка сайтов",
+        "не для чего не используется"
       ]
     ]
   },
@@ -64,7 +106,13 @@
       "What is 1/12 of an hour?",
       "What is this Theorem? C squared equals A squared plus B squared",
       "What is the difference between opposite numbers?",
-      "If a function is odd, then its graph?"
+      "If a function is odd, then its graph?",
+      "What is the break statement for",
+      "Choose the correct assignment operator notation",
+      "How many possible values does a bool variable have?",
+      "Third month of summer vacation",
+      "Is 25 an exact square?",
+      "What is Python most commonly used for?"
     ],
     "answers": [
       "100 rubles",
@@ -73,7 +121,13 @@
       "5 minutes",
       "Pythagorean theorem",
       "sign",
-      "symmetric about the origin"
+      "symmetric about the origin",
+      "stop loop",
+      "=",
+      "two",
+      "august",
+      "yes",
+      "machine learning"
     ],
     "uncorrect_answers": [
       [
@@ -110,6 +164,36 @@
         "symmetrical about the x-axis",
         "symmetrical about the y-axis",
         "not symmetrical about the origin"
+      ],
+      [
+        "skip loop iteration",
+        "stop the program",
+        "throw an exception"
+      ],
+      [
+        "==",
+        "!=",
+        "->"
+      ],
+      [
+        "one",
+        "eight",
+        "infinite set"
+      ],
+      [
+        "september",
+        "june",
+        "may"
+      ],
+      [
+        "no",
+        "what?",
+        "five"
+      ],
+      [
+        "creating games",
+        "site layout",
+        "not used for anything"
       ]
     ]
   }
