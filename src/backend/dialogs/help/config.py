@@ -15,7 +15,7 @@ config = {
             "Кто создатели навыка?",
             "Как связаться с разработчиками?",
             "Как узнать актуальность навыка на данный момент?",
-            "Подробнее о навыке"
+            "Подробнее о навыке",
             "Повторить ещё раз",
             "Что ты умеешь?",
             "Назад",
@@ -49,7 +49,7 @@ config = {
             "Who are the creators of the skill?",
             "How to contact the developers?",
             "How to find out the relevance of a skill at the moment?",
-            "Learn more about the skill"
+            "Learn more about the skill",
             "Repeat",
             "What can you do?",
             "Back",
