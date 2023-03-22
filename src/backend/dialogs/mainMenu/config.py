@@ -5,20 +5,22 @@ config = {
     "ru-RU": {
         "tts":
             """
+            Привет! Это навык - ИТМО помощник. 
+            Вы всегда сможете использовать функции: "Помощь", "Повторить ещё раз", "Что ты умеешь", "Выйти".
             Выберите нужную категорию, которая поможет вам.
-            Новости,
-            Студенческий офис,
-            Первокурсникам,
-            Расписание занятий,
-            Общеуниверситетские модули в бакалавриате,
-            Общеуниверситетские модули в магистратуре,
-            Иностранному студенту,
-            Библиотека,
-            Учебные и методические издания,
-            Стипендии,
-            Шахматы,
-            Викторина,
-            Случайный факт,
+            Новости.
+            Студенческий офис.
+            Первокурсникам.
+            Расписание занятий.
+            Общеуниверситетские модули в бакалавриате.
+            Общеуниверситетские модули в магистратуре.
+            Иностранному студенту.
+            Библиотека.
+            Учебные и методические издания.
+            Стипендии.
+            Шахматы.
+            Викторина.
+            Случайный факт.
             """,
         "buttons": [
             "Новости",
@@ -54,25 +56,27 @@ config = {
     "en-US": {
         "tts":
             """
+            Hi! This is an ITMO assistant skill. 
+            You can always use the functions: "Help", "Repeat again", "What can you do", "Exit".
             Choose the right category to help you.
-            News,
-            student office,
-            Freshmen
-            Timetable of classes,
-            University-wide undergraduate modules,
-            University-wide modules in the magistracy,
-            foreign student,
-            Library,
-            Educational and methodical publications,
-            scholarships,
-            Chess,
-            Quiz,
-            random fact,
+            News.
+            student office.
+            Freshmen.
+            Timetable of classes.
+            University-wide undergraduate modules.
+            University-wide modules in the magistracy.
+            foreign student.
+            Library.
+            Educational and methodical publications.
+            scholarships.
+            Chess.
+            Quiz.
+            random fact.
             """,
         "buttons": [
             "News",
             "Student Office",
-            "For freshmens",
+            "For freshmen",
             "Timetable of classes",
             "University-wide modules in undergraduate studies",
             "University-wide modules in the magistracy",

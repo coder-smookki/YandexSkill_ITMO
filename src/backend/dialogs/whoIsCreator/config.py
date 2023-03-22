@@ -10,10 +10,11 @@ config = {
 Кутников Родион (Дизайнер UI|UX).
         """,
         "tts": """ 
-        Создатели навыка: Ильин Кирилл, исполняет роль Тим Лидера. 
+        Создатели навыка: 
+        Ильин Кирилл, исполняет роль Тим Лидера. 
         Плюснин Александр, исполняет роль Главного Разработчика навыка и его основы. 
-        Караваев Иван, исполняет роль Разработчика. Лесовой Кирилл, 
-        исполняет роль Тестировщика навыка и Разработчика по алгоритмизации игр. 
+        Караваев Иван, исполняет роль Разработчика. 
+        Лесовой Кирилл, исполняет роль Тестировщика навыка и Разработчика по алгоритмизации игр. 
         Кутников Родион, исполняет роль Главного Дизайнера в проекте, в том числе UI и UX.
         """,
         "buttons": ["Повторить ещё раз", "Что ты умеешь?", "Помощь", "Назад", "Выйти"],
@@ -27,7 +28,8 @@ Lesovoy Kirill (Tester).
 Kutnikov Rodion (UI|UX Designer).
         """,
         "tts": """
-        Skill creators: Ilyin Kirill, plays the role of Team Leader.
+        Skill creators: 
+        Ilyin Kirill, plays the role of Team Leader.
         Plyusnin Alexander, plays the role of the Chief Developer of the skill and its basis.
         Karavaev Ivan, plays the role of Developer. Lesovoy Kirill,
         Acts as Skill Tester and Game Algorithm Developer.
