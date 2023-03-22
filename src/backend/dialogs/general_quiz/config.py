@@ -51,7 +51,7 @@ def getConfig(event):
 
     return {
         'message': message,
-        'tts': message,
+        'tts': tts,
         'buttons': buttons_response,
         'session_state': states
     }
