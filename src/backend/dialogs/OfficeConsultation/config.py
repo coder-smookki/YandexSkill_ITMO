@@ -13,7 +13,7 @@ config = {
             "title": "КАК ПОПАСТЬ НА КОНСУЛЬТАЦИЮ В СТУДЕНЧЕСКИЙ ОФИС?",
             "description":
                 """
-                Приходите к нам в офис, расположенный по адресу ул. Ломоносова, д.9. Менеджеры примут вас в порядке живой очереди. Также вы можете записаться на консультацию через приложение «Электронная очередь» в личном кабинете ИСУ.
+Приходите к нам в офис, расположенный по адресу ул. Ломоносова, д.9. Менеджеры примут вас в порядке живой очереди. Также вы можете записаться на консультацию через приложение «Электронная очередь» в личном кабинете ИСУ.
                 """,
         },
     },
@@ -35,7 +35,7 @@ config = {
             "title": "HOW TO GET THE CONSULTATION IN THE STUDENT OFFICE?",
             "description":
                 """
-                Come to our office located in St. Petersburg at st. Lomonosov, d.9. Managers will receive you on a first-come, first-served basis. You can also sign up for a consultation through the Electronic Queue application in your UIS personal account.
+Come to our office located in St. Petersburg at st. Lomonosov, d.9. Managers will receive you on a first-come, first-served basis. You can also sign up for a consultation through the Electronic Queue application in your UIS personal account.
                 """,
         },
     },

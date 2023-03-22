@@ -33,7 +33,7 @@ config = {
             "title": "PREVIOUS EDUCATION DOCUMENT",
             "description":
                 """
-                You need to go to the ISU portal, and then everything is simple! Submit an application through the form offered by the system.
+You need to go to the ISU portal, and then everything is simple! Submit an application through the form offered by the system.
                 """,
         },
     },

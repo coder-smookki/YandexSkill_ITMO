@@ -49,7 +49,7 @@ config = {
             "title": "КАТАЛОГ",
             "description":
                 """
-                Выберите нужную категорию, которая поможет вам.
+Выберите нужную категорию, которая поможет вам.
                 """,
         },
     },
@@ -100,7 +100,7 @@ config = {
             "title": "CATALOG",
             "description":
                 """
-                Choose the right category to help you.
+Choose the right category to help you.
                 """,
         },
     },

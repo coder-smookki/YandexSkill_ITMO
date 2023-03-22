@@ -30,7 +30,7 @@ config = {
             "image_id": "213044/70ec763b4e6221c9bf9a",
             "title": "ОБЩЕУНИВЕРСИТЕТСКИЕ МОДУЛИ В МАГИСТРАТУРЕ",
             "description": """
-            Чтобы узнать подробнее, нажмите на кнопку ниже
+Чтобы узнать подробнее, нажмите на кнопку ниже
             """,
         },
     },
@@ -63,7 +63,7 @@ config = {
             "image_id": "213044/70ec763b4e6221c9bf9a",
             "title": "GENERAL UNIVERSITY MODULES IN MASTER STUDIES",
             "description": """
-            To find out more, click on the button below
+To find out more, click on the button below
             """,
         },
     },

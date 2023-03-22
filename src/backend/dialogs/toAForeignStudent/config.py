@@ -193,7 +193,7 @@ internationalMagistracyConfig = {
             "image_id": "1030494/e955cc538c12dfb9bd3a",
             "title": "ИНОСТРАННОМУ СТУДЕНТУ (МЕЖДУНАРОДНАЯ МАГИСТРАТУРА)",
             "description": """
-                Развивайте карьеру, знакомьтесь с другими культурами и стройте своё будущее!
+Развивайте карьеру, знакомьтесь с другими культурами и стройте своё будущее!
                 """,
         },
         "session_state": {"branch": "toAForeignStudentIntMag"},
@@ -218,7 +218,7 @@ internationalMagistracyConfig = {
             "image_id": "1030494/e955cc538c12dfb9bd3a",
             "title": "FOR A FOREIGN STUDENT (INTERNATIONAL MASTER)",
             "description": """
-                Develop your career, meet other cultures and build your future!
+Develop your career, meet other cultures and build your future!
                 """,
         },
         "session_state": {"branch": "toAForeignStudentIntMag"},

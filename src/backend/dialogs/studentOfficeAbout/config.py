@@ -14,7 +14,7 @@ config = {
             "title": "ЧТО ТАКОЕ СТУДЕНЧЕСКИЙ ОФИС?",
             "description":
                 """
-                Студенческий офис – это компас студента в мире сложных и непонятных вопросов.
+Студенческий офис – это компас студента в мире сложных и непонятных вопросов.
                 """,
         },
     },
@@ -37,7 +37,7 @@ config = {
             "title": "WHAT IS THE STUDENT OFFICE?",
             "description":
                 """
-                The student office is the student's compass in the world of complex and incomprehensible issues.
+The student office is the student's compass in the world of complex and incomprehensible issues.
                 """,
         },
     },

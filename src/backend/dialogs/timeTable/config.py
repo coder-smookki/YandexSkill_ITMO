@@ -4,38 +4,38 @@ words = {
     "ru-RU": {
         "askGroupMessage":
             """
-            Напишите вашу группу (например, А1234)
+Напишите вашу группу (например, А1234)
             """,
         "askGroupTts":
             """
-            Продиктуйте вашу группу. Например. А. один, два, три, четыре. Или же. А. тысяча, двести, тридцать, четыре.
+Продиктуйте вашу группу. Например. А. один, два, три, четыре. Или же. А. тысяча, двести, тридцать, четыре.
             """,
         "askDegreeMessage":
             """
-            Напишите ваш вид образования (бакалавриат, магистратура, специалитет)
+Напишите ваш вид образования (бакалавриат, магистратура, специалитет)
             """,
         "askDegreeTts":
             """
-            Скажите ваш вид образования. Бакалавриат, магистратура, специалитет.
+Скажите ваш вид образования. Бакалавриат, магистратура, специалитет.
             """,
         "buttons": ["Что ты умеешь?", "Помощь", "Назад", "Выйти"],
     },
     "en-US": {
         "askGroupMessage":
             """
-            Write your group (eg A1234)
+Write your group (eg A1234)
             """,
         "askGroupTts":
             """
-            Dictate your group. For example. A. one, two, three, four. Or. A. one thousand, two hundred, thirty, four.
+Dictate your group. For example. A. one, two, three, four. Or. A. one thousand, two hundred, thirty, four.
             """,
         "askDegreeMessage":
             """
-            Write your type of education (Bachelor's, Master's, Specialist)
+Write your type of education (Bachelor's, Master's, Specialist)
             """,
         "askDegreeTts":
             """
-            Tell me your type of education. Bachelor's, Master's, Specialist.
+Tell me your type of education. Bachelor's, Master's, Specialist.
             """,
         "buttons": [
             "What can you do?",

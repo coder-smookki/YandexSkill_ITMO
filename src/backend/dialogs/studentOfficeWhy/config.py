@@ -26,9 +26,9 @@ config = {
             'title': 'ЗАЧЕМ МНЕ ОБРАЩАТЬСЯ В СТУДЕНЧЕСКИЙ ОФИС?',
             'description':
                 """
-                Через студенческий офис вы можете: Получить любую справку. Продлить или заменить студенческий билет. Заменить паспортные данные.
-                Продлить сессию по уважительной причине. Подать заявление на академический отпуск, перевод, восстановление, отчисление.
-                Временно получить свой документ об образовании. Аттестат или диплом.
+Через студенческий офис вы можете: Получить любую справку. Продлить или заменить студенческий билет. Заменить паспортные данные.
+Продлить сессию по уважительной причине. Подать заявление на академический отпуск, перевод, восстановление, отчисление.
+Временно получить свой документ об образовании. Аттестат или диплом.
                 """
         }
     },
@@ -58,9 +58,9 @@ config = {
              'title': 'WHY SHOULD I GO TO THE STUDENT OFFICE?',
              'description':
                  """
-                 Through the student office you can: Get any certificate. Renew or replace student card. Replace passport data.
-                 Extend the session for a good reason. Apply for academic leave, transfer, restoration, expulsion.
-                 Temporarily receive your document on education. Certificate or diploma.
+Through the student office you can: Get any certificate. Renew or replace student card. Replace passport data.
+Extend the session for a good reason. Apply for academic leave, transfer, restoration, expulsion.
+Temporarily receive your document on education. Certificate or diploma.
                  """
         }
     }

@@ -37,7 +37,7 @@ config = {
             "title": "СТИПЕНДИИ",
             "description":
                 """
-                Есть вопросы? Задайте их Стипендиальной комиссии! Почта - ursi@itmo.ru
+Есть вопросы? Задайте их Стипендиальной комиссии! Почта - ursi@itmo.ru
                 """,
         },
     },
@@ -77,7 +77,7 @@ config = {
             "title": "SCHOLARSHIPS",
             "description":
                 """
-                Have questions? Ask them to the Scholarship Commission! Email - ursi@itmo.ru
+Have questions? Ask them to the Scholarship Commission! Email - ursi@itmo.ru
                 """,
         },
     },

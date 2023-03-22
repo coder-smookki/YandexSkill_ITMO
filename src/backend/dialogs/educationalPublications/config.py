@@ -13,7 +13,7 @@ config = {
             "title": "УЧЕБНЫЕ ИЗДАНИЯ",
             "description":
                 """
-                Скажите или напишите издание, которое вы хотите найти.
+Скажите или напишите издание, которое вы хотите найти.
                 """,
         },
     },
@@ -35,7 +35,7 @@ config = {
             "title": "EDUCATIONAL PUBLICATIONS",
             "description":
                 """
-                Say or write the edition you want to find.
+Say or write the edition you want to find.
                 """,
         },
     },

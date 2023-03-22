@@ -28,7 +28,7 @@ config = {
             'title': 'ПЕРВОКУРСНИКАМ',
             'description': \
                 """
-                Все вопросы, возникающие во время обучения, можно решить если перейти по ссылке.
+Все вопросы, возникающие во время обучения, можно решить если перейти по ссылке.
                 """
         }
     },
@@ -60,7 +60,7 @@ config = {
             'title': 'FRESHENERS',
             'description': \
                 """
-                All questions that arise during the training can be solved by clicking on the link.
+All questions that arise during the training can be solved by clicking on the link.
                 """
         }
     }

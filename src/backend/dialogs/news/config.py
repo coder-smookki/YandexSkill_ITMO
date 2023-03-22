@@ -14,7 +14,7 @@ words = {
             "title": "НОВОСТИ",
             "description":
                 """
-                Выберите раздел новостей: Анонсы или Контесты.
+Выберите раздел новостей: Анонсы или Контесты.
                 """,
         },
     },
@@ -39,7 +39,7 @@ words = {
             "title": "NEWS",
             "description":
                 """
-                Select the news section: Announcements or Contests.
+Select the news section: Announcements or Contests.
                 """,
         },
     },

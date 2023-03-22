@@ -13,7 +13,7 @@ config = {
             "title": "ДРУГИЕ ВОЗМОЖНОСТИ",
             "description":
                 """
-                Конечно! Помимо перечисленных вопросов, вы можете получить информацию о: оплате обучения, учебном процессе, получении места в общежитии/переселении. И др.
+Конечно! Помимо перечисленных вопросов, вы можете получить информацию о: оплате обучения, учебном процессе, получении места в общежитии/переселении. И др.
                 """,
         },
     },
@@ -35,7 +35,7 @@ config = {
             "title": "Other Features",
             "description":
                 """
-                Certainly! In addition to the questions listed above, you can get information about: tuition fees, the educational process, getting a place in a hostel or relocation. And others.
+Certainly! In addition to the questions listed above, you can get information about: tuition fees, the educational process, getting a place in a hostel or relocation. And others.
                 """,
         },
     },

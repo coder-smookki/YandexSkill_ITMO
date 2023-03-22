@@ -43,7 +43,7 @@ config = {
             "title": "LIBRARY",
             "description":
                 """
-                Register a campus card with a librarian or coworking administrator as a library card and enjoy all the opportunities!
+Register a campus card with a librarian or coworking administrator as a library card and enjoy all the opportunities!
                 """,
         },
     },

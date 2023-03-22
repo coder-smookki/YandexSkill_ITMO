@@ -25,10 +25,10 @@ config = {
             "title": "ПОМОЩЬ",
             "description":
                 """
-                Выберите раздел, который вам поможет в решение вашего вопроса.
-                Кто создатели навыка?
-                Как связаться с разработчиками?
-                Как узнать актуальность навыка на данный момент?
+Выберите раздел, который вам поможет в решение вашего вопроса.
+Кто создатели навыка?
+Как связаться с разработчиками?
+Как узнать актуальность навыка на данный момент?
                 """,
         },
     },
@@ -57,10 +57,10 @@ config = {
             "title": "HELP",
             "description":
                 """
-                Select the section that will help you resolve your issue.
-                Who are the creators of the skill?
-                How to contact the developers?
-                How to find out the relevance of a skill at the moment?
+Select the section that will help you resolve your issue.
+Who are the creators of the skill?
+How to contact the developers?
+How to find out the relevance of a skill at the moment?
                 """,
         },
     },

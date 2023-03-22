@@ -45,7 +45,7 @@ config = {
             'title': 'СТУДЕНЧЕСКИЙ ОФИС',
             'description':
                 """
-                Контакты: Email - so@itmo.ru, Телефон - +7 (812) 607-04-74 или +7 (812) 480-90-00.
+Контакты: Email - so@itmo.ru, Телефон - +7 (812) 607-04-74 или +7 (812) 480-90-00.
                 """
         }
     },
@@ -95,7 +95,7 @@ config = {
              'title': 'STUDENT OFFICE',
              'description':
                  """
-                 Contacts: Email - so@itmo.ru, Phone - +7 (812) 607-04-74 or +7 (812) 480-90-00.
+Contacts: Email - so@itmo.ru, Phone - +7 (812) 607-04-74 or +7 (812) 480-90-00.
                  """
         }
     }

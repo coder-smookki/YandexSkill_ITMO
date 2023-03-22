@@ -25,7 +25,7 @@ config = {
             'title': 'НАЧАЛО ВИКТОРИНЫ',
             'description':
                 """
-                Вы готовы начать викторину?
+Вы готовы начать викторину?
                 """
         }
     },
@@ -54,7 +54,7 @@ config = {
              'title': 'START QUIZ',
              'description':
                  """
-                 Are you ready to start the quiz?
+Are you ready to start the quiz?
                  """
         }
     }

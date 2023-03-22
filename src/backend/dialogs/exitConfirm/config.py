@@ -35,7 +35,7 @@ config = {
             "title": "EXIT SKILL?",
             "description":
                 """
-                Are you sure you want to exit?
+Are you sure you want to exit?
                 """,
         },
     },

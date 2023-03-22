@@ -1,10 +1,6 @@
-ru_choose_color_message = ru_choose_color_tts = """
-За какой цвет будете играть? Белый или чёрный?
-"""
+ru_choose_color_message = ru_choose_color_tts = """За какой цвет будете играть? Белый или чёрный?"""
 
-ru_user_move_first_message = ru_user_move_first_tts = """
-Вы играете белыми! Называйте, откуда и куда?
-"""
+ru_user_move_first_message = ru_user_move_first_tts = """Вы играете белыми! Называйте, откуда и куда?"""
 
 ru_user_move_first_card = {
     'type': 'BigImage',
@@ -12,9 +8,7 @@ ru_user_move_first_card = {
     'title': 'Ваш ход!',
 }
 
-ru_user_move_second_message = ru_user_move_second_tts = """
-Вы играете черными! Скажите мне что-то, чтобы я сделал первый ход.
-"""
+ru_user_move_second_message = ru_user_move_second_tts = """Вы играете черными! Скажите мне что-то, чтобы я сделал первый ход."""
 
 ru_choose_color_buttons = [
     'Белый',
@@ -32,17 +26,11 @@ ru_buttons = [
     "Помощь",
 ]
 
-eng_choose_color_message = eng_choose_color_tts = """
-What color will you play for? White or black?
-"""
+eng_choose_color_message = eng_choose_color_tts = """What color will you play for? White or black?"""
 
-eng_user_move_first_message = eng_user_move_first_tts = """
-You're playing white! Tell me where from and where to?
-"""
+eng_user_move_first_message = eng_user_move_first_tts = """You're playing white! Tell me where from and where to?"""
 
-eng_user_move_second_message = eng_user_move_second_tts = """
-You're playing black! Say something so that I make the first move for white.
-"""
+eng_user_move_second_message = eng_user_move_second_tts = """You're playing black! Say something so that I make the first move for white."""
 
 eng_user_move_first_card = {
     'type': 'BigImage',
