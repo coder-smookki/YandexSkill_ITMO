@@ -11,14 +11,18 @@ def getResponse(event, allDialogs=None):
 def isTriggered(event):
     words = [
         'подробнее',
-        'detailed',
+        'learn',
+        'about',
+        'more',
         'подроб',
-        'дете',
-        'дета',
-        'детэ',
-        'дите',
-        'дита',
-        'дитэ'
+        'леарн',
+        'лерн',
+        'лирн',
+        'абаут',
+        'обаут',
+        'эбаут',
+        'море',
+        'мор'
     ]
     return isInCommandOr(event, words)
 
