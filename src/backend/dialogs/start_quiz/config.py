@@ -4,8 +4,8 @@ config = {
     "ru-RU": {
         "tts":
             """
-            Вы перешли в категорию "Начало Викторины". 
-            Вы можете начать викторину по нажатию кнопки - Начать.
+            Вы можете начать викторину сказав фразу "Начать" или нажав на кнопку.
+            Так же вы можете выйди с викторины, сказав фразу "Назад" или нажав на кнопку.
             При запуске викторины, будут запущены вопросы. На которые вы должны дать правильные ответы.
             Один правильный ответ, равняется одному баллу.
             Вы готовы к викторине?    
@@ -33,9 +33,9 @@ config = {
     "en-US": {
         "tts":
             """
-            You have moved to the "Start Quiz" category.
-            You can start the quiz by pressing the Start button.
-            When you start a quiz, questions will be launched. To which you must give the correct answers.
+            You can start the quiz by saying the phrase "Start" or by clicking on the button.
+            You can also exit the quiz by saying the phrase "Back" or by clicking on the button.
+            When you start the quiz, questions will be started. To which you must give the correct answers.
             One correct answer equals one point.
             Are you ready for the quiz?
             """,
