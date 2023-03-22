@@ -21,7 +21,7 @@ config = {
 
         "card": {
             'type': 'BigImage',
-            'image_id': '937455/40f0536e426907808499',
+            'image_id': '1521359/ffc9c8afbe8b9f6f95c9',
             'title': 'НАЧАЛО ВИКТОРИНЫ',
             'description':
                 """
@@ -50,7 +50,7 @@ config = {
 
         "card": {
             'type': 'BigImage',
-             'image_id': '937455/40f0536e426907808499',
+             'image_id': '1521359/ffc9c8afbe8b9f6f95c9',
              'title': 'START QUIZ',
              'description':
                  """

@@ -43,7 +43,7 @@ config = {
         ],
         "card": {
             "type": "BigImage",
-            "image_id": "965417/6964866b174321bd8721",
+            "image_id": "997614/e38bbfd1a2235c7229b1",
             "title": "КАТАЛОГ",
             "description":
                 """
@@ -92,7 +92,7 @@ config = {
         ],
         "card": {
             "type": "BigImage",
-            "image_id": "965417/6964866b174321bd8721",
+            "image_id": "997614/e38bbfd1a2235c7229b1",
             "title": "CATALOG",
             "description":
                 """

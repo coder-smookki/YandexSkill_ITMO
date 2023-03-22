@@ -12,7 +12,7 @@ config = {
         ],
         "card": {
             "type": "BigImage",
-            "image_id": "937455/40f0536e426907808499",
+            "image_id": "997614/ca506e7918d405f24764",
             "title": "ВЫЙТИ ИЗ НАВЫКА?",
             "description":
                 """
@@ -31,7 +31,7 @@ config = {
         ],
         "card": {
             "type": "BigImage",
-            "image_id": "937455/40f0536e426907808499",
+            "image_id": "997614/ca506e7918d405f24764",
             "title": "EXIT SKILL?",
             "description":
                 """

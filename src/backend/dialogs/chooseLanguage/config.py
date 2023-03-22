@@ -25,12 +25,12 @@ buttons = [
 
 card = {
     'type': 'BigImage',
-    'image_id': '1540737/e54d76e58a6f6c0a6a96',
+    'image_id': '1030494/e955cc538c12dfb9bd3a',
     'title': 'СМЕНИТЬ ЯЗЫК (CHANGE THE LANGUAGE)',
     'description': \
         """
-        Выберите язык - Русский или Английский.
-        Select language - Russian or English.
+        Выберите язык - Русский или Английский...
+        Select language - Russian or English...
         """
 }
 

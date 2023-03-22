@@ -42,7 +42,7 @@ config = {
         ],
         "card": {
             "type": "BigImage",
-            "image_id": "965417/877ccf979621f858aefe",
+            "image_id": "1521359/ffc9c8afbe8b9f6f95c9",
             "title": "WHAT CAN YOU DO?",
             "description": """
             With the help of the skill, you can find out the latest news from the life of the university, get information about the class schedule, learn some important aspects of the educational process.

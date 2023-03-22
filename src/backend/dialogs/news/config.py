@@ -10,7 +10,7 @@ words = {
         "buttons": ["Анонсы", "Контесты", "Что ты умеешь?", "Помощь", "Назад", "Выйти"],
         "card": {
             "type": "BigImage",
-            "image_id": "937455/40f0536e426907808499",
+            "image_id": "213044/70ec763b4e6221c9bf9a",
             "title": "НОВОСТИ",
             "description":
                 """
@@ -35,7 +35,7 @@ words = {
         ],
         "card": {
             "type": "BigImage",
-            "image_id": "937455/40f0536e426907808499",
+            "image_id": "213044/70ec763b4e6221c9bf9a",
             "title": "NEWS",
             "description":
                 """

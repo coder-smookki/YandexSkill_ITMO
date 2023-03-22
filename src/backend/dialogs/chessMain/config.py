@@ -1,6 +1,10 @@
 ru_welcome = ru_welcome_tts = \
     """
-Шахматы! Правила просты: называешь клетку откуда и клетку куда, а потом я делаю ход.
+Шахматы! Идеальная игра! Но усложняется тем, что вы играете в шахматы голосом, и без визуальной доски!
+Если вы играете на устройство с экраном, вам повезло. На картинке изображается онлайн доска по мере игры.
+Если вы играете на устройстве без экрана, например колонка. Увы, вам надо доску запоминать в голове, что усложняет игру в 2 раза!  
+        
+Правила просты: называешь клетку откуда и клетку куда, а потом я делаю ход.
 Скажи "Да" или "Играть", чтобы начать, или "Правила", чтобы прочитать правила.
 
 Важное замечание. Все операции не входят в лимит времени навыков Алисы, поэтому после сообщения о загрузке нужно подождать пару секунд и потом сказать что-угодно.
@@ -9,7 +13,7 @@ ru_welcome = ru_welcome_tts = \
 ru_rules = ru_rules_tts = \
     """
 Шахматные правила.
-1. Соблюдаются все правила шахмат.
+1. Соблюдаются все правила стандартных шахмат.
 2. Ходы надо говорить в стиле "клетка-клетка", "cNcN", где c - буква, N - номер. Например, e2e4, e-2-e-4, e2-e4 и так далее.
 3. Для рокировки надо сказать начальную и конечную клетки.
 Скажи "Да" или "Играть", чтобы начать играть.
@@ -17,10 +21,14 @@ ru_rules = ru_rules_tts = \
 
 eng_welcome = eng_welcome_tts = \
     """
-Chess! The rules are simple: you name the cell from where and the cell to where, and then I make a move.
+Chess! The perfect game! But it is complicated by the fact that you play chess with a voice, and without a visual board!
+If you're playing on a device with a screen, you're in luck. The picture shows an online board as the game progresses.
+If you are playing on a device without a screen, for example a speaker. Alas, you need to memorize the board in your head, which complicates the game by 2 times!
+
+The rules are simple: you name the cell from where and the cell to where, and then I make a move.
 Say "Yes" or "Play" to start, or "Rules" to read the rules.
 
-Important note. All operations are not included in the time limit of Alice's skills, so after the message about waiting, you need to wait a couple of seconds and then say anything.
+Important note. All operations are not included in the time limit of Alice's skills, so after the download message, you need to wait a couple of seconds and then say anything.
 """
 
 eng_rules = eng_rules_tts = \
