@@ -33,6 +33,7 @@ session_state = {
 def getConfig(event):
     lang = getLanguage(event)
     message = questions[lang]["questions"][getState(event, "questions_list")[-1]]
+    tts = message
     correct_answer = questions[lang]["answers"][getState(event, "questions_list")[-1]]
     answers = copy.deepcopy(questions[lang]["uncorrect_answers"][getState(event, "questions_list")[-1]])
     answers[random.randint(0, len(answers) - 1)] = correct_answer
@@ -42,6 +43,9 @@ def getConfig(event):
         "count_correct_response": event["state"]["session"]["count_correct_response"],
         "questions_list": event['state']['session']['questions_list']
     }
+
+    for i in buttons_response:
+        tts += i
 
     states.update(session_state)
 
