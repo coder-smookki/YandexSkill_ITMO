@@ -23,4 +23,4 @@ def isTriggered(event):
     return isInCommandOr(event, words)
 
 
-howToConnectWithDevelopers = {"getResponse": getResponse, "isTriggered": isTriggered}
+learnMoreAboutTheSkill = {"getResponse": getResponse, "isTriggered": isTriggered}
