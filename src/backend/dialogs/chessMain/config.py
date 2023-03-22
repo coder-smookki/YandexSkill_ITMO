@@ -6,8 +6,6 @@ ru_welcome = ru_welcome_tts = \
         
 Правила просты: называешь клетку откуда и клетку куда, а потом я делаю ход.
 Скажи "Да" или "Играть", чтобы начать, или "Правила", чтобы прочитать правила.
-
-Важное замечание. Все операции не входят в лимит времени навыков Алисы, поэтому после сообщения о загрузке нужно подождать пару секунд и потом сказать что-угодно.
 """
 
 ru_rules = ru_rules_tts = \
@@ -27,8 +25,6 @@ If you are playing on a device without a screen, for example a speaker. Alas, yo
 
 The rules are simple: you name the cell from where and the cell to where, and then I make a move.
 Say "Yes" or "Play" to start, or "Rules" to read the rules.
-
-Important note. All operations are not included in the time limit of Alice's skills, so after the download message, you need to wait a couple of seconds and then say anything.
 """
 
 eng_rules = eng_rules_tts = \

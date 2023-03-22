@@ -63,10 +63,10 @@ def getFinishConfig(event):
     buttonsResponse.append('меню')
     if lang == "ru-RU":
         return {
-            'message': "Ваш результат: " + str(getState(event, "count_correct_response")) + "/" + str(
-                getState(event, "count_questions") - 1),
+            'message': "🏆 Ваш результат: " + str(getState(event, "count_correct_response")) + "/" + str(
+                getState(event, "count_questions") - 1) + " 🏆",
             'tts': "Ваш результат:" + str(getState(event, "count_correct_response")) + "из" + str(
-                getState(event, "count_questions") - 1),
+                getState(event, "count_questions") - 1) + "Если ты будешь больше тренироваться в нашей викторине, то будешь больше знать!",
             'buttons': buttonsResponse,
             'session_state': {
                 "branch": "mainMenu"
