@@ -8,12 +8,14 @@ config = {
             Кто создатели навыка?
             Как связаться с разработчиками?
             Как узнать актуальность навыка на данный момент?
-            На все эти вопросы, вы можете получить ответ, если спросите у навыка интересующий вами вопрос.
+            Подробнее о навыке.
+            На все эти вопросы и уточнения, вы можете получить ответ, если спросите у навыка интересующий вами вопрос.
             """,
         "buttons": [
             "Кто создатели навыка?",
             "Как связаться с разработчиками?",
             "Как узнать актуальность навыка на данный момент?",
+            "Подробнее о навыке"
             "Повторить ещё раз",
             "Что ты умеешь?",
             "Назад",
@@ -25,29 +27,31 @@ config = {
             "title": "ПОМОЩЬ",
             "description":
                 """
-Выберите раздел, который вам поможет в решение вашего вопроса.
+Выберите раздел, который вам поможет в решение вашего вопроса или уточнения.
 Кто создатели навыка?
 Как связаться с разработчиками?
 Как узнать актуальность навыка на данный момент?
+Подробнее о навыке.
                 """,
         },
     },
     "en-US": {
         "tts":
             """
-            Select the section that will help you answer your question.
+            Choose a section that will help you in solving your question or clarification.
             Who are the creators of the skill?
             How to contact the developers?
             How to find out the relevance of a skill at the moment?
+            Learn more about the skill.
             To all these questions, you can get an answer if you ask the skill the question you are interested in.
             """,
         "buttons": [
             "Who are the creators of the skill?",
             "How to contact the developers?",
             "How to find out the relevance of a skill at the moment?",
+            "Learn more about the skill"
             "Repeat",
             "What can you do?",
-            "Help",
             "Back",
             "Exit",
         ],
@@ -57,10 +61,11 @@ config = {
             "title": "HELP",
             "description":
                 """
-Select the section that will help you resolve your issue.
+Choose a section that will help you in solving your question or clarification.
 Who are the creators of the skill?
 How to contact the developers?
 How to find out the relevance of a skill at the moment?
+Learn more about the skill.
                 """,
         },
     },
