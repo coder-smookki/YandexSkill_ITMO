@@ -43,9 +43,9 @@ def getConfig(event):
         "count_correct_response": event["state"]["session"]["count_correct_response"],
         "questions_list": event['state']['session']['questions_list']
     }
-
-    for i in buttons_response:
-        tts += i
+    tts += 'Варианты ответа: '
+    for i in answers:
+        tts += i + ', '
 
     states.update(session_state)
 
