@@ -113,7 +113,7 @@ Choose the right category to help you.
     
     if isNewSession(event):
         config["en-US"]['tts'] = 'Hi! This is an ITMO assistant skill. ' + config["en-US"]['tts']
-        config["en-US"]['card']['description'] = 'Hi! This is ITMO Helper. ' + config["en-US"]['description'] 
+        config["en-US"]['card']['description'] = 'Hi! This is ITMO Helper. ' + config["en-US"]['card']['description'] 
 
         config["ru-RU"]['tts'] = 'Привет! Это навык - ИТМО помощник. ' + config["ru-RU"]['tts']
         config["ru-RU"]['card']['description'] = 'Привет! Это навык - ИТМО помощник. ' + config["ru-RU"]['card']['description']
