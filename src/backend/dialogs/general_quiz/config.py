@@ -90,7 +90,7 @@ def check_answer(event):
     questions_list = getState(event, "questions_list")
 
     if len(questions_list) != 0:
-        if questions[lang]["answers"][questions_list[-1]].lower() in getOriginalUtterance(event).lower() or questions[lang]["answers"][questions_list[-1]].lower() == getOriginalUtterance(event).lower():
+        if questions[lang]["answers"][questions_list[-1]].lower() == getOriginalUtterance(event).lower() or questions[lang]["answers"][questions_list[-1]].lower() == getOriginalUtterance(event).lower():
             setStateInEvent(event, "count_correct_response", getState(event, "count_correct_response") + 1)
 
     setStateInEvent(event, "count_questions", getState(event, "count_questions") + 1)
