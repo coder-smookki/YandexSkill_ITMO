@@ -1,11 +1,11 @@
-from utils.responseHelper import getGlobalState, getLanguage
-from utils.triggerHelper import haveGlobalState
+from utils.responseHelper import getLanguage
+from utils.triggerHelper import isNewSession
 
-config = {
+def getConfig(event):
+    config = {
     "ru-RU": {
         "tts":
-            """
-            Привет! Это навык - ИТМО помощник. 
+            """ 
             Вы всегда сможете использовать функции: "Помощь", "Повторить ещё раз", "Что ты умеешь", "Выйти".
             Выберите нужную категорию, которая поможет вам.
             Новости.
@@ -55,8 +55,7 @@ config = {
     },
     "en-US": {
         "tts":
-            """
-            Hi! This is an ITMO assistant skill. 
+            """ 
             You can always use the functions: "Help", "Repeat again", "What can you do", "Exit".
             Choose the right category to help you.
             News.
@@ -106,12 +105,18 @@ Choose the right category to help you.
     },
 }
 
-session_state = {"branch": "mainMenu"}
+    session_state = {"branch": "mainMenu"}
 
 
-def getConfig(event):
     lang = getLanguage(event)
     # lang = "ru-RU"
+    
+    if isNewSession(event):
+        config["en-US"]['tts'] = 'Hi! This is an ITMO assistant skill. ' + config["en-US"]['tts']
+        config["en-US"]['card']['description'] = 'Hi! This is ITMO Helper. ' + config["en-US"]['description'] 
+
+        config["ru-RU"]['tts'] = 'Привет! Это навык - ИТМО помощник. ' + config["ru-RU"]['tts']
+        config["ru-RU"]['card']['description'] = 'Привет! Это навык - ИТМО помощник. ' + config["ru-RU"]['card']['description']
 
     return {
         "tts": config[lang]["tts"],
