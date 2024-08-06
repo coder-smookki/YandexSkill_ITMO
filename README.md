@@ -24,4 +24,4 @@ There is a .env file in the project, please create it yourself and determine whi
 
 #
 
-<img src="screenshots/image.png" width="720" height="360"/>
+<img src="screenshots/image.png" width="520" height="520"/>
