@@ -93,7 +93,7 @@ python index.py
 | Плюснин Александр | Главный разработчик навыка и его основы | [@elogrus](https://github.com/elogrus) |
 | Караваев Иван | Разработчик | [@Nauryeasy](https://github.com/Nauryeasy) |
 | Лесовой Кирилл | Тестировщик, разработчик игровых алгоритмов | [@K1rL3s](https://github.com/K1rL3s) |
-| Кутников Родион | Главный дизайнер, UI и UX | |
+| Кутников Родион | Главный дизайнер, UI и UX | [@ZloyKobra](https://github.com/ZloyKobra) |
 
 ## Хакатон
 
